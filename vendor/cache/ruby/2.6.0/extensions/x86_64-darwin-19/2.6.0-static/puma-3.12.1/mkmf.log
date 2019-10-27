@@ -1,0 +1,112 @@
+have_library: checking for BIO_read() in -lcrypto... -------------------- no
+
+"clang -o conftest -I/Users/petro/.rbenv/versions/2.6.5/include/ruby-2.6.0/x86_64-darwin19 -I/Users/petro/.rbenv/versions/2.6.5/include/ruby-2.6.0/ruby/backward -I/Users/petro/.rbenv/versions/2.6.5/include/ruby-2.6.0 -I. -I/usr/local/Cellar/openssl/1.0.1e/include -I/Users/petro/.rbenv/versions/2.6.5/include -I/usr/local/opt/readline/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -pipe conftest.c  -L. -L/Users/petro/.rbenv/versions/2.6.5/lib -L/usr/local/Cellar/openssl/1.0.1e/lib -L. -L/Users/petro/.rbenv/versions/2.6.5/lib -L/usr/local/opt/readline/lib -fstack-protector-strong -L/usr/local/lib     -lruby.2.6-static -framework Security -framework Foundation -lpthread -ldl -lobjc   "
+ld: warning: directory not found for option '-L/usr/local/Cellar/openssl/1.0.1e/lib'
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"clang -o conftest -I/Users/petro/.rbenv/versions/2.6.5/include/ruby-2.6.0/x86_64-darwin19 -I/Users/petro/.rbenv/versions/2.6.5/include/ruby-2.6.0/ruby/backward -I/Users/petro/.rbenv/versions/2.6.5/include/ruby-2.6.0 -I. -I/usr/local/Cellar/openssl/1.0.1e/include -I/Users/petro/.rbenv/versions/2.6.5/include -I/usr/local/opt/readline/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -pipe conftest.c  -L. -L/Users/petro/.rbenv/versions/2.6.5/lib -L/usr/local/Cellar/openssl/1.0.1e/lib -L. -L/Users/petro/.rbenv/versions/2.6.5/lib -L/usr/local/opt/readline/lib -fstack-protector-strong -L/usr/local/lib     -lruby.2.6-static -framework Security -framework Foundation -lpthread -ldl -lobjc -lcrypto   "
+conftest.c:14:57: error: use of undeclared identifier 'BIO_read'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))BIO_read; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))BIO_read; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/petro/.rbenv/versions/2.6.5/include/ruby-2.6.0/x86_64-darwin19 -I/Users/petro/.rbenv/versions/2.6.5/include/ruby-2.6.0/ruby/backward -I/Users/petro/.rbenv/versions/2.6.5/include/ruby-2.6.0 -I. -I/usr/local/Cellar/openssl/1.0.1e/include -I/Users/petro/.rbenv/versions/2.6.5/include -I/usr/local/opt/readline/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -pipe conftest.c  -L. -L/Users/petro/.rbenv/versions/2.6.5/lib -L/usr/local/Cellar/openssl/1.0.1e/lib -L. -L/Users/petro/.rbenv/versions/2.6.5/lib -L/usr/local/opt/readline/lib -fstack-protector-strong -L/usr/local/lib     -lruby.2.6-static -framework Security -framework Foundation -lpthread -ldl -lobjc -lcrypto   "
+ld: warning: directory not found for option '-L/usr/local/Cellar/openssl/1.0.1e/lib'
+ld: library not found for -lcrypto
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: extern void BIO_read();
+15: int t(void) { BIO_read(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for BIO_read() in -llibeay32... -------------------- no
+
+"clang -o conftest -I/Users/petro/.rbenv/versions/2.6.5/include/ruby-2.6.0/x86_64-darwin19 -I/Users/petro/.rbenv/versions/2.6.5/include/ruby-2.6.0/ruby/backward -I/Users/petro/.rbenv/versions/2.6.5/include/ruby-2.6.0 -I. -I/usr/local/Cellar/openssl/1.0.1e/include -I/Users/petro/.rbenv/versions/2.6.5/include -I/usr/local/opt/readline/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -pipe conftest.c  -L. -L/Users/petro/.rbenv/versions/2.6.5/lib -L/usr/local/Cellar/openssl/1.0.1e/lib -L. -L/Users/petro/.rbenv/versions/2.6.5/lib -L/usr/local/opt/readline/lib -fstack-protector-strong -L/usr/local/lib     -lruby.2.6-static -framework Security -framework Foundation -lpthread -ldl -lobjc -llibeay32   "
+conftest.c:14:57: error: use of undeclared identifier 'BIO_read'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))BIO_read; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))BIO_read; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/petro/.rbenv/versions/2.6.5/include/ruby-2.6.0/x86_64-darwin19 -I/Users/petro/.rbenv/versions/2.6.5/include/ruby-2.6.0/ruby/backward -I/Users/petro/.rbenv/versions/2.6.5/include/ruby-2.6.0 -I. -I/usr/local/Cellar/openssl/1.0.1e/include -I/Users/petro/.rbenv/versions/2.6.5/include -I/usr/local/opt/readline/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -pipe conftest.c  -L. -L/Users/petro/.rbenv/versions/2.6.5/lib -L/usr/local/Cellar/openssl/1.0.1e/lib -L. -L/Users/petro/.rbenv/versions/2.6.5/lib -L/usr/local/opt/readline/lib -fstack-protector-strong -L/usr/local/lib     -lruby.2.6-static -framework Security -framework Foundation -lpthread -ldl -lobjc -llibeay32   "
+ld: warning: directory not found for option '-L/usr/local/Cellar/openssl/1.0.1e/lib'
+ld: library not found for -llibeay32
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: extern void BIO_read();
+15: int t(void) { BIO_read(); return 0; }
+/* end */
+
+--------------------
+
