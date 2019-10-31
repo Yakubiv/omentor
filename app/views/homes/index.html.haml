@@ -1,0 +1,100 @@
+%header.header_area
+  .main_menu
+    %nav.navbar.navbar-expand-lg.navbar-light
+      .container
+        %a.navbar-brand.logo_h{ href: "" }
+        %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        / Collect the nav links, forms, and other content for toggling
+        #navbarSupportedContent.collapse.navbar-collapse.offset
+          %ul.nav.navbar-nav.menu_nav.ml-auto
+            %li.nav-item.active
+              %a.nav-link{:href => "index.html"} Home
+            %li.nav-item
+              %a.nav-link{:href => "about-us.html"} About
+            %li.nav-item.submenu.dropdown
+              %a.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"} Pages
+              %ul.dropdown-menu
+                %li.nav-item
+                  %a.nav-link{:href => "courses.html"} Courses
+                %li.nav-item
+                  %a.nav-link{:href => "course-details.html"} Course Details
+                %li.nav-item
+                  %a.nav-link{:href => "elements.html"} Elements
+            %li.nav-item.submenu.dropdown
+              %a.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"} Blog
+              %ul.dropdown-menu
+                %li.nav-item
+                  %a.nav-link{:href => "blog.html"} Blog
+                %li.nav-item
+                  %a.nav-link{:href => "single-blog.html"} Blog Details
+            %li.nav-item
+              %a.nav-link{:href => "contact.html"} Contact
+            %li.nav-item
+              %a#search.nav-link.search{:href => "#"}
+                %i.ti-search
+
+%section.home_banner_area
+  .banner_inner
+    .container
+      .row
+        .col-lg-12
+          .banner_content.text-center
+            %p.text-uppercase
+              Best online education service In the world
+            %h2.text-uppercase.mt-4.mb-5
+              StudyGO work in progress
+            %div
+              %a.primary-btn2.mb-3.mb-sm-0{:href => "#"} learn more
+              %a.primary-btn.ml-sm-3.ml-0{:href => "#"} see course
+
+%footer.footer-area.section_gap
+  .container
+    .row
+      .col-lg-2.col-md-6.single-footer-widget
+        %h4 Top Products
+        %ul
+          %li
+            %a{:href => "#"} Managed Website
+          %li
+            %a{:href => "#"} Manage Reputation
+          %li
+            %a{:href => "#"} Power Tools
+          %li
+            %a{:href => "#"} Marketing Service
+      .col-lg-2.col-md-6.single-footer-widget
+        %h4 Quick Links
+        %ul
+          %li
+            %a{:href => "#"} Jobs
+          %li
+            %a{:href => "#"} Brand Assets
+          %li
+            %a{:href => "#"} Investor Relations
+          %li
+            %a{:href => "#"} Terms of Service
+      .col-lg-2.col-md-6.single-footer-widget
+        %h4 Features
+        %ul
+          %li
+            %a{:href => "#"} Jobs
+          %li
+            %a{:href => "#"} Brand Assets
+          %li
+            %a{:href => "#"} Investor Relations
+          %li
+            %a{:href => "#"} Terms of Service
+      .col-lg-2.col-md-6.single-footer-widget
+        %h4 Resources
+        %ul
+          %li
+            %a{:href => "#"} Guides
+          %li
+            %a{:href => "#"} Research
+          %li
+            %a{:href => "#"} Experts
+          %li
+            %a{:href => "#"} Agencies
+      .col-lg-4.col-md-6.single-footer-widget
