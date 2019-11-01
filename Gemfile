@@ -13,10 +13,12 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'devise'
 
+gem 'rubocop', '~> 0.76.0', require: false
+
 # Inline svg
 gem 'inline_svg'
 
-gem 'haml-rails', '2.0.1'
+gem 'hamlit'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -25,6 +27,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'pry', '~> 0.12.2'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'

@@ -5,7 +5,6 @@
   z-index: 1;
   min-height: 900px;
   position: relative;
-  background: url(../img/banner/home-banner.jpg) no-repeat center;
   background-size: cover;
   .banner_inner {
     position: absolute;
@@ -44,7 +43,6 @@
     min-height: 780px;
     z-index: 1;
     .overlay {
-      background: url(../img/banner/banner-2.jpg) no-repeat center center;
       opacity: 0.5;
       height: 125%;
       position: absolute;
@@ -79,7 +77,6 @@
 
 .banner_area {
   position: relative;
-  background: url(../img/banner/banner.jpg) no-repeat center center;
   z-index: 1;
   min-height: 392px;
   padding-top: 0 !important;

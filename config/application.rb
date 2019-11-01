@@ -10,6 +10,7 @@ module Studygo
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
+    config.autoload_paths += %W[ lib/ ]
     config.generators do |g|
       g.test_framework :rspec
     end
