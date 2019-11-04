@@ -15,6 +15,8 @@ gem 'devise'
 
 gem 'rubocop', '~> 0.76.0', require: false
 
+gem 'font_awesome5_rails'
+
 # Inline svg
 gem 'inline_svg'
 
