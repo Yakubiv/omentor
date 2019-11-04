@@ -7,7 +7,7 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-require("custom/paper-dashboard.min")
+require("custom")
 
 import "../stylesheets/application";
 import "@fortawesome/fontawesome-free/js/all";

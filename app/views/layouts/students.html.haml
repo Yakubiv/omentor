@@ -6,5 +6,665 @@
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
-  %body
+  %body.font-opensans
+    / Page Loader
+    -# .page-loader-wrapper
+    -#   .loader
+    #main_content
+      #header_top.header_top
+        .container
+          .hleft
+            %a.header-brand{:href => "index.html"}
+              %i.fe.fe-command.brand-logo
+            .dropdown
+              %a.nav-link.icon{:href => "page-search.html"}
+                %i.fa.fa-search{"data-placement" => "right", "data-toggle" => "tooltip", :title => "Search..."}
+              %a.nav-link.icon.create_page.xs-hide{:href => "javascript:void(0)"}
+                %i.fa.fa-plus{"data-placement" => "right", "data-toggle" => "tooltip", :title => "Create New"}
+              %a.nav-link.icon.app_inbox{:href => "app-email.html"}
+                %i.fa.fa-envelope{"data-placement" => "right", "data-toggle" => "tooltip", :title => "Inbox"}
+              %a.nav-link.icon.app_file.xs-hide{:href => "app-filemanager.html"}
+                %i.fa.fa-folder{"data-placement" => "right", "data-toggle" => "tooltip", :title => "File Manager"}
+              %a.nav-link.icon.xs-hide{:href => "app-social.html"}
+                %i.fa.fa-share-alt{"data-placement" => "right", "data-toggle" => "tooltip", :title => "Social Media"}
+              %a.nav-link.icon.xs-hide{:href => "javascript:void(0)"}
+                %i.fa.fa-bullhorn{"data-placement" => "right", "data-toggle" => "tooltip", :title => "Projects"}
+              %a.nav-link.icon.xs-hide{:href => "javascript:void(0)"}
+                %i.fa.fa-cloud-upload{"data-placement" => "right", "data-toggle" => "tooltip", :title => "Cloud Upload"}
+          .hright
+            .dropdown
+              %a.nav-link.icon.theme_btn{:href => "javascript:void(0)"}
+                %i.fa.fa-paint-brush{"data-placement" => "right", "data-toggle" => "tooltip", :title => "Themes"}
+              %a.nav-link.icon.settingbar{:href => "javascript:void(0)"}
+                %i.fa.fa-gear.fa-spin{"data-placement" => "right", "data-toggle" => "tooltip", :title => "Settings"}
+              %a.nav-link.user_btn{:href => "javascript:void(0)"}
+                img
+              %a.nav-link.icon.menu_toggle{:href => "javascript:void(0)"}
+                %i.fa.fa-align-left
+      #rightsidebar.right_sidebar
+        %a.p-3.settingbar.float-right{:href => "javascript:void(0)"}
+          %i.fa.fa-close
+        %ul.nav.nav-tabs{:role => "tablist"}
+          %li.nav-item
+            %a.nav-link.active{"aria-expanded" => "true", "data-toggle" => "tab", :href => "#Settings"} Settings
+          %li.nav-item
+            %a.nav-link{"aria-expanded" => "false", "data-toggle" => "tab", :href => "#activity"} Activity
+        .tab-content
+          #Settings.tab-pane.vivify.fadeIn.active{"aria-expanded" => "true", :role => "tabpanel"}
+            .mb-4
+              %h6.font-14.font-weight-bold.text-muted Font Style
+              .custom-controls-stacked.font_setting
+                %label.custom-control.custom-radio.custom-control-inline
+                  %input.custom-control-input{:checked => "checked", :name => "font", :type => "radio", :value => "font-opensans"}/
+                  %span.custom-control-label Open Sans Font
+                %label.custom-control.custom-radio.custom-control-inline
+                  %input.custom-control-input{:name => "font", :type => "radio", :value => "font-montserrat"}/
+                  %span.custom-control-label Montserrat Google Font
+                %label.custom-control.custom-radio.custom-control-inline
+                  %input.custom-control-input{:name => "font", :type => "radio", :value => "font-poppins"}/
+                  %span.custom-control-label Poppins Google Font
+            .mb-4
+              %h6.font-14.font-weight-bold.text-muted Dropdown Menu Icon
+              .custom-controls-stacked.arrow_option
+                %label.custom-control.custom-radio.custom-control-inline
+                  %input.custom-control-input{:checked => "checked", :name => "marrow", :type => "radio", :value => "arrow-a"}/
+                  %span.custom-control-label A
+                %label.custom-control.custom-radio.custom-control-inline
+                  %input.custom-control-input{:name => "marrow", :type => "radio", :value => "arrow-b"}/
+                  %span.custom-control-label B
+                %label.custom-control.custom-radio.custom-control-inline
+                  %input.custom-control-input{:name => "marrow", :type => "radio", :value => "arrow-c"}/
+                  %span.custom-control-label C
+              %h6.font-14.font-weight-bold.mt-4.text-muted SubMenu List Icon
+              .custom-controls-stacked.list_option
+                %label.custom-control.custom-radio.custom-control-inline
+                  %input.custom-control-input{:checked => "checked", :name => "listicon", :type => "radio", :value => "list-a"}/
+                  %span.custom-control-label A
+                %label.custom-control.custom-radio.custom-control-inline
+                  %input.custom-control-input{:name => "listicon", :type => "radio", :value => "list-b"}/
+                  %span.custom-control-label B
+                %label.custom-control.custom-radio.custom-control-inline
+                  %input.custom-control-input{:name => "listicon", :type => "radio", :value => "list-c"}/
+                  %span.custom-control-label C
+            %div
+              %h6.font-14.font-weight-bold.mt-4.text-muted General Settings
+              %ul.setting-list.list-unstyled.mt-1.setting_switch
+                %li
+                  %label.custom-switch
+                    %span.custom-switch-description Night Mode
+                    %input.custom-switch-input.btn-darkmode{:name => "custom-switch-checkbox", :type => "checkbox"}/
+                    %span.custom-switch-indicator
+                %li
+                  %label.custom-switch
+                    %span.custom-switch-description Fix Navbar top
+                    %input.custom-switch-input.btn-fixnavbar{:name => "custom-switch-checkbox", :type => "checkbox"}/
+                    %span.custom-switch-indicator
+                %li
+                  %label.custom-switch
+                    %span.custom-switch-description Header Dark
+                    %input.custom-switch-input.btn-pageheader{:name => "custom-switch-checkbox", :type => "checkbox"}/
+                    %span.custom-switch-indicator
+                %li
+                  %label.custom-switch
+                    %span.custom-switch-description Min Sidebar Dark
+                    %input.custom-switch-input.btn-min_sidebar{:name => "custom-switch-checkbox", :type => "checkbox"}/
+                    %span.custom-switch-indicator
+                %li
+                  %label.custom-switch
+                    %span.custom-switch-description Sidebar Dark
+                    %input.custom-switch-input.btn-sidebar{:name => "custom-switch-checkbox", :type => "checkbox"}/
+                    %span.custom-switch-indicator
+                %li
+                  %label.custom-switch
+                    %span.custom-switch-description Icon Color
+                    %input.custom-switch-input.btn-iconcolor{:name => "custom-switch-checkbox", :type => "checkbox"}/
+                    %span.custom-switch-indicator
+                %li
+                  %label.custom-switch
+                    %span.custom-switch-description Gradient Color
+                    %input.custom-switch-input.btn-gradient{:name => "custom-switch-checkbox", :type => "checkbox"}/
+                    %span.custom-switch-indicator
+                %li
+                  %label.custom-switch
+                    %span.custom-switch-description Box Shadow
+                    %input.custom-switch-input.btn-boxshadow{:name => "custom-switch-checkbox", :type => "checkbox"}/
+                    %span.custom-switch-indicator
+                %li
+                  %label.custom-switch
+                    %span.custom-switch-description RTL Support
+                    %input.custom-switch-input.btn-rtl{:name => "custom-switch-checkbox", :type => "checkbox"}/
+                    %span.custom-switch-indicator
+                %li
+                  %label.custom-switch
+                    %span.custom-switch-description Box Layout
+                    %input.custom-switch-input.btn-boxlayout{:name => "custom-switch-checkbox", :type => "checkbox"}/
+                    %span.custom-switch-indicator
+            %hr/
+            .form-group
+              %label.d-block
+                Storage
+                %span.float-right 77%
+              .progress.progress-sm
+                .progress-bar{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "77", :role => "progressbar", :style => "width: 77%;"}
+              %button.btn.btn-primary.btn-block.mt-3{:type => "button"} Upgrade Storage
+          #activity.tab-pane.vivify.fadeIn{"aria-expanded" => "false", :role => "tabpanel"}
+            %ul.new_timeline.mt-3
+              %li
+                .bullet.pink
+                .time 11:00am
+                .desc
+                  %h3 Attendance
+                  %h4 Computer Class
+              %li
+                .bullet.pink
+                .time 11:30am
+                .desc
+                  %h3 Added an interest
+                  %h4 “Volunteer Activities”
+              %li
+                .bullet.green
+                .time 2:00pm
+                .desc
+                  %h3 Responded to need
+                  %a{:href => "javascript:void(0)"} “In-Kind Opportunity”
+              %li
+                .bullet.orange
+                .time 1:30pm
+                .desc
+                  %h3 Lunch Break
+              %li
+                .bullet.green
+                .time 2:38pm
+                .desc
+                  %h3 Finish
+                  %h4 Go to Home
+      .theme_div
+        .card
+          .card-body
+            %ul.list-group.list-unstyled
+              %li.list-group-item.mb-2
+                %p Default Theme
+                %a{:href => "../light/index.html"}
+                  = image_tag "themes/default.png", class: 'img-fluid'
+              %li.list-group-item.mb-2
+                %p Night Mode Theme
+                %a{:href => "../dark/index.html"}
+                  = image_tag "themes/dark.png", class: 'img-fluid'
+              %li.list-group-item.mb-2
+                %p Horizontal Version
+                %a{:href => "../horizontal/index.html"}
+                  = image_tag "themes/horizontal.png", class: 'img-fluid'
+              %li.list-group-item.mb-2
+                %p RTL Version
+                %a{:href => "../rtl/index.html"}
+                  = image_tag "themes/rtl.png", class: 'img-fluid'
+      .user_div
+        %h5.brand-name.mb-4
+          Epic Able
+          %a.user_btn{:href => "javascript:void(0)"}
+            %i.icon-logout
+        .card
+          .card-body
+            .media
+              img
+              .media-body
+                %h5.m-0 Sara Hopkins
+                %p.text-muted.mb-0 Webdeveloper
+                %ul.social-links.list-inline.mb-0.mt-2
+                  %li.list-inline-item
+                    %a{"data-original-title" => "Facebook", "data-toggle" => "tooltip", :href => "javascript:void(0)", :title => ""}
+                      %i.fa.fa-facebook
+                  %li.list-inline-item
+                    %a{"data-original-title" => "Twitter", "data-toggle" => "tooltip", :href => "javascript:void(0)", :title => ""}
+                      %i.fa.fa-twitter
+                  %li.list-inline-item
+                    %a{"data-original-title" => "1234567890", "data-toggle" => "tooltip", :href => "javascript:void(0)", :title => ""}
+                      %i.fa.fa-phone
+                  %li.list-inline-item
+                    %a{"data-original-title" => "@skypename", "data-toggle" => "tooltip", :href => "javascript:void(0)", :title => ""}
+                      %i.fa.fa-skype
+        .card
+          .card-header
+            %h3.card-title Statistics
+            .card-options
+              %a.card-options-collapse{"data-toggle" => "card-collapse", :href => "#"}
+                %i.fe.fe-chevron-up
+              %a.card-options-remove{"data-toggle" => "card-remove", :href => "#"}
+                %i.fe.fe-x
+          .card-body
+            .text-center
+              .row
+                .col-6.pb-3
+                  %label.mb-0 Balance
+                  %h4.font-30.font-weight-bold $545
+                .col-6.pb-3
+                  %label.mb-0 Growth
+                  %h4.font-30.font-weight-bold 27%
+            .form-group
+              %label.d-block
+                Total Income
+                %span.float-right 77%
+              .progress.progress-xs
+                .progress-bar.bg-blue{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "77", :role => "progressbar", :style => "width: 77%;"}
+            .form-group
+              %label.d-block
+                Total Expenses
+                %span.float-right 50%
+              .progress.progress-xs
+                .progress-bar.bg-danger{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "50", :role => "progressbar", :style => "width: 50%;"}
+            .form-group.mb-0
+              %label.d-block
+                Gross Profit
+                %span.float-right 23%
+              .progress.progress-xs
+                .progress-bar.bg-green{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "23", :role => "progressbar", :style => "width: 23%;"}
+        .card
+          .card-header
+            %h3.card-title Friends
+            .card-options
+              %a.card-options-collapse{"data-toggle" => "card-collapse", :href => "#"}
+                %i.fe.fe-chevron-up
+              %a.card-options-remove{"data-toggle" => "card-remove", :href => "#"}
+                %i.fe.fe-x
+          .card-body
+            %ul.right_chat.list-unstyled
+              %li.online
+                %a{:href => "javascript:void(0);"}
+                  .media
+                    .media-body
+                      %span.name Donald Gardner
+                      %span.message Designer, Blogger
+                      %span.badge.badge-outline.status
+              %li.online
+                %a{:href => "javascript:void(0);"}
+                  .media
+                    -# %img.media-object{:alt => "", :src => "/images/xs/avatar5.jpg"}/
+                    .media-body
+                      %span.name Wendy Keen
+                      %span.message Java Developer
+                      %span.badge.badge-outline.status
+              %li.offline
+                %a{:href => "javascript:void(0);"}
+                  .media
+                    -# %img.media-object{:alt => "", :src => "/images/xs/avatar2.jpg"}/
+                    .media-body
+                      %span.name Matt Rosales
+                      %span.message CEO, anchortheme
+                      %span.badge.badge-outline.status
+        .card.b-none
+          %ul.list-group
+            %li.list-group-item.d-flex
+              .box-icon.sm.rounded.bg-blue
+                %i.fa.fa-credit-card
+              .ml-3
+                %div +$29 New sale
+                %a{:href => "javascript:void(0)"} Admin Template
+                .text-muted.font-12 5 min ago
+            %li.list-group-item.d-flex
+              .box-icon.sm.rounded.bg-pink
+                %i.fa.fa-upload
+              .ml-3
+                %div Project Update
+                %a{:href => "javascript:void(0)"} New HTML page
+                .text-muted.font-12 10 min ago
+            %li.list-group-item.d-flex
+              .box-icon.sm.rounded.bg-teal
+                %i.fa.fa-file-word-o
+              .ml-3
+                %div You edited the file
+                %a{:href => "javascript:void(0)"} reposrt.doc
+                .text-muted.font-12 11 min ago
+            %li.list-group-item.d-flex
+              .box-icon.sm.rounded.bg-cyan
+                %i.fa.fa-user
+              .ml-3
+                %div New user
+                %a{:href => "javascript:void(0)"} Puffin web - view
+                .text-muted.font-12 17 min ago
+      #left-sidebar.sidebar
+        %h5.brand-name
+          Epic Able
+          %a.menu_option.float-right{:href => "javascript:void(0)"}
+            %i.icon-grid.font-16{"data-placement" => "left", "data-toggle" => "tooltip", :title => "Grid & List Toggle"}
+        %nav#left-sidebar-nav.sidebar-nav
+          %ul.metismenu
+            %li.g_heading Directories
+            %li.active
+              %a{:href => "index.html"}
+                %i.icon-home
+                %span Dashboard
+            %li
+              %a{:href => "app-calendar.html"}
+                %i.icon-calendar
+                %span Calendar
+            %li
+              %a{:href => "app-chat.html"}
+                %i.icon-speech
+                %span Chat
+            %li
+              %a{:href => "app-contact.html"}
+                %i.icon-notebook
+                %span Contact
+            %li
+              %a{:href => "app-blog.html"}
+                %i.icon-globe
+                %span Blog
+            %li
+              %a.has-arrow{:href => "javascript:void(0)"}
+                %i.icon-lock
+                %span Authentication
+              %ul
+                %li
+                  %a{:href => "login.html"} Login
+                %li
+                  %a{:href => "register.html"} Register
+                %li
+                  %a{:href => "forgot-password.html"} Forgot password
+                %li
+                  %a{:href => "404.html"} 404 error
+                %li
+                  %a{:href => "500.html"} 500 error
+            %li.g_heading Pages
+            %li
+              %a.has-arrow{:href => "javascript:void(0)"}
+                %i.icon-tag
+                %span Icons
+              %ul
+                %li
+                  %a{:href => "icons-feather.html"} Feather Icons
+                %li
+                  %a{:href => "icons-line.html"} Line Icons
+                %li
+                  %a{:href => "icons-fontawesome.html"} Font Awesome
+                %li
+                  %a{:href => "icons-flags.html"} Flags Icons
+                %li
+                  %a{:href => "icons-payments.html"} Payments Icons
+            %li
+              %a.has-arrow{:href => "javascript:void(0)"}
+                %i.icon-bar-chart
+                %span Charts
+              %ul
+                %li
+                  %a{:href => "charts-apex.html"} Charts Apex
+                %li
+                  %a{:href => "charts-e.html"} EChart
+                %li
+                  %a{:href => "charts-c3.html"} C3 Chart
+                %li
+                  %a{:href => "charts-knob.html"} JQuery Knob
+                %li
+                  %a{:href => "charts-sparkline.html"} Sparkline Chart
+            %li
+              %a.has-arrow{:href => "javascript:void(0)"}
+                %i.icon-layers
+                %span Forms
+              %ul
+                %li
+                  %a{:href => "form-elements.html"} Basic Elements
+                %li
+                  %a{:href => "form-advanced.html"} Advanced Elements
+                %li
+                  %a{:href => "form-validation.html"} Form Validation
+                %li
+                  %a{:href => "form-wizard.html"} Form Wizard
+                %li
+                  %a{:href => "form-summernote.html"} Summernote
+            %li
+              %a.has-arrow{:href => "javascript:void(0)"}
+                %i.icon-tag
+                %span Tables
+              %ul
+                %li
+                  %a{:href => "table-normal.html"} Bootstrap Table
+                %li
+                  %a{:href => "table-datatable.html"} Jquery Datatable
+            %li
+              %a{:href => "widgets.html"}
+                %i.icon-puzzle
+                %span Widgets
+            %li.g_heading Extra
+            %li
+              %a{:href => "page-maps.html"}
+                %i.icon-map
+                %span Maps
+            %li
+              %a{:href => "page-gallery.html"}
+                %i.icon-picture
+                %span Gallery
+            %li
+              %a.has-arrow{:href => "javascript:void(0)"}
+                %i.fe.fe-file
+                %span Pages
+              %ul
+                %li
+                  %a{:href => "page-empty.html"} Empty page
+                %li
+                  %a{:href => "page-profile.html"} Profile
+                %li
+                  %a{:href => "page-search.html"} Search Results
+                %li
+                  %a{:href => "page-timeline.html"} Timeline
+                %li
+                  %a{:href => "page-invoices.html"} Invoices
+                %li
+                  %a{:href => "page-pricing.html"} Pricing
+                %li
+                  %a{:href => "page-carousel.html"} Carousel
+      .page
+        #page_top.section-body
+          .container-fluid
+            .page-header
+              .left
+                %h1.page-title TaskBoard
+                %select.custom-select
+                  %option Year
+                  %option Month
+                  %option Week
+                .input-group.xs-hide
+                  %input.form-control{:placeholder => "Search...", :type => "text"}/
+              .right
+                %ul.nav.nav-pills
+                  %li.nav-item.dropdown
+                    %a.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"} Language
+                    .dropdown-menu
+                      %a.dropdown-item{:href => "#"}
+                        = image_tag 'flags/us.svg', class: 'w20 mr-2', alt: ''
+                        English
+                      .dropdown-divider
+                      %a.dropdown-item{:href => "#"}
+                        = image_tag 'flags/ua.svg', class: 'w20 mr-2', alt: ''
+                        Ukraine
+                      %a.dropdown-item{:href => "#"}
+                        = image_tag 'flags/ru.svg', class: 'w20 mr-2', alt: ''
+                        Russian
+                  %li.nav-item.dropdown
+                    %a.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"} Reports
+                    .dropdown-menu
+                      %a.dropdown-item{:href => "#"}
+                        %i.dropdown-icon.fa.fa-file-excel-o
+                        MS Excel
+                      %a.dropdown-item{:href => "#"}
+                        %i.dropdown-icon.fa.fa-file-word-o
+                        MS Word
+                      %a.dropdown-item{:href => "#"}
+                        %i.dropdown-icon.fa.fa-file-pdf-o
+                        PDF
+                  %li.nav-item.dropdown
+                    %a.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"} Project
+                    .dropdown-menu
+                      %a.dropdown-item{:href => "#"} Graphics Design
+                      %a.dropdown-item{:href => "#"} Angular Admin
+                      %a.dropdown-item{:href => "#"} PSD to HTML
+                      %a.dropdown-item{:href => "#"} iOs App Development
+                      .dropdown-divider
+                      %a.dropdown-item{:href => "#"} Home Development
+                      %a.dropdown-item{:href => "#"} New Blog post
+                .notification.d-flex
+                  .dropdown.d-flex
+                    %a.nav-link.icon.d-none.d-md-flex.btn.btn-default.btn-icon.ml-1{"data-toggle" => "dropdown"}
+                      %i.fa.fa-envelope
+                      %span.badge.badge-success.nav-unread
+                    .dropdown-menu.dropdown-menu-right.dropdown-menu-arrow
+                      %ul.right_chat.list-unstyled.w250.p-0
+                        %li.online
+                          %a{:href => "javascript:void(0);"}
+                            .media
+                              .media-body
+                                %span.name Donald Gardner
+                                %span.message Designer, Blogger
+                                %span.badge.badge-outline.status
+                        %li.online
+                          %a{:href => "javascript:void(0);"}
+                            .media
+                              .media-body
+                                %span.name Wendy Keen
+                                %span.message Java Developer
+                                %span.badge.badge-outline.status
+                        %li.offline
+                          %a{:href => "javascript:void(0);"}
+                            .media
+                              .media-body
+                                %span.name Matt Rosales
+                                %span.message CEO, anchortheme
+                                %span.badge.badge-outline.status
+                        %li.online
+                          %a{:href => "javascript:void(0);"}
+                            .media
+                              .media-body
+                                %span.name Phillip Smith
+                                %span.message Writter, Mag Editor
+                                %span.badge.badge-outline.status
+                      .dropdown-divider
+                      %a.dropdown-item.text-center.text-muted-dark.readall{:href => "javascript:void(0)"} Mark all as read
+                  .dropdown.d-flex
+                    %a.nav-link.icon.d-none.d-md-flex.btn.btn-default.btn-icon.ml-1{"data-toggle" => "dropdown"}
+                      %i.fa.fa-bell
+                      %span.badge.badge-primary.nav-unread
+                    .dropdown-menu.dropdown-menu-right.dropdown-menu-arrow
+                      %ul.list-unstyled.feeds_widget
+                        %li
+                          .feeds-left
+                            %i.fa.fa-check
+                          .feeds-body
+                            %h4.title.text-danger
+                              Issue Fixed
+                              %small.float-right.text-muted 11:05
+                            %small WE have fix all Design bug with Responsive
+                        %li
+                          .feeds-left
+                            %i.fa.fa-user
+                          .feeds-body
+                            %h4.title
+                              New User
+                              %small.float-right.text-muted 10:45
+                            %small I feel great! Thanks team
+                        %li
+                          .feeds-left
+                            %i.fa.fa-thumbs-o-up
+                          .feeds-body
+                            %h4.title
+                              7 New Feedback
+                              %small.float-right.text-muted Today
+                            %small It will give a smart finishing to your site
+                        %li
+                          .feeds-left
+                            %i.fa.fa-question-circle
+                          .feeds-body
+                            %h4.title.text-warning
+                              Server Warning
+                              %small.float-right.text-muted 10:50
+                            %small Your connection is not private
+                        %li
+                          .feeds-left
+                            %i.fa.fa-shopping-cart
+                          .feeds-body
+                            %h4.title
+                              7 New Orders
+                              %small.float-right.text-muted 11:35
+                            %small You received a new oder from Tina.
+                      .dropdown-divider
+                      %a.dropdown-item.text-center.text-muted-dark.readall{:href => "javascript:void(0)"} Mark all as read
+                  .dropdown.d-flex
+                    %a.nav-link.icon.d-none.d-md-flex.btn.btn-default.btn-icon.ml-1{"data-toggle" => "dropdown"}
+                      %i.fa.fa-user
+                    .dropdown-menu.dropdown-menu-right.dropdown-menu-arrow
+                      %a.dropdown-item{:href => "page-profile.html"}
+                        %i.dropdown-icon.fe.fe-user
+                        Profile
+                      %a.dropdown-item{:href => "app-setting.html"}
+                        %i.dropdown-icon.fe.fe-settings
+                        Settings
+                      %a.dropdown-item{:href => "app-email.html"}
+                        %span.float-right
+                          %span.badge.badge-primary 6
+                        %i.dropdown-icon.fe.fe-mail
+                        Inbox
+                      %a.dropdown-item{:href => "javascript:void(0)"}
+                        %i.dropdown-icon.fe.fe-send
+                        Message
+                      .dropdown-divider
+                      %a.dropdown-item{:href => "javascript:void(0)"}
+                        %i.dropdown-icon.fe.fe-help-circle
+                        Need help?
+                      %a.dropdown-item{:href => "login.html"}
+                        %i.dropdown-icon.fe.fe-log-out
+                        Sign out
+        .section-body.taskboard.mt-4
+          .container-fluid
+            .row.clearfix
+              .col-lg-4.col-md-12
+        .section-body
+          %footer.footer
+            .container-fluid
+              .row
+                .col-md-6.col-sm-12
+                  Copyright © 2019
+                  = succeed "." do
+                    %a{:href => "javascript:void(0)"} PuffinTheme
+                .col-md-6.col-sm-12.text-md-right
+                  %ul.list-inline.mb-0
+                    %li.list-inline-item
+                      %a{:href => "../doc/index.html"} Documentation
+                    %li.list-inline-item
+                      %a{:href => "javascript:void(0)"} FAQ
+                    %li.list-inline-item
+                      %a.btn.btn-outline-primary.btn-sm{:href => "javascript:void(0)"} Buy Now
+    / Add New Task
+    #addtask.modal.fade{:role => "dialog", :tabindex => "-1"}
+      .modal-dialog{:role => "document"}
+        .modal-content
+          .modal-header
+            %h6#defaultModalLabel.title Add New Task
+          .modal-body
+            .row.clearfix
+              .col-12
+                .form-group
+                  %input.form-control{:placeholder => "Task no.", :type => "text"}/
+              .col-12
+                .form-group
+                  %input.form-control{:placeholder => "Job title", :type => "text"}/
+              .col-12
+                .form-group
+                  %textarea.form-control{:placeholder => "Description"}
+              .col-12
+                .form-group
+                  %select.form-control.show-tick
+                    %option Select Team
+                    %option John Smith
+                    %option Claire Peters
+                    %option Allen Collins
+                    %option Cory Carter
+                    %option Rochelle Barton
+              .col-12
+                %label Range
+                .input-daterange.input-group{"data-provide" => "datepicker"}
+                  %input.form-control{:name => "start", :type => "text"}/
+                  %span.input-group-addon to
+                  %input.form-control{:name => "end", :type => "text"}/
+          .modal-footer
+            %button.btn.btn-primary{:type => "button"} Add
+            %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+
+
     = yield
