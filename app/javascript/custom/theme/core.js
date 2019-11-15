@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).on('turbolinks:load', function () {
     "use strict";
 
     /** Constant div card */
@@ -50,7 +50,7 @@ $(document).ready(function() {
 });
 
 // table-filter js
-$(document).ready(function () {
+$(document).on('turbolinks:load', function () {
     $('.star').on('click', function () {
         $(this).toggleClass('star-checked');
     });
@@ -69,7 +69,7 @@ $(document).ready(function () {
 });
 
 // Sidebar Setting
-$(document).ready(function() {
+$(document).on('turbolinks:load', function () {
     "use strict";
     // sidebar navigation
 	$('.sidebar-nav').metisMenu();
@@ -110,7 +110,7 @@ $(document).ready(function() {
 });
 
 // Font Setting and icon
-$(document).ready(function() {
+$(document).on('turbolinks:load', function () {
     "use strict";
     // Font icon Setting
     $('.arrow_option input:radio').click(function () {
@@ -135,7 +135,7 @@ $(document).ready(function() {
 });
 
 // Switch Setting
-$(document).ready(function() {
+$(document).on('turbolinks:load', function () {
     "use strict";
     // Full Dark mode
 	$(".setting_switch .btn-darkmode").on('change',function() {

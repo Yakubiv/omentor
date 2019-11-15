@@ -1,11 +1,11 @@
 /* General Styles */
-html {	
+html {
 	direction: ltr;
 }
 body {
-    @include transition(all .4s ease-in-out);    
-    background-color: $body-color;	
-    color: $font-color;    
+    @include transition(all .4s ease-in-out);
+    background-color: $body-color;
+    color: $font-color;
 	direction: ltr;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -108,7 +108,7 @@ body {
         #left-sidebar{
             left: auto;
             right: 0;
-            padding: 20px 75px 20px 15px;
+            padding: 20px;
             border-right: 0;
             border-left: 1px solid $lightgray;
             text-align: right;
@@ -136,7 +136,7 @@ body {
             }
             &.open{
                 left: 0;
-            }            
+            }
         }
         .metismenu{
             ul a{
@@ -145,7 +145,7 @@ body {
                     left: auto;
                     right: 1px;
                 }
-            }            
+            }
             a{
                 border-right: 0;
                 border-left: 2px solid transparent;
@@ -154,7 +154,7 @@ body {
                 }
             }
             .active>a{
-                border-left: 2px solid; 
+                border-left: 2px solid;
             }
             .has-arrow:after{
                 right: auto;
@@ -179,7 +179,7 @@ body {
                 right: 0;
                 width: 100%;
             }
-        }        
+        }
         .page-title{
             margin-left: 20px;
             margin-right: 0;
@@ -420,7 +420,7 @@ body {
             .active>a{
                 font-weight: normal;
             }
-            a{                
+            a{
                 padding: 10px 15px;
                 margin-left: -1px;
                 text-align: left;
@@ -500,7 +500,7 @@ body {
                 height: calc(100vh - 230px);
                 overflow-y: auto;
             }
-        }        
+        }
         &.rtl{
             .page{
                 right: auto;
@@ -533,10 +533,10 @@ body {
 	@media print {
 		background: none;
     }
-    
+
     *::-webkit-scrollbar {
         width: 0px;
-        height: 3px;        
+        height: 3px;
         transition: .3s background;
     }
     *::-webkit-scrollbar-thumb {

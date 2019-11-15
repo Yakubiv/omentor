@@ -1,0 +1,26 @@
+#header_top.header_top
+  .container
+    .hleft
+      = link_to brand_url, class: 'header-brand' do
+        %i.fe.fe-command.brand-logo
+      .dropdown
+        %a.nav-link.icon{:href => "page-search.html"}
+          %i.fa.fa-search{"data-placement" => "right", "data-toggle" => "tooltip", :title => "Search..."}
+        %a.nav-link.icon.create_page.xs-hide{:href => "javascript:void(0)"}
+          %i.fa.fa-plus{"data-placement" => "right", "data-toggle" => "tooltip", :title => "Create New"}
+        %a.nav-link.icon.app_inbox{:href => "app-email.html"}
+          %i.fa.fa-envelope{"data-placement" => "right", "data-toggle" => "tooltip", :title => "Inbox"}
+        %a.nav-link.icon.app_file.xs-hide{:href => "app-filemanager.html"}
+          %i.fa.fa-folder{"data-placement" => "right", "data-toggle" => "tooltip", :title => "File Manager"}
+        %a.nav-link.icon.xs-hide{:href => "app-social.html"}
+          %i.fa.fa-share-alt{"data-placement" => "right", "data-toggle" => "tooltip", :title => "Social Media"}
+        %a.nav-link.icon.xs-hide{:href => "javascript:void(0)"}
+          %i.fa.fa-bullhorn{"data-placement" => "right", "data-toggle" => "tooltip", :title => "Projects"}
+        %a.nav-link.icon.xs-hide{:href => "javascript:void(0)"}
+          %i.fa.fa-cloud-upload{"data-placement" => "right", "data-toggle" => "tooltip", :title => "Cloud Upload"}
+    .hright
+      .dropdown
+        %a.nav-link.icon.settingbar{:href => "javascript:void(0)"}
+          %i.fa.fa-cog.fa-spin{"data-placement" => "right", "data-toggle" => "tooltip", :title => "Settings"}
+        %a.nav-link.icon.menu_toggle{:href => "javascript:void(0)"}
+          %i.fa.fa-align-left

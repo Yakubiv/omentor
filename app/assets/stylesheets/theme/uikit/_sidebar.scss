@@ -40,16 +40,16 @@
     }
     .has-arrow {
 		position: relative;
-		
+
         &:after {
             @include transition(all .5s ease-in-out);
             font-family: 'FontAwesome';
             position: absolute;
             color: $gray-300;
-            content: "\f10c";
+            content: "\f111";
             right: 1.8em;
             font-size: $font-size - 6px;
-            top: 15px; 
+            top: 15px;
         }
         &[aria-expanded="true"]::after {
             content: "\f192";
@@ -107,12 +107,12 @@
 		@include transition(all .3s ease-out);
         @include display-block;
         @include border-radius(0);
-        border-right: 2px solid transparent; 
+        border-right: 2px solid transparent;
 		color: $dark;
 		position: relative;
 		padding: 10px 0;
         outline-width: 0;
-        font-size: $font-size - 1px;  
+        font-size: $font-size - 1px;
 
         &:hover{
             letter-spacing: 1px;
@@ -144,8 +144,8 @@
             color: $gray-600;
             font-size: $font-size - 2px;
             padding: 5px 15px 5px 30px;
-            position: relative;            
-    
+            position: relative;
+
             &::before{
                 font-size: $font-size - 1px;
                 font-family: 'feather' !important;
@@ -194,8 +194,8 @@
                 @include border-radius(3px);
                 border: 1px solid rgba($dark,0.05);
                 padding: 10px;
-                margin-bottom: 5px;
-                width: 90px;
+                margin: 10px;
+                width: 98px;
                 height: 70px;
                 line-height: 28px;
 
@@ -210,7 +210,7 @@
                 i{
                     width: auto;
                 }
-                span{                    
+                span{
                     display: block;
                     line-height: normal;
                     width: 70px;
@@ -251,12 +251,12 @@
 	width: $sidebar-width;
     background-color: $white;
     border-right: 1px solid $lightgray;
-    left: 0;	
+    left: 0;
     overflow-y: auto;
 	position: fixed;
     top: 0;
-    padding: 20px 15px 20px $sidebar-icon + 15px;
-	
+    padding: 20px;
+
 	@include max-screen($break-large) {
 		left: -$sidebar-width;
     }
@@ -322,7 +322,7 @@
     padding: 20px 15px;
     height: 100vh;
     overflow-y: auto;
-    z-index: 9999;    
+    z-index: 9999;
 
     &.open{
         left: 0;
@@ -377,11 +377,11 @@
     cursor: pointer;
 
     &_part {
-        
-        width: 20px; 
-        height: 2px; 
+
+        width: 20px;
+        height: 2px;
         position: absolute;
-        background: #313d44; 
+        background: #313d44;
         right: 0;
         margin: auto;
         left: 0;
@@ -390,15 +390,15 @@
 
         top: calc(50% - ((5px)) + -2px);
 
-        &:nth-of-type(1) {        
+        &:nth-of-type(1) {
             top: calc(50% - ((5px)) + -2px);
             width: 20px;
         }
-        &:nth-of-type(2) {        
+        &:nth-of-type(2) {
             top: calc(50% - ((5px)) + 2px);
             width: 14px;
         }
-        &:nth-of-type(3) {        
+        &:nth-of-type(3) {
             top: calc(50% - ((5px)) + 6px);
             width: 10px;
         }
@@ -430,7 +430,7 @@
                 background: $gray-100;
             }
         }
-    }    
+    }
     #header_top{
         .nav-link{
             color: $gray-300;
@@ -448,7 +448,7 @@
 .top_dark{
     background-color: $black2 !important;
     color: $white;
-    
+
     .form-control,
     .custom-select{
         background-color: rgba($white, 0.1);
