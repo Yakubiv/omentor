@@ -1,5 +1,5 @@
 current directory: /Users/petro/Projects/studygo/vendor/cache/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
-/Users/petro/.rbenv/versions/2.6.5/bin/ruby -I /Users/petro/.rbenv/versions/2.6.5/lib/ruby/site_ruby/2.6.0 -r ./siteconf20191027-2236-1l66vdt.rb extconf.rb
+/Users/petro/.rbenv/versions/2.6.5/bin/ruby -I /Users/petro/.rbenv/versions/2.6.5/lib/ruby/site_ruby/2.6.0 -r ./siteconf20191116-13557-6zxncl.rb extconf.rb
 creating Makefile
 
 current directory: /Users/petro/Projects/studygo/vendor/cache/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
@@ -12,4 +12,4 @@ linking shared-object skiptrace/internal/cruby.bundle
 
 current directory: /Users/petro/Projects/studygo/vendor/cache/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20191027-2236-p2xk46/skiptrace/internal
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20191116-13557-o7uxzd/skiptrace/internal

@@ -1,5 +1,5 @@
 current directory: /Users/petro/Projects/studygo/vendor/cache/ruby/2.6.0/gems/nio4r-2.5.2/ext/nio4r
-/Users/petro/.rbenv/versions/2.6.5/bin/ruby -I /Users/petro/.rbenv/versions/2.6.5/lib/ruby/site_ruby/2.6.0 -r ./siteconf20191027-2236-nlabxg.rb extconf.rb
+/Users/petro/.rbenv/versions/2.6.5/bin/ruby -I /Users/petro/.rbenv/versions/2.6.5/lib/ruby/site_ruby/2.6.0 -r ./siteconf20191116-13557-1d9xakv.rb extconf.rb
 checking for unistd.h... yes
 checking for linux/aio_abi.h... no
 checking for sys/select.h... yes
@@ -92,4 +92,4 @@ linking shared-object nio4r_ext.bundle
 
 current directory: /Users/petro/Projects/studygo/vendor/cache/ruby/2.6.0/gems/nio4r-2.5.2/ext/nio4r
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 nio4r_ext.bundle ./.gem.20191027-2236-1wyb558
+/usr/bin/install -c -m 0755 nio4r_ext.bundle ./.gem.20191116-13557-omq2fs

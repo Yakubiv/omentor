@@ -1,5 +1,5 @@
 current directory: /Users/petro/Projects/studygo/vendor/cache/ruby/2.6.0/gems/puma-3.12.1/ext/puma_http11
-/Users/petro/.rbenv/versions/2.6.5/bin/ruby -I /Users/petro/.rbenv/versions/2.6.5/lib/ruby/site_ruby/2.6.0 -r ./siteconf20191027-2236-13nhofa.rb extconf.rb
+/Users/petro/.rbenv/versions/2.6.5/bin/ruby -I /Users/petro/.rbenv/versions/2.6.5/lib/ruby/site_ruby/2.6.0 -r ./siteconf20191116-13557-1ldt1o5.rb extconf.rb
 checking for BIO_read() in -lcrypto... no
 checking for BIO_read() in -llibeay32... no
 creating Makefile
@@ -22,4 +22,4 @@ ld: warning: directory not found for option '-L/usr/local/Cellar/openssl/1.0.1e/
 
 current directory: /Users/petro/Projects/studygo/vendor/cache/ruby/2.6.0/gems/puma-3.12.1/ext/puma_http11
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 puma_http11.bundle ./.gem.20191027-2236-w26m9j/puma
+/usr/bin/install -c -m 0755 puma_http11.bundle ./.gem.20191116-13557-1ukm89w/puma

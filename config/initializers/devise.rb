@@ -11,6 +11,7 @@ Devise.setup do |config|
   config.case_insensitive_keys = [:email]
   config.strip_whitespace_keys = [:email]
   config.skip_session_storage = [:http_auth]
+  config.confirm_within = 2.days
 
   config.stretches = Rails.env.test? ? 1 : 11
 

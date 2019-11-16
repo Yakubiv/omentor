@@ -1,5 +1,5 @@
 current directory: /Users/petro/Projects/studygo/vendor/cache/ruby/2.6.0/gems/ffi-1.11.1/ext/ffi_c
-/Users/petro/.rbenv/versions/2.6.5/bin/ruby -I /Users/petro/.rbenv/versions/2.6.5/lib/ruby/site_ruby/2.6.0 -r ./siteconf20191027-2236-1kdvb90.rb extconf.rb
+/Users/petro/.rbenv/versions/2.6.5/bin/ruby -I /Users/petro/.rbenv/versions/2.6.5/lib/ruby/site_ruby/2.6.0 -r ./siteconf20191116-13557-8iabey.rb extconf.rb
 checking for ffi_call() in -lffi... yes
 checking for ffi_closure_alloc()... yes
 checking for shlwapi.h... no
@@ -44,4 +44,4 @@ linking shared-object ffi_c.bundle
 
 current directory: /Users/petro/Projects/studygo/vendor/cache/ruby/2.6.0/gems/ffi-1.11.1/ext/ffi_c
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 ffi_c.bundle ./.gem.20191027-2236-1iy6sv0
+/usr/bin/install -c -m 0755 ffi_c.bundle ./.gem.20191116-13557-1xnlvxz

@@ -1,0 +1,21 @@
+.card-body
+  .card-title Log in
+
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    .form-group
+      = f.label :email, class: 'form-label'
+      = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control'
+    .form-group
+      = f.label :password, class: 'form-label'
+      = f.password_field :password, autocomplete: 'new-password', class: 'form-control'
+    - if devise_mapping.rememberable?
+      .form-group
+        %label.custom-control.custom-checkbox
+          = f.check_box :remember_me, class: 'custom-control-input'
+          %span.custom-control-label
+            Remember me
+    .form-footer
+      = f.submit 'Log in', class: 'btn btn-primary btn-block'
+  .text-center.text-muted
+    = render "students/shared/links"
