@@ -5,6 +5,6 @@ class Students::Devise::ConfirmationsController < Devise::ConfirmationsControlle
 
   def after_confirmation_path_for(_resource_name, resource)
     sign_in(resource)
-    students_join_path
+    students_details_path
   end
 end

@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   root to: 'homes#index'
 
@@ -21,10 +23,12 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/students/join/pending', to: 'students/joins#pending'
-  get '/students/join', to: 'students/joins#show'
+  get '/students/pending', to: 'students/details#pending'
+  get '/students/details', to: 'students/details#show'
 
   authenticated :admin do
+    mount Sidekiq::Web => '/sidekiq'
+
     constraints Subdomain do
       devise_for :admins
 

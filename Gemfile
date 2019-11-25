@@ -13,6 +13,9 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 
 gem 'devise'
+gem 'sendgrid-ruby'
+gem 'devise-async'
+gem 'sidekiq'
 
 gem 'rubocop', '~> 0.76.0', require: false
 
@@ -26,6 +29,7 @@ gem 'hamlit'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 

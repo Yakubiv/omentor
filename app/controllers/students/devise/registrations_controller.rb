@@ -4,6 +4,6 @@ class Students::Devise::RegistrationsController < Devise::RegistrationsControlle
   private
 
   def after_inactive_sign_up_path_for(_)
-    students_join_pending_path
+    students_pending_path
   end
 end
