@@ -13,8 +13,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 
 gem 'devise'
-gem 'sendgrid-ruby'
 gem 'devise-async'
+gem 'sendgrid-ruby'
 gem 'sidekiq'
 
 gem 'rubocop', '~> 0.76.0', require: false
