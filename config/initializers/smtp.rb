@@ -3,7 +3,7 @@
 ActionMailer::Base.smtp_settings = {
   domain: 'http://studygo.com.ua',
   address: 'smtp.sendgrid.net',
-  port: 465,
+  port: 587,
   authentication: :plain,
   enable_starttls_auto: true,
   user_name: 'apikey',
