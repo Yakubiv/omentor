@@ -15,6 +15,7 @@ Rails.application.configure do
   config.action_controller.perform_caching = true
 
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
   config.action_mailer.default_url_options = { host: 'http://studygo.com.ua' }
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
