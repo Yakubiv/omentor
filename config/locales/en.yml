@@ -30,6 +30,27 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  activerecord:
+    attributes:
+      student:
+        avatar: Аватар
+        first_name: Ім'я
+        last_name: Прізвище
+        username: Нікнейм
+        phone: Телефон
+        birthday: День Народження
+        gender: Стать
+        degree_type: Оствіта
+        city: Місто
+        country: Країна
+        bio: Про себе
+  helpers:
+    placeholder:
+      student:
+        country: Виберіть Країну
+
+  signup:
+    confirmation_message: 'Перевірте свою <span class="font600">%{email}</span> пошту! Ми відправили вам лист підтвердження.'
   common:
     logout: Вийти
   layouts:
@@ -38,6 +59,9 @@ en:
         page_title: Головна
 
   students:
+    details:
+      main_header: Загальна інформація
+      submit_button: Зберегти інформацію
     left_sidebar:
       dashboard: Головна
       search_teachers: Пошук Репетиторів

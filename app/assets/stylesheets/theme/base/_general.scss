@@ -576,7 +576,6 @@ a:hover{
 .form-control{
     border-color: #E8E9E9;
     font-size: $font-size - 1px;
-    height: auto;
     &::placeholder{
         color: $gray-300;
     }

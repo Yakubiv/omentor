@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   authenticated :student do
     namespace :students do
       root 'dashboards#show'
+      resources :details, only: :update
 
       resource :dashboard, only: :show
     end
@@ -26,9 +27,9 @@ Rails.application.routes.draw do
   get '/students/pending', to: 'students/details#pending'
   get '/students/details', to: 'students/details#show'
 
-  authenticated :admin do
-    mount Sidekiq::Web => '/sidekiq'
+  mount Sidekiq::Web => '/sidekiq'
 
+  authenticated :admin do
     constraints Subdomain do
       devise_for :admins
 
