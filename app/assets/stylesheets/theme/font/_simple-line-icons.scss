@@ -1,10 +1,10 @@
 @font-face{
   font-family:'simple-Line-Icons';
-  src:url('simple-Line-Icons.eot');
-  src:url('simple-Line-Icons.eot') format('embedded-opentype'),
-      url('simple-Line-Icons.woff') format('woff'),
-      url('simple-Line-Icons.ttf') format('truetype'),
-      url('simple-Line-Icons.svg#Simple-Line-Icons') format('svg');font-weight:normal;font-style:normal;}
+  src:font-url('simple-Line-Icons.eot');
+  src:font-url('simple-Line-Icons.eot') format('embedded-opentype'),
+      font-url('simple-Line-Icons.woff') format('woff'),
+      font-url('simple-Line-Icons.ttf') format('truetype'),
+      font-url('simple-Line-Icons.svg#Simple-Line-Icons') format('svg');font-weight:normal;font-style:normal;}
 
 [data-icon]:before{
   font-family:'simple-Line-Icons';
