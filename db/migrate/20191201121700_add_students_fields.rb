@@ -3,7 +3,6 @@ class AddStudentsFields < ActiveRecord::Migration[6.0]
     add_column :students, :first_name, :string
     add_column :students, :last_name, :string
     add_column :students, :username, :string
-    add_column :students, :avatar, :string
     add_column :students, :birthday, :datetime
     add_column :students, :phone, :string
     add_column :students, :dial_code, :string

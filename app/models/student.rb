@@ -6,4 +6,6 @@ class Student < ApplicationRecord
 
   enum gender: %i[male female]
   enum degree_type: %i[university schoole tests other]
+
+  has_one_attached :avatar
 end

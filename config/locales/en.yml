@@ -33,6 +33,14 @@ en:
   activerecord:
     attributes:
       student:
+        genders:
+          male: Чоловік
+          female: Жінка
+        degree_types:
+          university: Університет
+          schoole: Школа
+          other: Інше
+          tests: ЗНО
         avatar: Аватар
         first_name: Ім'я
         last_name: Прізвище
@@ -44,6 +52,7 @@ en:
         city: Місто
         country: Країна
         bio: Про себе
+
   helpers:
     placeholder:
       student:
@@ -70,3 +79,6 @@ en:
       calendar: Календар
       blog: Блог
       settings: Налаштування
+  details_controller:
+    update:
+      success: Профіль успішно оновлений

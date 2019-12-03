@@ -1,7 +1,7 @@
 .row.clearfix.pt-50.pb-50
   .col-md-8.offset-md-2
     .card
-      = form_with(model: current_student, url: students_detail_path(current_student)) do |f|
+      = form_with(model: current_student, url: students_detail_path(current_student), method: :put) do |f|
         .card-body
           .card-title
             = t('students.details.main_header')
@@ -9,7 +9,7 @@
             .col-sm-6.col-md-4
               .form-group
                 = f.label :avatar, class: 'control-label'
-                = f.file_field :avatar, class: 'form-control'
+                = f.file_field :avatar, multiple: false, direct_upload: true, class: 'form-control'
           .row
             .col-sm-4.col-md-4
               .form-group
@@ -40,8 +40,8 @@
                 .selectgroup.w-100
                   - Student.genders.each do |gender, key|
                     %label.selectgroup-item
-                      = f.radio_button :gender, key, { required: true, class: 'selectgroup-input' }
-                      %span.selectgroup-button= gender
+                      = f.radio_button :gender, gender, { required: true, class: 'selectgroup-input' }
+                      %span.selectgroup-button= Student.human_enum_name(:gender, gender)
 
             .col-sm-6.col-md-8
               .form-group
@@ -50,8 +50,8 @@
                 .selectgroup.w-100
                   - Student.degree_types.each do |degree, key|
                     %label.selectgroup-item
-                      = f.radio_button :degree_type, key, { required: true, class: 'selectgroup-input' }
-                      %span.selectgroup-button= degree
+                      = f.radio_button :degree_type, degree , { required: true, class: 'selectgroup-input' }
+                      %span.selectgroup-button= Student.human_enum_name(:degree_type, degree)
           .row
             .col-sm-6.col-md-4
               .form-group

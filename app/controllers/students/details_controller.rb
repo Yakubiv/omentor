@@ -10,7 +10,8 @@ class Students::DetailsController < Students::BaseController
   end
 
   def update
-
+    current_student.update(current_student_params)
+    redirect_to students_dashboard_path, notice: t('details_controller.update.success')
   end
 
   def pending
@@ -18,6 +19,13 @@ class Students::DetailsController < Students::BaseController
   end
 
   private
+
+  def current_student_params
+    params.require(:student).permit(:avatar, :first_name, :last_name, :username,
+                                    :birthday, :bio, :phone, :city, :country,
+                                    :gender, :degree_type)
+  end
+
 
   def user_redirection
     if current_student.first_name.present?

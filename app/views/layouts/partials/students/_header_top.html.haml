@@ -117,7 +117,10 @@
               %a.dropdown-item.text-center.text-muted-dark.readall{:href => "javascript:void(0)"} Mark all as read
           .dropdown.d-flex
             %a.nav-link.icon.d-none.d-md-flex.btn.btn-default.btn-icon.ml-1{"data-toggle" => "dropdown"}
-              %i.fa.fa-user
+              - if current_student.avatar.attached?
+                = image_tag user_avatar(current_student), class: 'rounded'
+              - else
+                %i.fa.fa-user
             .dropdown-menu.dropdown-menu-right.dropdown-menu-arrow
               %a.dropdown-item{:href => "page-profile.html"}
                 %i.dropdown-icon.fe.fe-user
