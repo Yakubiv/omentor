@@ -62,10 +62,14 @@ en:
     confirmation_message: 'Перевірте свою <span class="font600">%{email}</span> пошту! Ми відправили вам лист підтвердження.'
   common:
     logout: Вийти
+    profile: Профіль
+    need_help: Потрібна допомога?
   layouts:
     students:
       dashboards:
         page_title: Головна
+      profiles:
+        page_title: Профіль
 
   students:
     details:

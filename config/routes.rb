@@ -19,10 +19,16 @@ Rails.application.routes.draw do
     namespace :students do
       root 'dashboards#show'
       resources :details, only: :update
-
       resource :dashboard, only: :show
+      resource :profile, only: :show
+
+      resources :search_tutors, only: :index
+      resources :calendars, only: :index
+      resources :my_tutors, only: :index
     end
   end
+
+  resources :blogs, only: :index
 
   get '/students/pending', to: 'students/details#pending'
   get '/students/details', to: 'students/details#show'

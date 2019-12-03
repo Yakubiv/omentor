@@ -8,4 +8,9 @@ class Student < ApplicationRecord
   enum degree_type: %i[university schoole tests other]
 
   has_one_attached :avatar
+
+  def name
+    [first_name, last_name].join(' ')
+  end
+
 end
