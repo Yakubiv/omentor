@@ -4,6 +4,8 @@ $(document).on('turbolinks:load', function () {
     /** Constant div card */
     const DIV_CARD = 'div.card';
 
+    $('#phone').mask('(999) 999-9999');
+
     setTimeout(function() {
         $('.page-loader-wrapper').fadeOut();
     }, 50);

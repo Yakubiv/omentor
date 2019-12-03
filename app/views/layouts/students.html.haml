@@ -6,9 +6,9 @@
   %body.font-opensans
     = render 'layouts/partials/loader'
     #main_content
-      -# = render 'layouts/partials/small_sidebar', brand_url: students_root_path
+      = render 'layouts/partials/small_sidebar', brand_url: students_root_path
       = render 'layouts/partials/right_sidebar'
-      = render 'layouts/partials/left_sidebar'
+      = render 'layouts/partials/students/left_sidebar'
 
       .page
         = render 'layouts/partials/students/header_top'

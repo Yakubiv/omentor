@@ -30,14 +30,51 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  activerecord:
+    attributes:
+      student:
+        genders:
+          male: Чоловік
+          female: Жінка
+        degree_types:
+          university: Університет
+          schoole: Школа
+          other: Інше
+          tests: ЗНО
+        avatar: Аватар
+        first_name: Ім'я
+        last_name: Прізвище
+        username: Нікнейм
+        phone: Телефон
+        birthday: День Народження
+        gender: Стать
+        degree_type: Оствіта
+        city: Місто
+        country: Країна
+        bio: Про себе
+
+  helpers:
+    placeholder:
+      student:
+        country: Виберіть Країну
+
+  signup:
+    confirmation_message: 'Перевірте свою <span class="font600">%{email}</span> пошту! Ми відправили вам лист підтвердження.'
   common:
     logout: Вийти
+    profile: Профіль
+    need_help: Потрібна допомога?
   layouts:
     students:
       dashboards:
         page_title: Головна
+      profiles:
+        page_title: Профіль
 
   students:
+    details:
+      main_header: Загальна інформація
+      submit_button: Зберегти інформацію
     left_sidebar:
       dashboard: Головна
       search_teachers: Пошук Репетиторів
@@ -46,3 +83,6 @@ en:
       calendar: Календар
       blog: Блог
       settings: Налаштування
+  details_controller:
+    update:
+      success: Профіль успішно оновлений

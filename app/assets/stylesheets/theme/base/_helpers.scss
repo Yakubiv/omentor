@@ -10,7 +10,7 @@
 .displaynone {display: none; }
 .overflowhidden{overflow: hidden;}
 .b-none{ border: 0 !important;}
-.bg-none{ 
+.bg-none{
     background: transparent !important;
     .card-header,
     .card-body{
@@ -41,7 +41,7 @@
     margin: 0 !important;
 }
 
-@for $i from 0 through 25 {
+@for $i from 0 through 50 {
     .pl-#{$i * 5} {
         padding-left: #{$i * 5}px;
     }

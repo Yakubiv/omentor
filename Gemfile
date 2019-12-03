@@ -12,6 +12,9 @@ gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 
+gem 'aws-sdk-s3'
+gem 'image_processing'
+
 gem 'devise'
 gem 'devise-async'
 gem 'sendgrid-ruby'

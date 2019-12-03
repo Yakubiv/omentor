@@ -55,7 +55,7 @@
         @extend .form-control;
         color: $body-color;
         float: right;
-        text-align: right;        
+        text-align: right;
 
         input{
             @include inline-block;
@@ -69,13 +69,13 @@
         text-align: right;
 
         .paginate_button{
-            @extend .btn, .btn-secondary;    
+            @extend .btn, .btn-secondary;
         }
-    }    
+    }
     .dataTables_info {
         color: $gray-500;
         clear: both;
-        float: left;    
+        float: left;
         margin: 0;
         padding: 0 !important;
         line-height: 38px;
