@@ -18,6 +18,9 @@ gem 'image_processing'
 gem 'devise'
 gem 'devise-async'
 gem 'sendgrid-ruby'
+
+gem 'redis'
+gem 'redis-namespace', '1.6.0'
 gem 'sidekiq'
 
 gem 'rubocop', '~> 0.76.0', require: false
