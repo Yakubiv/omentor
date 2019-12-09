@@ -13,5 +13,3 @@ if Rails.env.production?
     config.redis = { url: ENV['REDIS_URL'], size: 20 }
   end
 end
-
-Sidekiq.default_worker_options = { throttle: { threshold: 4, period: 1.second } }
