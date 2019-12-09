@@ -4,7 +4,5 @@ staging:
 production:
   :concurrency: 20
 :queues:
-  - critical
   - default
-  - low
   - mailers
