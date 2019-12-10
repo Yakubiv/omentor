@@ -1,2 +1,2 @@
 web: bundle exec puma -C config/puma.rb
-worker: bundle exec sidekiq -q default -q mailers -q
+worker: bundle exec sidekiq -C config/sidekiq.yml -q mailers -q default
