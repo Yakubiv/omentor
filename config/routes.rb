@@ -18,7 +18,7 @@ Rails.application.routes.draw do
       resource :details, only: %i[show create]
       resource :dashboard, only: :show
       resource :profile, only: :show
-
+      resources :chats, onle: :index
       resources :search_tutors, only: :index
       resources :calendars, only: :index
       resources :my_tutors, only: :index
