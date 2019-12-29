@@ -6,23 +6,23 @@
   %nav#left-sidebar-nav.sidebar-nav
     %ul.metismenu
       %li.g_heading
-      %li.active
+      %li{ class: active_if?(controller: 'dashboards') }
         = link_to students_dashboard_path do
           %i.icon-home
           %span= t('students.left_sidebar.dashboard')
-      %li
+      %li{ class: active_if?(controller: 'search_tutors') }
         = link_to students_search_tutors_path do
           %i.icon-home
           %span= t('students.left_sidebar.search_teachers')
-      %li
+      %li{ class: active_if?(controller: 'calendars') }
         = link_to students_calendars_path do
           %i.icon-calendar
           %span= t('students.left_sidebar.calendar')
-      -# %li
-      -#   %a{:href => "app-chat.html"}
-      -#     %i.icon-speech
-      -#     %span= t('students.left_sidebar.chat')
-      %li
+      %li{ class: active_if?(controller: 'chats') }
+        %a{ href: students_chats_path }
+          %i.icon-speech
+          %span= t('students.left_sidebar.chat')
+      %li{ class: active_if?(controller: 'my_tutors') }
         = link_to students_my_tutors_path do
           %i.icon-home
           %span= t('students.left_sidebar.my_teachers')

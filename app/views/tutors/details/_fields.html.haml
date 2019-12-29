@@ -40,15 +40,15 @@
             = f.radio_button :gender, gender, { required: true, class: 'selectgroup-input' }
             %span.selectgroup-button= Profile.human_enum_name(:gender, gender)
 
-  .col-sm-6.col-md-8
-    .form-group
-      = f.label :degree_type, class: 'control-label'
+  -# .col-sm-6.col-md-8
+  -#   .form-group
+  -#     = f.label :degree_type, class: 'control-label'
 
-      .selectgroup.w-100
-        - Profile.degree_types.each do |degree, key|
-          %label.selectgroup-item
-            = f.radio_button :degree_type, degree , { required: true, class: 'selectgroup-input' }
-            %span.selectgroup-button= Profile.human_enum_name(:degree_type, degree)
+  -#     .selectgroup.w-100
+  -#       - Profile.degree_types.each do |degree, key|
+  -#         %label.selectgroup-item
+  -#           = f.radio_button :degree_type, degree , { required: true, class: 'selectgroup-input' }
+  -#           %span.selectgroup-button= Student.human_enum_name(:degree_type, degree)
 .row
   .col-sm-6.col-md-4
     .form-group

@@ -1,10 +1,9 @@
 .row.clearfix.pt-50.pb-50
   .col-md-8.offset-md-2
     .card
-      = form_with(model: current_student, url: students_detail_path(current_student), method: :put) do |f|
+      = form_with(model: @student_profile, url: students_details_path(@student_profile), method: :post) do |f|
         .card-body
           .card-title
             = t('students.details.main_header')
           = render 'fields',f: f
         .card-footer.text-right
-          = f.submit t('students.details.submit_button').html_safe, class: 'btn btn-primary'

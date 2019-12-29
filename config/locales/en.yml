@@ -32,7 +32,7 @@
 en:
   activerecord:
     attributes:
-      student:
+      profile:
         genders:
           male: Чоловік
           female: Жінка
@@ -70,6 +70,14 @@ en:
         page_title: Головна
       profiles:
         page_title: Профіль
+      chats:
+        page_title: Чат
+      calendars:
+        page_title: Календар
+      search_tutors:
+        page_title: Пошук Репетиторів
+      my_tutors:
+        page_title: Мої Репетитори
 
   students:
     details:

@@ -1,0 +1,29 @@
+.card-body
+  .card-title Create new account
+
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    = f.hidden_field :sign_up_as, value: session[:signup_as]
+    .form-group
+      = f.label :email, class: 'form-label'
+      = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control'
+    .form-group
+      = f.label :password, class: 'form-label'
+      - if @minimum_password_length
+        %em
+          (#{@minimum_password_length} characters minimum)
+      = f.password_field :password, autocomplete: 'new-password', class: 'form-control'
+    .form-group
+      = f.label :password_confirmation, class: 'form-label'
+      = f.password_field :password_confirmation, autocomplete: 'new-password', class: 'form-control'
+    .form-group
+      %label.custom-control.custom-checkbox
+        = f.check_box :terms_and_conditions, class: 'custom-control-input'
+        %span.custom-control-label
+          Agree the
+          %a{:href => "#"} terms and policy
+    .form-footer
+      = f.submit 'Create new account', class: 'btn btn-primary btn-block'
+  .text-center.text-muted
+    Already have account?
+    = render "devise/shared/links"
