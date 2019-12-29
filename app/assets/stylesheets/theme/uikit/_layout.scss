@@ -1,11 +1,11 @@
 .page {
     @include transition(all .5s ease-in-out);
     left: $sidebar-width;
-    //background: $white;    
+    //background: $white;
     -ms-flex: 1 1 auto;
-    flex: 1 1 auto;	
+    flex: 1 1 auto;
     width: calc(100% - 280px);
-    position: relative;    
+    position: relative;
 
     @include max-screen($break-large){
         left: 60px;
@@ -14,7 +14,7 @@
     @include max-screen($break-small - 1px){
         padding: 56px 0 0 0;
         width: 100%;
-        left: 0;        
+        left: 0;
     }
     .section-light,
     .section-dark,
@@ -72,7 +72,7 @@
             .nav-item{
                 padding: 0;
                 .dropdown-item{
-                    font-size: $font-size - 1px; 
+                    font-size: $font-size - 1px;
                 }
             }
             .nav-link{
@@ -88,7 +88,7 @@
             padding: 6px 10px;
         }
         .notification{
-            position: relative;            
+            position: relative;
             .nav-unread{
                 position: absolute;
                 top: 0;
@@ -129,8 +129,8 @@
         background: transparent;
         margin: 0;
         padding: 0;
-        font-size: $font-size - 2px; 
-    }    
+        font-size: $font-size - 2px;
+    }
 }
 .page-header-tab{
     border: 0;
@@ -156,7 +156,7 @@
 }
 .page-subtitle {
     color: $text-muted-dark;
-    font-size: px2rem(13px);	
+    font-size: px2rem(13px);
     margin-left: 2rem;
 
     a {
@@ -171,7 +171,7 @@
 }
 .page-description {
     color: $text-muted-dark;
-    margin: .25rem 0 0;	
+    margin: .25rem 0 0;
 
     a {
         color: inherit;
@@ -209,8 +209,7 @@
 
 .offcanvas-active {
     #header_top{
-        background: $white;
-        border-right: 1px solid $border-color;
+        border-right: 0 solid $border-color;
         @include max-screen($break-small - 1px) {
             border-right: 0;
         }
@@ -223,7 +222,7 @@
             position: fixed;
             z-index: 99;
         }
-        @include max-screen($break-small - 1px){                        
+        @include max-screen($break-small - 1px){
             left: 0;
             position: fixed;
         }
@@ -232,11 +231,11 @@
         left: 60px;
         width: calc(100% - 60px);
 
-        @include max-screen($break-small - 1px){            
+        @include max-screen($break-small - 1px){
             left: 0;
             width: 100%;
         }
-    }    
+    }
 }
 
 .auth{
@@ -244,7 +243,7 @@
     height: 100vh;
     align-items: center;
     .header-brand{
-        font-size: $font-size + 15px; 
+        font-size: $font-size + 15px;
     }
     .auth_left{
         background: $white;

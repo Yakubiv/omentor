@@ -1,0 +1,2 @@
+class StudentProfile < Profile
+end

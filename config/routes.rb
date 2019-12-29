@@ -3,22 +3,19 @@ require 'sidekiq/web'
 Rails.application.routes.draw do
   root to: 'homes#index'
 
-  devise_for :tutors, controllers: { confirmations: 'tutors/confirmations' }
-  devise_for :students, controllers: { confirmations: 'students/devise/confirmations',
-                                       registrations: 'students/devise/registrations' }
+  devise_for :users, controllers: { confirmations: 'devises/confirmations',
+                                    registrations: 'devises/registrations' }
 
-  authenticated :tutor do
+  authenticated :user do
     namespace :tutors do
       root 'dashboards#show'
-
+      resource :details, only: %i[show create]
       resource :dashboard, only: :show
     end
-  end
 
-  authenticated :student do
     namespace :students do
       root 'dashboards#show'
-      resources :details, only: :update
+      resource :details, only: %i[show create]
       resource :dashboard, only: :show
       resource :profile, only: :show
 
@@ -28,22 +25,20 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :blogs, only: :index
+  constraints Subdomain do
+    namespace :admin do
+      root 'dashboards#show'
 
-  get '/students/pending', to: 'students/details#pending'
-  get '/students/details', to: 'students/details#show'
-
-  mount Sidekiq::Web => '/sidekiq'
-
-  authenticated :admin do
-    constraints Subdomain do
-      devise_for :admins
-
-      namespace :admin do
-        root 'dashboards#show'
-
-        resource :dashboard, only: :show
-      end
+      resource :dashboard, only: :show
     end
   end
+
+  resources :users, only: [] do
+    get :pending, on: :collection
+    get :registration, on: :collection
+  end
+
+  resources :blogs, only: :index
+
+  mount Sidekiq::Web => '/sidekiq'
 end

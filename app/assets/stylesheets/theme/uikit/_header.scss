@@ -1,5 +1,5 @@
-#header_top{	
-	z-index: $zindex-fixed;	
+#header_top{
+	z-index: $zindex-fixed;
 	position: fixed;
     width: $sidebar-icon;
     height: 100vh;
@@ -12,7 +12,6 @@
     text-align: center;
 
     @include max-screen($break-large) {
-        background: $white;
         border-right: 1px solid $border-color;
     }
     @include max-screen($break-small - 1px) {
@@ -22,7 +21,7 @@
         height: auto;
         width: 100%;
         padding: 0 15px;
-        
+
         .hleft,
         .dropdown{
             display: flex;
@@ -32,7 +31,7 @@
             margin: 0;
             padding-right: 15px;
         }
-    }	
+    }
 	.header-brand {
 		padding: 0;
 		transition: .3s opacity;
@@ -48,7 +47,7 @@
 			color: inherit;
 			text-decoration: none;
 		}
-    }    
+    }
 	.brand-logo {
         background: $gray-800;
         padding: 10px;
@@ -79,11 +78,11 @@
         .dropdown-menu{
             top: 50px !important;
             left: 50px !important;
-            
+
             @include max-screen($break-small - 1px) {
                 top: 0 !important;
                 left: auto !important;
             }
-        }        
+        }
     }
 }

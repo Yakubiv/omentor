@@ -47,8 +47,8 @@
             %h2.text-uppercase.mt-4.mb-5
               StudyGO work in progress
             %div
-              %a.primary-btn2.mb-3.mb-sm-0{ href: new_student_session_path } Try As Student
-              %a.primary-btn.ml-sm-3.ml-0{ href: new_tutor_session_path } Try as Tutor
+              %a.primary-btn2.mb-3.mb-sm-0{ href: registration_users_path(as: :student) } Try As Student
+              %a.primary-btn.ml-sm-3.ml-0{ href: registration_users_path(as: :tutor) } Try as Tutor
 
 %footer.footer-area.section_gap
   .container

@@ -1,5 +1,0 @@
-%p.align-center= t('signup.confirmation_message', email: session[:pending_email]).html_safe
-
-- if string_match?(session[:pending_email], match: 'gmail.com')
-  .row
-    .col-sm-4.offset-sm-4= link_to t('signup.gmail_link'), 'https://mail.google.com/mail/', target: '_blank', class: 'btn btn-primary'
