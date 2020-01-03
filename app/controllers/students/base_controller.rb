@@ -17,5 +17,12 @@ class Students::BaseController < ApplicationController
   def redirect_to_default
     redirect_to root_path
   end
+
+  private
+  # move to pundit
+  def check_if_required_fileds_are_filled?
+    if current_user && current_user.student_profile.nil?
+      redirect_to students_details_path
+    end
+  end
 end
-sw2cdexdeswdsw2de3

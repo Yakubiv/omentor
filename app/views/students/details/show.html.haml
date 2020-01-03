@@ -7,3 +7,4 @@
             = t('students.details.main_header')
           = render 'fields',f: f
         .card-footer.text-right
+          = f.submit t('students.details.submit_button').html_safe, class: 'btn btn-primary'

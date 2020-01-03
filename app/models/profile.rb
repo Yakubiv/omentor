@@ -7,6 +7,8 @@ class Profile < ApplicationRecord
   enum degree_type: %i[university schoole tests other]
   enum status: %i[pending active inactive]
 
+  belongs_to :user, optional: true
+
   def name
     [first_name, last_name].join(' ')
   end

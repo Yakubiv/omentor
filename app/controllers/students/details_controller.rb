@@ -4,12 +4,12 @@ class Students::DetailsController < Students::BaseController
   layout 'application', only: :show
 
   def show
-    @student_profile = current_user.build_student_profile
+    @student_profile = current_user.student_profile || current_user.build_student_profile
   end
 
   def create
-    @student_profile = current_user.build_student_profile(current_student_params)
-    if @student_profile.save
+    @student_profile = current_user.create_student_profile(current_student_params)
+    if @student_profile.save!
       after_successfull_update_redirection
     else
       render :show
