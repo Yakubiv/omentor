@@ -1,1 +1,36 @@
-search
+#News
+  - 5.times do
+    .card
+      .card-body
+        %article.media
+          .mr-3
+            .card-image{ style: "background-image: url(#{image_path(current_student_profile.avatar)})"}
+          .media-body
+            .content
+              %p.h5
+                Петро якубів
+                %small @pedro
+                %small.ml-3.text-muted
+                  %i.fa.fa-star
+                  5.0
+                %span.card-button
+                  %a.btn.btn-info{ href: blogs_path } Записатися на урок
+              %p
+                %span Математика - #{rand(100..600)} грн.
+                = link_to students_tutor_calendars_path(current_student_profile), class: 'ml-3' do
+                  %i.fa.fa-calendar
+                  Календар
+              %p Мене звати Петро, я репетитор.
+            %nav.d-flex.text-muted.mb-10
+              %a.icon.mr-3{:href => "#"}
+                %i.icon-graduation
+                10 років
+              %a.icon.mr-3{:href => "#"}
+                %i.icon-users
+                100 уроків
+              %a.icon.mr-3{:href => "#"}
+                %i.icon-like
+                43 відгуки
+              %a.icon.mr-3{:href => "#"}
+                %i.icon-globe
+                43 статті

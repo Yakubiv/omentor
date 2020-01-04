@@ -19,6 +19,12 @@
     }
 }
 
+.show-sm {
+  @include media-breakpoint-down(sm) {
+    display: inline !important;
+  }
+}
+
 //Margin
 @for $i from -25 through 25 {
     .ml-#{$i * 5} {
@@ -129,17 +135,17 @@
 .bg-light-gray    { background-color: rgba($gray-500, 0.1); color: $gray-500; }
 
 @include max-screen ($break-1024){
-	.hidden-md{
-		display: none;
-	}
+    .hidden-md{
+        display: none;
+    }
 }
 @include max-screen ($break-medium){
-	.hidden-sm{
-		display: none;
-	}
+    .hidden-sm{
+        display: none;
+    }
 }
 @include max-screen ($break-small - 1px){
-	.hidden-xs{
-		display: none;
-	}
+    .hidden-xs{
+        display: none;
+    }
 }

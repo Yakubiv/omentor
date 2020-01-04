@@ -7,6 +7,10 @@ module ApplicationHelper
     user.avatar.variant(resize: "#{size}x#{size}!")
   end
 
+  def image_path(image)
+    rails_blob_url(image)
+  end
+
   def active_if?(conditions)
     active_conditions = {
       action: action_name == conditions[:action],

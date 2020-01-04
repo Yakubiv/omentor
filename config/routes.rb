@@ -22,6 +22,10 @@ Rails.application.routes.draw do
       resources :search_tutors, only: :index
       resources :calendars, only: :index
       resources :my_tutors, only: :index
+
+      resources :tutors, only: [], path: nil, as: nil do
+        resource :calendars, only: :show
+      end
     end
   end
 
