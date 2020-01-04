@@ -627,7 +627,7 @@ a:hover{
     }
 }
 @include max-screen ($break-xsmall){
-    #News{
+    #cards{
         .media{
             display: block;
             > .mr-3{

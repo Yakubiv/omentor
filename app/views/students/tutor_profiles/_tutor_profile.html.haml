@@ -1,0 +1,41 @@
+.card
+  .card-body
+    %article.media
+      .block.mr-3
+        .card-image{ style: "background-image: url(#{image_path(current_student_profile.avatar)})"}
+      .media-body
+        .content
+          %p.h5
+            = tutor_profile.name
+            %small @#{tutor_profile.username}
+            %small.ml-3.text-muted
+              %i.fa.fa-star
+              = tutor_profile.stars
+            %span.card-button
+              %a.btn.btn-info{ href: blogs_path } Записатися на урок
+          %p
+            %span
+              %i.icon-direction
+              = tutor_profile.city
+            %span.ml-3.text-muted
+              останній візит:
+              %strong cьогодні
+          %p
+            %span Математика - #{tutor_profile.rate} грн.
+            = link_to students_tutor_calendars_path(current_student_profile), class: 'ml-3' do
+              %i.fa.fa-calendar
+              Календар
+          %p= tutor_profile.bio
+        %nav.d-flex.text-muted.mb-10
+          %a.icon.mr-3{:href => "#"}
+            %i.icon-graduation
+            #{tutor_profile.total_years_of_expirience} років
+          %a.icon.mr-3{:href => "#"}
+            %i.icon-users
+            100 уроків
+          %a.icon.mr-3{:href => "#"}
+            %i.icon-bubbles
+            43 відгуки
+          %a.icon.mr-3{:href => "#"}
+            %i.icon-globe
+            43 статті

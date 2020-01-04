@@ -10,8 +10,8 @@
         = link_to students_dashboard_path do
           %i.icon-home
           %span= t('students.left_sidebar.dashboard')
-      %li{ class: active_if?(controller: 'search_tutors') }
-        = link_to students_search_tutors_path do
+      %li{ class: active_if?(controller: 'tutor_profiles') }
+        = link_to students_tutor_profiles_path do
           %i.icon-home
           %span= t('students.left_sidebar.search_teachers')
       %li{ class: active_if?(controller: 'calendars') }
