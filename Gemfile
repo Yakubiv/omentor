@@ -30,6 +30,7 @@ gem 'font_awesome5_rails'
 gem 'inline_svg'
 
 gem 'hamlit'
+gem 'friendly_id'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 

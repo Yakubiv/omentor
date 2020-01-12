@@ -64,6 +64,7 @@ en:
     logout: Вийти
     profile: Профіль
     need_help: Потрібна допомога?
+    hour: год
   layouts:
     students:
       dashboards:
@@ -78,6 +79,8 @@ en:
         page_title: Пошук Репетиторів
       my_tutors:
         page_title: Мої Репетитори
+      bookings:
+        page_title: Планування уроку
 
   students:
     details:

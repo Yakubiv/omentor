@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_15_130937) do
+ActiveRecord::Schema.define(version: 2020_01_06_093929) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,30 @@ ActiveRecord::Schema.define(version: 2019_12_15_130937) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "class_rooms", force: :cascade do |t|
+    t.bigint "student_profile_id"
+    t.bigint "tutor_profile_id"
+    t.integer "status", default: 0
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["student_profile_id"], name: "index_class_rooms_on_student_profile_id"
+    t.index ["tutor_profile_id"], name: "index_class_rooms_on_tutor_profile_id"
+  end
+
+  create_table "lessons", force: :cascade do |t|
+    t.integer "status", default: 0
+    t.datetime "start_at"
+    t.decimal "duration", precision: 8, scale: 2
+    t.bigint "subject_id"
+    t.bigint "class_room_id"
+    t.decimal "price", precision: 8, scale: 2
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["class_room_id"], name: "index_lessons_on_class_room_id"
+    t.index ["subject_id"], name: "index_lessons_on_subject_id"
+  end
+
   create_table "profiles", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -56,6 +80,8 @@ ActiveRecord::Schema.define(version: 2019_12_15_130937) do
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_profiles_on_slug", unique: true
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 

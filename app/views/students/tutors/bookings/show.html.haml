@@ -1,0 +1,34 @@
+#cards
+  = render 'students/tutor_profiles/tutor_profile', tutor_profile: @tutor_profile
+%hr
+.row
+  .col-lg-5.col-md-6.col-xl-4
+    .card
+      .card-header
+        %h3.card-title Виберіть предмет на час проведення уроку
+      .card-body
+        .form-group
+          %label.form-label Предмет
+          %select.form-control.custom-select
+            %option{:value => ""} Математика
+        .form-group
+          %label.form-label Тривалість уроку
+          %select.form-control.custom-select
+            %option{:value => ""} 45 хвилин
+            %option{:value => ""} 1 година
+            %option{:value => ""} 1.5 години
+            %option{:value => ""} 2 години
+        .form-group
+          %label.form-label Ціна
+          %input.form-control{:name => "example-text-input-valid", :placeholder => "350 грн", :type => "text", disabled: true}/
+        .form-group
+          %label.form-label Дата
+          .input-group
+            %input.form-control{ data: { provide: 'datepicker', date: { autoclose: true } } }
+        .form-group
+          %label.form-label Час
+          %select.form-control.custom-select
+            %option{:value => ""} Виберіть час уроку
+        .form-group
+          %hr
+          = link_to 'Забронювати', nil, class: 'btn btn-block btn-success btn-lg'

@@ -80,6 +80,18 @@
     text-align: justify;
 }
 
+.pull-right {
+  float: right;
+}
+
+.flex-align-center {
+  align-items: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .font300{ font-weight: $font-weight-300; }
 .font600{ font-weight: $font-weight-600; }
 .font700{ font-weight: $font-weight-700; }

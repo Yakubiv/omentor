@@ -12,15 +12,73 @@
     }
   }
 
-  &-button {
-    float: right;
-    color: white;
+  &-details {
+    justify-content: center;
+    flex: 1 1 50%;
 
-    @include media-breakpoint-down(sm) {
-      margin-top: 10px;
-      display: block;
-      float: none;
-      a { width: 100%; }
+    @include media-breakpoint-down(md) {
+      flex: 1 1 100%;
+    }
+  }
+
+  &-button {
+    color: white;
+    -webkit-box-pack: center;
+    justify-content: center;
+    max-width: 220px;
+    flex: 1 1 100%;
+
+    a {
+      border-radius: 20px;
+    }
+
+    @include media-breakpoint-down(md) {
+      margin-top: 15px;
+      max-width: 100%;
+    }
+  }
+}
+
+.card-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex: 1 0 0px;
+
+  &--name {
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    align-items: center;
+    flex: 1 1 50%;
+  }
+
+  &--essentials {
+    margin-top: 0px;
+  }
+
+  &--rating {
+    display: inline;
+    font-size: 14px;
+    margin-left: 10px;
+
+    svg {
+      color: #fdc425 !important;
+    }
+  }
+
+  &--rate {
+    position: relative;
+    font-size: 20px;
+    display: inline;
+    margin-right: 35px;
+
+    .unit {
+      position: absolute;
+      top: -2px;
+      width: 30px;
+      right: -35px;
+      font-size: 12px;
     }
   }
 }

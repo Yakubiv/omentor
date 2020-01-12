@@ -19,12 +19,16 @@ Rails.application.routes.draw do
       resource :dashboard, only: :show
       resource :profile, only: :show
       resources :chats, onle: :index
-      resources :tutor_profiles, only: :index
+      resources :tutor_profiles, path: :tutors, only: :index
       resources :calendars, only: :index
       resources :my_tutors, only: :index
 
-      resources :tutors, only: [], path: nil, as: nil do
-        resource :calendars, only: :show
+      scope module: :tutors do
+        resources :tutors, only: [], path: nil, as: nil do
+          resource :booking, only: %i[show create]
+          resource :profile, only: :show
+          resource :calendars, only: :show
+        end
       end
     end
   end

@@ -6,9 +6,9 @@ $(document).on('turbolinks:load', function () {
 
     $('#phone').mask('(999) 999-9999');
 
-    setTimeout(function() {
-        $('.page-loader-wrapper').fadeOut();
-    }, 50);
+    // setTimeout(function() {
+    //     $('.page-loader-wrapper').fadeOut();
+    // }, 50);
     /** Initialize tooltips */
     $('[data-toggle="tooltip"]').tooltip();
 
