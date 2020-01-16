@@ -1,0 +1,82 @@
+.c-multisteps-links {
+  margin-bottom: 30px;
+  overflow: hidden;
+  text-align: center;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+
+  @include media-breakpoint-down(md) {
+    margin-bottom: 15px;
+  }
+
+  li {
+    position: relative;
+    list-style-type: none;
+    width: 20%;
+
+    @include media-breakpoint-down(md) {
+      width: 33.3%;
+    }
+
+    &.completed a {
+      background: #27AE60;
+      color: white;
+    }
+
+    &.active a {
+      border: solid 1px #27AE60;
+    }
+
+    &.active:before, &.completed:before {
+      background: #27AE60;
+    }
+
+    &.disabled a {
+      background: #d8d8d8;
+      color: #676767;
+    }
+
+    &.disabled:before {
+      background: #d8d8d8;
+    }
+
+    &:before {
+      content: '';
+      width: 100%;
+      height: 2px;
+      background: white;
+      position: absolute;
+      left: -40%;
+      top: 29px;
+      z-index: -1;
+
+      @include media-breakpoint-down(md) {
+        top: 21px;
+      }
+    }
+
+    &:first-child:before {
+      content: none;
+    }
+
+    a {
+      color: #333;
+      text-transform: uppercase;
+      font-size: 14px;
+      width: 60px;
+      line-height: 60px;
+      background: white;
+      border-radius: 50%;
+      margin: 0 auto 5px auto;
+      display: block;
+
+      @include media-breakpoint-down(md) {
+        width: 45px;
+        line-height: 45px;
+        font-size: 12px;
+      }
+    }
+  }
+}

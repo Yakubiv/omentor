@@ -1,0 +1,7 @@
+%ul.c-multisteps-links
+  %li{ class: student_registration_step_class[:general] }
+    = link_to t('students.details.general'), students_details_path
+  %li{ class: student_registration_step_class[:photo] }
+    = link_to t('students.details.photo'), photo_students_details_path
+  %li{ class: student_registration_step_class[:bio] }
+    = link_to t('students.details.bio'), bio_students_details_path

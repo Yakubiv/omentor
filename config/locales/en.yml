@@ -86,6 +86,15 @@ en:
     details:
       main_header: Загальна інформація
       submit_button: Зберегти інформацію
+      next: Далі
+      back: Назад
+      done: Готово
+      general: Дані
+      photo: Фото
+      bio: Опис
+      image_header: Фото профілю
+      bio_header: Опис
+      image_tips: Вимоги до фото
     left_sidebar:
       dashboard: Головна
       search_teachers: Пошук Репетиторів

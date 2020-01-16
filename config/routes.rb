@@ -15,10 +15,13 @@ Rails.application.routes.draw do
 
     namespace :students do
       root 'dashboards#show'
-      resource :details, only: %i[show create]
+      resource :details, only: %i[show create update] do
+        get :photo, on: :collection
+        get :bio, on: :collection
+      end
       resource :dashboard, only: :show
       resource :profile, only: :show
-      resources :chats, onle: :index
+      resources :chats, only: :index
       resources :tutor_profiles, path: :tutors, only: :index
       resources :calendars, only: :index
       resources :my_tutors, only: :index

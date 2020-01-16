@@ -25,4 +25,16 @@ module ApplicationHelper
   def fullpath_starts_with?(path)
     request.fullpath =~ /^\/#{Regexp.quote(path)}/
   end
+
+  def student_registration_step_class
+    case action_name
+    when 'show'
+      { general: 'active', bio: 'disabled', photo: 'disabled' }
+    when 'photo'
+      { general: 'completed', bio: 'disabled', photo: 'active' }
+    when 'bio'
+      { general: 'completed', bio: 'active', photo: 'completed' }
+    end
+  end
+
 end

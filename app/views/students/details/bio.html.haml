@@ -1,0 +1,17 @@
+.row.clearfix.pt-50.pb-50
+  .col-lg-6.offset-lg-3
+    = render 'steps'
+  .col-lg-6.offset-lg-3
+    .card
+      = form_with(model: @student_profile, url: students_details_path, method: :put) do |f|
+        .card-body
+          .card-title
+            = t('students.details.bio_header')
+          .row
+            .col-md-12
+              .form-group.mb-0
+                = f.label :bio, class: 'control-label'
+                = f.text_area :bio, rows: 5, class: 'form-control'
+        .card-footer.text-right
+          = link_to t('students.details.back').html_safe, photo_students_details_path, class: 'btn btn-primary'
+          = f.submit t('students.details.done').html_safe, class: 'btn btn-primary'
