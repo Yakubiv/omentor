@@ -4,6 +4,15 @@ $(document).on('turbolinks:load', function () {
     /** Constant div card */
     const DIV_CARD = 'div.card';
 
+    $('.dropify').dropify({
+      messages: {
+        'default': 'Перемістіть фото сюди або просто клікність',
+        'replace': 'Перемістіть фото або клікність сюди, щоб замінити існуюче',
+        'remove': 'Видалити',
+        'error': 'Щось пішло не так.'
+      }
+    });
+
     $('#phone').mask('(999) 999-9999');
 
     // setTimeout(function() {

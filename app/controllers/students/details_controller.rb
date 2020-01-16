@@ -15,13 +15,12 @@ class Students::DetailsController < Students::BaseController
   end
 
   def update
-    current_user.student_profile.update(current_student_params)
+    save_student_prfile
     after_update_redirection
   end
 
   def create
-    @student_profile = current_user.create_student_profile(current_student_params)
-    if @student_profile.save!
+    if save_student_prfile
       after_successfull_create_redirection
     else
       render :show
@@ -30,6 +29,15 @@ class Students::DetailsController < Students::BaseController
 
   private
 
+  def save_student_prfile
+    if current_user.student_profile
+      current_user.student_profile.update(current_student_params)
+    else
+      @student_profile = current_user.create_student_profile(current_student_params)
+      @student_profile.save!
+    end
+  end
+
   def load_student_profile
     @student_profile = current_user.student_profile || current_user.build_student_profile
   end
@@ -37,13 +45,10 @@ class Students::DetailsController < Students::BaseController
   def current_student_params
     params.require(:student_profile).permit(:avatar, :first_name, :last_name, :username,
                                             :birthday, :bio, :phone, :city, :country,
-                                            :gender, :degree_type)
+                                            :gender, :degree_type, :short_bio)
   end
 
   def after_update_redirection
-
-    binding.pry
-
     if request.referrer.match?(/photo/)
       redirect_to bio_students_details_path
     elsif request.referrer.match?(/bio/)
@@ -55,7 +60,7 @@ class Students::DetailsController < Students::BaseController
     if request.referrer.match?(/profile/)
       redirect_to students_profile_path, notice: t('details_controller.update.success')
     else
-      redirect_to students_dashboard_path, notice: t('details_controller.update.success')
+      redirect_to photo_students_details_path, notice: t('details_controller.update.success')
     end
   end
 end

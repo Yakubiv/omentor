@@ -52,6 +52,7 @@ en:
         city: Місто
         country: Країна
         bio: Про себе
+        short_bio: Короткий опис
 
   helpers:
     placeholder:

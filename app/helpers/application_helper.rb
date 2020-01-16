@@ -8,7 +8,7 @@ module ApplicationHelper
   end
 
   def image_path(image)
-    rails_blob_url(image)
+    rails_blob_url(image) if image.attached?
   end
 
   def active_if?(conditions)
@@ -36,5 +36,4 @@ module ApplicationHelper
       { general: 'completed', bio: 'active', photo: 'completed' }
     end
   end
-
 end
