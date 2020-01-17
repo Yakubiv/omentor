@@ -9,7 +9,12 @@ Rails.application.routes.draw do
   authenticated :user do
     namespace :tutors do
       root 'dashboards#show'
-      resource :details, only: %i[show create]
+      resource :details, only: %i[show create update] do
+        get :photo, on: :collection
+        get :bio, on: :collection
+        get :video, on: :collection
+        get :schedule, on: :collection
+      end
       resource :dashboard, only: :show
     end
 

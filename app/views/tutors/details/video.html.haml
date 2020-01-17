@@ -3,14 +3,13 @@
     = render 'steps'
   .col-lg-6.offset-lg-3
     .card
-      = form_with(model: @student_profile, url: students_details_path, method: :put) do |f|
+      = form_with(model: @tutor_profile, url: tutors_details_path, method: :put) do |f|
         .card-body
-          .card-title.mb-3
-            = t('students.details.bio_header')
+          .card-title.mb-1
+            = t('tutors.details.video_header')
           .row
-            .col-md-12
-              .alert.alert-success
-                Додайте заголовок та опис до свого профіля. Зробіть його яскравішим.
+            .col-md-12.mb-3
+              %em.text-muted= t('tutors.details.video_tip')
             .col-md-3
               .c-registration-form__bio
                 .c-registration-form__bio--image{ style: "background-image: url(#{image_path(f.object.avatar)})" }
@@ -26,5 +25,5 @@
                 %small
                   %em.text-muted Мінімум 250 символів.
         .card-footer.text-right
-          = link_to t('students.details.back').html_safe, photo_students_details_path, class: 'btn btn-info'
-          = f.submit t('students.details.done').html_safe, class: 'btn btn-info'
+          = link_to t('tutors.details.back').html_safe, photo_students_details_path, class: 'btn btn-info'
+          = f.submit t('tutors.details.next').html_safe, class: 'btn btn-info'

@@ -104,6 +104,23 @@ en:
       calendar: Календар
       blog: Блог
       settings: Налаштування
+  tutors:
+    details:
+      main_header: Загальна інформація
+      submit_button: Зберегти інформацію
+      video_header: Завантажте відео звернення для студентів
+      video_tip: Відео відіграє одну з найважливіших ролей у вашому профілі, 90% студентів вибирають репетиторів з якісним відеозверненням.
+      next: Далі
+      back: Назад
+      done: Готово
+      general: Дані
+      photo: Фото
+      bio: Опис
+      video: Відео
+      schedule: Графік
+      image_header: Фото профілю
+      bio_header: Опис
+      image_tips: Вимоги до фото
   details_controller:
     update:
       success: Профіль успішно оновлений

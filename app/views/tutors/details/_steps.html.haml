@@ -1,0 +1,11 @@
+%ul.c-multisteps-links
+  %li{ class: registration_step_class[:general] }
+    = link_to t('tutors.details.general'), tutors_details_path, disabled: registration_step_class[:general] == 'disabled'
+  %li{ class: registration_step_class[:photo] }
+    = link_to t('tutors.details.photo'), photo_tutors_details_path, disabled: registration_step_class[:photo] == 'disabled'
+  %li{ class: registration_step_class[:bio] }
+    = link_to t('tutors.details.bio'), bio_tutors_details_path, disabled: registration_step_class[:bio] == 'disabled'
+  %li{ class: registration_step_class[:video] }
+    = link_to t('tutors.details.video'), video_tutors_details_path, disabled: registration_step_class[:video] == 'disabled'
+  %li{ class: registration_step_class[:schedule] }
+    = link_to t('tutors.details.schedule'), schedule_tutors_details_path, disabled: registration_step_class[:schedule] == 'disabled'

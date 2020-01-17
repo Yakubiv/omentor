@@ -26,14 +26,18 @@ module ApplicationHelper
     request.fullpath =~ /^\/#{Regexp.quote(path)}/
   end
 
-  def student_registration_step_class
+  def registration_step_class
     case action_name
     when 'show'
-      { general: 'active', bio: 'disabled', photo: 'disabled' }
+      { general: 'active', bio: 'disabled', photo: 'disabled', video: 'disabled', schedule: 'disabled' }
     when 'photo'
-      { general: 'completed', bio: 'disabled', photo: 'active' }
+      { general: 'completed', bio: 'disabled', photo: 'active', video: 'disabled', schedule: 'disabled' }
     when 'bio'
-      { general: 'completed', bio: 'active', photo: 'completed' }
+      { general: 'completed', bio: 'active', photo: 'completed', video: 'disabled', schedule: 'disabled' }
+    when 'video'
+      { general: 'completed', bio: 'completed', photo: 'completed', video: 'active', schedule: 'disabled' }
+    when 'schedule'
+      { general: 'completed', bio: 'completed', photo: 'completed', video: 'completed', schedule: 'active' }
     end
   end
 end
