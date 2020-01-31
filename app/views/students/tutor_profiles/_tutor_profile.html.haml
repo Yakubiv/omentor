@@ -1,4 +1,4 @@
-.card
+.card.c-tutor-card--h
   .card-body
     %article.media
       .block.mr-3
@@ -11,7 +11,7 @@
               %small
                 @#{tutor_profile.username}
               .card-heading--rating
-                %i.fa.fa-star
+                %i.icon-star
                 = tutor_profile.stars
             .card-heading--essentials
               .card-heading--rate
@@ -19,15 +19,12 @@
                 %small.unit.text-muted / #{t('common.hour')}.
           %p
             %span
-              %i.icon-direction
+              %i.icon-home
               = tutor_profile.city
-            -# %span.ml-3.text-muted
-            -#   останній візит:
-            -#   %strong cьогодні
           %p
             %span Математика, Фізика
             = link_to students_tutor_calendars_path(current_student_profile), class: 'ml-3' do
-              %i.fa.fa-calendar
+              %i.icon-calendar
               Календар
           %p= tutor_profile.bio
         %nav.d-flex.text-muted.flex-align-center.flex-wrap

@@ -1,0 +1,37 @@
+.card.c-tutor-card--v
+  .c-tutor-card--v__image{ style: "background-image: url(#{image_path(current_student_profile.avatar)})" }
+  .card-body
+    %h3.card-title
+      = tutor_profile.name
+      %small
+        @#{tutor_profile.username}
+    %h4.card-text.mb-4
+      %i.icon-home
+      = tutor_profile.city
+    .row
+      .col-3
+        %h6
+          %strong 3265
+        %span Уроків
+      .col-3
+        %h6
+          %strong 1358
+        %span відгуки
+      .col-3
+        %h6
+          %strong 10р
+        %span Досвід
+      .col-3
+        %h6
+          %strong 45
+        %span Статті
+  %ul.list-group.list-group-flush
+    %li.list-group-item Математика, Фізика, хімія
+    %li.list-group-item 500грн/год
+    %li.list-group-item
+      %span.text-muted Останній візит:
+      %strong сьогодні
+  .card-body
+    %a.card-link{:href => "javascript:void(0);"}
+      Переглянути профіль
+      %i.fe.fe-arrow-right

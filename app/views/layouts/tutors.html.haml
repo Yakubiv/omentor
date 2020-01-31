@@ -3,6 +3,16 @@
   %head
     %title Studygo Tutor
     = render 'layouts/partials/head'
-  %body
+  %body.font-opensans
     = render 'layouts/partials/loader'
-    = yield
+    #main_content
+      = render 'layouts/partials/small_sidebar', brand_url: tutors_root_path
+      = render 'layouts/partials/right_sidebar'
+      = render 'layouts/partials/tutors/left_sidebar'
+
+      .page
+        = render 'layouts/partials/tutors/header_top'
+        .section-body.taskboard.mt-4
+          .container-fluid
+            = yield
+        = render 'layouts/partials/footer'

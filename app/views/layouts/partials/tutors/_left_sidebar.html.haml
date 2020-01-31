@@ -1,0 +1,32 @@
+#left-sidebar.sidebar
+  %h5.brand-name
+    StudyGo
+    %a.menu_option.float-right{:href => "javascript:void(0)"}
+      %i.icon-grid.font-16{"data-placement" => "left", "data-toggle" => "tooltip", :title => "Grid & List Toggle"}
+  %nav#left-sidebar-nav.sidebar-nav
+    %ul.metismenu
+      %li.g_heading
+      %li{ class: active_if?(controller: 'dashboards') }
+        = link_to tutors_dashboard_path do
+          %i.icon-home
+          %span= t('tutors.left_sidebar.dashboard')
+      -# %li{ class: active_if?(controller: 'tutor_profiles') }
+      -#   = link_to tutors_tutor_profiles_path do
+      -#     %i.icon-home
+      -#     %span= t('tutors.left_sidebar.search_teachers')
+      -# %li{ class: active_if?(controller: 'calendars') }
+      -#   = link_to tutors_calendars_path do
+      -#     %i.icon-calendar
+      -#     %span= t('tutors.left_sidebar.calendar')
+      -# %li{ class: active_if?(controller: 'chats') }
+      -#   %a{ href: tutors_chats_path }
+      -#     %i.icon-speech
+      -#     %span= t('tutors.left_sidebar.chat')
+      -# %li{ class: active_if?(controller: 'my_tutors') }
+      -#   = link_to tutors_my_tutors_path do
+      -#     %i.icon-home
+      -#     %span= t('tutors.left_sidebar.my_teachers')
+      -# %li
+      -#   = link_to blogs_path do
+      -#     %i.icon-globe
+      -#     %span= t('tutors.left_sidebar.blog')

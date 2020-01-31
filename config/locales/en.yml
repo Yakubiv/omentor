@@ -67,6 +67,11 @@ en:
     need_help: Потрібна допомога?
     hour: год
   layouts:
+    tutors:
+      dashboards:
+        page_title: Головна
+      profiles:
+        page_title: Профіль
     students:
       dashboards:
         page_title: Головна
@@ -121,6 +126,11 @@ en:
       image_header: Фото профілю
       bio_header: Опис
       image_tips: Вимоги до фото
+    left_sidebar:
+      dashboard: Головна
+      chat: Чат
+      calendar: Календар
+      settings: Налаштування
   details_controller:
     update:
       success: Профіль успішно оновлений

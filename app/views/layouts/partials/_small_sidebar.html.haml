@@ -7,4 +7,8 @@
           %i.icon-settings{ data: { placement: 'right', toggle: 'tooltip' }, title: 'Settings' }
         %a.nav-link.icon.menu_toggle{ href: 'javascript:void(0)' }
           %i.fe.fe-align-left
-        .displaynone.show-sm= render 'layouts/partials/students/profile_dropdown'
+        .displaynone.show-sm
+          - if current_user.student?
+            = render 'layouts/partials/students/profile_dropdown'
+          - else
+            = render 'layouts/partials/tutors/profile_dropdown'

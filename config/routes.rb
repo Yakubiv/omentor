@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   authenticated :user do
     namespace :tutors do
       root 'dashboards#show'
+      resource :profile, only: :show
       resource :details, only: %i[show create update] do
         get :photo, on: :collection
         get :bio, on: :collection
