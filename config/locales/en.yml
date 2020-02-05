@@ -57,6 +57,7 @@ en:
         country: Країна
         bio: Про себе
         short_bio: Короткий опис
+        video_url: Посилання на ютуб. Відео про себе.
 
   helpers:
     placeholder:

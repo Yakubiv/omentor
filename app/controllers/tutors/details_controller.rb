@@ -31,6 +31,8 @@ class Tutors::DetailsController < Tutors::BaseController
   private
 
   def save_tutor_prfile
+    return true unless params[:tutor_profile]
+
     if current_user.tutor_profile
       current_user.tutor_profile.update(current_tutor_params)
     else
@@ -46,7 +48,7 @@ class Tutors::DetailsController < Tutors::BaseController
   def current_tutor_params
     params.require(:tutor_profile).permit(:avatar, :first_name, :last_name, :username,
                                           :birthday, :bio, :phone, :city, :country,
-                                          :gender, :degree_type, :short_bio)
+                                          :gender, :degree_type, :short_bio, :video_url)
   end
 
   def after_update_redirection
