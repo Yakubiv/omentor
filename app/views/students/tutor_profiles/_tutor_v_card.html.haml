@@ -7,20 +7,22 @@
           %strong= tutor_profile.name
           %small.text-muted.nickname
             @#{tutor_profile.username}
-        .card-text.mb-4
-          %i.icon-home
-          = tutor_profile.city
-    .card-price
-      500грн/год
-    %ul.list-group.list-group-flush
-      %li.list-group-item
-        %span.custom-badge Математика
-        %span.custom-badge Фізика
-        %span.custom-badge Xімія
-      %li.list-group-item
-        %span.text-muted Останній візит:
-        %strong сьогодні
-      %li.list-group-item
-        %a.card-link{:href => "javascript:void(0);"}
-          Переглянути профіль
-          %i.fe.fe-arrow-right
+
+  %ul.list-group.list-group-flush
+    %li.list-group-item
+      %i.icon-home
+      = tutor_profile.city
+    %li.list-group-item
+      .card-price
+        500грн/год
+    %li.list-group-item
+      %span.custom-badge Математика
+      %span.custom-badge Фізика
+      %span.custom-badge Xімія
+    %li.list-group-item
+      %span.text-muted Останній візит:
+      %strong сьогодні
+    %li.list-group-item
+      %a.card-link{:href => "javascript:void(0);"}
+        Переглянути профіль
+        %i.fe.fe-arrow-right

@@ -1,5 +1,5 @@
 .row
-  .col-lg-8.col-md-7.col-xl-5.offset-xl-2
+  .col-lg-8.col-md-7.col-xl-6.offset-xl-1
     .card
       .card-header
         %h3.card-title Виберіть предмет на час проведення уроку
@@ -29,5 +29,5 @@
           .form-group
             %hr
             = link_to 'Забронювати', nil, class: 'btn btn-block btn-success btn-lg'
-  .col-lg-4.col-md-5.col-xl-3
+  .col-lg-4.col-md-5.col-xl-4
     = render 'students/tutor_profiles/tutor_v_card', tutor_profile: @tutor_profile
