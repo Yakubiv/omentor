@@ -3,11 +3,21 @@ require 'sidekiq/web'
 Rails.application.routes.draw do
   root to: 'homes#index'
 
+  constraints Subdomain do
+    namespace :admin do
+      root 'dashboards#show'
+
+      resource :dashboard, only: :show
+      resource :profile, only: :show
+      resources :subjects
+    end
+  end
+
   devise_for :users, controllers: { confirmations: 'devises/confirmations',
                                     registrations: 'devises/registrations' }
 
   authenticated :user do
-    namespace :tutors do
+    namespace :tutors, path: 't' do
       root 'dashboards#show'
       resource :profile, only: :show
       resource :details, only: %i[show create update] do
@@ -19,7 +29,7 @@ Rails.application.routes.draw do
       resource :dashboard, only: :show
     end
 
-    namespace :students do
+    namespace :students, path: 's' do
       root 'dashboards#show'
       resource :details, only: %i[show create update] do
         get :photo, on: :collection
@@ -39,14 +49,6 @@ Rails.application.routes.draw do
           resource :calendars, only: :show
         end
       end
-    end
-  end
-
-  constraints Subdomain do
-    namespace :admin do
-      root 'dashboards#show'
-
-      resource :dashboard, only: :show
     end
   end
 

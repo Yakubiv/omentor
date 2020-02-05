@@ -1,0 +1,16 @@
+#left-sidebar.sidebar
+  %h5.brand-name
+    StudyGo
+    %a.menu_option.float-right{:href => "javascript:void(0)"}
+      %i.icon-grid.font-16{"data-placement" => "left", "data-toggle" => "tooltip", :title => "Grid & List Toggle"}
+  %nav#left-sidebar-nav.sidebar-nav
+    %ul.metismenu
+      %li.g_heading
+      %li{ class: active_if?(controller: 'dashboards') }
+        = link_to admin_dashboard_path do
+          %i.icon-home
+          %span= t('admins.left_sidebar.dashboard')
+      %li{ class: active_if?(controller: 'subjects') }
+        = link_to admin_subjects_path do
+          %i.icon-book-open
+          %span= t('admins.left_sidebar.subjects')

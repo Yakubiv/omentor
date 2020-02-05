@@ -1,7 +1,18 @@
 !!!
 %html
   %head
-    %title Studygo Admins
+    %title Studygo Admin
     = render 'layouts/partials/head'
-  %body
-    = yield
+  %body.font-opensans
+    = render 'layouts/partials/loader'
+    #main_content
+      = render 'layouts/partials/small_sidebar', brand_url: admin_root_path
+      = render 'layouts/partials/right_sidebar'
+      = render 'layouts/partials/admins/left_sidebar'
+
+      .page
+        = render 'layouts/partials/admins/header_top'
+        .section-body.taskboard.mt-4
+          .container-fluid
+            = yield
+        = render 'layouts/partials/footer'

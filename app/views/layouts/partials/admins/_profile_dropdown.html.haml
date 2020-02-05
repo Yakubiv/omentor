@@ -1,0 +1,24 @@
+%a.nav-link.btn.btn-icon.ml-1{"data-toggle" => "dropdown"}
+  %i.icon-user
+.dropdown-menu.dropdown-menu-right.dropdown-menu-arrow
+  %a.dropdown-item{ href: admin_profile_path }
+    %i.dropdown-icon.fe.fe-user
+    = t('common.profile')
+  -# %a.dropdown-item{:href => "app-setting.html"}
+  -#   %i.dropdown-icon.fe.fe-settings
+  -#   Settings
+  -# %a.dropdown-item{:href => "app-email.html"}
+  -#   %span.float-right
+  -#     %span.badge.badge-primary 6
+  -#   %i.dropdown-icon.fe.fe-mail
+  -#   Inbox
+  -# %a.dropdown-item{:href => "javascript:void(0)"}
+  -#   %i.dropdown-icon.fe.fe-send
+  -#   Message
+  .dropdown-divider
+  %a.dropdown-item{:href => "javascript:void(0)"}
+    %i.dropdown-icon.fe.fe-help-circle
+    = t('common.need_help')
+  = link_to destroy_user_session_path, method: :delete, class: 'dropdown-item' do
+    %i.dropdown-icon.fe.fe-log-out
+    = t('common.logout')

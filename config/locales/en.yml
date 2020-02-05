@@ -32,6 +32,10 @@
 en:
   activerecord:
     attributes:
+      lesson:
+        subject_id: Предмет
+        duration: Тривалість уроку
+        price: Ціна
       profile:
         genders:
           male: Чоловік
@@ -67,6 +71,11 @@ en:
     need_help: Потрібна допомога?
     hour: год
   layouts:
+    admins:
+      dashboards:
+        page_title: Головна
+      subjects:
+        page_title: Предмети
     tutors:
       dashboards:
         page_title: Головна
@@ -87,7 +96,10 @@ en:
         page_title: Мої Репетитори
       bookings:
         page_title: Планування уроку
-
+  admins:
+    left_sidebar:
+      dashboard: Головна
+      subjects: Предмети
   students:
     details:
       main_header: Загальна інформація
@@ -134,3 +146,9 @@ en:
   details_controller:
     update:
       success: Профіль успішно оновлений
+
+  lessons:
+    duration:
+      one_hour: 1 година
+      two_hours: 2 години
+      one_and_half_hours: 1.5 години

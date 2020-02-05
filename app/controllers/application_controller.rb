@@ -14,10 +14,13 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    if resource.student?
+    case resource.sign_up_as
+    when 'student'
       students_dashboard_path
-    else
+    when 'tutor'
       tutors_dashboard_path
+    when 'admin'
+      admin_dashboard_url(subdomain: 'admin')
     end
   end
 end

@@ -10,5 +10,7 @@
         .displaynone.show-sm
           - if current_user.student?
             = render 'layouts/partials/students/profile_dropdown'
-          - else
+          - elsif current_user.tutor?
             = render 'layouts/partials/tutors/profile_dropdown'
+          - else
+            = render 'layouts/partials/admins/profile_dropdown'

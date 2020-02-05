@@ -18,7 +18,7 @@ gem 'image_processing'
 gem 'devise'
 gem 'devise-async'
 gem 'sendgrid-ruby'
-
+gem 'local_time'
 gem 'redis'
 gem 'sidekiq'
 

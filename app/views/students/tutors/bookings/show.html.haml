@@ -1,33 +1,33 @@
 .row
-  .col-lg-8.col-md-6.col-xl-8
+  .col-lg-8.col-md-7.col-xl-5.offset-xl-2
     .card
       .card-header
         %h3.card-title Виберіть предмет на час проведення уроку
       .card-body
-        .form-group
-          %label.form-label Предмет
-          %select.form-control.custom-select
-            %option{:value => ""} Математика
-        .form-group
-          %label.form-label Тривалість уроку
-          %select.form-control.custom-select
-            %option{:value => ""} 45 хвилин
-            %option{:value => ""} 1 година
-            %option{:value => ""} 1.5 години
-            %option{:value => ""} 2 години
-        .form-group
-          %label.form-label Ціна
-          %input.form-control{:name => "example-text-input-valid", :placeholder => "350 грн", :type => "text", disabled: true}/
-        .form-group
-          %label.form-label Дата
-          .input-group
-            %input.form-control{ data: { provide: 'datepicker', date: { autoclose: true } } }
-        .form-group
-          %label.form-label Час
-          %select.form-control.custom-select
-            %option{:value => ""} Виберіть час уроку
-        .form-group
-          %hr
-          = link_to 'Забронювати', nil, class: 'btn btn-block btn-success btn-lg'
-  .col-lg-4.col-md-6.col-xl-4
+        = form_with(model: @lesson, url: students_tutor_booking_path(@tutor_profile), method: :post) do |f|
+          .form-group
+            = f.label :subject_id, class: 'form-label'
+            = f.select :subject_id, options_for_select(Subject.all.map{|a| [a.name, a.id]}), {}, class: 'form-control'
+          .form-group
+            = f.label :duration, class: 'form-label'
+            = f.select :duration, options_for_select(lesson_durations.map{ |a| [a[:name], a[:duration]]}), {}, class: 'form-control', data: { tutor_rate: @tutor_profile.rate }
+          .form-group
+            = f.label :price, class: 'form-label'
+            .input-group
+              .input-group-prepend
+                %span.input-group-text
+                  %i.fe.fe-dollar-sign
+              = f.text_field :price, disabled: true, class: 'form-control'
+          .form-group
+            %label.form-label Час
+            .input-group
+              = f.time_select :start_at, {}, class: "form-control"
+          .form-group
+            %label.form-label Дата
+            .input-group
+              = f.date_select :start_at, {}, class: "form-control"
+          .form-group
+            %hr
+            = link_to 'Забронювати', nil, class: 'btn btn-block btn-success btn-lg'
+  .col-lg-4.col-md-5.col-xl-3
     = render 'students/tutor_profiles/tutor_v_card', tutor_profile: @tutor_profile

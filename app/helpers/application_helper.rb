@@ -1,4 +1,10 @@
 module ApplicationHelper
+  def lesson_durations
+    [{ duration: 60, name: t('lessons.duration.one_hour') },
+     { duration: 90, name: t('lessons.duration.one_and_half_hours') },
+     { duration: 120, name: t('lessons.duration.two_hours') }]
+  end
+
   def string_match?(string, match: '')
     string.match?(match)
   end

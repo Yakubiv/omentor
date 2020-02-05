@@ -1,0 +1,36 @@
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Subjects</h3>
+  </div>
+
+  <div class="card-body">
+    <p id="notice"><%= notice %></p>
+    <div class="table-responsive">
+      <table class="table text-nowrap mb-0">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Status</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @subjects.each do |subject| %>
+            <tr>
+              <td><%= subject.name %></td>
+              <td><%= subject.status %></td>
+              <td><%= link_to 'Show', [:admin, subject] %></td>
+              <td><%= link_to 'Edit', edit_admin_subject_path(subject) %></td>
+              <td><%= link_to 'Destroy', [:admin, subject], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+
+      <%= link_to 'New Subject', new_admin_subject_path %>
+    </div>
+  </div>
+</div>
