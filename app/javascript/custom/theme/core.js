@@ -79,6 +79,7 @@ $(document).on('turbolinks:load', function () {
     });
 });
 
+
 // Sidebar Setting
 $(document).on('turbolinks:load', function () {
     "use strict";

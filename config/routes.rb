@@ -19,6 +19,11 @@ Rails.application.routes.draw do
   authenticated :user do
     namespace :tutors, path: 't' do
       root 'dashboards#show'
+
+      namespace :registrations do
+        resources :time_slots, except: :show
+      end
+
       resource :profile, only: :show
       resource :details, only: %i[show create update] do
         get :photo, on: :collection
