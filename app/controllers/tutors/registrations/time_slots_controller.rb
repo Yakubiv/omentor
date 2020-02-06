@@ -3,8 +3,6 @@
 class Tutors::Registrations::TimeSlotsController < Tutors::BaseController
   before_action :load_time_slot, only: %i[edit update]
 
-  respond_to :html, :js, :json
-
   def index
     @time_slots = current_tutor_profile.time_slots
   end

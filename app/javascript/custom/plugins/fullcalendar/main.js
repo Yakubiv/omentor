@@ -2,6 +2,8 @@ import { Calendar } from '@fullcalendar/core';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 
+window.Calendar = Calendar;
+
 addEventListener('DOMContentLoaded', function () {
   var calendarEl = document.getElementById('calendar-registration-form');
   var calendar = new Calendar(calendarEl, {
@@ -25,11 +27,11 @@ addEventListener('DOMContentLoaded', function () {
       }
 
       $.ajax({
-        url: "/t/registrations/time_slots.js",
+        url: "/t/registrations/time_slots.json",
         type: "POST",
         data: timeSlot,
         success: function (data) {
-
+          calendar.addEvent(data);
         }
       })
     },

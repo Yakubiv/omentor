@@ -8,6 +8,9 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("local-time")
 
+window.jQuery = $;
+window.$ = $;
+
 require("@fullcalendar/core")
 require("@fullcalendar/daygrid")
 require("@fullcalendar/timegrid")
