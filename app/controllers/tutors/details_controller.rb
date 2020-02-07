@@ -47,7 +47,7 @@ class Tutors::DetailsController < Tutors::BaseController
 
   def current_tutor_params
     params.require(:tutor_profile).permit(:avatar, :first_name, :last_name, :username,
-                                          :birthday, :bio, :phone, :city, :country,
+                                          :birthday, :bio, :phone, :city, :country, :time_zone,
                                           :gender, :degree_type, :short_bio, :video_url)
   end
 

@@ -4,6 +4,8 @@ module Tutors
   class BaseController < ApplicationController
     before_action :authenticate_user!
     before_action :verify_current_user_is_tutor?
+    before_action :set_time_zone, if: :tutor_signed_in?
+
     layout 'tutors'
 
     def current_tutor_profile
@@ -17,6 +19,16 @@ module Tutors
 
     def redirect_to_default
       redirect_to root_path
+    end
+
+    private
+
+    def tutor_signed_in?
+      current_user && current_user&.tutor_profile
+    end
+
+    def set_time_zone
+      Time.zone = current_tutor_profile.time_zone
     end
   end
 end

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Tutors::Registrations::TimeSlotsController < Tutors::BaseController
-  before_action :load_time_slot, only: %i[edit update]
+  before_action :load_time_slot, only: %i[edit update destroy]
 
   def index
     @time_slots = current_tutor_profile.time_slots
@@ -20,6 +20,11 @@ class Tutors::Registrations::TimeSlotsController < Tutors::BaseController
 
   def update
     @time_slot.update(time_slots_params)
+    true
+  end
+
+  def destroy
+    @time_slot.destroy
     true
   end
 

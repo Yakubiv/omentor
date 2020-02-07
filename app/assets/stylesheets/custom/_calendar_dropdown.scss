@@ -1,0 +1,23 @@
+#calendar-dropdown-block {
+  z-index: 99;
+  display: none;
+  position: absolute;
+
+  & > .block-content {
+    &.md {
+      width: 200px;
+    }
+
+    border-radius: 2px;
+    width: 340px;
+    background-color: #fff;
+    border: 1px solid #edeff0;
+    box-shadow: 0 5px 25px 0 rgba(79,79,79,.1);
+
+    padding: 20px;
+
+    .btn {
+      border-radius: 0;
+    }
+  }
+}

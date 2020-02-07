@@ -1,0 +1,29 @@
+.fc-event {
+  background-color: $azure;
+  border-color: $azure;
+  border-radius: 0;
+  opacity: 0.9;
+}
+.fc-content {
+  color: white !important;
+}
+.fc-event-container {
+  margin: 1px !important;
+}
+
+.fc-header-toolbar {
+  .fc-button-group {
+    display: inline-block;
+    .fc-button {
+      padding: 0 5px;
+    }
+  }
+
+  h2 {
+    position: relative;
+    top: 3px;
+    display: inline-block;
+    font-size: 1.25em;
+    font-weight: 400;
+  }
+}

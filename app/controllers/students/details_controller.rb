@@ -45,7 +45,7 @@ class Students::DetailsController < Students::BaseController
   def current_student_params
     params.require(:student_profile).permit(:avatar, :first_name, :last_name, :username,
                                             :birthday, :bio, :phone, :city, :country,
-                                            :gender, :degree_type, :short_bio)
+                                            :gender, :degree_type, :short_bio, :time_zone)
   end
 
   def after_update_redirection

@@ -2,7 +2,7 @@
   - if current_student_profile.avatar.attached?
     = image_tag user_avatar(current_student_profile), class: 'rounded'
   - else
-    %i.fa.fa-user
+    %i.icon-user
 .dropdown-menu.dropdown-menu-right.dropdown-menu-arrow
   %a.dropdown-item{ href: students_profile_path }
     %i.dropdown-icon.fe.fe-user
