@@ -32,6 +32,11 @@ Rails.application.routes.draw do
         get :schedule, on: :collection
       end
       resource :dashboard, only: :show
+      resources :lessons, only: :index
+      resources :calendars, only: :index
+      resources :chats, only: :index
+      resources :settings, only: :index
+      resources :students, only: :index
     end
 
     namespace :students, path: 's' do

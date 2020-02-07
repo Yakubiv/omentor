@@ -144,6 +144,8 @@ en:
       chat: Чат
       calendar: Календар
       settings: Налаштування
+      lessons: Уроки
+      students: Студенти
   details_controller:
     update:
       success: Профіль успішно оновлений

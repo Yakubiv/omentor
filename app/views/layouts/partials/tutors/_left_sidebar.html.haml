@@ -10,23 +10,23 @@
         = link_to tutors_dashboard_path do
           %i.icon-home
           %span= t('tutors.left_sidebar.dashboard')
-      -# %li{ class: active_if?(controller: 'tutor_profiles') }
-      -#   = link_to tutors_tutor_profiles_path do
-      -#     %i.icon-home
-      -#     %span= t('tutors.left_sidebar.search_teachers')
-      -# %li{ class: active_if?(controller: 'calendars') }
-      -#   = link_to tutors_calendars_path do
-      -#     %i.icon-calendar
-      -#     %span= t('tutors.left_sidebar.calendar')
-      -# %li{ class: active_if?(controller: 'chats') }
-      -#   %a{ href: tutors_chats_path }
-      -#     %i.icon-speech
-      -#     %span= t('tutors.left_sidebar.chat')
-      -# %li{ class: active_if?(controller: 'my_tutors') }
-      -#   = link_to tutors_my_tutors_path do
-      -#     %i.icon-home
-      -#     %span= t('tutors.left_sidebar.my_teachers')
-      -# %li
-      -#   = link_to blogs_path do
-      -#     %i.icon-globe
-      -#     %span= t('tutors.left_sidebar.blog')
+      %li{ class: active_if?(controller: 'lessons') }
+        = link_to tutors_lessons_path do
+          %i.icon-notebook
+          %span= t('tutors.left_sidebar.lessons')
+      %li{ class: active_if?(controller: 'calendars') }
+        = link_to tutors_calendars_path do
+          %i.icon-calendar
+          %span= t('tutors.left_sidebar.calendar')
+      %li{ class: active_if?(controller: 'chats') }
+        = link_to tutors_chats_path do
+          %i.icon-speech
+          %span= t('tutors.left_sidebar.chat')
+      %li{ class: active_if?(controller: 'students') }
+        %a{ href: tutors_students_path }
+          %i.icon-users
+          %span= t('tutors.left_sidebar.students')
+      %li{ class: active_if?(controller: 'settings') }
+        = link_to tutors_settings_path do
+          %i.icon-settings
+          %span= t('tutors.left_sidebar.settings')
