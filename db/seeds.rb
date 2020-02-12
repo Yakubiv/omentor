@@ -23,7 +23,7 @@ end
 
 %w[student admin tutor].each do |r|
   u = User.create(email: "#{r}@gmail.com", password: 'password', sign_up_as: r, terms_and_conditions: true)
-  TutorProfile.create(
+  Profile.create(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     username: Faker::Name.last_name,
