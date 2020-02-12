@@ -2,6 +2,14 @@ import { Calendar } from '@fullcalendar/core';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 
+
+addEventListener('turbolinks:load', function () {
+  var calendarEl = document.getElementById('calendar-registration-form');
+  if (calendarEl && calendarEl.classList.contains('fc')) {
+    $('#calendar-registration-form').html('');
+  }
+});
+
 addEventListener('turbolinks:load', function () {
   var calendarEl = document.getElementById('calendar-registration-form');
   if (calendarEl) {

@@ -12,7 +12,7 @@
           %span= t('students.left_sidebar.dashboard')
       %li{ class: active_if?(controller: 'tutor_profiles') }
         = link_to students_tutor_profiles_path do
-          %i.icon-home
+          %i.icon-magnifier
           %span= t('students.left_sidebar.search_teachers')
       %li{ class: active_if?(controller: 'calendars') }
         = link_to students_calendars_path do
@@ -26,7 +26,3 @@
         = link_to students_my_tutors_path do
           %i.icon-home
           %span= t('students.left_sidebar.my_teachers')
-      %li
-        = link_to blogs_path do
-          %i.icon-globe
-          %span= t('students.left_sidebar.blog')

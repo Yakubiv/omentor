@@ -57,12 +57,21 @@
   }
 
   .card-top {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  &__avatar {
     position: relative;
+    -ms-flex: 0 0 56px;
+    flex: 0 0 60px;
   }
 
   &__image {
-    height: 80px;
-    width: 80px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
     background-size: cover;
     background-position: center center;
@@ -71,10 +80,8 @@
   }
 
   &__title {
-    position: absolute;
-    top: 30px;
-    left: 90px;
-    margin-left: 5px;
+    flex: 1 1 auto;
+    margin-left: 10px;
   }
 }
 

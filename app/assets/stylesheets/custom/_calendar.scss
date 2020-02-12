@@ -1,0 +1,72 @@
+#calendar-dropdown-block {
+  z-index: 99;
+  display: none;
+  position: absolute;
+
+  & > .block-content {
+    &.md {
+      width: 200px;
+    }
+
+    border-radius: 2px;
+    width: 340px;
+    background-color: #fff;
+    border: 1px solid #edeff0;
+    box-shadow: 0 5px 25px 0 rgba(79,79,79,.1);
+
+    padding: 20px;
+
+    .btn {
+      border-radius: 0;
+    }
+  }
+}
+
+.calendar-heading {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.c-time-slot-record {
+  display: block;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: block;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  min-width: 2.375rem;
+  padding: 3px;
+  border-radius: 0px;
+  border: 1px solid transparent;
+  margin-bottom: 3px;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  line-height: 1.5rem;
+
+  &.free {
+    color: $indigo;
+
+    &:hover {
+
+      border: 1px solid $indigo;
+    }
+  }
+
+  &.booked {
+    color: $gray-300;
+    cursor: not-allowed;
+  }
+}
+
+#booking-calendar {
+  table th, table td {
+    padding: 0;
+  }
+
+  .btn.btn-default {
+    padding: 3px 6px;
+  }
+}

@@ -55,6 +55,7 @@ en:
         degree_type: Оствіта
         city: Місто
         country: Країна
+        time_zone: Часовий пояс
         bio: Про себе
         short_bio: Короткий опис
         video_url: Посилання на ютуб. Відео про себе.
@@ -155,3 +156,7 @@ en:
       one_hour: 1 година
       two_hours: 2 години
       one_and_half_hours: 1.5 години
+
+  simple_calendar:
+    previous: Попередній
+    next: Наступний

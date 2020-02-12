@@ -12,6 +12,22 @@
     .form-group
       = f.label :username, class: 'control-label'
       = f.text_field :username, required: true, class: 'form-control'
+  .col-md-6
+    .form-group
+      = f.label :rate, class: 'control-label'
+      .input-group
+        .input-group-prepend
+          .input-group-text
+            %i.fe.fe-dollar-sign
+        = f.number_field :rate, required: true, class: 'form-control'
+  .col-md-6
+    .form-group
+      = f.label :total_years_of_expirience, class: 'control-label'
+      .input-group
+        .input-group-prepend
+          .input-group-text
+            %i.icon-graduation
+        = f.number_field :total_years_of_expirience, required: true, class: 'form-control'
   .col-md-12
     .form-group
       = f.label :phone, class: 'control-label'

@@ -1,5 +1,7 @@
 .row
-  .col-lg-8.col-md-7.col-xl-6.offset-xl-1
+  .col-xl-3.order-md-12
+    = render 'students/tutor_profiles/tutor_v_card', tutor_profile: @tutor_profile
+  .col-xl-5.order-md-1.offset-xl-2
     .card
       .card-header
         %h3.card-title Виберіть предмет на час проведення уроку
@@ -18,16 +20,12 @@
                 %span.input-group-text
                   %i.fe.fe-dollar-sign
               = f.text_field :price, disabled: true, class: 'form-control'
-          .form-group
-            %label.form-label Час
-            .input-group
-              = f.time_select :start_at, {}, class: "form-control"
-          .form-group
-            %label.form-label Дата
-            .input-group
-              = f.date_select :start_at, {}, class: "form-control"
+          .mt-5.align-center
+            #booking-calendar
+              = week_calendar do |date|
+                - @available_hours.fetch(date.to_s, []).each do |time|
+                  .c-time-slot-record{ class: time[:status] }
+                    = time[:time]
           .form-group
             %hr
             = link_to 'Забронювати', nil, class: 'btn btn-block btn-success btn-lg'
-  .col-lg-4.col-md-5.col-xl-4
-    = render 'students/tutor_profiles/tutor_v_card', tutor_profile: @tutor_profile
