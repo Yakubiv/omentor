@@ -5,6 +5,7 @@ require('./plugins/input-mask/jquery.mask.min.js')
 require('./plugins/metisMenu/metisMenu.js')
 require('./plugins/fullcalendar/main.js')
 
+require('./booking')
 require('./plugins/sweetalert/sweetalert.min.js')
 
 require('./plugins/markdown/markdown.js')

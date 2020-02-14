@@ -52,6 +52,12 @@ Rails.application.routes.draw do
       resources :calendars, only: :index
       resources :my_tutors, only: :index
 
+      namespace :lessons do
+        scope ':lesson_id' do
+          resource :checkout, only: %i[show create]
+        end
+      end
+
       scope module: :tutors do
         resources :tutors, only: [], path: nil, as: nil do
           resource :booking, only: %i[show create]

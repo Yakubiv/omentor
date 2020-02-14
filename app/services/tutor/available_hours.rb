@@ -27,6 +27,7 @@ class Tutor::AvailableHours
       (time_slot.start_at.to_i..(time_slot.end_at - lesson.duration.minutes).to_i).step(EVERY_30_MINS).map do |date|
         { date: Time.at(date).strftime(DATE_FORMAT),
           time: Time.at(date).strftime(TIME_FORMAT),
+          full_time: Time.at(date),
           status: ['free', 'booked'].sample,
           time_slot_id: time_slot.id }
       end

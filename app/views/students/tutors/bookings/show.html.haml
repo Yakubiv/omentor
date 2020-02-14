@@ -6,7 +6,8 @@
       .card-header
         %h3.card-title Виберіть предмет на час проведення уроку
       .card-body
-        = form_with(model: @lesson, url: students_tutor_booking_path(@tutor_profile), method: :post) do |f|
+        = form_with(model: @lesson, url: students_tutor_booking_path(@tutor_profile), method: :post, html: { id: 'lesson-booking-form' }) do |f|
+          = f.hidden_field :start_at
           .form-group
             = f.label :subject_id, class: 'form-label'
             = f.select :subject_id, options_for_select(Subject.all.map{|a| [a.name, a.id]}), {}, class: 'form-control'
@@ -19,13 +20,10 @@
               .input-group-prepend
                 %span.input-group-text
                   %i.fe.fe-dollar-sign
-              = f.text_field :price, disabled: true, class: 'form-control'
+              = f.text_field :price, readonly: true, class: 'form-control'
           .mt-5.align-center
             #booking-calendar
               = week_calendar do |date|
                 - @available_hours.fetch(date.to_s, []).each do |time|
-                  .c-time-slot-record{ class: time[:status] }
+                  .c-time-slot-record{ class: time[:status], data: { time: time[:full_time] } }
                     = time[:time]
-          .form-group
-            %hr
-            = link_to 'Забронювати', nil, class: 'btn btn-block btn-success btn-lg'

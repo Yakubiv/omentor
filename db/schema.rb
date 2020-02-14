@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_06_171536) do
+ActiveRecord::Schema.define(version: 2020_02_14_082506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2020_02_06_171536) do
     t.decimal "price", precision: 8, scale: 2
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "uuid"
     t.index ["class_room_id"], name: "index_lessons_on_class_room_id"
     t.index ["subject_id"], name: "index_lessons_on_subject_id"
   end

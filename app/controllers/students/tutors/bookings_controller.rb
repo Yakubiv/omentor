@@ -10,10 +10,18 @@ class Students::Tutors::BookingsController < Students::BaseController
   end
 
   def create
-
+    @tutor_profile = TutorProfile.friendly.find(params[:tutor_id])
+    class_room = current_student_profile.class_rooms.find_or_create_by(tutor_profile: @tutor_profile)
+    @lesson = Lesson.create(lesson_params.merge(class_room_id: class_room.id))
+    redirect_to students_lessons_checkout_path(@lesson)
   end
 
   private
+
+  def lesson_params
+    params.require(:lesson)
+          .permit(:start_at, :subject_id, :duration, :price)
+  end
 
   def calculate_price_for_hour_lesson(tutor_profile)
     (tutor_profile.rate * Lesson::ONE_HOUR_DURATION) / 60.0
