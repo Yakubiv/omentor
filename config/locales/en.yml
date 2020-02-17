@@ -98,6 +98,8 @@ en:
         page_title: Мої Репетитори
       bookings:
         page_title: Планування уроку
+      checkouts:
+        page_title: Оплата Уроку
   admins:
     left_sidebar:
       dashboard: Головна
