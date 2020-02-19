@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %title Studygo
+    = render 'layouts/partials/head'
+  %body
+    #main_content
+      = render 'layouts/partials/header'
+      = render 'layouts/partials/loader'
+      .section-body.mt-5
+        .container-fluid
+          .row.clearfix
+            .col-lg-12.col-md-12.col-sm-12
+              = yield

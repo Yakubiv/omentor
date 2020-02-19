@@ -100,11 +100,19 @@ en:
         page_title: Планування уроку
       checkouts:
         page_title: Оплата Уроку
+      lessons:
+        page_title: Мої Уроки
   admins:
     left_sidebar:
       dashboard: Головна
       subjects: Предмети
   students:
+    lessons:
+      index:
+        all_lessons: Усі Уроки
+        paid_lessons: Заплановані
+        canceled_lessons: Скасовані
+        completed_lessons: Завершені
     details:
       main_header: Загальна інформація
       submit_button: Зберегти інформацію
@@ -125,6 +133,7 @@ en:
       calendar: Календар
       blog: Блог
       settings: Налаштування
+      lessons: Мої Уроки
   tutors:
     details:
       main_header: Загальна інформація

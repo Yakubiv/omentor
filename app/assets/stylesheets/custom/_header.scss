@@ -1,0 +1,54 @@
+.c-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  height: 70px;
+  padding: 0 50px;
+
+  &--wrapper {
+    width: 100%;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    position: relative;
+  }
+
+  &--left {
+    float: left;
+  }
+
+  &--center {
+
+  }
+
+  &--right {
+    float: right;
+
+    .nav-pills {
+      .nav-item{
+        padding: 0;
+
+        .dropdown-item{
+          font-size: $font-size - 1px;
+        }
+      }
+
+      .nav-link{
+        color: $gray-500;
+      }
+
+      .show>.nav-link{
+        background: transparent;
+      }
+    }
+    .nav-link{
+      background: transparent;
+      border: 0;
+      padding: 6px 10px;
+    }
+  }
+
+  ul {
+    margin: 0;
+  }
+}

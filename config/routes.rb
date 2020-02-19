@@ -48,6 +48,7 @@ Rails.application.routes.draw do
       resource :dashboard, only: :show
       resource :profile, only: :show
       resources :chats, only: :index
+      resources :lessons, only: %i[index show update]
       resources :tutor_profiles, path: :tutors, only: :index
       resources :calendars, only: :index
       resources :my_tutors, only: :index

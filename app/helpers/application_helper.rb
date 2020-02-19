@@ -5,6 +5,12 @@ module ApplicationHelper
      { duration: 120, name: t('lessons.duration.two_hours') }]
   end
 
+  def duration_in_hours
+    { 60 => t('lessons.duration.one_hour'),
+      90 => t('lessons.duration.one_and_half_hours'),
+      120 => t('lessons.duration.two_hours') }
+  end
+
   def string_match?(string, match: '')
     string.match?(match)
   end
@@ -45,5 +51,12 @@ module ApplicationHelper
     when 'schedule'
       { general: 'completed', bio: 'completed', photo: 'completed', video: 'completed', schedule: 'active' }
     end
+  end
+
+  def lesson_status_background
+    { 'pending' => 'bg-secondary',
+      'paid' => 'bg-success',
+      'canceled' => 'bg-danger',
+      'completed' => 'bg-warning' }
   end
 end

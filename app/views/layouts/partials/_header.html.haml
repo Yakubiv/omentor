@@ -1,0 +1,21 @@
+.c-header--wrapper
+  .c-header
+    .c-header-left
+      StudyGO
+    .c-header-center
+      Lesson payment
+    .c-header-right
+      %ul
+        %li.nav-item.dropdown
+          %a.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"} Language
+          .dropdown-menu.dropdown-menu-right
+            %a.dropdown-item{:href => "#"}
+              = image_tag 'flags/ua.svg', class: 'w20 mr-2', alt: ''
+              Ukraine
+            .dropdown-divider
+            %a.dropdown-item{:href => "#"}
+              = image_tag 'flags/us.svg', class: 'w20 mr-2', alt: ''
+              English
+            %a.dropdown-item{:href => "#"}
+              = image_tag 'flags/ru.svg', class: 'w20 mr-2', alt: ''
+              Russian

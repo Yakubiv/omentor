@@ -3,4 +3,5 @@
 class StudentProfile < Profile
   has_many :class_rooms
   has_many :tutor_profiles, through: :class_rooms, dependent: :destroy
+  has_many :lessons, through: :class_rooms
 end

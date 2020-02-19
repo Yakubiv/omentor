@@ -1,0 +1,53 @@
+.row.clearfix
+  .col-lg-12
+    .card
+      .card-body
+        .d-md-flex.justify-content-between
+          %ul.nav.nav-tabs.b-none
+            %li.nav-item
+              %a.nav-link.active{"data-toggle" => "tab", :href => "#all_lessons"}= t('students.lessons.index.all_lessons')
+            %li.nav-item
+              %a.nav-link{"data-toggle" => "tab", :href => "#paid_lessons"}= t('students.lessons.index.paid_lessons')
+            %li.nav-item
+              %a.nav-link{"data-toggle" => "tab", :href => "#completed_lessons"}= t('students.lessons.index.completed_lessons')
+            %li.nav-item
+              %a.nav-link{"data-toggle" => "tab", :href => "#canceled_lessons"}= t('students.lessons.index.canceled_lessons')
+        .input-group.mt-2
+          %input.form-control.search{:placeholder => "Search...", :type => "text"}/
+
+.tab-content
+  #all_lessons.tab-pane.fade.show.active{:role => "tabpanel"}
+    .table-responsive
+      %table.table.card-table.table-vcenter.text-nowrap.table_custom
+        %thead
+          %tr
+            %th Subject
+            %th Tutor
+            %th Time
+            %th Duration
+            %th Status
+            %th Price
+            %th
+            %th
+        %tbody
+          - @lessons.each do |lesson|
+            %tr
+              %td
+                %span.text-muted= lesson.subject
+              %td
+                %a.text-inherit{:href => "page-invoices.html"}= lesson.tutor_profile.name
+              %td= lesson.start_at.strftime(Lesson::FULL_FORMAT)
+              %td= duration_in_hours[lesson.duration.to_i]
+              %td
+                %span.status-icon{ class: lesson_status_background[lesson.status] }
+                = lesson.status
+              %td= lesson.price
+              %td.text-right
+                = link_to 'Visit', [:students, lesson], class: 'btn btn-secondary btn-sm'
+
+  #paid_lessons.tab-pane.fade{:role => "tabpanel"}
+    paid
+  #completed_lessons.tab-pane.fade{:role => "tabpanel"}
+    completed
+  #canceled_lessons.tab-pane.fade{:role => "tabpanel"}
+    canceled

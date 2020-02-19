@@ -1,10 +1,21 @@
 # frozen_string_literal: true
 
 class Students::Lessons::CheckoutsController < Students::BaseController
+  layout 'checkout'
+
   def show
-    @lesson = Lesson.find_by(uuid: params[:lesson_id])
+    @lesson = load_lesson
   end
 
   def create
+    lesson = load_lesson
+    lesson.update(status: 'paid')
+    redirect_to [:students, lesson]
+  end
+
+  private
+
+  def load_lesson
+    Lesson.find_by(uuid: params[:lesson_id])
   end
 end
