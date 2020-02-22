@@ -5,23 +5,23 @@
         .d-md-flex.justify-content-between
           %ul.nav.nav-tabs.b-none
             %li.nav-item
-              %a.nav-link{ href: students_lessons_path }
+              %a.nav-link{ href: students_lessons_path, class: active_if?(action: 'index') }
                 = t('students.lessons.index.all_lessons')
                 = @lessons_count.values.sum
             %li.nav-item
-              %a.nav-link{ href: paid_students_lessons_path }
+              %a.nav-link{ href: paid_students_lessons_path, class: active_if?(action: 'paid') }
                 = t('students.lessons.index.paid_lessons')
                 = @lessons_count.fetch('paid', 0)
             %li.nav-item
-              %a.nav-link{ href: pending_students_lessons_path }
+              %a.nav-link{ href: pending_students_lessons_path, class: active_if?(action: 'pending') }
                 = t('students.lessons.index.pending_lessons')
                 = @lessons_count.fetch('pending', 0)
             %li.nav-item
-              %a.nav-link{ href: completed_students_lessons_path }
+              %a.nav-link{ href: completed_students_lessons_path, class: active_if?(action: 'completed') }
                 = t('students.lessons.index.completed_lessons')
                 = @lessons_count.fetch('completed', 0)
             %li.nav-item
-              %a.nav-link{ href: canceled_students_lessons_path }
+              %a.nav-link{ href: canceled_students_lessons_path, class: active_if?(action: 'canceled') }
                 = t('students.lessons.index.canceled_lessons')
                 = @lessons_count.fetch('canceled', 0)
         .input-group.mt-2
