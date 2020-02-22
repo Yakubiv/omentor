@@ -15,7 +15,7 @@
                 = tutor_profile.stars
             .card-heading--essentials
               .card-heading--rate
-                #{tutor_profile.rate} грн
+                = number_to_currency tutor_profile.rate
                 %small.unit.text-muted / #{t('common.hour')}.
           %p
             %span
@@ -42,4 +42,4 @@
               %i.icon-globe
               43 статті
           .card-button
-            %a.btn.btn-info.btn-block.btn-lg{ href: students_tutor_booking_path(tutor_profile) } Записатися на урок
+            %a.btn.btn-success.btn-block.btn-lg{ href: students_tutor_booking_path(tutor_profile) } Записатися на урок
