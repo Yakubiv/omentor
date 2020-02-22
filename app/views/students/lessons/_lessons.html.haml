@@ -1,0 +1,31 @@
+.table-responsive
+  %table.table.card-table.table-vcenter.text-nowrap.table_custom
+    %thead
+      %tr
+        %th Subject
+        %th Tutor
+        %th Time
+        %th Duration
+        %th Status
+        %th Price
+        %th
+    %tbody
+      - if lessons.any?
+        - lessons.each do |lesson|
+          %tr
+            %td
+              %span.text-muted= lesson.subject
+            %td
+              %a.text-inherit{:href => "page-invoices.html"}= lesson.tutor_profile.name
+            %td= lesson.start_at.strftime(Lesson::FULL_FORMAT)
+            %td= duration_in_hours[lesson.duration.to_i]
+            %td
+              %span.status-icon{ class: lesson_status_background[lesson.status] }
+              = lesson.status
+            %td= lesson.price
+            %td.text-right
+              = link_to 'Visit', [:students, lesson], class: 'btn btn-secondary btn-sm'
+      - else
+        %tr
+          %td.align-center{ colspan: 7 }
+            = t('students.lessons.index.no_found')

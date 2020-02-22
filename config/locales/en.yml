@@ -72,6 +72,9 @@ en:
     profile: Профіль
     need_help: Потрібна допомога?
     hour: год
+    list: Список
+    grid: Грід
+    years: Років
   layouts:
     admins:
       dashboards:
@@ -113,6 +116,8 @@ en:
         paid_lessons: Заплановані
         canceled_lessons: Скасовані
         completed_lessons: Завершені
+        pending_lessons: Неактивні
+        no_found: 'Уроків не знайдено'
     details:
       main_header: Загальна інформація
       submit_button: Зберегти інформацію

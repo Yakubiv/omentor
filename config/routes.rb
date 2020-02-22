@@ -48,7 +48,12 @@ Rails.application.routes.draw do
       resource :dashboard, only: :show
       resource :profile, only: :show
       resources :chats, only: :index
-      resources :lessons, only: %i[index show update]
+      resources :lessons, only: %i[index show update] do
+        get :paid, on: :collection
+        get :pending, on: :collection
+        get :completed, on: :collection
+        get :canceled, on: :collection
+      end
       resources :tutor_profiles, path: :tutors, only: :index
       resources :calendars, only: :index
       resources :my_tutors, only: :index
