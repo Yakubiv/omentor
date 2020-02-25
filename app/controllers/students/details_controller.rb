@@ -30,6 +30,8 @@ class Students::DetailsController < Students::BaseController
   private
 
   def save_student_prfile
+    return true unless params[:tutor_profile]
+
     if current_user.student_profile
       current_user.student_profile.update(current_student_params)
     else
@@ -44,7 +46,7 @@ class Students::DetailsController < Students::BaseController
 
   def current_student_params
     params.require(:student_profile).permit(:avatar, :first_name, :last_name, :username,
-                                            :birthday, :bio, :phone, :city, :country,
+                                            :birthday, :bio, :phone, :city, :country, :time_zone,
                                             :gender, :degree_type, :short_bio, :time_zone)
   end
 

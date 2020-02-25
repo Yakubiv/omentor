@@ -12,6 +12,8 @@ class Lesson < ApplicationRecord
 
   before_create :set_uuid
 
+  scope :future, -> { where('start_at > ?', Time.current) }
+
   def to_param
     uuid
   end

@@ -1,10 +1,10 @@
 
 .row
-  .col-sm-6.col-md-6
+  .col-sm-12
     .form-group
       = f.label :first_name, class: 'control-label'
       = f.text_field :first_name, required: true, class: 'form-control'
-  .col-md-6
+  .col-md-12
     .form-group
       = f.label :last_name, class: 'control-label'
       = f.text_field :last_name, required: true, class: 'form-control'
@@ -16,13 +16,12 @@
     .form-group
       = f.label :phone, class: 'control-label'
       = f.text_field :phone, required: true, class: 'form-control', id: 'phone', placeholder: '(999) 999-9999'
-  .col-sm-6.col-md-6
+  .col-md-6
     .form-group
-      = f.label :birthday, class: 'control-label'
-      .input-group
-        = f.text_field :birthday, required: true, class: 'form-control', data: { provide: 'datepicker', date: { autoclose: 'true' } }
-.row
-  .col-sm-6.col-md-4
+      = f.label :time_zone, class: 'control-label'
+      = f.time_zone_select(:time_zone, nil, { }, class: 'form-control', required: true )
+
+  .col-md-6
     .form-group
       = f.label :gender, class: 'control-label'
 
@@ -31,8 +30,7 @@
           %label.selectgroup-item
             = f.radio_button :gender, gender, { required: true, class: 'selectgroup-input' }
             %span.selectgroup-button= Profile.human_enum_name(:gender, gender)
-
-  .col-sm-6.col-md-8
+  .col-md-12
     .form-group
       = f.label :degree_type, class: 'control-label'
 
@@ -41,12 +39,18 @@
           %label.selectgroup-item
             = f.radio_button :degree_type, degree , { required: true, class: 'selectgroup-input' }
             %span.selectgroup-button= Profile.human_enum_name(:degree_type, degree)
+  .col-sm-6.col-md-6
+    .form-group
+      = f.label :birthday, class: 'control-label'
+      .input-group
+        = f.text_field :birthday, required: true, class: 'form-control', data: { provide: 'datepicker', date: { autoclose: 'true' } }
+  .col-md-6
 .row
-  .col-sm-6.col-md-4
+  .col-sm-6
     .form-group
       = f.label :city, class: 'control-label'
       = f.text_field :city, required: true, class: 'form-control'
-  .col-md-5
+  .col-md-6
     .form-group
       = f.label :country, class: 'control-label'
       = f.select :country, options_for_select(['Ukraine'], f.object.country), { prompt: t('helpers.placeholder.student.country') }, class: 'form-control', required: true
