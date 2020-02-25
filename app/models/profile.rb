@@ -11,8 +11,17 @@ class Profile < ApplicationRecord
   enum status: %i[pending active inactive]
 
   belongs_to :user, optional: true
+  belongs_to :country
+
+  before_create :set_country_name
 
   def name
     [first_name, last_name].join(' ')
+  end
+
+  private
+
+  def set_country_name
+    self.country = I18n.t("countries.#{country.code}")
   end
 end

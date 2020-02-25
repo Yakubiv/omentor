@@ -69,5 +69,5 @@
       = f.text_field :city, required: true, class: 'form-control'
   .col-md-6
     .form-group
-      = f.label :country, class: 'control-label'
-      = f.select :country, options_for_select(['Ukraine'], f.object.country), { prompt: t('helpers.placeholder.student.country') }, class: 'form-control', required: true
+      = f.label :country_id, class: 'control-label'
+      = f.select :country_id, options_for_select(countries_to_select, f.object.country_id), { prompt: t('helpers.placeholder.student.country') }, class: 'form-control', required: true

@@ -59,4 +59,10 @@ module ApplicationHelper
       'canceled' => 'bg-danger',
       'completed' => 'bg-warning' }
   end
+
+  def countries_to_select
+    Country.all.map do |country|
+      [I18n.t("countries.#{country.code}"), country.id]
+    end
+  end
 end

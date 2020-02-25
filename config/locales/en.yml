@@ -55,6 +55,7 @@ en:
         degree_type: Оствіта
         city: Місто
         country: Країна
+        country_id: Країна
         time_zone: Часовий пояс
         bio: Про себе
         short_bio: Короткий опис
@@ -116,7 +117,7 @@ en:
         paid_lessons: Заплановані
         canceled_lessons: Скасовані
         completed_lessons: Завершені
-        pending_lessons: Неактивні
+        pending_lessons: Не оплачені
         no_found: 'Уроків не знайдено'
     details:
       main_header: Загальна інформація
