@@ -17,6 +17,7 @@ gem 'image_processing'
 
 gem "simple_calendar", "~> 2.0"
 
+gem 'pundit'
 gem 'devise'
 gem 'devise-async'
 gem 'sendgrid-ruby'
