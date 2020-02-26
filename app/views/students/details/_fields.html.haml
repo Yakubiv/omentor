@@ -21,7 +21,7 @@
       = f.label :time_zone, class: 'control-label'
       = f.time_zone_select(:time_zone, nil, { }, class: 'form-control', required: true )
 
-  .col-md-6
+  .col-md-12
     .form-group
       = f.label :gender, class: 'control-label'
 
@@ -43,7 +43,7 @@
     .form-group
       = f.label :birthday, class: 'control-label'
       .input-group
-        = f.text_field :birthday, required: true, class: 'form-control', data: { provide: 'datepicker', date: { autoclose: 'true' } }
+        = f.text_field :birthday, required: true, class: 'form-control', data: { provide: 'datepicker' }
   .col-md-6
 .row
   .col-md-6
