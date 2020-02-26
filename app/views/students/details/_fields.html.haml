@@ -46,11 +46,11 @@
         = f.text_field :birthday, required: true, class: 'form-control', data: { provide: 'datepicker', date: { autoclose: 'true' } }
   .col-md-6
 .row
-  .col-sm-6
-    .form-group
-      = f.label :city, class: 'control-label'
-      = f.text_field :city, required: true, class: 'form-control'
   .col-md-6
     .form-group
       = f.label :country_id, class: 'control-label'
       = f.select :country_id, options_for_select(countries_to_select, f.object.country_id), { prompt: t('helpers.placeholder.student.country') }, class: 'form-control', required: true
+  .col-sm-6
+    .form-group
+      = f.label :city, class: 'control-label'
+      = f.text_field :city, required: true, class: 'form-control'
