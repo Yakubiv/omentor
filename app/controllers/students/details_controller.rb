@@ -30,7 +30,7 @@ class Students::DetailsController < Students::BaseController
   private
 
   def save_student_prfile
-    return true unless params[:tutor_profile]
+    return true unless params[:student_profile]
 
     if current_user.student_profile
       current_user.student_profile.update(current_student_params)

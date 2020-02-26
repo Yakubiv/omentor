@@ -1,9 +1,9 @@
 require('./plugins/bootstrap/bootstrap.min.js')
-require('./plugins/bootstrap-datepicker/bootstrap-datepicker.min.js')
 require('./plugins/input-mask/jquery.mask.min.js')
 
 require('./plugins/metisMenu/metisMenu.js')
 require('./plugins/fullcalendar/main.js')
+require('./plugins/flatpickr/datetimepicker.js')
 
 require('./booking')
 require('./plugins/sweetalert/sweetalert.min.js')
