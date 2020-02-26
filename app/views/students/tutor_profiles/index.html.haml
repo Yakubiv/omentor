@@ -1,2 +1,18 @@
+.row.clearfix
+  .col-lg-12
+    .card
+      .card-body
+        .d-md-flex
+          %ul.nav.nav-tabs.b-none
+            %li.nav-item
+              %a#list-tab.nav-link.active{"data-toggle" => "tab", :href => "#list"}
+                %i.icon-list
+                = t('common.list')
+            %li.nav-item
+              %a#grid-tab.nav-link{"data-toggle" => "tab", :href => "#grid"}
+                %i.icon-grid
+                = t('common.grid')
+        .input-group.mt-2
+          %input.form-control.search{:placeholder => "Search...", :type => "text"}/
 #cards
   = render @tutors, cached: true
