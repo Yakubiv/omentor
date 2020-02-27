@@ -5,7 +5,9 @@ require('./plugins/metisMenu/metisMenu.js')
 require('./plugins/fullcalendar/main.js')
 require('./plugins/flatpickr/datetimepicker.js')
 
+require('./plugins/jquery_range.min.js')
 require('./booking')
+require('./price_slider')
 require('./plugins/sweetalert/sweetalert.min.js')
 
 require('./plugins/markdown/markdown.js')

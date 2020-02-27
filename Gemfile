@@ -30,6 +30,8 @@ gem 'rubocop', '~> 0.76.0', require: false
 # Inline svg
 gem 'inline_svg'
 
+gem 'pagy'
+
 gem 'hamlit'
 gem 'friendly_id'
 

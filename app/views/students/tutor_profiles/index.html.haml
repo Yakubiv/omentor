@@ -2,17 +2,40 @@
   .col-lg-12
     .card
       .card-body
-        .d-md-flex
-          %ul.nav.nav-tabs.b-none
-            %li.nav-item
-              %a#list-tab.nav-link.active{"data-toggle" => "tab", :href => "#list"}
-                %i.icon-list
-                = t('common.list')
-            %li.nav-item
-              %a#grid-tab.nav-link{"data-toggle" => "tab", :href => "#grid"}
-                %i.icon-grid
-                = t('common.grid')
-        .input-group.mt-2
-          %input.form-control.search{:placeholder => "Search...", :type => "text"}/
+        #c-tutors-search-box
+          = form_with(url: students_tutor_profiles_path, method: :get) do
+            .row.input-group
+              .col-lg-4
+                .form-group
+                  = label_tag :subject, t('search_form.tutors.subject')
+                  = text_field_tag :subject, params[:subject], placeholder: t('search_form.tutors.subject_placeholder'), class: 'form-control'
+              .col-lg-4
+                .form-group
+                  = label_tag :subject, t('search_form.tutors.availability')
+                  %a.nav-link.btn.btn-default{"data-toggle" => "dropdown"}
+                    Будь який час
+                  .dropdown-menu.dropdown-menu-left
+                    .dropdown-content
+                      .form-group
+                        %label.form-label.mb-3 Доступний в дні
+                        .selectgroup.w-100
+                          - Date::DAYNAMES.rotate(1).each do |day|
+                            %label.selectgroup-item
+                              %input.selectgroup-input{:name => "day", :type => "checkbox", :value => day}/
+                              %span.selectgroup-button= t("daynames.short.#{day}")
+                      .form-group
+                        %label.form-label.mb-3 Часовий період
+                        - %w[0-6 6-12 12-18 18-24].each do |period|
+                          .selectgroup.selectgroup-pills
+                            %label.selectgroup-item
+                              %input.selectgroup-input{ :name => "period", :type => "checkbox", :value => period }/
+                              %span.selectgroup-button= period
+              .col-lg-4
+                .form-group
+                  = label_tag :subject, t('search_form.tutors.hour_price')
+                  #price-range_values
+                    0 - 50
+                  .mt-3
+                    %input{ type: "hidden", class: "form-control", id: 'price-range', value: '0,50', step: "5", min: "0", max: "50" }
 #cards
   = render @tutors, cached: true

@@ -106,6 +106,13 @@ en:
         page_title: Оплата Уроку
       lessons:
         page_title: Мої Уроки
+
+  search_form:
+    tutors:
+      subject: Предмет
+      hour_price: 'Ціна за годину: $'
+      availability: Доступний
+      subject_placeholder: Назва предмету
   admins:
     left_sidebar:
       dashboard: Головна
