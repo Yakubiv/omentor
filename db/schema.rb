@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_25_165310) do
+ActiveRecord::Schema.define(version: 2020_02_29_133425) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,9 +80,9 @@ ActiveRecord::Schema.define(version: 2020_02_25_165310) do
     t.integer "gender"
     t.integer "status", default: 0
     t.integer "degree_type"
-    t.decimal "rate", precision: 10, scale: 2
-    t.decimal "total_years_of_expirience", precision: 5, scale: 2
-    t.decimal "stars", precision: 3, scale: 2
+    t.integer "rate"
+    t.integer "total_years_of_expirience"
+    t.decimal "stars", precision: 3, scale: 1
     t.text "bio"
     t.string "type"
     t.bigint "user_id"

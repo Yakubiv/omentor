@@ -628,6 +628,7 @@ a:hover{
 }
 @include max-screen ($break-xsmall){
     #cards{
+        position: relative;
         .media{
             display: block;
             > .mr-3{

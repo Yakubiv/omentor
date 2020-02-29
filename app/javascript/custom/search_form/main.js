@@ -26,3 +26,8 @@ addEventListener('turbolinks:load', function () {
 
 });
 
+addEventListener('turbolinks:load', function () {
+  $(document).on('click', '#c-tutors-search-box .dropdown-menu', function (e) {
+    e.stopPropagation();
+  });
+});

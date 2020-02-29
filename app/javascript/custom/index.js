@@ -7,7 +7,8 @@ require('./plugins/flatpickr/datetimepicker.js')
 
 require('./plugins/jquery_range.min.js')
 require('./booking')
-require('./price_slider')
+require('./search_form/main')
+require('./search_form/autocomplete')
 require('./plugins/sweetalert/sweetalert.min.js')
 
 require('./plugins/markdown/markdown.js')

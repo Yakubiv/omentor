@@ -25,6 +25,8 @@ gem 'local_time'
 gem 'redis'
 gem 'sidekiq'
 
+gem 'rails-jquery-autocomplete'
+
 gem 'rubocop', '~> 0.76.0', require: false
 
 # Inline svg

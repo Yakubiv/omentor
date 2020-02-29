@@ -79,10 +79,11 @@
 	position: relative;
 
 	.loader {
+		z-index: 99;
 		display: none;
 		margin: 0 auto;
 		position: absolute;
-		top: 50%;
+		top: 100px;
 		left: 0;
 		right: 0;
 		transform: translateY(-50%);
@@ -103,7 +104,7 @@
 /** Loader */
 
 $loader-size: 2.5rem;
-.loader {	
+.loader {
 	height: $loader-size;
 	width: $loader-size;
     color: $blue;

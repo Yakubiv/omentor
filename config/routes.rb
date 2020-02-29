@@ -3,6 +3,12 @@ require 'sidekiq/web'
 Rails.application.routes.draw do
   root to: 'homes#index'
 
+  namespace :api do
+    namespace :v1 do
+      resources :subjects, only: :index, format: :json
+    end
+  end
+
   constraints Subdomain do
     namespace :admin do
       root 'dashboards#show'

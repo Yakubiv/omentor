@@ -113,6 +113,7 @@ en:
       hour_price: 'Ціна за годину: $'
       availability: Доступний
       subject_placeholder: Назва предмету
+      search: Шукати
   admins:
     left_sidebar:
       dashboard: Головна

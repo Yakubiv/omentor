@@ -1,0 +1,3 @@
+$("#cards .dimmer").addClass('active');
+$("#cards").hide().html("<%= escape_javascript(render partial: 'tutor_profile', collection: @tutors, as: :tutor_profile ) %>").fadeIn('slow');
+$("#cards .dimmer").removeClass('active');
