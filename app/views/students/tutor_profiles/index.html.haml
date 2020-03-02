@@ -32,13 +32,16 @@
                               %span.selectgroup-button= period
               .col-lg-4
                 .form-group
+                  - money_min_rate = money_without_cents @tutors_query.min_rate
+                  - money_max_rate = money_without_cents @tutors_query.max_rate
                   = f.label :price_range, t('search_form.tutors.hour_price')
                   #price-range_values
-                    #{@tutors_query.min_rate} - #{@tutors_query.max_rate}
+                    #{money_min_rate} - #{money_max_rate}
                   .mt-3
-                    = f.hidden_field :price_range, id: 'price-range', value: [@tutors_query.min_rate, @tutors_query.max_rate].join(','), step: "5", min: @tutors_query.min_rate, max: @tutors_query.max_rate
+                    = f.hidden_field :price_range, id: 'price-range', value: [money_min_rate, money_max_rate].join(','), step: "1", min: money_min_rate, max: money_max_rate
             = f.submit t('search_form.tutors.search'), class: 'btn btn-success btn-rounded'
 #cards
   .dimmer
     .loader
-  = render @tutors, cached: true
+  #tutors-collection
+    = render @tutors, cached: true

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_29_133425) do
+ActiveRecord::Schema.define(version: 2020_03_02_075050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,10 +60,11 @@ ActiveRecord::Schema.define(version: 2020_02_29_133425) do
     t.decimal "duration", precision: 8, scale: 2
     t.bigint "subject_id"
     t.bigint "class_room_id"
-    t.decimal "price", precision: 8, scale: 2
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "uuid"
+    t.integer "price_cents", default: 0, null: false
+    t.string "price_currency", default: "USD", null: false
     t.index ["class_room_id"], name: "index_lessons_on_class_room_id"
     t.index ["subject_id"], name: "index_lessons_on_subject_id"
   end
@@ -80,7 +81,6 @@ ActiveRecord::Schema.define(version: 2020_02_29_133425) do
     t.integer "gender"
     t.integer "status", default: 0
     t.integer "degree_type"
-    t.integer "rate"
     t.integer "total_years_of_expirience"
     t.decimal "stars", precision: 3, scale: 1
     t.text "bio"
@@ -93,6 +93,8 @@ ActiveRecord::Schema.define(version: 2020_02_29_133425) do
     t.string "video_url"
     t.string "time_zone", default: "UTC"
     t.integer "country_id"
+    t.integer "rate_cents", default: 0, null: false
+    t.string "rate_currency", default: "USD", null: false
     t.index ["slug"], name: "index_profiles_on_slug", unique: true
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end

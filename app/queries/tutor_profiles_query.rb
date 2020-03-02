@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class TutorProfilesQuery
+  CENTS = 100
+
   def initialize(relation, params)
     @relation = relation
     @params = params.to_h.symbolize_keys
@@ -11,17 +13,17 @@ class TutorProfilesQuery
   end
 
   def min_rate
-    tutor_rates.min
+    @min_rate ||= Money.new(tutor_rates.min)
   end
 
   def max_rate
-    tutor_rates.max
+    @max_rate ||= Money.new(tutor_rates.max)
   end
 
   private
 
   def tutor_rates
-    @tutor_rates ||= @relation.pluck(:rate)
+    @tutor_rates ||= @relation.pluck(:rate_cents)
   end
 
   def subject
@@ -49,7 +51,7 @@ class TutorProfilesQuery
   def price_range_sql
     return if @params.fetch(:price_range, '').blank?
 
-    min_price, max_price = @params.fetch(:price_range).split(',')
-    "rate BETWEEN #{min_price} AND #{max_price}"
+    min_price, max_price = @params.fetch(:price_range).split(',').flat_map(&:to_i)
+    "rate_cents BETWEEN #{min_price * CENTS} AND #{max_price * CENTS}"
   end
 end

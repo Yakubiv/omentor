@@ -5,6 +5,8 @@ class Lesson < ApplicationRecord
   FULL_FORMAT = '%d %b %Y, %H:%M'.freeze
   enum status: %i[pending canceled paid completed]
 
+  monetize :price_cents
+
   belongs_to :class_room
   belongs_to :subject
   has_one :student_profile, through: :class_room

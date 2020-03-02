@@ -25,6 +25,8 @@ gem 'local_time'
 gem 'redis'
 gem 'sidekiq'
 
+gem 'money-rails', '~>1.12'
+
 gem 'rails-jquery-autocomplete'
 
 gem 'rubocop', '~> 0.76.0', require: false

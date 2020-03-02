@@ -15,7 +15,7 @@
                 = tutor_profile.stars
             .card-heading--essentials
               .card-heading--rate
-                = number_to_currency tutor_profile.rate
+                = humanized_money_with_symbol tutor_profile.rate
                 %small.unit.text-muted / #{t('common.hour')}.
           %p
             %span

@@ -4,6 +4,8 @@ class Profile < ApplicationRecord
   extend FriendlyId
   friendly_id :username, use: :slugged
 
+  monetize :rate_cents
+
   has_one_attached :avatar
 
   enum gender: %i[male female]
