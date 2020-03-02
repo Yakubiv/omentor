@@ -13,7 +13,7 @@
             = f.select :subject_id, options_for_select(Subject.all.map{|a| [a.name, a.id]}), {}, class: 'form-control'
           .form-group
             = f.label :duration, class: 'form-label'
-            = f.select :duration, options_for_select(lesson_durations.map{ |a| [a[:name], a[:duration]]}), {}, class: 'form-control', data: { tutor_rate: @tutor_profile.rate }
+            = f.select :duration, options_for_select(lesson_durations.map{ |a| [a[:name], a[:duration]]}), {}, class: 'form-control', data: { tutor_rate: @tutor_profile.rate_cents }
           .form-group
             = f.label :price, class: 'form-label'
             .input-group

@@ -158,13 +158,6 @@ $(document).on('turbolinks:load', function () {
 		}
     });
 
-    $("#lesson_duration").on('change', function (e) {
-        var tutorRate = parseFloat($(this).attr('data-tutor-rate'));
-        var lessonDuration = parseFloat($(this).val());
-        var price = (tutorRate * lessonDuration) / 60.0
-        $('#lesson_price').val(price.toFixed(1))
-    });
-
 
     // Top bar sticky
 	$(".setting_switch .btn-fixnavbar").on('change',function() {

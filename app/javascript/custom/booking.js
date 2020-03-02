@@ -7,4 +7,15 @@ addEventListener('turbolinks:load', function () {
       $(this).closest('form').submit();
     });
   }
+
+  var lessonDuration = $('#lesson_duration');
+
+  if (lessonDuration.length > 0) {
+    lessonDuration.on('change', function (e) {
+      var tutorRate = parseFloat($(this).attr('data-tutor-rate'));
+      var lessonDuration = parseFloat($(this).val());
+      var price = ((tutorRate * lessonDuration) / 60.0) / 100;
+      $('#lesson_price').val(price.toFixed(2))
+    });
+  }
 });
