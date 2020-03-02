@@ -28,19 +28,35 @@
           .input-group-text
             %i.icon-graduation
         = f.number_field :total_years_of_expirience, required: true, class: 'form-control'
+  .col-sm-12
+    .form-group
+      = f.fields_for :subjects, f.object.subjects do |ff|
+        = ff.label :name, t('subject.name')
+        = ff.text_field :name, autocomplete: :off, value: ff.object.first.name, placeholder: t('search_form.tutors.subject_placeholder'), class: 'form-control'
   .col-md-12
     .form-group
       = f.label :phone, class: 'control-label'
-      = f.text_field :phone, required: true, class: 'form-control', id: 'phone', placeholder: '(999) 999-9999'
+      .input-group
+        .input-group-prepend
+          .input-group-text
+            %i.fe.fe-phone
+        = f.text_field :phone, required: true, class: 'form-control', id: 'phone', placeholder: '(999) 999-9999'
   .col-sm-12
     .form-group
       = f.label :birthday, class: 'control-label'
       .input-group
+        .input-group-prepend
+          .input-group-text
+            %i.icon-present
         = f.text_field :birthday, required: true, class: 'form-control', data: { provide: 'datepicker' }
   .col-md-12
     .form-group
       = f.label :time_zone, class: 'control-label'
-      = f.time_zone_select(:time_zone, nil, { }, class: 'form-control', required: true )
+      .input-group
+        .input-group-prepend
+          .input-group-text
+            %i.icon-globe
+        = f.time_zone_select(:time_zone, nil, { }, class: 'form-control', required: true )
 
 .row
   .col-sm-12

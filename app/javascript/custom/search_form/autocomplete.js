@@ -28,4 +28,32 @@ addEventListener('turbolinks:load', function () {
 
     subjectInput.easyAutocomplete(options);
   }
+
+  var tutorForm = $('#tutor_profile_subjects_name');
+
+  if (tutorForm.length > 0) {
+    var subjectInput = $("#tutor_profile_subjects_name");
+
+    subjectInput.focus(function () {
+      var e = jQuery.Event("keyup", { keyCode: 65, which: 65 });
+      $(this).attr('value', '');
+      $(this).triggerHandler(e);
+      $(this).trigger('change');
+    });
+
+    var options = {
+      url: function (name) {
+        return `/api/v1/subjects.json?name=${name}&format=json`;
+      },
+      getValue: "name",
+      list: {
+        match: {
+          enabled: true
+        },
+      },
+      theme: "square"
+    };
+
+    subjectInput.easyAutocomplete(options);
+  }
 });

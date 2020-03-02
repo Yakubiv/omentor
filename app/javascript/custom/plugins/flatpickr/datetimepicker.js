@@ -4,7 +4,9 @@ import { Ukrainian } from "flatpickr/dist/l10n/uk.js"
 addEventListener('turbolinks:load', function () {
   flatpickr("[data-provide='datepicker']", {
     allowInput: true,
-    dateFormat: "Y-m-d",
+    format: "Y-m-d",
+    altFormat: "Y-m-d",
+    altInput: true,
     "locale": Ukrainian,
     maxDate: new Date()
   })

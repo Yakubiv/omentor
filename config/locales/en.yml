@@ -66,6 +66,8 @@ en:
         rate: Ціна за годину
         short_bio: Короткий опис
         video_url: Посилання на ютуб. Відео про себе.
+  subject:
+    name: Я викладаю предмет
 
   helpers:
     placeholder:
