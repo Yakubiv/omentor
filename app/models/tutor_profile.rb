@@ -8,7 +8,6 @@ class TutorProfile < Profile
 
   def subject=(subject_name)
     subject_record = Subject.find_or_create_by(name: subject_name)
-
     update(subject_ids: [subject_record.id])
   end
 end

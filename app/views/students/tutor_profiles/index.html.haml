@@ -8,7 +8,7 @@
               .col-lg-4
                 .form-group
                   = f.label :subject, t('search_form.tutors.subject')
-                  = f.text_field :subject, autocomplete: :off, value: params[:search_tutor][:subject], placeholder: t('search_form.tutors.subject_placeholder'), class: 'form-control'
+                  = f.text_field :subject, autocomplete: :off, value: params.fetch(:search_tutor, subject: nil)[:subject], placeholder: t('search_form.tutors.subject_placeholder'), class: 'form-control'
               .col-lg-4
                 .form-group
                   %label= t('search_form.tutors.availability')
@@ -27,7 +27,7 @@
                       .form-group
                         %label.form-label.mb-3 Часовий період
                         - %w[0-6 6-12 12-18 18-24].each do |period|
-                          - checked = params[:search_tutor][:periods].blank? ? false : params[:search_tutor][:periods].include?(period)
+                          - checked = params.fetch(:search_tutor, periods: nil)[:periods].blank? ? false : params[:search_tutor][:periods].include?(period)
                           .selectgroup.selectgroup-pills
                             %label.selectgroup-item
                               = f.check_box :periods, { multiple: true, class: 'selectgroup-input', checked: checked }, period, false
