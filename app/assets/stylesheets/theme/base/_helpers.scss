@@ -88,6 +88,14 @@
   align-items: center;
 }
 
+.d-flex {
+    display: flex;
+}
+
+.flex-h-center {
+    justify-content: center;
+}
+
 .flex-wrap {
   flex-wrap: wrap;
 }

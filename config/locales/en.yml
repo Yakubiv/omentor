@@ -127,6 +127,8 @@ en:
       subjects: Предмети
   students:
     lessons:
+      show:
+        start_lesson: Почати урок
       index:
         all_lessons: Усі Уроки
         paid_lessons: Заплановані
