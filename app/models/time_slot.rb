@@ -6,11 +6,17 @@ class TimeSlot < ApplicationRecord
 
   validate :validate_start_at_before_end_at
 
+  before_create :set_weekday
+
   def all_day_event?
     start_at == start_at.midnight && end_at == end_at.midnight
   end
 
   private
+
+  def set_weekday
+    self.wday = start_at.strftime('%A').downcase
+  end
 
   def validate_start_at_before_end_at
     if start_at > end_at

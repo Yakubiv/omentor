@@ -8,7 +8,7 @@
               .col-lg-4
                 .form-group
                   = f.label :subject, t('search_form.tutors.subject')
-                  = f.text_field :subject, autocomplete: :off, value: params[:subject], placeholder: t('search_form.tutors.subject_placeholder'), class: 'form-control'
+                  = f.text_field :subject, autocomplete: :off, value: params[:search_tutor][:subject], placeholder: t('search_form.tutors.subject_placeholder'), class: 'form-control'
               .col-lg-4
                 .form-group
                   %label= t('search_form.tutors.availability')
@@ -21,24 +21,27 @@
                         .selectgroup.w-100
                           - Date::DAYNAMES.rotate(1).each do |day|
                             %label.selectgroup-item
-                              = f.check_box :days, { multiple: true, class: 'selectgroup-input' }, day, false
+                              - checked = params.fetch(:search_tutor, days: nil)[:days].blank? ? false : params[:search_tutor][:days].include?(day)
+                              = f.check_box :days, { multiple: true, class: 'selectgroup-input', checked: checked }, day, false
                               %span.selectgroup-button= t("daynames.short.#{day}")
                       .form-group
                         %label.form-label.mb-3 Часовий період
                         - %w[0-6 6-12 12-18 18-24].each do |period|
+                          - checked = params[:search_tutor][:periods].blank? ? false : params[:search_tutor][:periods].include?(period)
                           .selectgroup.selectgroup-pills
                             %label.selectgroup-item
-                              = f.check_box :periods, { multiple: true, class: 'selectgroup-input' }, period, false
+                              = f.check_box :periods, { multiple: true, class: 'selectgroup-input', checked: checked }, period, false
                               %span.selectgroup-button= period
               .col-lg-4
                 .form-group
-                  - money_min_rate = money_without_cents @tutors_query.min_rate
-                  - money_max_rate = money_without_cents @tutors_query.max_rate
+                  - min_rate, max_rate = params.fetch(:search_tutor, price_range: nil)[:price_range]&.split(',')
+                  - money_min_rate = money_without_cents(min_rate || @tutors_query.min_rate)
+                  - money_max_rate = money_without_cents(max_rate || @tutors_query.max_rate)
                   = f.label :price_range, t('search_form.tutors.hour_price')
                   #price-range_values
                     #{money_min_rate} - #{money_max_rate}
                   .mt-3
-                    = f.hidden_field :price_range, id: 'price-range', value: [money_min_rate, money_max_rate].join(','), step: "1", min: money_min_rate, max: money_max_rate
+                    = f.hidden_field :price_range, id: 'price-range', value: [money_min_rate, money_max_rate].join(','), step: "1", min: @tutors_query.min_rate, max: @tutors_query.max_rate
             = f.submit t('search_form.tutors.search'), class: 'btn btn-success btn-rounded'
 #cards
   .dimmer

@@ -22,7 +22,7 @@
               %i.icon-home
               = tutor_profile.city
           %p
-            %span Математика, Фізика
+            %span= tutor_profile.subjects.pluck(:name).join(', ')
             = link_to students_tutor_calendars_path(current_student_profile), class: 'ml-3' do
               %i.icon-calendar
               Календар

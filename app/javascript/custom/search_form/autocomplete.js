@@ -29,10 +29,10 @@ addEventListener('turbolinks:load', function () {
     subjectInput.easyAutocomplete(options);
   }
 
-  var tutorForm = $('#tutor_profile_subjects_name');
+  var tutorForm = $('#tutor_profile_subject');
 
   if (tutorForm.length > 0) {
-    var subjectInput = $("#tutor_profile_subjects_name");
+    var subjectInput = $("#tutor_profile_subject");
 
     subjectInput.focus(function () {
       var e = jQuery.Event("keyup", { keyCode: 65, which: 65 });

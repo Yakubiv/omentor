@@ -39,10 +39,6 @@ class Tutors::DetailsController < Tutors::BaseController
       @tutor_profile = current_user.create_tutor_profile(current_tutor_params)
       @tutor_profile.save!
     end
-    return if params[:tutor_profile][:subjects].blank?
-
-    subjects = Subject.where(name: params[:tutor_profile][:subjects][:name])
-    current_user.tutor_profile.update(subject_ids: subjects.ids)
   end
 
   def load_tutor_profile
@@ -52,7 +48,7 @@ class Tutors::DetailsController < Tutors::BaseController
   def current_tutor_params
     params.require(:tutor_profile).permit(:avatar, :first_name, :last_name, :username,
                                           :birthday, :bio, :phone, :city, :country_id, :time_zone,
-                                          :gender, :degree_type, :short_bio, :video_url,
+                                          :gender, :degree_type, :short_bio, :video_url, :subject,
                                           :total_years_of_expirience, :rate)
   end
 

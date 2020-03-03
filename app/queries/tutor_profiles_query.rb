@@ -9,22 +9,18 @@ class TutorProfilesQuery
   end
 
   def call
-    @relation.where(search_query)
+    @relation.includes(:subjects, :time_slots).where(search_query)
   end
 
   def min_rate
-    @min_rate ||= Money.new(tutor_rates.min)
+    @min_rate ||= Money.new(100)
   end
 
   def max_rate
-    @max_rate ||= Money.new(tutor_rates.max)
+    @max_rate ||= Money.new(900_00)
   end
 
   private
-
-  def tutor_rates
-    @tutor_rates ||= @relation.pluck(:rate_cents)
-  end
 
   def subject
     @subject ||= Subject.find_by(name: @params.fetch(:subject, ''))
@@ -32,26 +28,30 @@ class TutorProfilesQuery
 
   def search_query
     @params.keys.map do |param|
-      send("#{param}_sql")
-    end.compact.join(' AND ')
+      send("#{param}_condition")
+    end.compact.reduce({}, :merge)
   end
 
-  def subject_sql
+  def subject_condition
     return unless subject
+
+    { subjects: { id: subject.id } }
   end
 
-  def days_sql
+  def days_condition
     return if @params.fetch(:days, '').blank?
+
+    { time_slots: { wday: @params[:days].map(&:downcase) } }
   end
 
-  def periods_sql
+  def periods_condition
     return if @params.fetch(:periods, '').blank?
   end
 
-  def price_range_sql
+  def price_range_condition
     return if @params.fetch(:price_range, '').blank?
 
     min_price, max_price = @params.fetch(:price_range).split(',').flat_map(&:to_i)
-    "rate_cents BETWEEN #{min_price * CENTS} AND #{max_price * CENTS}"
+    { rate_cents: (min_price * CENTS)..(max_price * CENTS) }
   end
 end

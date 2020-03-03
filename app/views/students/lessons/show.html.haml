@@ -1,0 +1,28 @@
+.row.clearfix
+  .col-lg-9
+    .card
+      .card-body
+        %h4
+          = @lesson.subject
+          .float-right.text-muted
+            = link_to 'Start lesson', '', class: 'btn btn-success btn-rounded'
+        %p= @lesson.start_at
+        %p= @lesson.duration
+        %p= @lesson.price
+
+    .col-lg-12
+      %ul#pills-tab.nav.nav-tabs.mb-3{:role => "tablist"}
+        %li.nav-item
+          %a#pills-calendar-tab.nav-link.active{"aria-controls" => "pills-calendar", "aria-selected" => "false", "data-toggle" => "pill", :href => "#pills-calendar", :role => "tab"} Overview
+        %li.nav-item
+          %a#pills-timeline-tab.nav-link{"aria-controls" => "pills-timeline", "aria-selected" => "true", "data-toggle" => "pill", :href => "#pills-timeline", :role => "tab"} Chat
+        %li.nav-item
+          %a#pills-profile-tab.nav-link{"aria-controls" => "pills-profile", "aria-selected" => "false", "data-toggle" => "pill", :href => "#pills-profile", :role => "tab"} Attachments
+    .col-lg-12
+      #pills-tabContent.tab-content
+        #pills-calendar.tab-pane.fade.show.active{"aria-labelledby" => "pills-calendar-tab", :role => "tabpanel"}
+          .card
+            .card-header.bline
+            docs
+  .col-lg-3
+    = render 'students/tutor_profiles/tutor_v_card', tutor_profile: @lesson.tutor_profile

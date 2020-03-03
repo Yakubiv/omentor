@@ -8,6 +8,7 @@ class Students::LessonsController < Students::BaseController
   end
 
   def show
+    @lesson = current_student_profile.lessons.find_by(uuid: params[:id])
   end
 
   %w[paid pending completed canceled].each do |status|
