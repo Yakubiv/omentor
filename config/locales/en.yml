@@ -126,9 +126,15 @@ en:
       dashboard: Головна
       subjects: Предмети
   students:
+    tutor_profiles:
+      index:
+        no_found: Репетиторів не знайдено
     lessons:
       show:
         start_lesson: Почати урок
+        overview: Загальне
+        chat: Чат
+        attachments: Документи
       index:
         all_lessons: Усі Уроки
         paid_lessons: Заплановані

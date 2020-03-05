@@ -8,10 +8,6 @@
               %a#list-tab.nav-link.active{"data-toggle" => "tab", :href => "#list"}
                 %i.icon-list
                 = t('common.list')
-            %li.nav-item
-              %a#grid-tab.nav-link{"data-toggle" => "tab", :href => "#grid"}
-                %i.icon-grid
-                = t('common.grid')
         .input-group.mt-2
           %input.form-control.search{:placeholder => "Search...", :type => "text"}/
 
@@ -33,8 +29,8 @@
                 %div
                   %a{:href => "javascript:void(0);"}= tutor.name
               %td
-                %div
-                  %a{:href => "javascript:void(0);"} Укр МОва, Фізика
+                - tutor.subjects.each do |s|
+                  = link_to s.name, students_tutor_profiles_path(search_tutor: { subject: s.name })
               %td.hidden-xs
                 .text-muted
                   %i.icon-graduation
@@ -43,33 +39,6 @@
               %td.hidden-sm
                 .text-muted #{tutor.city}, #{tutor.country}
               %td.text-right
-                %a.btn.btn-sm.btn-link{"data-toggle" => "tooltip", :href => "javascript:void(0)", :title => "Sent Message"}
-                  %i.icon-envelope
-                %a.btn.btn-sm.btn-link.hidden-xs.js-sweetalert{"data-toggle" => "tooltip", "data-type" => "confirm", :href => "javascript:void(0)", :title => "Delete"}
-                  %i.icon-trash
-
-  #grid.tab-pane.fade{:role => "tabpanel"}
-    .row.row-deck
-      .col-lg-3.col-md-6.col-sm-12
-        - @tutors.each do |tutor|
-          .card
-            .card-body
-              .card-status.bg-blue
-              .mb-3
-                %img.rounded-circle.w100{:alt => "", :src => image_path(current_student_profile.avatar)}/
-              .mb-2
-                %h5.mb-0
-                  %div
-                    %a{:href => "javascript:void(0);"}= tutor.name
-                %p.text-muted
-                  #{tutor.city}, #{tutor.country}
-                %span= tutor.short_bio
-              .mb-2
-                %p
-                  %i.icon-graduation
-                  = tutor.total_years_of_expirience.to_i
-                  = t('common.years')
-              %span.font-12.text-muted
                 %a.btn.btn-sm.btn-link{"data-toggle" => "tooltip", :href => "javascript:void(0)", :title => "Sent Message"}
                   %i.icon-envelope
                 %a.btn.btn-sm.btn-link.hidden-xs.js-sweetalert{"data-toggle" => "tooltip", "data-type" => "confirm", :href => "javascript:void(0)", :title => "Delete"}

@@ -35,16 +35,19 @@
               .col-lg-4
                 .form-group
                   - min_rate, max_rate = params.fetch(:search_tutor, price_range: nil)[:price_range]&.split(',')
-                  - money_min_rate = money_without_cents(min_rate || @tutors_query.min_rate)
-                  - money_max_rate = money_without_cents(max_rate || @tutors_query.max_rate)
+                  - money_min_rate = (min_rate || @tutors_query.min_rate).to_i.round(0)
+                  - money_max_rate = (max_rate || @tutors_query.max_rate).to_i.round(0)
                   = f.label :price_range, t('search_form.tutors.hour_price')
                   #price-range_values
                     #{money_min_rate} - #{money_max_rate}
                   .mt-3
-                    = f.hidden_field :price_range, id: 'price-range', value: [money_min_rate, money_max_rate].join(','), step: "1", min: @tutors_query.min_rate, max: @tutors_query.max_rate
+                    = f.hidden_field :price_range, id: 'price-range', value: [money_min_rate, money_max_rate].join(','), step: "1", min: @tutors_query.min_rate.to_i.round(0), max: @tutors_query.max_rate.to_i.round(0)
             = f.submit t('search_form.tutors.search'), class: 'btn btn-success btn-rounded'
 #cards
   .dimmer
     .loader
   #tutors-collection
-    = render @tutors, cached: true
+    - if @tutors.any?
+      = render @tutors, cached: true
+    - else
+      = render 'no_found'
