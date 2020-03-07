@@ -8,7 +8,7 @@
             .badge{ class: lesson_status_background[@lesson.status] }
               = @lesson.status
           .float-right.text-muted
-            = link_to t('students.lessons.show.start_lesson'), '', class: 'btn btn-success btn-rounded'
+            = link_to t('students.lessons.show.start_lesson'), students_lessons_videos_path(@lesson), class: 'btn btn-success btn-rounded', 'data-popup' => true
       .row
         .col-lg-6
           .card

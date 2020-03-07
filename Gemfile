@@ -25,6 +25,9 @@ gem 'local_time'
 gem 'redis'
 gem 'sidekiq'
 
+# video
+gem 'opentok', "~> 4.0.0"
+
 gem 'money-rails', '~>1.12'
 
 gem 'rails-jquery-autocomplete'

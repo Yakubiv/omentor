@@ -66,6 +66,7 @@ Rails.application.routes.draw do
 
       namespace :lessons do
         scope ':lesson_id' do
+          resource :videos, only: %i[show create]
           resource :checkout, only: %i[show create]
         end
       end
