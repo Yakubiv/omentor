@@ -26,6 +26,6 @@ class Profile < ApplicationRecord
   private
 
   def set_country_name
-    self.country = I18n.t("countries.#{country.code}")
+    self.country_name = I18n.t("countries.#{country.code}")
   end
 end

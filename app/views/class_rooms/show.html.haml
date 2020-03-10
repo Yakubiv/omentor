@@ -1,0 +1,86 @@
+#videos
+  #subscriber
+  #publisher
+  %a#stop-session{ href: '' } Stop Session
+
+= @class_room.inspect
+
+%script{ src: "https://static.opentok.com/v2/js/opentok.min.js" }
+
+:javascript
+  $( document ).on('turbolinks:load', function() {
+    var apiKey = "#{ENV['TOKBOX_API_KEY']}";
+    var sessionId = "#{@class_room.tokbox_session_id}";
+    var token = "#{@class_room.tokbox_token}";
+
+    console.log(apiKey)
+    // (optional) add server code here
+    initializeSession();
+
+    function handleError(error) {
+      if (error) {
+        alert(error.message);
+      }
+    }
+
+    function initializeSession() {
+      var session = OT.initSession(apiKey, sessionId);
+
+      session.on('streamCreated', function(event) {
+        session.subscribe(event.stream, 'subscriber', {
+          insertMode: 'append',
+          insertDefaultUI: true,
+          width: '100%',
+          height: '100%',
+          style: {
+            buttonDisplayMode: 'on',
+            audioBlockedDisplayMode: "on"
+            }
+        }, handleError);
+      });
+
+      // Create a publisher
+      var publisher = OT.initPublisher('publisher', {
+        insertMode: 'append',
+        insertDefaultUI: true,
+        width: '100%',
+        height: '100%',
+        style: {buttonDisplayMode: 'on'}
+      }, handleError);
+
+      // Connect to the session
+      session.connect(token, function(error) {
+        // If the connection is successful, publish to the session
+        if (error) {
+          handleError(error);
+        } else {
+          session.publish(publisher, handleError);
+        }
+      });
+
+      publisher.on("streamDestroyed", function (event) {
+        console.log("The publisher stopped streaming. Reason: "
+        + event.reason);
+      });
+
+      session.on("streamPropertyChanged", function (event) {
+        var subscribers = session.getSubscribersForStream(event.stream);
+        console.log(event.stream.hasAudio)
+        for (var i = 0; i < subscribers.length; i++) {
+          i.subscribeToAudio(event.stream.hasAudio); // audio off
+          i.subscribeToVideo(event.stream.hasVideo);
+          // You may want to display some UI text for each
+          // subscriber, or make some other UI change,
+          // based on event.changedProperty and
+          // event.newValue
+        }
+      });
+      const stopSessionBtn = document.getElementById("stop-session");
+      stopSessionBtn.addEventListener('click', (event)=> {
+        event.preventDefault();
+        console.log("stop-session btn clicked");
+        session.disconnect();
+      });
+    }
+  });
+

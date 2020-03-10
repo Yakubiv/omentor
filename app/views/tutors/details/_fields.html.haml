@@ -31,7 +31,7 @@
   .col-sm-12
     .form-group
       = f.label :subject
-      = f.text_field :subject, autocomplete: :off, required: true, value: f.object.subjects.first.name, placeholder: t('search_form.tutors.subject_placeholder'), class: 'form-control'
+      = f.text_field :subject, autocomplete: :off, required: true, value: f.object.subjects.first&.name, placeholder: t('search_form.tutors.subject_placeholder'), class: 'form-control'
   .col-md-12
     .form-group
       = f.label :phone, class: 'control-label'

@@ -13,7 +13,7 @@ class Students::BaseController < ApplicationController
   helper_method :current_student_profile
 
   def current_user_is_student?
-    redirect_to tutor_dashboard_path unless current_user.student?
+    redirect_to tutors_dashboard_path unless current_user.student?
   end
 
   def redirect_to_default

@@ -21,8 +21,6 @@ class VideoRoomChannel < ApplicationCable::Channel
     broadcast_session_to_sender(session_id, sender_id)
   end
 
-
-
   private
 
   def broadcast_session_to_recipient(session_id)

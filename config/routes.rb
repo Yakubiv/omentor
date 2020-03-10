@@ -23,6 +23,15 @@ Rails.application.routes.draw do
                                     registrations: 'devises/registrations' }
 
   authenticated :user do
+    concern :lessonable do
+      get :paid, on: :collection
+      get :pending, on: :collection
+      get :completed, on: :collection
+      get :canceled, on: :collection
+    end
+
+    resources :class_rooms, only: %i[show], param: :lesson_id
+
     namespace :tutors, path: 't' do
       root 'dashboards#show'
 
@@ -38,7 +47,7 @@ Rails.application.routes.draw do
         get :schedule, on: :collection
       end
       resource :dashboard, only: :show
-      resources :lessons, only: :index
+      resources :lessons, only: %i[index show update], concerns: :lessonable
       resources :calendars, only: :index
       resources :chats, only: :index
       resources :settings, only: :index
@@ -54,19 +63,13 @@ Rails.application.routes.draw do
       resource :dashboard, only: :show
       resource :profile, only: :show
       resources :chats, only: :index
-      resources :lessons, only: %i[index show update] do
-        get :paid, on: :collection
-        get :pending, on: :collection
-        get :completed, on: :collection
-        get :canceled, on: :collection
-      end
+      resources :lessons, only: %i[index show update], concerns: :lessonable
       resources :tutor_profiles, path: :tutors, only: :index
       resources :calendars, only: :index
       resources :my_tutors, only: :index
 
       namespace :lessons do
         scope ':lesson_id' do
-          resource :videos, only: %i[show create]
           resource :checkout, only: %i[show create]
         end
       end

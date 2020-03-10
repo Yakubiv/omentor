@@ -164,6 +164,19 @@ en:
       settings: Налаштування
       lessons: Мої Уроки
   tutors:
+    lessons:
+      show:
+        start_lesson: Почати урок
+        overview: Загальне
+        chat: Чат
+        attachments: Документи
+      index:
+        all_lessons: Усі Уроки
+        paid_lessons: Заплановані
+        canceled_lessons: Скасовані
+        completed_lessons: Завершені
+        pending_lessons: Не оплачені
+        no_found: 'Уроків не знайдено'
     details:
       main_header: Загальна інформація
       submit_button: Зберегти інформацію

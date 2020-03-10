@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_03_132445) do
+ActiveRecord::Schema.define(version: 2020_03_10_125548) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,9 @@ ActiveRecord::Schema.define(version: 2020_03_03_132445) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "tokbox_session_id"
+    t.string "tokbox_token"
+    t.boolean "active_call", default: false
     t.index ["student_profile_id"], name: "index_class_rooms_on_student_profile_id"
     t.index ["tutor_profile_id"], name: "index_class_rooms_on_tutor_profile_id"
   end
@@ -77,7 +80,7 @@ ActiveRecord::Schema.define(version: 2020_03_03_132445) do
     t.string "phone"
     t.string "dial_code"
     t.string "city"
-    t.string "country"
+    t.string "country_name"
     t.integer "gender"
     t.integer "status", default: 0
     t.integer "degree_type"
