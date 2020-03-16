@@ -1,10 +1,64 @@
-#videos
-  #subscriber
-  #publisher
-  %a#stop-session{ href: '' } Stop Session
-
-= @class_room.inspect
-
+.container-fluid.c-video-call
+  .row
+    .col-lg-7
+      .card
+        .card-header.bline
+          %h3.card-title Video Call
+          .card-options
+            %a.card-options-fullscreen{"data-toggle" => "card-fullscreen", :href => "#"}
+              %i.fe.fe-maximize
+        .card-body
+          #videos
+            #subscriber
+            #publisher
+            %a.btn.btn-danger#stop-session{ href: '' }
+              %i.fe.fe-phone-off.font-20
+    .col-lg-5
+      .card
+        .card-header.bline
+          %h3.card-title Lesson Tools
+          .card-options
+            %a.card-options-fullscreen{"data-toggle" => "card-fullscreen", :href => "#"}
+              %i.fe.fe-maximize
+        .card-header.bline.pb-0.pt-0
+          %ul.nav.nav-tabs.b-none
+            %li.nav-item
+              %a.nav-link.active{ 'data-toggle' => "tab", href: "#chat"} Chat
+            %li.nav-item
+              %a.nav-link{ 'data-toggle' => "tab", href: "#board"} Board
+        .card-body
+          .tab-content
+            .tab-pane.fade.active.show#chat
+              .chat_app
+                .chat_windows
+                  %ul.mb-0
+                    %li.other-message
+                      %span.avatar.avatar-blue.mr-3 NG
+                      .message
+                        %p.bg-light-cyan Hi Aiden, how are you? How is the project coming along?
+                        %p.bg-light-cyan Are we meeting today?
+                        %span.time 10:15 AM, Today
+                    %li.other-message
+                      %span.avatar.avatar-blue.mr-3 NG
+                      .message
+                        %p.bg-light-pink Are we meeting today I have results?
+                        %p.bg-light-pink Project has been already finished and to show you.
+                        %span.time 10:18 AM, Today
+                    %li.my-message
+                      .message
+                        %p.bg-light-gray Well we have good budget for the project
+                        %span.time 10:25 AM, Today
+                  .chat-message.clearfix
+                    %a{:href => "javascript:void(0);"}
+                      %i.icon-camera
+                    %a{:href => "javascript:void(0);"}
+                      %i.icon-camcorder
+                    %a{:href => "javascript:void(0);"}
+                      %i.icon-paper-plane
+                    .input-group.mb-0
+                      %input.form-control{:placeholder => "Enter text here...", :type => "text"}/
+            .tab-pane.fade.show#board
+              Board
 %script{ src: "https://static.opentok.com/v2/js/opentok.min.js" }
 
 :javascript

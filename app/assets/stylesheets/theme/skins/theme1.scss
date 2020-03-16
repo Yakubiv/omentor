@@ -12,7 +12,6 @@ a,
 .text-green,
 .text-info,
 .text-success,
-.text-danger,
 .text-primary,
 .text-warning,
 .mail-star.active,
@@ -51,10 +50,8 @@ a,
     border: transparent;
 }
 .bg-success,
-.bg-danger,
 .badge-success,
 .progress-bar,
-.btn-danger,
 .btn-warning{
     background-color: $indigo;
     border: transparent;
@@ -277,10 +274,8 @@ a,
         background: linear-gradient(45deg, $gray-400, $gray-700) !important;
     }
     .bg-success,
-    .bg-danger,
     .badge-success,
-    .progress-bar,
-    .btn-danger{
+    .progress-bar {
         background: linear-gradient(45deg, $indigo, $pink) !important;
     }
 }

@@ -1,8 +1,7 @@
 #left-sidebar.sidebar
-  %h5.brand-name
-    StudyGo
-    %a.menu_option.float-right{:href => "javascript:void(0)"}
-      %i.icon-grid.font-16{"data-placement" => "left", "data-toggle" => "tooltip", :title => "Grid & List Toggle"}
+  = image_tag 'logo_png.png', class: 'main-logo'
+  %a.menu_option.float-right{:href => "javascript:void(0)"}
+    %i.icon-grid.font-16{"data-placement" => "left", "data-toggle" => "tooltip", :title => "Grid & List Toggle"}
   %nav#left-sidebar-nav.sidebar-nav
     %ul.metismenu
       %li.g_heading

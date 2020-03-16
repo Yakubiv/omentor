@@ -10,7 +10,7 @@
             %a{ data: { toggle: 'tooltip' }, href: "javascript:void(0)", title: current_student_profile.phone}
               %i.fa.fa-phone
         %p.mb-4
-          = raw current_student_profile.bio
+          = current_student_profile.bio.html_safe
 
 .row.clearfix
   .col-12

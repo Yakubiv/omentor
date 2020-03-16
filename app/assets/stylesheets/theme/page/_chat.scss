@@ -1,16 +1,15 @@
 .chat_app{
-    height: 100vh;
+    min-height: 600px;
 
     @include max-screen($break-small - 1px) {
         height: auto;
     }
 
     .chat_windows{
-                
+
         ul {
             padding: 20px 0;
-            height: calc(100vh - 210px);
-            
+
             overflow-y: scroll;
             scrollbar-width: none; // Firefox /
             -ms-overflow-style: none;  // IE 10+ /
@@ -18,7 +17,7 @@
             &::-webkit-scrollbar { // WebKit /
                 width: 0px;
             }
-            
+
             @include max-screen($break-small - 1px) {
                 height: calc(100vh - 260px);
             }
@@ -32,23 +31,23 @@
                 }
             }
         }
-        
+
         .message {
             @include inline-block();
             position: relative;
-            
+
             p{
-                @extend .mb-5;
+                @extend .mb-1;
                 @include border-radius(60px 60px 60px 0);
                 width: max-content;
-                padding: 8px 15px; 
+                padding: 8px 15px;
 
                 @include max-screen($break-medium) {
                     width: fit-content;
-                }               
+                }
             }
 
-            .time {           
+            .time {
                 @include display-block();
                 @extend .font-12;
             }
@@ -81,7 +80,7 @@
             @include border-radius(3px);
             padding: 20px 10px;
             border: 1px solid $gray-100;
-            
+
             > a{
                 padding: 10px 15px;
             }
@@ -96,7 +95,7 @@
         }
         .file_folder{
             margin: 0;
-        
+
             .file-name {
                 text-align: left;
                 float: left;
@@ -189,8 +188,8 @@
             @include border-radius(40px);
             @extend .mr-10;
             width: 40px;
-            height: 40px;            
-            border: 2px solid transparent;            
+            height: 40px;
+            border: 2px solid transparent;
         }
         .name {
             display: block;
@@ -199,7 +198,7 @@
         }
         .message {
             @extend .font-13;
-            color: $gray-400;            
+            color: $gray-400;
         }
         .status {
             @include border-radius(40px);
@@ -209,7 +208,7 @@
             left: 40px;
             top: 38px;
             width: 11px;
-            height: 11px;                        
+            height: 11px;
             min-width: inherit;
             border: 3px solid $white;
         }
