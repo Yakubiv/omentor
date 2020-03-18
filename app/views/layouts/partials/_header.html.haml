@@ -1,9 +1,10 @@
 .c-header--wrapper
   .c-header
     .c-header-left
-      = image_tag 'logo_png.png'
+      = link_to root_path do
+        = image_tag 'logo_png.png', class: 'logo-sm'
     .c-header-center
-      Lesson payment
+      = title
     .c-header-right
       %ul
         %li.nav-item.dropdown

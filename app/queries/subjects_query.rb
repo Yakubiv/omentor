@@ -1,12 +1,15 @@
 # frozen_string_literal: true
 
 class SubjectsQuery
-  def initialize(relation, params)
-    @relation = relation
+  def initialize(params)
     @params = params
   end
 
   def call
-    @relation.where('name ilike ?', "%#{@params[:name]}%").select(:name, :id).limit(15)
+    if @params[:name].blank?
+      Subject.active
+    else
+      Subject.active.search_by_name(@params[:name])
+    end.select(:name, :id).limit(15)
   end
 end

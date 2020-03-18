@@ -1,0 +1,9 @@
+$("#cards .dimmer").addClass('active');
+var newUrl = "<%= request.url %>"
+window.history.pushState(null, null, newUrl);
+if(<%= @tutors.any? %>) {
+  $("#tutors-collection").hide().html("<%= escape_javascript(render partial: 'students/tutor_profiles/tutor_profile', collection: @tutors, as: :tutor_profile ) %>").fadeIn('slow');
+} else {
+  $("#tutors-collection").hide().html("<%= escape_javascript(render partial: 'students/tutor_profiles/no_found' ) %>").fadeIn('slow');
+}
+$("#cards .dimmer").removeClass('active');

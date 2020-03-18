@@ -3,6 +3,8 @@ require 'sidekiq/web'
 Rails.application.routes.draw do
   root to: 'homes#index'
 
+  resources :search_tutors, only: :index
+
   namespace :api do
     namespace :v1 do
       resources :subjects, only: :index, format: :json

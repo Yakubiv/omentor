@@ -1,4 +1,10 @@
 .card-body
+  .row
+    .col-sm-6
+      %a.btn.btn-info{ href: registration_users_path(as: :student) } Зареєструватися як учень
+    .col-sm-6
+      %a.btn.btn-info{ href: registration_users_path(as: :tutor) } Стати Репетитором
+  %hr
   .card-title Log in
 
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|

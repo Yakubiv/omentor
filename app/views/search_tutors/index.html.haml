@@ -1,0 +1,12 @@
+.row.mt-20
+  .col-md-10.offset-md-1
+    = render 'students/tutor_profiles/search_form', search_url: search_tutors_path
+
+    #cards
+      .dimmer
+        .loader
+      #tutors-collection
+        - if @tutors.any?
+          = render partial: 'students/tutor_profiles/tutor_profile', collection: @tutors, cached: true
+        - else
+          = render 'students/tutor_profiles/no_found'

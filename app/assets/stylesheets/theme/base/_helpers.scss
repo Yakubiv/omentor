@@ -138,6 +138,10 @@
     color: $green;
 }
 
+.text-black {
+    color: black !important;
+}
+
 .bg-blue    { background-color: $blue;}
 .bg-azure   { background-color: $azure; }
 .bg-indigo  { background-color: $indigo; }
@@ -166,6 +170,15 @@
 .bg-light-teal    { background-color: rgba($teal, 0.1); color: $teal; }
 .bg-light-cyan    { background-color: rgba($cyan, 0.1); color: $cyan; }
 .bg-light-gray    { background-color: rgba($gray-500, 0.1); color: $gray-500; }
+
+
+.logo-md {
+    width: 150px;
+}
+
+.logo-sm {
+    width: 100px;
+}
 
 @include max-screen ($break-1024){
     .hidden-md{

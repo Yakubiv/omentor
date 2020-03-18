@@ -2,7 +2,7 @@
 
 class Api::V1::SubjectsController < Api::V1::ApiController
   def index
-    @subjects = SubjectsQuery.new(Subject.active.all, subject_params).call
+    @subjects = SubjectsQuery.new(subject_params).call
 
     render json: @subjects.to_json
   end
