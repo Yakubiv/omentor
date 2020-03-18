@@ -8,7 +8,7 @@
       .auth_left
         .card
           .text-center.mb-5
-            %a.header-brand{:href => "index.html"}
+            = link_to root_path, class: 'header-brand' do
               = image_tag 'logo_png.png', class: 'logo-md'
           = yield
       .auth_right
