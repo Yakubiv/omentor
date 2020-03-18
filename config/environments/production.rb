@@ -18,7 +18,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: 'http://studygo.com.ua' }
+  config.action_mailer.default_url_options = { host: 'https://studygo.herokuapp.com' }
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
