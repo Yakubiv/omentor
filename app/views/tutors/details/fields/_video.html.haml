@@ -1,0 +1,7 @@
+.mb-3
+  %em.text-muted= t('tutors.details.video_tip')
+.form-group.mb-2
+  = f.label :video_url, class: 'control-label'
+  = f.text_field :video_url, placeholder: 'https://www.youtube.com/watch?v=123', class: 'form-control'
+.c-registration-form__video--placeholder
+  %i.icon-camcorder

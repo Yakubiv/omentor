@@ -4,14 +4,14 @@ import interactionPlugin from '@fullcalendar/interaction';
 
 
 addEventListener('turbolinks:load', function () {
-  var calendarEl = document.getElementById('calendar-registration-form');
+  var calendarEl = document.getElementById('calendar-tutor-schedule-form');
   if (calendarEl && calendarEl.classList.contains('fc')) {
-    $('#calendar-registration-form').html('');
+    $('#calendar-tutor-schedule-form').html('');
   }
 });
 
 addEventListener('turbolinks:load', function () {
-  var calendarEl = document.getElementById('calendar-registration-form');
+  var calendarEl = document.getElementById('calendar-tutor-schedule-form');
   if (calendarEl) {
     var calendar = new Calendar(calendarEl, {
       selectable: true,

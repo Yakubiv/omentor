@@ -1,0 +1,19 @@
+%ul#pills-tab.nav.nav-tabs.mb-3{:role => "tablist"}
+  %li.nav-item
+    %a.nav-link{ class: active_if?(action: 'schedule'), href: schedule_tutors_settings_path }
+      = t('tutors.settings.schedule_header')
+  %li.nav-item
+    %a.nav-link{ class: active_if?(action: 'general'), href: general_tutors_settings_path }
+      = t('tutors.settings.general_header')
+  %li.nav-item
+    %a.nav-link{ class: active_if?(action: 'photo'), href: photo_tutors_settings_path }
+      = t('tutors.settings.avatar_header')
+  %li.nav-item
+    %a.nav-link{ class: active_if?(action: 'video'), href: video_tutors_settings_path }
+      = t('tutors.settings.video_header')
+  %li.nav-item
+    %a.nav-link{ class: active_if?(action: 'bio'), href: bio_tutors_settings_path }
+      = t('tutors.settings.bio_header')
+  %li.nav-item
+    %a.nav-link{ class: active_if?(action: 'account'), href: account_tutors_settings_path }
+      = t('tutors.settings.account_header')

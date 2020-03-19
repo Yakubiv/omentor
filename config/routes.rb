@@ -52,8 +52,15 @@ Rails.application.routes.draw do
       resources :lessons, only: %i[index show update], concerns: :lessonable
       resources :calendars, only: :index
       resources :chats, only: :index
-      resources :settings, only: :index
-      resources :students, only: :index
+      resources :settings, only: [] do
+        get :photo, on: :collection
+        get :bio, on: :collection
+        get :video, on: :collection
+        get :schedule, on: :collection
+        get :account, on: :collection
+        get :general, on: :collection
+      end
+      resources :student_profiles, only: :index, path: :students
     end
 
     namespace :students, path: 's' do

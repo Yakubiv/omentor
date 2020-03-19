@@ -21,11 +21,11 @@
         = link_to tutors_chats_path do
           %i.icon-speech
           %span= t('tutors.left_sidebar.chat')
-      %li{ class: active_if?(controller: 'students') }
-        %a{ href: tutors_students_path }
+      %li{ class: active_if?(controller: 'student_profiles') }
+        %a{ href: tutors_student_profiles_path }
           %i.icon-users
           %span= t('tutors.left_sidebar.students')
       %li{ class: active_if?(controller: 'settings') }
-        = link_to tutors_settings_path do
+        = link_to schedule_tutors_settings_path do
           %i.icon-settings
           %span= t('tutors.left_sidebar.settings')

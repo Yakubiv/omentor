@@ -67,6 +67,7 @@ en:
         short_bio: Короткий опис
         video_url: Посилання на ютуб. Відео про себе.
         subject: Я викладаю предмет
+        total_years_of_expirience: Років Досвіду
 
   helpers:
     placeholder:
@@ -94,6 +95,16 @@ en:
         page_title: Головна
       profiles:
         page_title: Профіль
+      settings:
+        page_title: Налаштування
+      student_profiles:
+        page_title: Мої Студенти
+      chats:
+        page_title: Чат
+      calendars:
+        page_title: Календар
+      lessons:
+        page_title: Мої Уроки
     students:
       dashboards:
         page_title: Головна
@@ -164,6 +175,14 @@ en:
       settings: Налаштування
       lessons: Мої Уроки
   tutors:
+    settings:
+      schedule_header: Графік
+      general_header: Загальні
+      account_header: Акаунт
+      video_header: Відео
+      bio_header: Біо
+      avatar_header: Фото
+
     lessons:
       show:
         start_lesson: Почати урок
@@ -184,6 +203,7 @@ en:
       video_tip: Відео відіграє одну з найважливіших ролей у вашому профілі, 90% студентів вибирають репетиторів з якісним відеозверненням.
       next: Далі
       back: Назад
+      save: Зберегти
       done: Готово
       general: Дані
       photo: Фото
@@ -193,6 +213,7 @@ en:
       image_header: Фото профілю
       bio_header: Опис
       image_tips: Вимоги до фото
+      schedule_header: Зазначне графік
     left_sidebar:
       dashboard: Головна
       chat: Чат

@@ -1,6 +1,11 @@
-# frozen_string_literal: true
-
 class Tutors::SettingsController < Tutors::BaseController
-  def index
-  end
+  def show; end
+
+  def photo; end
+
+  def bio; end
+
+  def video; end
+
+  def schedule; end
 end

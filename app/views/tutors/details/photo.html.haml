@@ -7,26 +7,7 @@
         .card-body
           .card-title
             = t('students.details.image_header')
-          .row
-            .col-sm-12.col-md-6
-              .form-group
-                = f.label :avatar, class: 'control-label'
-                = f.file_field :avatar, multiple: false, direct_upload: true, data: { 'max-file-size' => '3M', 'default-file' => image_path(f.object.avatar) }, class: 'dropify'
-            .col-sm-12.col-md-6
-              %h5= t('students.details.image_tips')
-              %ul.list-unstyled.text-muted
-                %li
-                  %i.icon-check.text-sucess
-                  Ви єдина людина на фото
-                %li
-                  %i.icon-check.text-sucess
-                  Посміхайтеся і дивіться в камеру
-                %li
-                  %i.icon-check.text-sucess
-                  Розташовуйтеся прямо по центрі
-                %li
-                  %i.icon-check.text-sucess
-                  Уникайте логотипів на фото
+          = render 'tutors/details/fields/photo', f: f
         .card-footer.text-right
           = link_to t('students.details.back').html_safe, tutors_details_path, class: 'btn btn-info'
           = f.submit t('students.details.next').html_safe, class: 'btn btn-info'

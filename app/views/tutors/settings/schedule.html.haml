@@ -1,0 +1,11 @@
+= render 'tabs'
+
+.card
+  .card-header.bline
+    = t('tutors.details.schedule_header')
+    .card-options
+      %a.card-options-fullscreen{"data-toggle" => "card-fullscreen", :href => "#"}
+        %i.fe.fe-maximize
+  .card-body
+    #calendar-tutor-schedule-form
+    = render 'tutors/registrations/time_slots/delete_block'

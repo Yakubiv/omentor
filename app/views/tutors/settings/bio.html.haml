@@ -1,0 +1,13 @@
+= render 'tabs'
+
+.card
+  .card-header.bline
+    = t('tutors.settings.bio_header')
+    .card-options
+      %a.card-options-fullscreen{"data-toggle" => "card-fullscreen", :href => "#"}
+        %i.fe.fe-maximize
+  = form_with(model: current_tutor_profile, url: tutors_details_path, method: :put) do |f|
+    .card-body
+      = render 'tutors/details/fields/bio',f: f
+    .card-footer.text-right
+      = f.submit t('tutors.details.save').html_safe, class: 'btn btn-primary'

@@ -19,7 +19,7 @@
         .input-group-prepend
           .input-group-text
             %i.fe.fe-dollar-sign
-        = f.number_field :rate, required: true, min: 1, max: 200, class: 'form-control'
+        = f.number_field :rate, value: f.object.rate.to_f, required: true, min: 1, max: 200, class: 'form-control'
   .col-md-6
     .form-group
       = f.label :total_years_of_expirience, class: 'control-label'

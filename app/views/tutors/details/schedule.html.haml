@@ -5,8 +5,8 @@
     .card
       .card-body
         .card-title.mb-3
-          = t('students.details.schedule_header')
-        #calendar-registration-form
+          = t('tutors.details.schedule_header')
+        #calendar-tutor-schedule-form
         = render 'tutors/registrations/time_slots/delete_block'
       .card-footer.text-right
         = link_to t('students.details.back').html_safe, video_tutors_details_path, class: 'btn btn-info'

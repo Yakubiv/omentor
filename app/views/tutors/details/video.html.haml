@@ -7,13 +7,7 @@
         .card-body
           .card-title.mb-1
             = t('tutors.details.video_header')
-          .mb-3
-            %em.text-muted= t('tutors.details.video_tip')
-          .form-group.mb-2
-            = f.label :video_url, class: 'control-label'
-            = f.text_field :video_url, placeholder: 'https://www.youtube.com/watch?v=123', class: 'form-control'
-          .c-registration-form__video--placeholder
-            %i.icon-camcorder
+          = render 'tutors/details/fields/video', f: f
         .card-footer.text-right
           = link_to t('tutors.details.back').html_safe, bio_students_details_path, class: 'btn btn-info'
           = f.submit t('tutors.details.next').html_safe, class: 'btn btn-info'
