@@ -14,6 +14,8 @@ class Lesson < ApplicationRecord
 
   before_create :set_uuid
 
+  scope :for_student, ->(class_room) { where(class_room_id: class_room.id) }
+  scope :for_tutor, ->(class_room) { where(class_room_id: class_room.id) }
   scope :future, -> { where('start_at > ?', Time.current) }
 
   def to_param

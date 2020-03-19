@@ -1,0 +1,52 @@
+.row.clearfix
+  .col-md-12
+    .card.card-profile
+      .card-body.text-center
+        - if @student_profile.avatar.attachment
+          = image_tag user_avatar(@student_profile, 80), class: 'rounded-circle card-profile-img'
+        %h4.mb-3= @student_profile.name
+        %p.mb-4
+          = @student_profile.bio.html_safe
+
+.row.clearfix
+  .col-12
+    %ul#pills-tab.nav.nav-tabs.mb-3{:role => "tablist"}
+      %li.nav-item
+        %a#pills-lessons-tab.nav-link.active{ "data-toggle" => "pill", :href => "#pills-lessons", :role => "tab"}= t('tutors.students.lessons')
+  .col-lg-8.col-md-12
+    #pills-tabContent.tab-content
+      #pills-lessons.tab-pane.fade.show.active
+        = render 'tutors/lessons/lessons', lessons: @lessons
+  .col-lg-4.col-md-12
+    .card
+      .card-body
+        .widgets1
+          .icon
+            %i.icon-trophy.text-success.font-30
+          .details
+            %h6.mb-0.font600 Кількість уроків
+            %span.mb-0 $96K +
+    .card
+      .card-body
+        .widgets1
+          .icon
+            %i.icon-heart.text-warning.font-30
+          .details
+            %h6.mb-0.font600 Кількість коментарів
+            %span.mb-0 6,270
+    .card
+      .card-body
+        .widgets1
+          .icon
+            %i.icon-handbag.text-danger.font-30
+          .details
+            %h6.mb-0.font600 Delivered
+            %span.mb-0 720 Delivered
+    .card
+      .card-body
+        .widgets1
+          .icon
+            %i.icon-user.text-primary.font-30
+          .details
+            %h6.mb-0.font600 Jobs
+            %span.mb-0 614

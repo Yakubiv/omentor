@@ -2,12 +2,6 @@
   .col-lg-12
     .card
       .card-body
-        .d-md-flex
-          %ul.nav.nav-tabs.b-none
-            %li.nav-item
-              %a#list-tab.nav-link.active{"data-toggle" => "tab", :href => "#list"}
-                %i.icon-list
-                = t('common.list')
         .input-group.mt-2
           %input.form-control.search{:placeholder => "Search...", :type => "text"}/
 
@@ -24,10 +18,10 @@
                   %i.icon-star
               %td.text-center.width40
                 .avatar.d-block
-                  %img.avatar{ :src => image_path(current_student_profile.avatar) }/
+                  %img.avatar{ :src => image_path(tutor.avatar) }/
               %td
                 %div
-                  %a{:href => "javascript:void(0);"}= tutor.name
+                  %a{ href: students_my_tutor_path(tutor) }= tutor.name
               %td
                 - tutor.subjects.each do |s|
                   = link_to s.name, students_tutor_profiles_path(search_tutor: { subject: s.name })

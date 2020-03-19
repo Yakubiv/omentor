@@ -16,7 +16,7 @@
             %td
               %span.text-muted= lesson.subject
             %td
-              %a.text-inherit{:href => "page-invoices.html"}= lesson.tutor_profile.name
+              %a.text-inherit{ href: students_my_tutor_path(lesson.tutor_profile) }= lesson.tutor_profile.name
             %td= lesson.start_at.strftime(Lesson::FULL_FORMAT)
             %td= duration_in_hours[lesson.duration.to_i]
             %td

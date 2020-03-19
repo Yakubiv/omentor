@@ -60,7 +60,7 @@ Rails.application.routes.draw do
         get :account, on: :collection
         get :general, on: :collection
       end
-      resources :student_profiles, only: :index, path: :students
+      resources :student_profiles, only: %i[index show], path: :students
     end
 
     namespace :students, path: 's' do
@@ -75,7 +75,7 @@ Rails.application.routes.draw do
       resources :lessons, only: %i[index show update], concerns: :lessonable
       resources :tutor_profiles, path: :tutors, only: :index
       resources :calendars, only: :index
-      resources :my_tutors, only: :index
+      resources :my_tutors, only: %i[show index]
 
       namespace :lessons do
         scope ':lesson_id' do

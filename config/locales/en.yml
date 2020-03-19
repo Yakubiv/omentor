@@ -140,6 +140,9 @@ en:
     tutor_profiles:
       index:
         no_found: Репетиторів не знайдено
+      show:
+        calendar: Календар
+        lessons: Уроки
     lessons:
       show:
         start_lesson: Почати урок
@@ -196,6 +199,7 @@ en:
         completed_lessons: Завершені
         pending_lessons: Не оплачені
         no_found: 'Уроків не знайдено'
+        visit: Відкрити
     details:
       main_header: Загальна інформація
       submit_button: Зберегти інформацію
@@ -221,6 +225,8 @@ en:
       settings: Налаштування
       lessons: Уроки
       students: Студенти
+    students:
+      lessons: Уроки
   details_controller:
     update:
       success: Профіль успішно оновлений

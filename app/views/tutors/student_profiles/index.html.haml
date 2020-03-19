@@ -1,0 +1,29 @@
+.row.clearfix
+  .col-lg-12
+    .card
+      .card-body
+        .input-group.mt-2
+          %input.form-control.search{:placeholder => "Search...", :type => "text"}/
+
+.tab-content
+  #list.tab-pane.fade.show.active{:role => "tabpanel"}
+    #users.table-responsive
+
+      %table.table.table-hover.table-vcenter.text-nowrap.table_custom.list
+        %tbody
+          - @students.each do |student|
+            %tr
+              %td.width35.hidden-xs
+                %a.mail-star{:href => "javascript:void(0);"}
+                  %i.icon-star
+              %td.text-center.width40
+                .avatar.d-block
+                  %img.avatar{ :src => image_path(student.avatar) }/
+              %td
+                %div
+                  %a{ href: tutors_student_profile_path(student) }= student.name
+              %td.hidden-sm
+                .text-muted #{student.city}, #{student.country_name}
+              %td.text-right
+                %a.btn.btn-sm.btn-link{"data-toggle" => "tooltip", :href => "javascript:void(0)", :title => "Sent Message"}
+                  %i.icon-envelope
