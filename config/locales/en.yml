@@ -84,6 +84,10 @@ en:
     list: Список
     grid: Грід
     years: Років
+  class_room:
+    video:
+      stop_session: Завершити
+      start_screen_sharing: Демонструвати Екран
   layouts:
     admins:
       dashboards:

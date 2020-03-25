@@ -11,10 +11,12 @@ class ClassRoomsController < ApplicationController
       session_id = session.session_id
       @class_room.update(tokbox_session_id: session_id)
     end
-    if @class_room.updated_at > 24.hours.ago
-      tokbox_token = tokbox_client.generate_token(@class_room.tokbox_session_id)
-      @class_room.update(tokbox_token: tokbox_token, active_call: true)
-    end
+    tokbox_token = tokbox_client.generate_token(@class_room.tokbox_session_id)
+    @class_room.update(tokbox_token: tokbox_token, active_call: true)
+    # if @class_room.updated_at > 24.hours.ago
+    #   tokbox_token = tokbox_client.generate_token(@class_room.tokbox_session_id)
+    #   @class_room.update(tokbox_token: tokbox_token, active_call: true)
+    # end
   end
 
   private
