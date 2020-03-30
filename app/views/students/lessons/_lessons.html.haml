@@ -24,7 +24,7 @@
               = lesson.status
             %td= lesson.price
             %td.text-right
-              = link_to 'Visit', [:students, lesson], class: 'btn btn-secondary btn-sm'
+              = link_to t('tutors.lessons.index.visit'), [:students, lesson], class: 'btn btn-secondary btn-sm'
       - else
         %tr
           %td.align-center{ colspan: 7 }

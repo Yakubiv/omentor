@@ -1,0 +1,164 @@
+.chat_app
+  .row
+    .col-lg-8.col-md-12
+      .card.bg-none.b-none
+        .card-header.bline.pt-1
+          %h3.card-title
+            Friends Group
+            %small Last seen: 2 hours ago
+          .card-options
+            %a.p-1.chat_list_btn{:href => "javascript:void(0)"}
+              %i.icon-list
+            %a.p-1{:href => "javascript:void(0)"}
+              %i.fe.fe-plus
+            %a.p-1{:href => "javascript:void(0)"}
+              %i.icon-settings
+            %a.p-1{:href => "javascript:void(0)"}
+              %i.icon-refresh
+        = render 'messages/chat', class_room: ClassRoom.last, profile: current_tutor_profile, chat_css_class: '-app'
+
+  #users.chat_list.section-white
+    %a.chat_list_btn.float-right{:href => "javascript:void(0)"}
+      %i.icon-list
+    .input-group.mt-2.mb-2
+      %input.form-control.search{:placeholder => "Search...", :type => "text"}/
+    .tab-content
+      #users-list.tab-pane.fade.show.active{"aria-labelledby" => "users-tab", :role => "tabpanel"}
+        %ul.right_chat.list-unstyled.list
+          %li.online
+            %a{:href => "javascript:void(0);"}
+              .media
+                .media-body
+                  %span.name Ava Phillip Smith
+                  %span.message Are we meeting today?
+                  %span.badge.badge-outline.status
+          %li.online
+            %a{:href => "javascript:void(0);"}
+              .media
+                .media-body
+                  %span.name Debra Stewart
+                  %span.message Project has been already
+                  %span.badge.badge-outline.status
+          %li.offline
+            %a{:href => "javascript:void(0);"}
+              .media
+                .media-body
+                  %span.name Harry McCall
+                  %span.message Well we have good budget
+                  %span.badge.badge-outline.status
+          %li.offline
+            %a{:href => "javascript:void(0);"}
+              .media
+                %img{}
+                .media-body
+                  %span.name Nancy Flanary
+                  %span.message i'm meeting today
+                  %span.badge.badge-outline.status
+          %li.online
+            %a{:href => "javascript:void(0);"}
+              .media
+                .media-body
+                  %span.name Marshall Nichols
+                  %span.message I have results to show you
+                  %span.badge.badge-outline.status
+          %li.online
+            %a{:href => "javascript:void(0);"}
+              .media
+                .media-body
+                  %span.name Debra Stewart
+                  %span.message How is the project coming
+                  %span.badge.badge-outline.status
+          %li.offline
+            %a{:href => "javascript:void(0);"}
+              .media
+                .media-body
+                  %span.name Harry McCall
+                  %span.message Well we have good budget
+                  %span.badge.badge-outline.status
+          %li.offline
+            %a{:href => "javascript:void(0);"}
+              .media
+                .media-body
+                  %span.name Harry McCall
+                  %span.message Are we meeting today?
+                  %span.badge.badge-outline.status
+          %li.offline
+            %a{:href => "javascript:void(0);"}
+              .media
+                .media-body
+                  %span.name Nancy Flanary
+                  %span.message Hi Suse, how are you?
+                  %span.badge.badge-outline.status
+          %li.online
+            %a{:href => "javascript:void(0);"}
+              .media
+                .media-body
+                  %span.name Debra Stewart
+                  %span.message Hi Aiden, how are you?
+                  %span.badge.badge-outline.status
+          %li.offline
+            %a{:href => "javascript:void(0);"}
+              .media
+                .media-body
+                  %span.name Nancy Flanary
+                  %span.message I have results to show you
+                  %span.badge.badge-outline.status
+          %li.online
+            %a{:href => "javascript:void(0);"}
+              .media
+                .media-body
+                  %span.name Marshall Nichols
+                  %span.message Well we have good budget
+                  %span.badge.badge-outline.status
+          %li.online
+            %a{:href => "javascript:void(0);"}
+              .media
+                .media-body
+                  %span.name Debra Stewart
+                  %span.message Hi Aiden, how are you?
+                  %span.badge.badge-outline.status
+          %li.offline
+            %a{:href => "javascript:void(0);"}
+              .media
+                %img.media-object{}
+                .media-body
+                  %span.name Harry McCall
+                  %span.message I have results to show you
+                  %span.badge.badge-outline.status
+      #groups.tab-pane.fade{"aria-labelledby" => "groups-tab", :role => "tabpanel"}
+        %ul.right_chat.list-unstyled.list
+          %li.online
+            %a{:href => "javascript:void(0);"}
+              .media
+                .media-body
+                  %span.name PHP Groups
+                  %span.message How is the project coming
+                  %span.badge.badge-outline.status
+          %li.online
+            %a{:href => "javascript:void(0);"}
+              .media
+                .media-body
+                  %span.name Family Groups
+                  %span.message Update Code
+                  %span.badge.badge-outline.status
+          %li.offline
+            %a{:href => "javascript:void(0);"}
+              .media
+                .media-body
+                  %span.name Harry McCall
+                  %span.message 3 New design bug
+                  %span.badge.badge-outline.status
+          %li.offline
+            %a{:href => "javascript:void(0);"}
+              .media
+                .media-body
+                  %span.name Friends holic
+                  %span.message Hello All!
+                  %span.badge.badge-outline.status
+          %li.online
+            %a{:href => "javascript:void(0);"}
+              .media
+                .media-body
+                  %span.name CL City 2
+                  %span.message Add new contact
+                  %span.badge.badge-outline.status

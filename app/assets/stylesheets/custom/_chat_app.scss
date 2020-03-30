@@ -5,27 +5,35 @@
 }
 
 .chat_app{
-    min-height: 500px;
-    max-height: 500px;
     overflow-y: scroll;
 
-    @include max-screen($break-small - 1px) {
-      min-height: 250px;
-      max-height: 250px;
-    }
-
-    .chat_windows{
+    &.-widget {
       min-height: 500px;
+      max-height: 500px;
 
       @include max-screen($break-small - 1px) {
         min-height: 250px;
         max-height: 250px;
       }
 
+      .chat_windows{
+        min-height: 500px;
+
+        @include max-screen($break-small - 1px) {
+          min-height: 250px;
+          max-height: 250px;
+        }
+
+        ul {
+          height: 350px !important;
+        }
+      }
+    }
+
+    .chat_windows{
       ul {
           padding: 20px 0;
-          height: 350px;
-
+          height: calc(100vh - 380px);
           overflow-y: scroll;
 
           &::-webkit-scrollbar { // WebKit /
@@ -155,7 +163,7 @@
         height: 100vh;
         position: fixed;
         right: 0;
-        top: 0;
+        top: 75px;
         padding: 20px;
         z-index: 7;
 
@@ -167,7 +175,7 @@
         }
 
         @include max-screen($break-small - 1px) {
-            display: none;
+            // display: none;
         }
 
         .right_chat{

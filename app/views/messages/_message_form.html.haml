@@ -1,6 +1,6 @@
 = form_with(model: Message.new, url: class_room_messages_path(class_room), html: { id: 'new_message' }) do |f|
   = f.hidden_field :profile_id, value: profile.id
   .input-group.mb-0
-    = f.text_area :body, class: 'form-control', placeholder: "Enter text here..."
+    = f.text_area :body, class: 'form-control', placeholder: t('messages.form_placeholder')
   %button.btn.btn-success{ type: 'submit' }
     %i.icon-paper-plane

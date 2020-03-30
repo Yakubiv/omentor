@@ -130,6 +130,7 @@ en:
         page_title: Мої Уроки
   messages:
     no_messages: Повідомлень немає
+    form_placeholder: Напишіть повідомлення тут...
   search_form:
     tutors:
       subject: Предмет
