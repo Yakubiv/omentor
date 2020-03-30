@@ -6,6 +6,8 @@ class ClassRoomsController < ApplicationController
   def show
     @lesson = Lesson.find_by(uuid: params[:lesson_id])
     @class_room = @lesson.class_room
+    @current_profile = Profile.find_by(user_id: current_user.id)
+
     if !@class_room.tokbox_session_id
       session = tokbox_client.create_session :media_mode => :routed
       session_id = session.session_id

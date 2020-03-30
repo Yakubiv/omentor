@@ -1,0 +1,11 @@
+.chat_app
+  .chat_windows
+    %ul.mb-0#messages{ data: {class_room_id: class_room.id }}
+      - if class_room.messages.any?
+        - class_room.messages.each do |message|
+          = render 'messages/message', message: message, profile: profile
+      - else
+        .no-messages.bg-light-indigo
+          = t('messages.no_messages')
+    .chat-message.clearfix
+      = render 'messages/message_form', class_room: class_room, profile: profile

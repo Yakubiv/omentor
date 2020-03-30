@@ -25,6 +25,10 @@ Rails.application.routes.draw do
                                     registrations: 'devises/registrations' }
 
   authenticated :user do
+    resources :class_rooms, only: [] do
+      resources :messages, only: :create
+    end
+
     concern :lessonable do
       get :paid, on: :collection
       get :pending, on: :collection
@@ -100,5 +104,6 @@ Rails.application.routes.draw do
 
   resources :blogs, only: :index
 
+  mount ActionCable.server => '/cable'
   mount Sidekiq::Web => '/sidekiq'
 end

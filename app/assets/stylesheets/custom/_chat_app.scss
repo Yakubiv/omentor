@@ -1,69 +1,92 @@
+.no-messages {
+  border-radius: 20px !important;
+  text-align: center;
+  padding: 4px 5px;
+}
+
 .chat_app{
-    min-height: 600px;
+    min-height: 500px;
+    max-height: 500px;
+    overflow-y: scroll;
 
     @include max-screen($break-small - 1px) {
-        height: auto;
+      min-height: 250px;
+      max-height: 250px;
     }
 
     .chat_windows{
+      min-height: 500px;
 
-        ul {
-            padding: 20px 0;
+      @include max-screen($break-small - 1px) {
+        min-height: 250px;
+        max-height: 250px;
+      }
 
-            overflow-y: scroll;
-            scrollbar-width: none; // Firefox /
-            -ms-overflow-style: none;  // IE 10+ /
+      ul {
+          padding: 20px 0;
+          height: 350px;
 
-            &::-webkit-scrollbar { // WebKit /
-                width: 0px;
-            }
+          overflow-y: scroll;
 
-            @include max-screen($break-small - 1px) {
-                height: calc(100vh - 260px);
-            }
+          &::-webkit-scrollbar { // WebKit /
+            width: 3px;
+          }
 
-            li {
-                @extend .mb-30;
-                list-style: none;
+          @include max-screen($break-small - 1px) {
+            height: 150px;
+          }
 
-                &:last-child{
-                    @extend .mb-0;
-                }
-            }
-        }
+          li {
+              @extend .mb-1;
+              list-style: none;
+
+              &:last-child{
+                  @extend .mb-0;
+              }
+          }
+      }
 
         .message {
             @include inline-block();
             position: relative;
+            min-width: 100px;
 
             p{
                 @extend .mb-1;
                 @include border-radius(60px 60px 60px 0);
-                width: max-content;
-                padding: 8px 15px;
-
-                @include max-screen($break-medium) {
-                    width: fit-content;
-                }
-            }
-
-            .time {
-                @include display-block();
-                @extend .font-12;
+                padding: 8px 15px 15px;
             }
         }
 
         .my-message {
             @extend .align-right;
             @extend .ml-50;
-            justify-content: flex-end;
             p{
                 @include border-radius(60px 60px 0 60px);
             }
             .message{
-                @include max-screen($break-small - 1px) {
-                    width: calc(100% - 0);
+              @include max-screen($break-small - 1px) {
+                  width: calc(100% - 0);
+              }
+
+              .time {
+                position: absolute;
+                right: 30px;
+                bottom: 5px;
+                font-size: 10px;
+                color: $gray-600;
+              }
+
+              .read-status {
+                position: absolute;
+                right: 10px;
+                bottom: 0px;
+                color: $gray-300;
+
+                &.active {
+                  color: $gray-900;
                 }
+              }
             }
         }
 
@@ -73,6 +96,24 @@
                 @include max-screen($break-small - 1px) {
                     width: calc(100% - 70px);
                 }
+              .time {
+                position: absolute;
+                right: 30px;
+                bottom: 5px;
+                font-size: 10px;
+                color: $pink-600;
+              }
+
+              .read-status {
+                position: absolute;
+                right: 12px;
+                bottom: 0px;
+                color: $pink-300;
+
+                &.active {
+                  color: $pink;
+                }
+              }
             }
         }
 
@@ -109,7 +150,6 @@
     }
     .chat_list{
         @include transition(all .5s ease-in-out);
-        //@include box-shadow(0 2px 5px 0 rgba($dark,0.1));
         border-left: 1px solid $lightgray;
         width: 300px;
         height: 100vh;
