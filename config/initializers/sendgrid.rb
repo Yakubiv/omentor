@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 ActionMailer::Base.smtp_settings = {
-  domain: 'https://studygo.com.ua',
+  domain: 'http://studygo.com.ua',
   address: 'smtp.sendgrid.net',
   port: 587,
   authentication: :plain,
