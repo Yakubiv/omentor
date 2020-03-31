@@ -1,4 +1,12 @@
 module ApplicationHelper
+  def message_css_class(type, message, profile)
+    if type == :own_by
+      message.profile_id == profile.id ? 'my-message' : 'other-message'
+    elsif type == :background
+      message.profile_id == profile.id ? 'bg-light-gray' : 'bg-light-cyan'
+    end
+  end
+
   def lesson_durations
     [{ duration: 60, name: t('lessons.duration.one_hour') },
      { duration: 90, name: t('lessons.duration.one_and_half_hours') },

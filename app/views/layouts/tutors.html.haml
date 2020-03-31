@@ -3,6 +3,7 @@
   %head
     %title Studygo Tutor
     = render 'layouts/partials/head'
+    = action_cable_meta_tag
   %body.font-montserrat
     = render 'layouts/partials/body_tag_manager'
     = render 'layouts/partials/loader'
@@ -10,7 +11,6 @@
       = render 'layouts/partials/small_sidebar', brand_url: tutors_root_path
       = render 'layouts/partials/right_sidebar'
       = render 'layouts/partials/tutors/left_sidebar'
-
       .page
         = render 'layouts/partials/tutors/header_top'
         .section-body.taskboard.mt-4

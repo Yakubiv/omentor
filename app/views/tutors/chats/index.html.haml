@@ -1,0 +1,8 @@
+.chat_app
+  .row
+    .col-lg-8.col-md-12
+      .chat-placeholder
+        .chat-placeholder--text.bg-light-indigo
+          = t('messages.select_chat')
+
+  = render 'students_bar', class_rooms: @class_rooms

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_18_141631) do
+ActiveRecord::Schema.define(version: 2020_03_31_063512) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2020_03_18_141631) do
     t.string "tokbox_session_id"
     t.string "tokbox_token"
     t.boolean "active_call", default: false
+    t.string "uuid"
     t.index ["student_profile_id"], name: "index_class_rooms_on_student_profile_id"
     t.index ["tutor_profile_id"], name: "index_class_rooms_on_tutor_profile_id"
   end
@@ -71,6 +72,17 @@ ActiveRecord::Schema.define(version: 2020_03_18_141631) do
     t.string "price_currency", default: "USD", null: false
     t.index ["class_room_id"], name: "index_lessons_on_class_room_id"
     t.index ["subject_id"], name: "index_lessons_on_subject_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "body"
+    t.bigint "class_room_id"
+    t.bigint "profile_id"
+    t.boolean "read", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["class_room_id"], name: "index_messages_on_class_room_id"
+    t.index ["profile_id"], name: "index_messages_on_profile_id"
   end
 
   create_table "profiles", force: :cascade do |t|
