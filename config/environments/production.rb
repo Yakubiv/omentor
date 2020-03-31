@@ -17,6 +17,10 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
 
+  config.action_cable.url = 'wss://studygo.com.ua/cable'
+  config.action_cable.allowed_request_origins = ['https://studygo.com.ua',
+                                                 'http://studygo.com.ua']
+
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { host: 'https://studygo.com.ua' }
 

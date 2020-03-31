@@ -29,5 +29,28 @@ document.addEventListener('turbolinks:load', function () {
     }
 
     messages.scrollTop(messages.prop("scrollHeight"));
+
+    $(document).on('keypress', '[data-behavior=room_speaker]', function (event) {
+      if (event.keyCode === 13) {
+        var postData = {
+          message: {
+            profile_id: $('#message_profile_id').val(),
+            body: event.target.value
+          }
+        }
+        $.ajax({
+          url: `/class_rooms/${messages.data('class-room-id')}/messages`,
+          type: "POST",
+          data: postData,
+          success: function (data, textStatus, jqXHR) {
+          },
+          error: function (jqXHR, textStatus, errorThrown) {
+          }
+        });
+        event.target.value = '';
+        $(this).focus()
+        event.preventDefault();
+      }
+    });
   }
 })
