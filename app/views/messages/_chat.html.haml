@@ -1,9 +1,8 @@
 .chat_app{ class: chat_css_class }
   .chat_windows
-    %ul.mb-0#messages{ data: {class_room_id: class_room.id }}
-      - if class_room.messages.any?
-        - class_room.messages.each do |message|
-          = render 'messages/message', message: message, profile: profile
+    %ul.mb-0#messages{ data: { class_room_id: class_room.uuid }}
+      - if messages.exists?
+        = render partial: 'messages/message', collection: messages, locals: { profile: profile }, chached: true
       - else
         .no-messages.bg-light-indigo
           = t('messages.no_messages')

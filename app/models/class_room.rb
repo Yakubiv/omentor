@@ -6,7 +6,19 @@ class ClassRoom < ApplicationRecord
   has_many :lessons
   has_many :messages
 
+  before_create :set_uuid
+
   def opposet_profile_to(profile)
     profile == student_profile ? tutor_profile : student_profile
+  end
+
+  def to_param
+    uuid
+  end
+
+  private
+
+  def set_uuid
+    self.uuid = SecureRandom.uuid
   end
 end

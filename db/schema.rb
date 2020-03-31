@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_26_084223) do
+ActiveRecord::Schema.define(version: 2020_03_31_063512) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2020_03_26_084223) do
     t.string "tokbox_session_id"
     t.string "tokbox_token"
     t.boolean "active_call", default: false
+    t.string "uuid"
     t.index ["student_profile_id"], name: "index_class_rooms_on_student_profile_id"
     t.index ["tutor_profile_id"], name: "index_class_rooms_on_tutor_profile_id"
   end

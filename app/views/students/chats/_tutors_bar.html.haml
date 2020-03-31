@@ -1,0 +1,17 @@
+#users.chat_list.section-white
+  %a.chat_list_btn.float-right{:href => "javascript:void(0)"}
+    %i.icon-list
+  .input-group.mt-2.mb-2
+    %input.form-control.search{:placeholder => "Search...", :type => "text"}/
+  .tab-content
+    #users-list
+      %ul.right_chat.list-unstyled.list
+        - class_rooms.each do |class_room|
+          = render 'students/chats/profile_card', profile_plural: 'students', profile: class_room.tutor_profile, class_room: class_room, url: students_chat_path(class_room)
+        -# %li.offline
+        -#   %a{:href => "javascript:void(0);"}
+        -#     .media
+        -#       .media-body
+        -#         %span.name Harry McCall
+        -#         %span.message Well we have good budget
+        -#         %span.badge.badge-outline.status

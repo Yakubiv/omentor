@@ -55,7 +55,7 @@ Rails.application.routes.draw do
       resource :dashboard, only: :show
       resources :lessons, only: %i[index show update], concerns: :lessonable
       resources :calendars, only: :index
-      resources :chats, only: :index
+      resources :chats, only: %i[index show]
       resources :settings, only: [] do
         get :photo, on: :collection
         get :bio, on: :collection
@@ -75,7 +75,7 @@ Rails.application.routes.draw do
       end
       resource :dashboard, only: :show
       resource :profile, only: :show
-      resources :chats, only: :index
+      resources :chats, only: %i[index show]
       resources :lessons, only: %i[index show update], concerns: :lessonable
       resources :tutor_profiles, path: :tutors, only: :index
       resources :calendars, only: :index

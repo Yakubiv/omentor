@@ -10,6 +10,7 @@ class Students::LessonsController < Students::BaseController
   def show
     @lesson = current_student_profile.lessons.find_by(uuid: params[:id])
     @class_room = @lesson.class_room
+    @messages = @class_room.messages
     @message = Message.new
   end
 

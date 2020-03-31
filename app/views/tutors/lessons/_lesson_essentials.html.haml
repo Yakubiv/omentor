@@ -57,11 +57,11 @@
 .col-lg-12
   %ul#pills-tab.nav.nav-tabs.mb-3{:role => "tablist"}
     %li.nav-item
-      %a#pills-overview-tab.nav-link.active{"data-toggle" => "pill", :href => "#pills-overview", :role => "tab"}
-        = t('students.lessons.show.overview')
-    %li.nav-item
-      %a#pills-chat-tab.nav-link{"data-toggle" => "pill", :href => "#pills-chat", :role => "tab"}
+      %a#pills-chat-tab.nav-link.active{"data-toggle" => "pill", :href => "#pills-chat", :role => "tab"}
         = t('students.lessons.show.chat')
+    %li.nav-item
+      %a#pills-overview-tab.nav-link{"data-toggle" => "pill", :href => "#pills-overview", :role => "tab"}
+        = t('students.lessons.show.overview')
     %li.nav-item
       %a#pills-attachments-tab.nav-link{"data-toggle" => "pill", :href => "#pills-attachments", :role => "tab"}
         = t('students.lessons.show.attachments')
@@ -80,7 +80,7 @@
           %small.text-muted
             Останній візит 30хв назад
         .card-body
-          = render 'messages/chat', class_room: @class_room, profile: profile, chat_css_class: '-widget'
+          = render 'messages/chat', class_room: @class_room, messages: @messages, profile: profile, chat_css_class: '-widget'
     #pills-attachments.tab-pane.fade.show
       .card
         .card-header.bline

@@ -1,0 +1,8 @@
+%li.online
+  = link_to url do
+    .media
+      = image_tag image_path(profile.avatar), class: 'media-object'
+      .media-body
+        %span.name= profile.name
+        %span.message Are we meeting today?
+        %span.badge.badge-outline.status
