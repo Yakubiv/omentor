@@ -17,8 +17,6 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
 
-  config.middleware.use ChatActionCable
-
   config.web_socket_server_url = 'wss://studygo.com.ua/cable'
   config.action_cable.allowed_request_origins = ['https://studygo.com.ua',
                                                  'http://studygo.com.ua']
