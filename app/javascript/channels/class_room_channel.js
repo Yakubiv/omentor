@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         element.scrollTop = element.scrollHeight;
         if (!data.is_owner) {
           var audio = new Audio();
-          audio.src = '/audios/message.mp3';
+          audio.src = 'https://studygo-essentials.s3.eu-north-1.amazonaws.com/message.mp3';
           var playedPromise = audio.play();
           if (playedPromise) {
             playedPromise.catch((e) => {
