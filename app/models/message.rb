@@ -7,6 +7,8 @@ class Message < ApplicationRecord
 
   scope :my_unread_messages, ->(sender) { where(read: false).where.not(profile_id: sender.id) }
 
+  default_scope { order(created_at: :asc) }
+
   def message_time
     created_at.strftime(MESSAGE_TIME)
   end
