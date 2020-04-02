@@ -5,6 +5,8 @@ class Message < ApplicationRecord
 
   validates_presence_of :body, :class_room_id, :profile_id
 
+  scope :my_unread_messages, ->(sender) { where(read: false).where.not(profile_id: sender.id) }
+
   def message_time
     created_at.strftime(MESSAGE_TIME)
   end

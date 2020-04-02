@@ -1,34 +1,44 @@
 import consumer from "./consumer"
 
 document.addEventListener("DOMContentLoaded", function () {
-  var messages = $('#messages');
+  var messages = document.getElementById('messages');
 
   if (messages) {
-    if (consumer.connection.disconnected) {
-      consumer.subscriptions.create({ channel: "ClassRoomChannel", class_room_id: messages.data('class-room-id') }, {
-        connected() {
-        },
+    consumer.subscriptions.create({ channel: "ClassRoomChannel", class_room_id: messages.getAttribute('data-class-room-id') }, {
+      connected() {
+      },
 
-        disconnected() {
-          // Called when the subscription has been terminated by the server
-        },
+      disconnected() {
+        // Called when the subscription has been terminated by the server
+      },
 
-        received(data) {
-          if ($('.no-messages').length > 0) {
-            $('.no-messages').hide();
+      received(data) {
+        if ($('.no-messages').length > 0) {
+          $('.no-messages').hide();
+        }
+        const element = document.getElementById("messages");
+        element.insertAdjacentHTML("beforeend", data.html);
+        element.scrollTop = element.scrollHeight;
+        if (!data.is_owner) {
+          var audio = new Audio();
+          audio.src = '/audios/message.mp3';
+          var playedPromise = audio.play();
+          if (playedPromise) {
+            playedPromise.catch((e) => {
+              console.log(e)
+              if (e.name === 'NotAllowedError' || e.name === 'NotSupportedError') {
+                console.log(e.name);
+              }
+            }).then(() => {
+
+            });
           }
-          const element = document.getElementById("messages");
-          element.insertAdjacentHTML("beforeend", data.html);
-          this.messages_to_bottom();
-        },
+        }
+      }
+    })
 
-        messages_to_bottom() {
-          messages.scrollTop(messages.prop("scrollHeight"))
-        },
-      })
-    }
-
-    messages.scrollTop(messages.prop("scrollHeight"));
+    const element = document.getElementById("messages");
+    element.scrollTop = element.scrollHeight;
 
     $(document).on('keypress', '[data-behavior=room_speaker]', function (event) {
       if (event.keyCode === 13) {
@@ -53,4 +63,11 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-})
+});
+
+addEventListener('turbolinks:load', function () {
+  const element = document.getElementById("messages");
+  if (element) {
+    element.scrollTop = element.scrollHeight;
+  }
+});

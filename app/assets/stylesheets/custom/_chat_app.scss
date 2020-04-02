@@ -16,6 +16,11 @@
   }
 }
 
+.bg-blue-custom {
+    background-color: $bg-violet-light;
+    color: $brand-violet;
+}
+
 .chat_app{
     overflow-y: scroll;
 
@@ -101,10 +106,11 @@
                 position: absolute;
                 right: 10px;
                 bottom: 0px;
-                color: $gray-300;
+                color: $pink-300;
 
                 &.active {
-                  color: $gray-900;
+                  font-weight: 700;
+                  color: $pink !important;
                 }
               }
             }
@@ -112,6 +118,7 @@
 
         .other-message {
             @extend .align-left;
+            color: white;
             .message{
                 @include max-screen($break-small - 1px) {
                     width: calc(100% - 70px);
@@ -121,7 +128,7 @@
                 right: 30px;
                 bottom: 5px;
                 font-size: 10px;
-                color: $pink-600;
+                color: $gray-600;
               }
 
               .read-status {
@@ -131,7 +138,8 @@
                 color: $pink-300;
 
                 &.active {
-                  color: $pink;
+                  font-weight: 700;
+                  color: $pink !important;
                 }
               }
             }

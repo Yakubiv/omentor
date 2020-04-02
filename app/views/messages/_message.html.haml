@@ -2,5 +2,5 @@
   .message
     %p{ class: message_css_class(:background, message, profile)}= message.body
     %span.time= message.message_time
-    %span.read-status
-      %i.fe.fe-check{ class: "#{message.read ? 'active' : ''}" }
+    %span.read-status{ class: "#{message.read ? 'active' : ''}" }
+      %i.fe.fe-check

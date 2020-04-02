@@ -3,7 +3,7 @@ module ApplicationHelper
     if type == :own_by
       message.profile_id == profile.id ? 'my-message' : 'other-message'
     elsif type == :background
-      message.profile_id == profile.id ? 'bg-light-gray' : 'bg-light-cyan'
+      message.profile_id == profile.id ? 'bg-light-blue' : 'bg-blue-custom'
     end
   end
 
