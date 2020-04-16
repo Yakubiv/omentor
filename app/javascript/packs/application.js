@@ -12,6 +12,8 @@ require("@fullcalendar/core")
 require("@fullcalendar/daygrid")
 require("@fullcalendar/timegrid")
 
+require("selectize")
+
 require("channels")
 require("custom")
 require("dropify")
@@ -24,3 +26,5 @@ window.$ = $;
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+require("trix")
+require("@rails/actiontext")

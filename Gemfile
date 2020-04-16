@@ -9,6 +9,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 
 gem 'pg_search'
 gem 'meta-tags'
+gem 'impressionist', '1.6.1'
 
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5'
@@ -45,6 +46,7 @@ gem 'pagy'
 
 gem 'hamlit'
 gem 'friendly_id'
+gem 'babosa', '1.0.2'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 

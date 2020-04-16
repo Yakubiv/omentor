@@ -4,6 +4,17 @@ $(document).on('turbolinks:load', function () {
     /** Constant div card */
     const DIV_CARD = 'div.card';
 
+    $('#input-tags').selectize({
+        delimiter: ',',
+        persist: false,
+        create: function (input) {
+            return {
+                value: input,
+                text: input
+            }
+        }
+    });
+
     $('.dropify').dropify({
       messages: {
         'default': 'Перемістіть фото сюди або просто клікність',

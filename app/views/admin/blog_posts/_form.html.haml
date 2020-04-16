@@ -1,0 +1,58 @@
+= form_for [:admin, @post], html: { multipart: true } do |f|
+  - if @post.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
+      %ul
+        - @post.errors.full_messages.each do |message|
+          %li= message
+  .row
+    .col-sm-9
+      .form-group
+        = f.label :title
+        = f.text_field :title, class: 'form-control'
+      .form-group
+        = f.label :description
+        = f.text_area :description, class: 'form-control'
+      .form-group
+        = f.label :thumbnail, class: 'control-label'
+        = f.file_field :thumbnail, multiple: false, direct_upload: true, data: { 'max-file-size' => '3M', 'default-file' => image_path(f.object.thumbnail) }, class: 'dropify'
+        %em 1600x860 px
+      .form-group
+        = f.label :body
+        = f.rich_text_area :body, class: 'form-control'
+
+      .row
+        .col-sm-6
+          .form-group
+            = f.label :meta_title
+            = f.text_area :meta_title, class: 'form-control'
+          .form-group
+            = f.label :meta_description
+            = f.text_area :meta_description, class: 'form-control'
+          .form-group
+            = f.label :tags
+          .form-group
+            = f.label :meta_tags
+            = text_field_tag :meta_tags, f.object.meta_tags.join(','), class: 'form-control', id: 'input-tags'
+
+    .col-sm-3
+      .form-group
+        = f.check_box :popular
+        = f.label :popular
+      .form-group
+        = f.check_box :top
+        = f.label :top
+      -# .form-group
+      -#   = f.label :category
+      -#   = f.select :category, options_for_select(BlogPost.categories.map { |category, key|  [BlogPost.human_enum_name(:categories, category.to_sym), category] }, f.object.category), {}, class: 'form-control'
+      .form-group
+        = f.label :status
+        = f.select :status, options_for_select(BlogPost.statuses.map { |status, key|  [BlogPost.human_enum_name(:statuses, status.to_sym), status] }, f.object.status), {}, class: 'form-control'
+      .form-group
+        = f.label :publish_at
+        .input-group.date#datetimepicker
+          = f.text_field :publish_at, placeholder: 'Вибрати час', value: f.object&.publish_at&.strftime('%Y-%m-%d %H:%M'), class: 'form-control'
+          %span.input-group-addon
+            %i.fa.fa-calendar
+  .form-group
+    = f.submit 'Save', class: 'btn btn-success'

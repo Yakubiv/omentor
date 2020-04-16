@@ -3,6 +3,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable
   has_one :tutor_profile
   has_one :student_profile
+  has_many :blog_posts
 
   enum sign_up_as: %i[student tutor admin]
 

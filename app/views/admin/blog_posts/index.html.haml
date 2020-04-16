@@ -1,0 +1,44 @@
+
+.card
+  .card-header
+    %h3.card-title
+      Статті
+    .card-options
+      = link_to 'Нова Стаття', new_admin_blog_post_path, class: 'btn btn-secondary u-m-b-10'
+
+  .card-body
+    .table-responsive
+      %table.table.text-nowrap.mb-0
+        %thead
+          %tr
+            %th
+            %th Назва
+            %th Статус
+            %th Публікація
+            %th Створення
+            %th
+
+        %tbody
+          - @posts.each do |post|
+            %tr
+              %td
+                - if post.thumbnail.attachment
+                  = image_tag blog_thumbnail(post)
+              %td= link_to post.title, edit_admin_blog_post_path(post)
+              %td
+                - if post.publish_at && post.publish_at > Time.current
+                  %p Опублікується #{post.publish_at.strftime(Post::FULL_DATE)}
+                - else
+                  = post.show(:status)
+                %br
+                = post.top ? 'Топова' : 'Звичайна'
+                %br
+                = post.popular ? 'Популярна' : ''
+              %td
+                = l post.publish_at, format: BlogPost::SHORT_DATE if post.publish_at
+              %td= l post.created_at, format: BlogPost::SHORT_DATE
+              %td
+                = link_to edit_admin_blog_post_path(post) do
+                  %i.icon-pencil
+                = link_to [:admin, post], method: :delete, data: { confirm: 'Are you sure?' } do
+                  %i.icon-trash

@@ -10,11 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_31_063512) do
+ActiveRecord::Schema.define(version: 2020_04_13_152128) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
   enable_extension "plpgsql"
+
+  create_table "action_text_rich_texts", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "body"
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
+  end
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -35,6 +45,29 @@ ActiveRecord::Schema.define(version: 2020_03_31_063512) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "blog_posts", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.text "content"
+    t.string "tags", default: [], array: true
+    t.integer "user_id"
+    t.string "url_alies"
+    t.string "thumbnail"
+    t.string "meta_tags", default: [], array: true
+    t.integer "category"
+    t.integer "status"
+    t.boolean "popular", default: false
+    t.string "slug"
+    t.datetime "publish_at"
+    t.integer "impressions_count", default: 0
+    t.boolean "top", default: false
+    t.text "meta_description"
+    t.string "meta_title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_blog_posts_on_user_id"
   end
 
   create_table "class_rooms", force: :cascade do |t|

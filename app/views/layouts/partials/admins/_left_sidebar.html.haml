@@ -14,3 +14,7 @@
         = link_to admin_subjects_path do
           %i.icon-book-open
           %span= t('admins.left_sidebar.subjects')
+      %li{ class: active_if?(controller: 'blog_posts') }
+        = link_to admin_blog_posts_path do
+          %i.icon-note
+          %span= t('admins.left_sidebar.blog_posts')

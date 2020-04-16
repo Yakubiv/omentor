@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
       resource :dashboard, only: :show
       resource :profile, only: :show
+
+      resources :blog_posts
       resources :subjects
     end
   end

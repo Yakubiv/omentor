@@ -1,0 +1,7 @@
+.card
+  .card-header
+    %h3.card-title
+      Редагувати #{@post.title}
+  .card-body
+    = render 'form'
+    = link_to 'Back', admin_blog_posts_path

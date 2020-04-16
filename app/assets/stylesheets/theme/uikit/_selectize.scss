@@ -131,7 +131,7 @@
 .selectize-dropdown,
 .selectize-input,
 .selectize-input input {
-	color: $body-color;
+	color: $darkgray;
 	font-family: inherit;
 	font-size: 15px;
 	line-height: 18px;
@@ -248,6 +248,7 @@
 	display: block;
 	position: absolute;
 	background: #f0f0f0;
+	color: $darkgray;
 	height: 1px;
 	bottom: 0;
 	left: 0;
@@ -288,7 +289,7 @@
 }
 
 .selectize-dropdown .optgroup-header {
-	color: $body-color;
+	color: $darkgray;
 	background: #fff;
 	cursor: default;
 }
@@ -299,7 +300,7 @@
 }
 
 .selectize-dropdown .active.create {
-	color: $body-color;
+	color: $darkgray;
 }
 
 .selectize-dropdown .create {

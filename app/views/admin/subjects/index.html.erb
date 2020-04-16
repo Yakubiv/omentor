@@ -1,6 +1,7 @@
 <div class="card">
   <div class="card-header">
     <h3 class="card-title">Subjects</h3>
+    <div class="card-options"><%= link_to 'New Subject', new_admin_subject_path %></div>
   </div>
 
   <div class="card-body">
@@ -27,10 +28,6 @@
           <% end %>
         </tbody>
       </table>
-
-      <br>
-
-      <%= link_to 'New Subject', new_admin_subject_path %>
     </div>
   </div>
 </div>

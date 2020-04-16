@@ -37,6 +37,10 @@ en:
         separator: "."
   activerecord:
     attributes:
+      blog_post:
+        statuses:
+          published: Опубліковано
+          draft: Чернетка
       lesson:
         subject_id: Предмет
         duration: Тривалість уроку
