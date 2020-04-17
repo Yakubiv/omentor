@@ -1,6 +1,5 @@
 class Admin::BlogPostsController < Admin::BaseController
   before_action :set_post, only: [:edit, :update, :destroy]
-  autocomplete :tag, :name, class_name: 'ActsAsTaggableOn::Tag'
 
   def index
     @posts = BlogPost.all
@@ -38,7 +37,11 @@ class Admin::BlogPostsController < Admin::BaseController
   private
 
   def meta_tags
-    params[:meta_tags].split(',')
+    params[:meta_tags]&.split(',')
+  end
+
+  def tag_list
+    params[:blog_post][:tag_list]&.split(',')
   end
 
   def set_post
@@ -49,6 +52,7 @@ class Admin::BlogPostsController < Admin::BaseController
     params.require(:blog_post).permit(:title, :description, :category,
                                       :status, :meta_description, :meta_title,
                                       :popular, :publish_at, :top,
-                                      :body, :thumbnail, tag_list: []).merge(meta_tags: meta_tags)
+                                      :body, :thumbnail)
+                              .merge(meta_tags: meta_tags, tag_list: tag_list)
   end
 end

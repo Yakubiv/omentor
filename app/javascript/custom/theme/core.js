@@ -15,6 +15,17 @@ $(document).on('turbolinks:load', function () {
         }
     });
 
+    $('#tag-list').selectize({
+        delimiter: ',',
+        persist: false,
+        create: function (input) {
+            return {
+                value: input,
+                text: input
+            }
+        }
+    });
+
     $('.dropify').dropify({
       messages: {
         'default': 'Перемістіть фото сюди або просто клікність',

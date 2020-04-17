@@ -31,6 +31,7 @@
             = f.text_area :meta_description, class: 'form-control'
           .form-group
             = f.label :tags
+            = f.text_field :tag_list, value: f.object.tag_list.join(','), class: 'form-control', id: 'tag-list'
           .form-group
             = f.label :meta_tags
             = text_field_tag :meta_tags, f.object.meta_tags.join(','), class: 'form-control', id: 'input-tags'

@@ -10,6 +10,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'pg_search'
 gem 'meta-tags'
 gem 'impressionist', '1.6.1'
+gem 'acts-as-taggable-on', '~> 6.0'
 
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5'

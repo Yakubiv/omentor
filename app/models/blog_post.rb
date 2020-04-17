@@ -13,6 +13,9 @@ class BlogPost < ApplicationRecord
   has_rich_text :body
   friendly_id :title, use: :slugged
 
+  is_impressionable counter_cache: true, unique: true
+  acts_as_taggable_on :tags
+
   belongs_to :author, foreign_key: :user_id, class_name: 'User'
 
   enum category: { interesting: 1, culture: 2, news: 3, buity: 4, important: 5, art: 6, other: 7, style: 8, trands: 9 }
