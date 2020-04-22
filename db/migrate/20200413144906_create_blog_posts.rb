@@ -4,7 +4,6 @@ class CreateBlogPosts < ActiveRecord::Migration[6.0]
       t.string :title
       t.text :description
       t.text :content
-      t.string :tags, default: [], array: true
       t.integer :user_id, index: true
       t.string :url_alies
       t.string :thumbnail

@@ -10,7 +10,7 @@
         = link_to 'Головна', root_path, class: 'header__toolbar--item text-black'
         = link_to 'Як це працює?', '', class: 'header__toolbar--item text-black'
         = link_to 'Контакти', '', class: 'header__toolbar--item'
-        = link_to 'Блог', '', class: 'header__toolbar--item'
+        = link_to 'Блог', blogs_path, class: 'header__toolbar--item'
       .header__account
         = link_to 'Увійти', new_user_session_path, class: 'header__account--button sign-in btn'
         = link_to 'Зареєструватися', registration_users_path(as: :student), class: 'header__account--button sign-up btn'

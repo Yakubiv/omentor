@@ -1,1 +1,26 @@
-blogs
+.container
+  .row
+    .col-lg-8
+      .c-posts-box
+        - @blog_posts.each do |blog_post|
+          .c-post-box
+            .c-post-box__image
+              = link_to blog_path(blog_post) do
+                = image_tag image_path(blog_post.thumbnail)
+            .c-post-box__body
+              = link_to blog_path(blog_post) do
+                .c-post-box__title
+                  %h3= blog_post.title
+                .c-post-box__description
+                  = truncate(blog_post.description, length: 100)
+    .col-lg-4
+      .c-tags-box
+        .c-tags-box__header
+          Tags
+        %ul.c-tags-box__content
+          - BlogPost.tag_counts_on(:tags).order(taggings_count: :desc).first(10).each do |tag|
+            %li.c-tag-box
+              .c-tag-box__name
+                = link_to blogs_path(tag: tag.to_s) do
+                  = tag
+                  = tag.taggings_count

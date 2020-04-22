@@ -31,7 +31,7 @@
             = f.text_area :meta_description, class: 'form-control'
           .form-group
             = f.label :tags
-            = f.text_field :tag_list, value: f.object.tag_list.join(','), class: 'form-control', id: 'tag-list'
+            = f.text_field :tag_list, value: f.object.tag_list.to_s, class: 'form-control', id: 'tag-list'
           .form-group
             = f.label :meta_tags
             = text_field_tag :meta_tags, f.object.meta_tags.join(','), class: 'form-control', id: 'input-tags'
@@ -51,9 +51,11 @@
         = f.select :status, options_for_select(BlogPost.statuses.map { |status, key|  [BlogPost.human_enum_name(:statuses, status.to_sym), status] }, f.object.status), {}, class: 'form-control'
       .form-group
         = f.label :publish_at
-        .input-group.date#datetimepicker
-          = f.text_field :publish_at, placeholder: 'Вибрати час', value: f.object&.publish_at&.strftime('%Y-%m-%d %H:%M'), class: 'form-control'
-          %span.input-group-addon
-            %i.fa.fa-calendar
+        .input-group
+          .input-group-prepend
+            .input-group-text
+              %i.icon-calendar
+          = f.text_field :publish_at, placeholder: 'Вибрати час', class: 'form-control', data: { provide: 'datepicker' }
+
   .form-group
     = f.submit 'Save', class: 'btn btn-success'

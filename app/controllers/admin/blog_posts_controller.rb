@@ -40,10 +40,6 @@ class Admin::BlogPostsController < Admin::BaseController
     params[:meta_tags]&.split(',')
   end
 
-  def tag_list
-    params[:blog_post][:tag_list]&.split(',')
-  end
-
   def set_post
     @post = BlogPost.friendly.find(params[:id])
   end
@@ -52,7 +48,7 @@ class Admin::BlogPostsController < Admin::BaseController
     params.require(:blog_post).permit(:title, :description, :category,
                                       :status, :meta_description, :meta_title,
                                       :popular, :publish_at, :top,
-                                      :body, :thumbnail)
-                              .merge(meta_tags: meta_tags, tag_list: tag_list)
+                                      :body, :thumbnail, :tag_list)
+                               .merge(meta_tags: meta_tags)
   end
 end

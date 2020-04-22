@@ -104,7 +104,7 @@ Rails.application.routes.draw do
     get :registration, on: :collection
   end
 
-  resources :blogs, only: :index
+  resources :blogs, only: %i[index show], path: 'blog'
 
   mount ActionCable.server => '/cable'
   mount Sidekiq::Web => '/sidekiq'

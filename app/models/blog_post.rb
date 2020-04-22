@@ -18,7 +18,7 @@ class BlogPost < ApplicationRecord
 
   belongs_to :author, foreign_key: :user_id, class_name: 'User'
 
-  enum category: { interesting: 1, culture: 2, news: 3, buity: 4, important: 5, art: 6, other: 7, style: 8, trands: 9 }
+  # enum category: { interesting: 1, culture: 2, news: 3, buity: 4, important: 5, art: 6, other: 7, style: 8, trands: 9 }
   enum status: { draft: 1, published: 2 }
 
   before_save :set_publish_at
