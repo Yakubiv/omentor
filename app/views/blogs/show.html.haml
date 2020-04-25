@@ -1,0 +1,17 @@
+.container
+  .blog-post__wrapper
+    %header
+      %h1.blog-post__title= @blog_post.title
+      .blog-post__meta
+        .blog-post__meta-author
+          = link_to 'Studygo', blogs_path(author: 'studygo')
+
+        %time.blog-post__meta-date
+          = l @blog_post.publish_at, format: ApplicationHelper::SHORT_DATE
+        %ul.blog-post__meta-tags
+          - @blog_post.tags.each do |tag|
+            %li.blog-post__meta-tag
+              = link_to tag, blogs_path(tag: tag)
+    = image_tag image_path(@blog_post.thumbnail)
+    .blog-post__body
+      = raw @blog_post.body

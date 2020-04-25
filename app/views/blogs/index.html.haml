@@ -1,26 +1,41 @@
 .container
   .row
-    .col-lg-8
+    .col-lg-8.col-md-8
       .c-posts-box
         - @blog_posts.each do |blog_post|
-          .c-post-box
-            .c-post-box__image
-              = link_to blog_path(blog_post) do
-                = image_tag image_path(blog_post.thumbnail)
-            .c-post-box__body
-              = link_to blog_path(blog_post) do
-                .c-post-box__title
-                  %h3= blog_post.title
-                .c-post-box__description
-                  = truncate(blog_post.description, length: 100)
-    .col-lg-4
+          = cache [blog_post] do
+            .c-post-box
+              .c-post-box__image
+                = link_to blog_path(blog_post) do
+                  = image_tag image_path(blog_post.thumbnail)
+              .c-post-box__body
+                = link_to blog_path(blog_post) do
+                  .c-post-box__title
+                    = blog_post.title
+                  .c-post-box__description
+                    = truncate(blog_post.description, length: 100)
+                  .c-post-box__actions
+                    %ul.c-post-box__actions-tags
+                      %i.icon-tag.mr-1
+                      - blog_post.tags.each do |tag|
+                        %li.c-post-box__actions-tag
+                          = link_to tag, blogs_path(tag: tag)
+                    .c-post-box__actions-author
+                      %i.icon-user.mr-1
+                      = link_to 'Studygo', blogs_path(author: 'studygo')
+                    %time.c-post-box__actions-time
+                      %i.icon-clock.mr-1
+                      = l blog_post.publish_at, format: ApplicationHelper::SHORT_DATE
+                    .c-post-box__actions-views
+                      %i.icon-eye.mr-1
+                      10
+    .col-lg-4.col-md-4
       .c-tags-box
         .c-tags-box__header
-          Tags
+          = t('blog.tags')
         %ul.c-tags-box__content
           - BlogPost.tag_counts_on(:tags).order(taggings_count: :desc).first(10).each do |tag|
             %li.c-tag-box
               .c-tag-box__name
-                = link_to blogs_path(tag: tag.to_s) do
+                %a{ href: blogs_path(tag: tag.to_s), data: { toggle: 'tooltip' }, title: tag.taggings_count }
                   = tag
-                  = tag.taggings_count

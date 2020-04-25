@@ -46,6 +46,10 @@ en:
         duration: Тривалість уроку
         price: Ціна
       profile:
+        statuses:
+          pending: 'Очікує підтвердження'
+          active: Активний
+          inactive: Неактивний
         genders:
           male: Чоловік
           female: Жінка
@@ -147,6 +151,13 @@ en:
     left_sidebar:
       dashboard: Головна
       subjects: Предмети
+      students: Студенти
+      tutors: Вчителі
+      blog_posts: Блог
+    tutors:
+      updated: 'Вчитель оновлений %{tutor}'
+  blog:
+    tags: Теги
   students:
     tutor_profiles:
       index:

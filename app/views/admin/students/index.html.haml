@@ -1,0 +1,38 @@
+
+.card
+  .card-header
+    %h3.card-title
+      Студенти
+    .card-options
+
+  .card-body
+    .table-responsive
+      %table.table.text-nowrap.mb-0
+        %thead
+          %tr
+            %th
+            %th Імя
+            %th Email
+            %th Телефон
+            %th Створення
+            %th Активний?
+            %th
+
+        %tbody
+          - @students.each do |student|
+            %tr
+              %td
+                - if student.avatar.attachment
+                  = image_tag user_avatar(student)
+              %td= student.name
+              %td
+                = student.email
+              %td
+                = student.phone
+              %td= l student.created_at, format: ApplicationHelper::SHORT_DATE
+              %td= student.show(:status)
+              %td
+                = link_to edit_admin_student_path(student) do
+                  %i.icon-pencil
+                = link_to admin_student_path(student), method: :delete, data: { confirm: 'Are you sure?' } do
+                  %i.icon-trash

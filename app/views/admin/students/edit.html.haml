@@ -1,0 +1,24 @@
+.card
+  .card-header
+    %h3.card-title
+      Редагувати
+      %strong #{@student.name}
+    .card-options
+
+  .card-body
+    = form_with model: @student, url: admin_student_path(@student), method: :put do |f|
+      .row
+        .col-sm-4
+          .form-group
+            = f.label :status
+            = f.select :status, options_for_select(Profile.statuses.keys.to_a, f.object.status), {}, class: 'form-control'
+      .form-group
+        = f.submit 'Save', class: 'btn btn-success'
+    %hr
+    %pre
+      - if @student.avatar.attachment
+        = image_tag user_avatar(@student, 50)
+      - @student.attributes.keys.each do |key|
+        %br
+        %span Значення #{key}:
+        %strong= @student.attributes[key].to_s

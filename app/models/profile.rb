@@ -19,8 +19,14 @@ class Profile < ApplicationRecord
 
   before_create :set_country_name
 
+  delegate :email, to: :user
+
   def name
     [first_name, last_name].join(' ')
+  end
+
+  def show(type)
+    { status: Profile.human_enum_name(:statuses, status) }[type]
   end
 
   private

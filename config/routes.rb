@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
       resources :blog_posts
       resources :subjects
+      resources :students
+      resources :tutors
     end
   end
 

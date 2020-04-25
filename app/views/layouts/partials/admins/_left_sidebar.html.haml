@@ -18,3 +18,11 @@
         = link_to admin_blog_posts_path do
           %i.icon-note
           %span= t('admins.left_sidebar.blog_posts')
+      %li{ class: active_if?(controller: 'tutors') }
+        = link_to admin_tutors_path do
+          %i.icon-user
+          %span= t('admins.left_sidebar.tutors')
+      %li{ class: active_if?(controller: 'students') }
+        = link_to admin_students_path do
+          %i.icon-user
+          %span= t('admins.left_sidebar.students')
