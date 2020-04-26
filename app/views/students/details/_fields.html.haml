@@ -43,7 +43,7 @@
     .form-group
       = f.label :birthday, class: 'control-label'
       .input-group
-        = f.text_field :birthday, required: true, class: 'form-control', data: { provide: 'datepicker' }
+        = f.date_select :birthday, { start_year: Date.today.year - 70, end_year: Date.today.year }, { required: true, class: 'form-control' }
   .col-md-6
 .row
   .col-md-6

@@ -8,8 +8,46 @@ $border-radius: 20px;
 }
 
 .blog-post {
+  &__inner {
+    padding: 3rem;
+
+    @include media-breakpoint-down(lg) {
+      padding: 3rem;
+    }
+
+    @include media-breakpoint-down(md) {
+      padding: 1rem;
+    }
+
+    @include media-breakpoint-down(sm) {
+      padding: 0rem;
+    }
+  }
+
+  &__image {
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    box-shadow: 0 0 10px rgba(198, 163, 245, 0.6);
+    margin-bottom: 2rem;
+
+    @include media-breakpoint-down(lg) {
+      border-top-right-radius: 0.55rem;
+      border-bottom-right-radius: 0.55rem;
+      position: relative;
+      left: -4.25rem;
+    }
+
+    @include media-breakpoint-down(md) {
+      left: -2.25rem;
+    }
+
+    @include media-breakpoint-down(sm) {
+      left: -1.25rem;
+    }
+  }
+
   &__wrapper {
-    max-width: 700px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 3rem;
@@ -21,7 +59,7 @@ $border-radius: 20px;
   }
 
   &__body {
-    margin: 3rem 0;
+    margin: 2rem 0;
     font-size: 1.15rem;
 
     p {
@@ -41,22 +79,25 @@ $border-radius: 20px;
   &__title {
     font-size: 2rem;
     margin: 0 0 1rem;
-    text-align: center;
 
     @include media-breakpoint-down(lg) {
       font-size: 1.5rem;
-      line-height: 3.42rem;
       margin-bottom: 0.5rem;
     }
   }
 
   &__meta {
     line-height: 1.5;
-    padding-bottom: 2rem;
-    text-align: center;
+    padding-bottom: 1rem;
     font-weight: 500;
+    font-size: 0.9rem;
+
+    a, a:hover {
+      color: $darkgray;
+    }
 
     i {
+      color: $brand-violet;
       position: relative;
       top: 0.05rem;
       font-size: 0.8rem;
@@ -83,8 +124,6 @@ $border-radius: 20px;
     }
 
     &-date {
-      font-size: 1rem;
-
       &::after {
         content: "–";
         color: #9b9aa1;
@@ -98,11 +137,9 @@ $border-radius: 20px;
     }
 
     &-tags {
-      font-size: 0.8rem;
-      letter-spacing: 0.05em;
       list-style: none;
-      text-align: center;
       text-transform: uppercase;
+      padding: 0;
 
       @include media-breakpoint-down(lg) {
         margin-top: 0.5rem;
@@ -137,6 +174,10 @@ $border-radius: 20px;
 
   a, a:hover {
     color: $darkgray;
+  }
+
+  &:hover {
+    box-shadow: 0 0 10px rgba(198, 163, 245, 0.6);
   }
 
   &__image {
@@ -175,14 +216,15 @@ $border-radius: 20px;
     font-size: 25px;
     font-weight: 500;
     padding-bottom: 5px;
-  }
-
-  &__description {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 
   &__actions {
     font-weight: 600;
+
+    i {
+      color: $brand-violet;
+    }
 
     &-author {
       display: inline-block;
