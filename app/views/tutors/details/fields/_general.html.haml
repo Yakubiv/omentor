@@ -47,7 +47,7 @@
         .input-group-prepend
           .input-group-text
             %i.icon-present
-        = f.text_field :birthday, required: true, class: 'form-control', data: { provide: 'datepicker' }
+        = f.date_select :birthday, { start_year: Date.today.year - 70, end_year: Date.today.year }, { required: true, class: 'form-control' }
   .col-md-12
     .form-group
       = f.label :time_zone, class: 'control-label'

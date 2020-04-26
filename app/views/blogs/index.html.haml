@@ -12,8 +12,6 @@
                 = link_to blog_path(blog_post) do
                   .c-post-box__title
                     = blog_post.title
-                  .c-post-box__description
-                    = truncate(blog_post.description, length: 100)
                   .c-post-box__actions
                     %ul.c-post-box__actions-tags
                       %i.icon-tag.mr-1

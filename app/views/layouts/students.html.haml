@@ -1,9 +1,9 @@
 !!!
 %html
   %head
-    %title Studygo Student
     = action_cable_meta_tag
     = render 'layouts/partials/head'
+    = display_meta_tags noindex: true, nofollow: true
   %body.font-montserrat
     = render 'layouts/partials/body_tag_manager'
     = render 'layouts/partials/loader'

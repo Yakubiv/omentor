@@ -30,6 +30,9 @@
             = f.label :meta_description
             = f.text_area :meta_description, class: 'form-control'
           .form-group
+            = f.label :slug
+            = f.text_area :slug, class: 'form-control'
+          .form-group
             = f.label :tags
             = f.text_field :tag_list, value: f.object.tag_list.to_s, class: 'form-control', id: 'tag-list'
           .form-group

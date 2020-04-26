@@ -4,6 +4,14 @@ module ApplicationHelper
   DATE = '%d/%m'.freeze
   TIME = '%H:%M'.freeze
 
+  def meta_og_tags(properties = {})
+    return unless properties.is_a? Hash
+
+    properties.map do |property, value|
+      tag(:meta, property: "og:#{property}", content: value)
+    end.join.html_safe
+  end
+
   def bootstrap_class_for(flash_type)
     {
       success: "alert-success",

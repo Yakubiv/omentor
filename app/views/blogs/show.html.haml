@@ -1,23 +1,30 @@
-.container
-  .blog-post__wrapper
-    %header
-      %h1.blog-post__title= @blog_post.title
-      .blog-post__meta
-        .blog-post__meta-author
-          %i.icon-user.mr-1
-          = link_to 'Studygo', blogs_path(author: 'studygo')
+- set_meta_tags @blog_post
 
-        %time.blog-post__meta-date
-          %i.icon-clock.mr-1
-          = l @blog_post.publish_at, format: ApplicationHelper::SHORT_DATE
-        .blog-post__meta-views
-          %i.icon-eye.mr-1
-          = @blog_post.impressions_count
-        %ul.blog-post__meta-tags
-          %i.icon-tag.mr-1
-          - @blog_post.tags.each do |tag|
-            %li.blog-post__meta-tag
-              = link_to tag, blogs_path(tag: tag)
-    = image_tag image_path(@blog_post.thumbnail)
-    .blog-post__body
-      = raw @blog_post.body
+= content_for(:og_propeties) do
+  = meta_og_tags @blog_post.og_properties
+
+.blog-post__wrapper
+  .card
+    .card-body
+      .blog-post__inner
+        = image_tag image_path(@blog_post.thumbnail), class: 'blog-post__image'
+        %header
+          .blog-post__meta
+            .blog-post__meta-author
+              %i.icon-user.mr-1
+              = link_to 'Studygo', blogs_path(author: 'studygo')
+            %time.blog-post__meta-date
+              %i.icon-clock.mr-1
+              = l @blog_post.publish_at, format: ApplicationHelper::DEFAULT_DATE
+            .blog-post__meta-views
+              %i.icon-eye.mr-1
+              = @blog_post.impressions_count
+            - if @blog_post.tags.any?
+              %ul.blog-post__meta-tags
+                %i.icon-tag.mr-1
+                - @blog_post.tags.each do |tag|
+                  %li.blog-post__meta-tag
+                    = link_to tag, blogs_path(tag: tag)
+          %h1.blog-post__title= @blog_post.title
+        .blog-post__body
+          = raw @blog_post.body
