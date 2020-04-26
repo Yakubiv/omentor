@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
     when 'tutor'
       tutors_dashboard_path
     when 'admin'
-      admin_dashboard_url(subdomain: 'admin')
+      admin_dashboard_url(subdomain: 'admin.studygo')
     end
   end
 end
