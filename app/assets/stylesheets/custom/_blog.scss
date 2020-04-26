@@ -12,16 +12,17 @@ $border-radius: 20px;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 4rem;
+    margin-top: 3rem;
     padding: 0 1rem;
 
     @include media-breakpoint-down(lg) {
-      margin-top: 4rem;
+      margin-top: 3rem;
     }
   }
 
   &__body {
     margin: 3rem 0;
+    font-size: 1.15rem;
 
     p {
       margin: 0 0 1.2rem;
@@ -43,9 +44,9 @@ $border-radius: 20px;
     text-align: center;
 
     @include media-breakpoint-down(lg) {
-      font-size: 2.5rem;
+      font-size: 1.5rem;
       line-height: 3.42rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
   }
 
@@ -53,7 +54,13 @@ $border-radius: 20px;
     line-height: 1.5;
     padding-bottom: 2rem;
     text-align: center;
-    font-weight: 600;
+    font-weight: 500;
+
+    i {
+      position: relative;
+      top: 0.05rem;
+      font-size: 0.8rem;
+    }
 
     &-author {
       display: inline-block;
@@ -76,7 +83,18 @@ $border-radius: 20px;
     }
 
     &-date {
-      font-size: 1.1rem;
+      font-size: 1rem;
+
+      &::after {
+        content: "–";
+        color: #9b9aa1;
+        display: inline;
+        margin: 0 0.5rem;
+      }
+    }
+
+    &-views {
+      display: inline-block;
     }
 
     &-tags {

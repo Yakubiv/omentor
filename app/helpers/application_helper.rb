@@ -1,5 +1,5 @@
 module ApplicationHelper
-  SHORT_DATE = '%d %B, %H:%M'.freeze
+  SHORT_DATE = '%d %B %Y, %H:%M'.freeze
   DEFAULT_DATE = '%d %B %Y'.freeze
   DATE = '%d/%m'.freeze
   TIME = '%H:%M'.freeze

@@ -28,7 +28,7 @@
                       = l blog_post.publish_at, format: ApplicationHelper::SHORT_DATE
                     .c-post-box__actions-views
                       %i.icon-eye.mr-1
-                      10
+                      = blog_post.impressions_count
     .col-lg-4.col-md-4
       .c-tags-box
         .c-tags-box__header

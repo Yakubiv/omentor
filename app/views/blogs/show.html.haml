@@ -4,11 +4,17 @@
       %h1.blog-post__title= @blog_post.title
       .blog-post__meta
         .blog-post__meta-author
+          %i.icon-user.mr-1
           = link_to 'Studygo', blogs_path(author: 'studygo')
 
         %time.blog-post__meta-date
+          %i.icon-clock.mr-1
           = l @blog_post.publish_at, format: ApplicationHelper::SHORT_DATE
+        .blog-post__meta-views
+          %i.icon-eye.mr-1
+          = @blog_post.impressions_count
         %ul.blog-post__meta-tags
+          %i.icon-tag.mr-1
           - @blog_post.tags.each do |tag|
             %li.blog-post__meta-tag
               = link_to tag, blogs_path(tag: tag)
