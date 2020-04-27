@@ -70,6 +70,10 @@ $border-radius: 20px;
     @include media-breakpoint-down(lg) {
       margin-top: 3rem;
     }
+
+    @include media-breakpoint-down(md) {
+      padding: 0;
+    }
   }
 
   &__body {
@@ -204,13 +208,15 @@ $border-radius: 20px;
   background-color: white;
   border-radius: $border-radius;
   box-shadow: 0 0 20px 0 rgba(0,0,0,.03);
+  transition-duration: 0.7s;
 
   a, a:hover {
     color: $darkgray;
   }
 
   &:hover {
-    box-shadow: 0 0 10px rgba(198, 163, 245, 0.6);
+    box-shadow: 0 0 15px rgba(198, 163, 245, 0.6);
+    transition-duration: 0.7s;
   }
 
   &__image {

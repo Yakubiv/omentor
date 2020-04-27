@@ -1,10 +1,17 @@
+$header-height: 70px;
+
 .c-header {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #fff;
-  height: 70px;
+  height: $header-height;
   padding: 0 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
 
   &--wrapper {
     width: 100%;
@@ -55,4 +62,8 @@
 
 .main-logo {
   max-width: 90px;
+}
+
+.mt-header {
+  margin-top: $header-height;
 }
