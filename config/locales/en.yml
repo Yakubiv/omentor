@@ -158,6 +158,8 @@ en:
       updated: 'Вчитель оновлений %{tutor}'
   blog:
     tags: Теги
+    share_facebook: Поширити в Фейсбук
+    share_twitter: Поширити в Твітер
   students:
     tutor_profiles:
       index:

@@ -3,5 +3,7 @@
 class HomesController < ApplicationController
   layout 'home'
 
-  def index; end
+  def index
+    redirect_to blogs_path
+  end
 end

@@ -30,6 +30,20 @@ $border-radius: 20px;
     box-shadow: 0 0 10px rgba(198, 163, 245, 0.6);
     margin-bottom: 2rem;
 
+    @include media-breakpoint-up(lg) {
+      border-top-right-radius: 0.55rem;
+      border-bottom-right-radius: 0.55rem;
+      position: relative;
+      margin-left: 0rem;
+    }
+
+    @include media-breakpoint-down(xl) {
+      border-top-right-radius: 0.55rem;
+      border-bottom-right-radius: 0.55rem;
+      position: relative;
+      left: -4.25rem;
+    }
+
     @include media-breakpoint-down(lg) {
       border-top-right-radius: 0.55rem;
       border-bottom-right-radius: 0.55rem;
@@ -83,6 +97,24 @@ $border-radius: 20px;
     @include media-breakpoint-down(lg) {
       font-size: 1.5rem;
       margin-bottom: 0.5rem;
+    }
+  }
+
+  &__social-buttons {
+    list-style: none;
+    text-transform: uppercase;
+    padding: 0;
+    margin-top: 1rem;
+
+    li {
+      display: inline-block;
+
+      a {
+        text-decoration: none;
+        -webkit-text-decoration-skip: ink;
+        text-decoration-skip-ink: auto;
+        transition: color 0.1s linear;
+      }
     }
   }
 
@@ -140,9 +172,10 @@ $border-radius: 20px;
       list-style: none;
       text-transform: uppercase;
       padding: 0;
+      margin-top: 1rem;
 
       @include media-breakpoint-down(lg) {
-        margin-top: 0.5rem;
+
       }
     }
 
@@ -183,9 +216,13 @@ $border-radius: 20px;
   &__image {
     position: relative;
     overflow: hidden;
-    height: 300px;
+    height: 250px;
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
+
+    @include media-breakpoint-down(lg) {
+      height: 230px;
+    }
 
     @include media-breakpoint-down(md) {
       height: 250px;

@@ -5,6 +5,7 @@ module Tutors
     before_action :authenticate_user!
     before_action :verify_current_user_is_tutor?
     before_action :set_time_zone, if: :tutor_signed_in?
+    before_action :varify_that_user_filled_his_details, if: :user_signed_in?
 
     layout 'tutors'
 
@@ -22,6 +23,22 @@ module Tutors
     end
 
     private
+
+    def varify_that_user_filled_his_details
+      return true if not_ready_redirect_path.nil?
+
+      redirect_to not_ready_redirect_path
+    end
+
+    def not_ready_redirect_path
+      return tutors_details_path unless current_user.tutor_profile
+
+      if !current_user.tutor_profile.avatar.attached?
+        photo_tutors_details_path
+      elsif current_user.tutor_profile.video_url.nil?
+        video_tutors_details_path
+      end
+    end
 
     def tutor_signed_in?
       current_user && current_user&.tutor_profile

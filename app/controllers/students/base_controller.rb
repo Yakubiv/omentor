@@ -4,6 +4,7 @@ class Students::BaseController < ApplicationController
   before_action :authenticate_user!
   before_action :current_user_is_student?
   before_action :set_time_zone, if: :student_signed_in?
+  before_action :varify_that_user_filled_his_details, if: :user_signed_in?
 
   layout 'students'
 
@@ -21,6 +22,22 @@ class Students::BaseController < ApplicationController
   end
 
   private
+
+  def varify_that_user_filled_his_details
+    return true if not_ready_redirect_path.nil?
+
+    redirect_to not_ready_redirect_path
+  end
+
+  def not_ready_redirect_path
+    return students_details_path unless current_user.student_profile
+
+    if !current_user.student_profile.avatar.attached?
+      photo_students_details_path
+    elsif current_user.student_profile.video_url.nil?
+      video_students_details_path
+    end
+  end
 
   def student_signed_in?
     current_user && current_user&.student_profile
