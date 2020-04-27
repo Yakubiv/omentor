@@ -49,6 +49,6 @@ class Admin::BlogPostsController < Admin::BaseController
                                       :status, :meta_description, :meta_title,
                                       :popular, :publish_at, :top, :slug,
                                       :body, :thumbnail, :tag_list)
-                               .merge(meta_tags: meta_tags)
+                              .merge(meta_tags: meta_tags)
   end
 end

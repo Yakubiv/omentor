@@ -1,7 +1,7 @@
 - set_meta_tags @blog_post
 
 = content_for(:og_propeties) do
-  = meta_og_tags @blog_post.og_properties
+  = meta_og_tags og_properties(@blog_post)
 
 .blog-post__wrapper
   .card
@@ -28,3 +28,10 @@
           %h1.blog-post__title= @blog_post.title
         .blog-post__body
           = raw @blog_post.body
+        %ul.blog-post__social-buttons
+          %li.btn-social
+            %a.btn.btn-outline-primary.js-social-share.facebook{ href: "https://www.facebook.com/sharer/sharer.php?u=#{blog_url(@blog_post)}", target: "_blank", data: { toggle: 'tooltip' }, title: t('blog.share_facebook') }
+              %i.icon-social-facebook
+          %li.btn-social
+            %a.btn.btn-outline-primary.js-social-share.twitter{ href: "https://twitter.com/intent/tweet?text='#{@blog_post.title}'&url=#{blog_url(@blog_post)}&via=twitter", target: "_blank", data: { toggle: 'tooltip' }, title: t('blog.share_twitter') }
+              %i.icon-social-twitter

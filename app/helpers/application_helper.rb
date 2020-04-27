@@ -4,6 +4,13 @@ module ApplicationHelper
   DATE = '%d/%m'.freeze
   TIME = '%H:%M'.freeze
 
+  def og_properties(blog)
+    { title: blog.title,
+      type: blog.show(:category),
+      image: Rails.env.development? ? image_path(blog.thumbnail) : blog.thumbnail.service_url,
+      url: blog_url(blog) }
+  end
+
   def meta_og_tags(properties = {})
     return unless properties.is_a? Hash
 

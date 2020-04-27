@@ -8,7 +8,6 @@ class BlogPost < ApplicationRecord
 
   extend FriendlyId
   include PgSearch::Model
-  include Rails.application.routes.url_helpers
 
   has_one_attached :thumbnail
   has_rich_text :body
@@ -39,13 +38,6 @@ class BlogPost < ApplicationRecord
       tsearch: { prefix: true }
     }
   )
-
-  def og_properties
-    { title: title,
-      type: show(:category),
-      image: thumbnail.variant(resize: "200x200!"),
-      url: blog_path(slug) }
-  end
 
   def should_generate_new_friendly_id?
     slug.blank?

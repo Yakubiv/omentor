@@ -1,39 +1,39 @@
-.container
-  .row
-    .col-lg-8.col-md-8
-      .c-posts-box
-        - @blog_posts.each do |blog_post|
-          = cache [blog_post] do
-            .c-post-box
-              .c-post-box__image
-                = link_to blog_path(blog_post) do
-                  = image_tag image_path(blog_post.thumbnail)
-              .c-post-box__body
-                = link_to blog_path(blog_post) do
-                  .c-post-box__title
-                    = blog_post.title
-                  .c-post-box__actions
+.row
+  .col-xl-5.offset-xl-2.col-lg-5.offset-lg-2.col-md-8
+    .c-posts-box
+      - @blog_posts.each do |blog_post|
+        = cache [blog_post] do
+          .c-post-box
+            .c-post-box__image
+              = link_to blog_path(blog_post) do
+                = image_tag image_path(blog_post.thumbnail)
+            .c-post-box__body
+              = link_to blog_path(blog_post) do
+                .c-post-box__title
+                  = blog_post.title
+                .c-post-box__actions
+                  - if blog_post.tags.any?
                     %ul.c-post-box__actions-tags
                       %i.icon-tag.mr-1
                       - blog_post.tags.each do |tag|
                         %li.c-post-box__actions-tag
                           = link_to tag, blogs_path(tag: tag)
-                    .c-post-box__actions-author
-                      %i.icon-user.mr-1
-                      = link_to 'Studygo', blogs_path(author: 'studygo')
-                    %time.c-post-box__actions-time
-                      %i.icon-clock.mr-1
-                      = l blog_post.publish_at, format: ApplicationHelper::SHORT_DATE
-                    .c-post-box__actions-views
-                      %i.icon-eye.mr-1
-                      = blog_post.impressions_count
-    .col-lg-4.col-md-4
-      .c-tags-box
-        .c-tags-box__header
-          = t('blog.tags')
-        %ul.c-tags-box__content
-          - BlogPost.tag_counts_on(:tags).order(taggings_count: :desc).first(10).each do |tag|
-            %li.c-tag-box
-              .c-tag-box__name
-                %a{ href: blogs_path(tag: tag.to_s), data: { toggle: 'tooltip' }, title: tag.taggings_count }
-                  = tag
+                  .c-post-box__actions-author
+                    %i.icon-user.mr-1
+                    = link_to 'Studygo', blogs_path(author: 'studygo')
+                  %time.c-post-box__actions-time
+                    %i.icon-clock.mr-1
+                    = l blog_post.publish_at, format: ApplicationHelper::SHORT_DATE
+                  .c-post-box__actions-views
+                    %i.icon-eye.mr-1
+                    = blog_post.impressions_count
+  .col-xl-3.col-lg-4.col-md-4
+    .c-tags-box
+      .c-tags-box__header
+        = t('blog.tags')
+      %ul.c-tags-box__content
+        - BlogPost.tag_counts_on(:tags).order(taggings_count: :desc).first(10).each do |tag|
+          %li.c-tag-box
+            .c-tag-box__name
+              %a{ href: blogs_path(tag: tag.to_s), data: { toggle: 'tooltip' }, title: tag.taggings_count }
+                = tag
