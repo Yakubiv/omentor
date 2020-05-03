@@ -1,6 +1,17 @@
-.row
-  .col-xl-5.offset-xl-2.col-lg-5.offset-lg-2.col-md-8
-    .c-posts-box
+- set_meta_tags title: 'Блог', description: 'Блог онлайн платформи для навчання | Studygo'
+
+%nav.bg-indigo-600
+  %div{ class: 'max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 p-6' }
+    %ol.list-reset.flex.text-white
+      %li
+        %a.text-white.font-bold{ href: blogs_path } Блог
+
+-# .container-fluid
+-# .row
+-#   .col-xl-5.offset-xl-2.col-lg-5.offset-lg-2.col-md-8
+%div{ class: 'max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8' }
+  %div{ class: 'flex flex-wrap' }
+    .c-posts-box{ class: 'w-full md:w-3/5' }
       - @blog_posts.each do |blog_post|
         = cache [blog_post] do
           .c-post-box
@@ -27,8 +38,8 @@
                   .c-post-box__actions-views
                     %i.icon-eye.mr-1
                     = blog_post.impressions_count
-  .col-xl-3.col-lg-4.col-md-4
-    .c-tags-box
+      -# .col-xl-3.col-lg-4.col-md-4
+    .c-tags-box{ class: 'w-full md:w-2/5 mb-10' }
       .c-tags-box__header
         = t('blog.tags')
       %ul.c-tags-box__content

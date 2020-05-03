@@ -76,7 +76,7 @@
         }
 	}
 	.g_heading{
-        @extend .mt-20;
+        margin-top: 20px;
         font-size: $font-size - 4px;
         text-transform: uppercase;
 		color: $gray-500;

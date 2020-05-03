@@ -13,7 +13,7 @@
 @import 'base/variables';
 @import 'base/font';
 @import 'base/ui-variables';
-@import 'base/helpers';
+// @import 'base/helpers';
 @import "base/general";
 
 // ui kit scss
@@ -36,15 +36,15 @@
 @import 'page/social';
 @import 'page/timeline';
 @import 'page/example';
-@import 'page/inbox';
+// @import 'page/inbox';
 @import 'page/blog';
 @import 'page/profile';
 
 // Project Widgets
-@import 'page/widgets';
-@import 'page/widgets-statistics';
-@import 'page/widgets-data';
-@import 'page/widgets-social';
+// @import 'page/widgets';
+// @import 'page/widgets-statistics';
+// @import 'page/widgets-data';
+// @import 'page/widgets-social';
 
 @import 'skins/dark.scss';
 @import 'skins/default.scss';

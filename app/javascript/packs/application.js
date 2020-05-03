@@ -8,6 +8,8 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("local-time")
 
+require("css/application.scss")
+
 require("@fullcalendar/core")
 require("@fullcalendar/daygrid")
 require("@fullcalendar/timegrid")
@@ -17,6 +19,7 @@ require("selectize")
 require("channels")
 require("custom")
 require("dropify")
+
 
 window.$ = $;
 

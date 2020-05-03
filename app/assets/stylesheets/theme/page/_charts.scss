@@ -53,8 +53,8 @@ $ct-series-colors: (
 			stroke: $series-color;
 		}
 
-		.ct-area, 
-		.ct-slice-donut-solid, 
+		.ct-area,
+		.ct-slice-donut-solid,
 		.ct-slice-pie,
 		.ct-bar {
 			fill: $series-color;
@@ -63,7 +63,7 @@ $ct-series-colors: (
 }
 
 .chartist-tooltip {
-	@include border-radius(3px);	
+	@include border-radius(3px);
 	background: $gray-700;
     color: $white;
     min-width: 3.5em;
@@ -71,7 +71,7 @@ $ct-series-colors: (
 	&:before {
         border-top-color: $gray-700;
 		margin-left: -8px;
-		border-width: 8px;		
+		border-width: 8px;
 	}
 }
 
@@ -86,15 +86,15 @@ $ct-series-colors: (
 	color: $font-color;
 }
 .ct-legend {
-    @extend .align-right;
-    @extend .padding-0;
-	position: relative;	
+	text-align: right;
+	padding: 0;
+	position: relative;
 	z-index: 1;
 
 	li {
 		@include inline-block;
-        @extend .mr-20;
-        position: relative;
+		margin-right: 20px;
+		position: relative;
 		padding-left: 18px;
 		margin-bottom: 3px;
 		list-style-type: none;

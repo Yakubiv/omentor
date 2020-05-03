@@ -62,11 +62,11 @@
           }
 
           li {
-              @extend .mb-1;
+              margin-bottom: 5px;
               list-style: none;
 
               &:last-child{
-                  @extend .mb-0;
+                  margin-bottom: 0;
               }
           }
       }
@@ -77,15 +77,15 @@
             min-width: 100px;
 
             p{
-                @extend .mb-1;
+                margin-bottom: 5px;
                 @include border-radius(60px 60px 60px 0);
                 padding: 8px 15px 15px;
             }
         }
 
         .my-message {
-            @extend .align-right;
-            @extend .ml-50;
+            text-align: center;
+            margin-left: 50px;
             p{
                 @include border-radius(60px 60px 0 60px);
             }
@@ -117,7 +117,7 @@
         }
 
         .other-message {
-            @extend .align-left;
+            text-align: center;
             color: white;
             .message{
                 @include max-screen($break-small - 1px) {
@@ -222,9 +222,8 @@
     }
 }
 .right_chat{
-    @extend .pt-10;
-    @extend .pb-10;
-    @extend .mb-0;
+    padding: 50px 0;
+    margin-bottom: 0;
 
     li {
         @include border-radius(3px);
@@ -256,7 +255,6 @@
         .media-object {
             @include transition(all .3s ease-in-out);
             @include border-radius(40px);
-            @extend .mr-10;
             width: 40px;
             height: 40px;
             border: 2px solid transparent;
@@ -267,13 +265,11 @@
             line-height: normal;
         }
         .message {
-            @extend .font-13;
             color: $gray-400;
         }
         .status {
             @include border-radius(40px);
             @include inline-block();
-            @extend .padding-0;
             position: absolute;
             left: 40px;
             top: 38px;
