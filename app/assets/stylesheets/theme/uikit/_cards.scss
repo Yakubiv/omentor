@@ -1,6 +1,6 @@
 .card {
 	@include transition(all .5s ease-in-out);
-    @extend .mb-15;
+		margin-bottom: 15px;
     border-radius: $border-radius-large;
     border-color: $lightgray;
 	position: relative;
@@ -12,7 +12,7 @@
     &.box_shadow{
         @include box-shadow(0 3px 10px rgba($dark,0.05));
     }
-    
+
 	.card {
 		box-shadow: none;
 	}
@@ -20,15 +20,15 @@
 	@media print {
 		box-shadow: none;
 		border: none;
-    }    
+    }
 }
 .card-columns{
     @include max-screen ($break-medium){
         column-count: 2;
-    }    
+    }
 }
 .card-body {
-    @extend .margin-0;
+		margin: 0;
     padding: $card-spacer-y $card-spacer-x;
     flex: 1 1 auto;
 	position: relative;
@@ -37,7 +37,7 @@
 		border-top: 1px solid $border-color;
 	}
 	> :last-child {
-        @extend .mb-0;
+        margin-bottom: 0px;
 	}
 	@media print {
 		padding: 0;
@@ -58,16 +58,16 @@
 .card-header {
     padding: $card-spacer-y $card-spacer-x;
     border: 0;
-	background: none;	
-	display: flex;	
+	background: none;
+	display: flex;
 	align-items: center;
 
 	.card-title {
-        @extend .mb-0;
+				margin-bottom: 0px;
 	}
 
 	&.border-0 + .card-body {
-        @extend .pt-0;
+		padding-top: 0px;
 	}
 
 	@media print {
@@ -87,7 +87,7 @@
 	flex-direction: column;
 }
 .card-title {
-    @extend .mb-25;
+		margin-bottom: 25px;
     font-size: $font-size;
     font-weight: $font-weight-400;
     line-height: 1.2;
@@ -98,26 +98,26 @@
 	}
 
 	&:only-child {
-        @extend .mb-0;
+				margin-bottom: 0px;
     }
     small{
         @include display-block();
-        @extend .font-12;
+				font-size: 12px;
         text-transform: initial;
         font-weight: $font-weight-400;
-        color: $text-muted;    
-    }    
+        color: $text-muted;
+    }
 }
 .card-subtitle {
     @include display-block();
-    @extend .font-14;
+		font-size: 14px;
     font-weight: $font-weight-400;
 	color: $text-muted;
 	margin: -.75rem 0 1rem;
-	line-height: 1.1;	
+	line-height: 1.1;
 }
 .card-table {
-    @extend .mb-0;
+		margin-bottom: 0px;
 
 	tr {
 		&:first-child {
@@ -150,7 +150,7 @@
 	}
 }
 .card-profile-img {
-    @extend .mb-15;
+		margin-bottom: 15px;
     border: 3px solid $white;
 	max-width: 6rem;
 	border-radius: 100%;
@@ -207,7 +207,7 @@
 	background: no-repeat center/cover;
 }
 .card-value {
-    @extend .font-40;
+		font-size: 40px;
 	line-height: 3.4rem;
 	height: 3.4rem;
 	display: flex;
@@ -229,11 +229,11 @@
     color: $text-muted;
 	margin-left: auto;
 	display: flex;
-	order: 100;	
+	order: 100;
     align-self: center;
 
     > a{
-        @extend .ml-15;
+				margin-left: 15px;
         font-size: $font-size + 2px;
     }
 
@@ -248,7 +248,7 @@
 		&:after {
 			display: none;
 		}
-	}	
+	}
     .dropdown{
         > a{
             font-size: $font-size + 3px;
@@ -307,7 +307,7 @@
 
 .card-tabs-item {
     @include display-block();
-	flex: 1 1 auto;	
+	flex: 1 1 auto;
 	padding: 1rem $card-spacer-x;
 	border-bottom: 1px solid $border-color;
 	color: inherit;
@@ -344,7 +344,7 @@
 	top: -1px;
 	left: 0;
 	right: 0;
-    height: 3px;    
+    height: 3px;
 }
 
 .card-status-left {
@@ -359,21 +359,21 @@
 
 /** Card fullscreen */
 .card-fullscreen {
-	@extend .margin-0;
+	margin: 0px;
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
-	z-index: $zindex-tooltip;	
+	z-index: $zindex-tooltip;
 }
 
 /** Card icon */
 .card-icon {
-    @extend .font-40;
-    @extend .align-center;
+		text-align: center;
+		font-size: 40px;
 	width: 3rem;
-	line-height: 3rem;	
+	line-height: 3rem;
 }
 
 /** Card alert */
@@ -383,9 +383,9 @@
 }
 
 .card-category {
-    @extend .font-14;    
+		font-size: 14px;
     font-weight: $font-weight-600;
-    text-transform: uppercase;	
+    text-transform: uppercase;
 	letter-spacing: .05em;
 	margin: 0 0 .5rem;
 }

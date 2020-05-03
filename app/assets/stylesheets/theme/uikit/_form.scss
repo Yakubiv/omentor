@@ -11,7 +11,7 @@ textarea {
 .form-label {
     font-weight: $font-weight-600;
 	display: block;
-	margin-bottom: .375rem;	
+	margin-bottom: .375rem;
 	font-size: px2rem(14px);
 }
 
@@ -34,13 +34,13 @@ textarea {
 	}
 }
 .custom-checkbox{
-    @extend .mb-0;
+    margin-bottom: 0;
     .custom-control-input{
         left: 0;
     }
 	.custom-control-label {
-		vertical-align: middle;		
-	
+		vertical-align: middle;
+
 		&:before {
 			border: 1px solid $input-border-color;
 			background-color: $white;
@@ -65,7 +65,7 @@ textarea {
             outline: none;
 
 			label.checkbox {
-                @extend .font-14;
+                font-size: 14px;
                 color: $gray-500;
                 padding: 0;
 
@@ -89,18 +89,18 @@ textarea {
 
 		&.active > a {
 			label.checkbox:before {
-                @extend .font-12;
+                font-size: 12px;
                 color: $gray-500;
-                background-color: $gray-200;                
+                background-color: $gray-200;
 				font-family: 'FontAwesome';
-				content: '\f00c';				
+				content: '\f00c';
 				text-align: center;
-				line-height: 15px;				
+				line-height: 15px;
 			}
         }
         &.active{
             .checkbox{
-                color: $gray-700;                
+                color: $gray-700;
             }
         }
         &:hover{
@@ -116,7 +116,7 @@ textarea {
             display: block;
             outline: none;
 
-			label.radio {				
+			label.radio {
                 padding: 0;
 
 				&:before {
@@ -152,10 +152,10 @@ textarea {
 
         &.active{
             .radio{
-                color: $gray-600;                
+                color: $gray-600;
             }
         }
-        
+
         &:hover{
             background-color: $gray-100;
         }
@@ -196,7 +196,7 @@ textarea {
                 margin: 0 15px;
             }
         }
-        
+
 
         .btn{
             text-align: left;
@@ -263,7 +263,7 @@ textarea {
 		width: 100%;
 		.table-condensed{
 			width: 100%;
-		}        
+		}
 	}
 }
 .inline-datepicker{
@@ -302,7 +302,7 @@ textarea {
 }
 .custom-select{
     color: $font-color !important;
-    font-size: $font-size - 1px; 
+    font-size: $font-size - 1px;
     .selectize-input{
         color: $font-color;
     }

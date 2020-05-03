@@ -24,7 +24,7 @@
 	margin: 0 -.75rem;
 
 	.nav-link {
-        @extend .font-15;
+        font-size: 15px;
         transition: .3s border-color;
         font-weight: $font-weight-400;
 		border: 0;
@@ -52,13 +52,13 @@
 	}
 
 	.nav-item {
-        @extend .mb-0;
+				margin-bottom: 0px;
 		position: relative;
 
 		i {
             @include inline-block();
-            @extend .font-12;
-            @extend .mr-2;
+						font-size: 12px;
+						margin-right: 10px;
 			line-height: 1;
 			width: px2rem(14px);
 			vertical-align: baseline;

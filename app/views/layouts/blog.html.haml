@@ -4,11 +4,10 @@
     = render 'layouts/partials/head'
   %body.font-montserrat
     = render 'layouts/partials/body_tag_manager'
+    = render 'layouts/partials/header', title: 'Блог'
     #main_content
-      = render 'layouts/partials/header', title: 'Блог'
       = render 'layouts/partials/alert'
-      .section-body
-        .container-fluid
-          .row.clearfix.mt-header
-            .col-lg-12.col-md-12.col-sm-12
-              = yield
+      .section-body.mt-header
+        = yield
+        = render 'layouts/partials/newsletter'
+        = render 'layouts/partials/footer'

@@ -6,7 +6,7 @@
     height: 100vh;
     position: fixed;
     right: -300px;
-    top: 0px;    
+    top: 0px;
     z-index: 9999 !important;
 
     overflow-y: scroll;
@@ -36,18 +36,18 @@
     }
     .card{
         .card-header{
-            @extend .pb-0;
+            padding-bottom: 0;
         }
         ul{
-            @extend .mb-0;
+            margin-bottom: 0;
         }
     }
 }
 .setting-list{
     li{
-        @extend .mb-10;
+        margin-bottom: 10px;
         &:last-child{
-            @extend .mb-0;
+            margin-bottom: 0;
         }
     }
 }
@@ -59,11 +59,11 @@
         position: relative;
         cursor: pointer;
         font-size: 0;
-        
+
         &.active,
         &:hover{
             &:after {
-                @extend .font-10;
+                font-size: 10px;
                 color: $white;
                 font-family: 'FontAwesome';
                 position: absolute;
@@ -109,25 +109,25 @@
 }
 .contact-list{
     li{
-        @extend .mb-25;
+        margin-bottom: 25px;
 
         .contact-img{
-            @extend .mr-15;
+            margin-right: 15px;
             img{
                 width: 30px;
             }
         }
         .contact-name{
-            @extend .font-15;
-            @extend .mb-0;
+            font-size: 15px;
+            margin-bottom: 0;
 
             span{
-                @extend .font-12;
+                font-size: 12px;
                 font-weight: $font-weight-400;
             }
         }
         .action{
-            margin-left: auto; 
+            margin-left: auto;
         }
     }
 }
@@ -139,8 +139,8 @@
     width: 278px;
     height: 100vh;
     position: fixed;
-    right: -280px;    
-    top: 0px;    
+    right: -280px;
+    top: 0px;
     z-index: 9999 !important;
 
     overflow-x: auto;
@@ -160,7 +160,7 @@
             a{
                 display: block;
                 img{
-                    border: 1px solid $gray-100; 
+                    border: 1px solid $gray-100;
                 }
             }
         }

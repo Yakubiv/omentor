@@ -7,7 +7,7 @@
     min-width: 12rem;
     font-size: $font-size - 1px;
 
-    .dropdown-item {        
+    .dropdown-item {
         color: $gray-700;
         font-size: $font-size - 1px;
         padding: 5px 10px;
@@ -24,27 +24,30 @@
         }
 
         > div{
-            @extend .text_ellipsis;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            display: block;
+            overflow: hidden;
             width: calc(100% - 50px);
         }
         &.readall{
             padding: 0;
         }
     }
-    
-    &.dropdown-menu-arrow {	
+
+    &.dropdown-menu-arrow {
 
         &:after {
             display: inline-block;
             content: '';
             position: absolute;
             top: -10px;
-            left: 12px;		
+            left: 12px;
             border-right: 10px solid transparent;
             border-bottom: 10px solid $white;
-            border-left: 10px solid transparent;		
+            border-left: 10px solid transparent;
         }
-    
+
         &.dropdown-menu-right {
             &:before,
             &:after {
@@ -63,12 +66,10 @@
 	}
 
 	&:empty:after {
-        @extend .ml-0;
 	}
 }
 .dropdown-icon{
     @include inline-block();
-    @extend .align-center;	
-	margin-right: .5rem;	
+	margin-right: .5rem;
     vertical-align: -1px;
 }

@@ -160,6 +160,9 @@ en:
     tags: Теги
     share_facebook: Поширити в Фейсбук
     share_twitter: Поширити в Твітер
+    want_update: "Хочете отримувати корисні поради першими?"
+    subscribe_text: Підписуйтеся на нашу розсилку.
+    notify_me: Підписатися
   students:
     tutor_profiles:
       index:
