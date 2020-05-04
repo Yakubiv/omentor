@@ -61,10 +61,11 @@ $border-radius: 20px;
   }
 
   &__wrapper {
-    max-width: 800px;
+    max-width: 1024px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 3rem;
+    margin-bottom: 2.75rem;
     padding: 0 1rem;
 
     @include media-breakpoint-down(lg) {

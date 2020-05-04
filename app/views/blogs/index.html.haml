@@ -24,7 +24,7 @@
                   = blog_post.title
                 .c-post-box__actions
                   - if blog_post.tags.any?
-                    %ul.c-post-box__actions-tags
+                    %ul.c-post-box__actions-tags.mb-2
                       %i.icon-tag.mr-1
                       - blog_post.tags.each do |tag|
                         %li.c-post-box__actions-tag
