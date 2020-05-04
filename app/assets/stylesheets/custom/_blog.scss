@@ -385,7 +385,7 @@ li.c-tag-box {
   a {
     display: inline-block;
     padding: 8px 25px;
-    color: $gray-900;
+    color: $brand-violet;
     text-decoration: none;
     background-color: #fff;
     -webkit-transition: .2s;
@@ -393,7 +393,7 @@ li.c-tag-box {
     transition: .2s;
 
     &:hover {
-      background-color: $gray-900;
+      background-color: $brand-violet;
       color: white;
     }
   }
