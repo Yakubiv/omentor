@@ -30,6 +30,11 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  pagy:
+    nav:
+      prev: "&lsaquo;&nbsp;Попередня"
+      next: "Наступна&nbsp;&rsaquo;"
+      gap: "&hellip;"
   number:
     currency:
       format:
@@ -267,3 +272,8 @@ en:
   simple_calendar:
     previous: Попередній
     next: Наступний
+
+  common:
+    rights_reserved: Всі права захищені
+    rights: Умови надання послуг
+    read_rights: Читати

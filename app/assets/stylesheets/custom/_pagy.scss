@@ -1,0 +1,35 @@
+$item-radius: 20px;
+
+.page-link {
+  padding: 1rem 1.5rem !important;
+  color: $brand-violet !important;
+}
+
+.page-item {
+  &.prev {
+    .page-link {
+      border-top-left-radius: $item-radius ;
+      border-bottom-left-radius: $item-radius;
+    }
+  }
+
+  &.disabled {
+    .page-link {
+      color: rgba($brand-violet, 0.6) !important;
+    }
+  }
+
+  &.next {
+    .page-link {
+      border-top-right-radius: $item-radius;
+      border-bottom-right-radius: $item-radius;
+    }
+  }
+  &.active {
+    .page-link {
+      background-color: $pink-500 !important;
+      border-color: $pink-500 !important;
+      color: white !important;
+    }
+  }
+}

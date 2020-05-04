@@ -1,4 +1,6 @@
 module ApplicationHelper
+  include Pagy::Frontend
+
   SHORT_DATE = '%d %B %Y, %H:%M'.freeze
   DEFAULT_DATE = '%d %B %Y'.freeze
   DATE = '%d/%m'.freeze

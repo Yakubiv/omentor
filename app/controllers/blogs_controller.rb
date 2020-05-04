@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
   layout 'blog'
 
   def index
-    @blog_posts = BlogPost.includes(:tags)
+    @pagy, @blog_posts = pagy(BlogPost.includes(:tags), items: 10)
   end
 
   def show

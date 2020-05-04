@@ -38,7 +38,8 @@
                   .c-post-box__actions-views
                     %i.icon-eye.mr-1
                     = blog_post.impressions_count
-      -# .col-xl-3.col-lg-4.col-md-4
+      - if @pagy.prev || @pagy.next
+        .mb-10= render partial: 'layouts/partials/pagy', locals: { pagy: @pagy }
     .c-tags-box{ class: 'w-full md:w-2/5 mb-10' }
       .c-tags-box__header
         = t('blog.tags')
