@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'homes#index'
 
   resources :search_tutors, only: :index
+  resources :subscriptions, only: :create
 
   namespace :api do
     namespace :v1 do

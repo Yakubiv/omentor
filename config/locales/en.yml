@@ -168,6 +168,8 @@ en:
     want_update: "Хочете отримувати корисні поради першими?"
     subscribe_text: Підписуйтеся на нашу розсилку.
     notify_me: Підписатися
+    email_placeholder: 'Email'
+
   students:
     tutor_profiles:
       index:
