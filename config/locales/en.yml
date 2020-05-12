@@ -163,6 +163,7 @@ en:
     tutors:
       updated: 'Вчитель оновлений %{tutor}'
   blog:
+    posts_not_found: Статей не найдено
     tags: Теги
     share_facebook: Поширити в Фейсбук
     share_twitter: Поширити в Твітер
