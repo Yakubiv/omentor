@@ -1,0 +1,19 @@
+.card
+  .card-header
+    %h3.card-title
+      Редагувати
+      %strong #{@subscriber.email}
+    .card-options
+
+  .card-body
+    = form_with model: @subscriber, url: admin_subscriber_path(@subscriber), method: :put do |f|
+      .row
+        .col-sm-4
+          .form-group
+            = f.label :active
+            = f.select :active, options_for_select([true, false], f.object.active), {}, class: 'form-control'
+          .form-group
+            = f.label :email
+            = f.email_field :email, class: 'form-control'
+      .form-group
+        = f.submit 'Save', class: 'btn btn-success'

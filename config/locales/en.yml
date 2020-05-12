@@ -159,6 +159,7 @@ en:
       students: Студенти
       tutors: Вчителі
       blog_posts: Блог
+      subscribers: News Підписники
     tutors:
       updated: 'Вчитель оновлений %{tutor}'
   blog:

@@ -1,0 +1,28 @@
+
+.card
+  .card-header
+    %h3.card-title
+      News Підписники
+    .card-options
+
+  .card-body
+    .table-responsive
+      %table.table.text-nowrap.mb-0
+        %thead
+          %tr
+            %th Email
+            %th Активний?
+            %th
+
+        %tbody
+          - @subscribers.each do |subscriber|
+            %tr
+              %td
+                = subscriber.email
+              %td
+                = subscriber.active ? 'Yes' : 'No'
+              %td
+                = link_to edit_admin_subscriber_path(subscriber) do
+                  %i.icon-pencil
+                = link_to admin_subscriber_path(subscriber), method: :delete, data: { confirm: 'Are you sure?' } do
+                  %i.icon-trash

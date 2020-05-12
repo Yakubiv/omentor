@@ -21,8 +21,9 @@ Rails.application.routes.draw do
 
       resources :blog_posts
       resources :subjects
-      resources :students
-      resources :tutors
+      resources :students, only: %i[index edit update]
+      resources :tutors, only: %i[index edit update]
+      resources :subscribers, only: %i[index edit update destroy]
     end
   end
 

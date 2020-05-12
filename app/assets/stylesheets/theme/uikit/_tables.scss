@@ -11,14 +11,14 @@
 	}
 
 	th {
-		color: $text-muted;		
+		color: $text-muted;
 		font-size: $h6-font-size;
         font-weight: $font-weight-400;
         text-transform: uppercase;
     }
     td, th{
         border-color: $gray-100;
-        font-size: $font-size - 1px; 
+        font-size: $font-size - 1px;
     }
 
     &.table_custom{
@@ -39,7 +39,7 @@
             }
         }
         tr{
-            background: $white;            
+            background: $white;
             th, td{
                 border: 0;
 
@@ -51,30 +51,30 @@
         td {
             padding: .5rem;
         }
-    }    
+    }
     &.table-vcenter {
         td,
         th {
             vertical-align: middle;
         }
-    }    
+    }
     &.table-center {
         td,
         th {
             text-align: center;
         }
-    }    
+    }
     &.table-striped {
         tbody tr:nth-of-type(odd) {
             background: transparent;
         }
-    
+
         tbody tr:nth-of-type(even) {
             background-color: $table-accent-bg;
         }
     }
     &.table-custom{
-		border-collapse: separate !important;        
+		border-collapse: separate !important;
 
 		&.spacing5{
 			border-spacing: 0 5px !important;
@@ -84,7 +84,7 @@
 		}
 		td, th{
             vertical-align: middle;
-            border-top: 0; 
+            border-top: 0;
 		}
 	}
 	&.table-custom2{
@@ -130,7 +130,7 @@
 .table-calendar-link {
 	@include transition(all .3s ease-in-out);
 	@include border-radius(4px);
-	@include inline-block;	
+	@include inline-block;
 	background: $gray-100;
 	color: $font-color;
 	font-weight: $font-weight-600;
@@ -145,13 +145,13 @@
 		height: 5px;
 		position: absolute;
 		left: 3px;
-		top: 3px;		
+		top: 3px;
 	}
 
 	&:hover {
-		color: $white;		
+		color: $white;
 		background: $primary;
-		text-decoration: none;		
+		text-decoration: none;
 	}
 }
 
