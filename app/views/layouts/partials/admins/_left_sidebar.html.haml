@@ -26,7 +26,7 @@
         = link_to admin_students_path do
           %i.icon-user
           %span= t('admins.left_sidebar.students')
-      %li{ class: active_if?(controller: 'subscriptions') }
+      %li{ class: active_if?(controller: 'subscribers') }
         = link_to admin_subscribers_path do
           %i.icon-users
           %span= t('admins.left_sidebar.subscribers')
