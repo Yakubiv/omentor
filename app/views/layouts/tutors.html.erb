@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= render 'layouts/partials/head' %>
+    <%= action_cable_meta_tag %>
+    <%= display_meta_tags noindex: true, nofollow: true %>
+  </head>
+
+  <body class="font-montserrat bg-gray-200">
+    <%= render 'layouts/partials/body_tag_manager' %>
+    <div class="bg-gray-100">
+      <div class="h-screen flex overflow-hidden bg-gray-100" x-data="{ sidebarOpen: false }" @keydown.window.escape="sidebarOpen = false">
+        <!-- Off-canvas menu for mobile -->
+        <%= render 'layouts/partials/tutors/new_left_sidebar' %>
+
+        <!-- Static sidebar for desktop -->
+        <%= render 'layouts/partials/tutors/desktop_left_sidebar' %>
+
+        <div class="flex flex-col w-0 flex-1 overflow-hidden">
+          <%= render 'layouts/partials/tutors/new_top_header' %>
+          <%= render 'layouts/partials/alert' %>
+
+          <main class="flex-1 relative z-0 overflow-y-auto py-6 focus:outline-none" tabindex="0" x-data="" x-init="$el.focus()">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+              <h1 class="text-2xl font-semibold text-gray-900">
+                <%= t("layouts.tutors.#{controller_name}.page_title") %>
+              </h1>
+            </div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+              <div class="py-4">
+                <%= yield %>
+              </div>
+            </div>
+
+            <%= render 'layouts/partials/cab_footer' %>
+          </main>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

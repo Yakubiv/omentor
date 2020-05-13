@@ -263,6 +263,8 @@ en:
       students: Студенти
     students:
       lessons: Уроки
+      index:
+        no_students: У вас ще немає студентів
   details_controller:
     update:
       success: Профіль успішно оновлений
@@ -281,3 +283,6 @@ en:
     rights_reserved: Всі права захищені
     rights: Умови надання послуг
     read_rights: Читати
+    logout: Вийти
+    settings: Налаштування
+    profile: Профіль

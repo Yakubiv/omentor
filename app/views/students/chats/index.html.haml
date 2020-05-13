@@ -1,15 +1,12 @@
 .chat_app
   .row
-    .col-lg-8.col-md-12
-      .card.bg-none.b-none
-        .card-header.bline.pt-1
-          .card-options
-            %a.p-1.chat_list_btn{:href => "javascript:void(0)"}
-              %i.icon-list
-            %a.p-1{:href => "javascript:void(0)"}
-              %i.icon-settings
-        .chat-placeholder
-          .chat-placeholder--text.bg-light-indigo
-            = t('messages.select_chat')
+    .col-lg-7.col-md-12
+      .float-right
+        %a.p-1.chat_list_btn{:href => "javascript:void(0)"}
+          %i.icon-list
+      %br
+      .pt-20.text-center
+        %div{ class:"p-2 bg-indigo-400 items-center text-indigo-100 leading-none rounded-full flex lg:inline-flex" }
+          %span{ class: "mr-2 text-left flex-auto" }= t('messages.select_chat')
 
-  = render 'tutors_bar', class_rooms: @class_rooms
+  = render 'students_bar', class_rooms: @class_rooms

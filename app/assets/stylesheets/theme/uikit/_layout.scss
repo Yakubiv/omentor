@@ -6,6 +6,8 @@
     flex: 1 1 auto;
     width: calc(100% - 280px);
     position: relative;
+    min-height: 100vh;
+    padding-bottom: 80px;
 
     @include max-screen($break-large){
         left: 60px;
@@ -15,6 +17,7 @@
         padding: 56px 0 0 0;
         width: 100%;
         left: 0;
+        padding-bottom: 100px;
     }
     .section-light,
     .section-dark,

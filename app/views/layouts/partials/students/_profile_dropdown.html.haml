@@ -1,6 +1,6 @@
 %a.nav-link.btn.btn-icon.ml-1{"data-toggle" => "dropdown"}
   - if current_student_profile.avatar.attached?
-    = image_tag user_avatar(current_student_profile), class: 'rounded'
+    = image_tag user_avatar(current_student_profile), class: 'ava-sm'
   - else
     %i.icon-user
 .dropdown-menu.dropdown-menu-right.dropdown-menu-arrow

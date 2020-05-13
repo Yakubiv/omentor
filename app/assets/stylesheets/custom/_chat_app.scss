@@ -4,18 +4,6 @@
   padding: 4px 5px;
 }
 
-.chat-placeholder {
-  height: calc(100vh - 290px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  &--text {
-    padding: 10px 20px;
-    border-radius: 20px;
-  }
-}
-
 .bg-blue-custom {
     background-color: $bg-violet-light;
     color: $brand-violet;
@@ -177,14 +165,13 @@
         }
     }
     .chat_list{
+        background-color: white;
         @include transition(all .5s ease-in-out);
-        border-left: 1px solid $lightgray;
-        border-top: 1px solid $lightgray;
         width: 300px;
-        height: 100vh;
         position: fixed;
         right: 0;
-        top: 75px;
+        top: 64px;
+        bottom: 72px;
         padding: 20px;
         z-index: 7;
 
@@ -193,7 +180,7 @@
         }
         @include max-screen($break-1024 - 1px) {
             right: -320px;
-            top: 125px;
+            bottom: 140px;
         }
 
         @include max-screen($break-small - 1px) {

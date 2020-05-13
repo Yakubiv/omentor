@@ -29,6 +29,10 @@ class Profile < ApplicationRecord
     { status: Profile.human_enum_name(:statuses, status) }[type]
   end
 
+  def initials
+    "#{first_name[0]}#{last_name[0]}".upcase
+  end
+
   private
 
   def set_country_name
