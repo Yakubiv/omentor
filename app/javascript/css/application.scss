@@ -12,7 +12,7 @@
 
 .tw-sidebar {
   &-link {
-    @apply flex items-center px-2 py-2 text-base leading-6 text-gray-900 rounded-md transition ease-in-out duration-150;
+    @apply flex items-center px-4 py-2 text-base leading-6 text-gray-900 rounded-md transition ease-in-out duration-150;
 
     &.active, &.active:hover {
       @apply bg-indigo-600 text-white font-medium;

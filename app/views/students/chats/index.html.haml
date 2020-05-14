@@ -5,8 +5,8 @@
         %a.p-1.chat_list_btn{:href => "javascript:void(0)"}
           %i.icon-list
       %br
-      .pt-20.text-center
+      .pt-10.text-center
         %div{ class:"p-2 bg-indigo-400 items-center text-indigo-100 leading-none rounded-full flex lg:inline-flex" }
-          %span{ class: "mr-2 text-left flex-auto" }= t('messages.select_chat')
+          %span.text-center{ class: "mr-2 text-left flex-auto" }= t('messages.select_chat')
 
-  = render 'students_bar', class_rooms: @class_rooms
+  = render 'tutors_bar', class_rooms: @class_rooms

@@ -17,17 +17,17 @@
               .card-heading--rate
                 = humanized_money_with_symbol tutor_profile.rate
                 %small.unit.text-muted / #{t('common.hour')}.
-          %p
+          %p.mb-2
             %span
               %i.icon-home
               = tutor_profile.city
-          %p
+          %p.mb-2
             %span= tutor_profile.subjects.pluck(:name).join(', ')
             = link_to students_tutor_calendars_path(tutor_profile) do
               %i.icon-calendar
               Календар
           %p= tutor_profile.bio
-        %nav.d-flex.text-muted.flex-align-center.flex-wrap
+        %nav.flex.text-muted.items-center.flex-wrap.mt-2
           .card-details
             %a.icon.mr-3{:href => "#"}
               %i.icon-graduation

@@ -2,7 +2,7 @@
   .row
     .col-lg-8.col-md-12
       .card.bg-none.b-none
-        .card-header.bline.pt-1
+        .card-header.bline
           %h3.card-title
             = @class_room.student_profile.name
             %small Last seen: 2 hours ago
@@ -13,6 +13,7 @@
               %i.icon-settings
             %a.p-1{ href: tutors_chat_path(@class_room) }
               %i.icon-refresh
-        = render 'messages/chat', class_room: @class_room, messages: @messages, profile: current_tutor_profile, chat_css_class: '-app'
+        .card-body
+          = render 'messages/chat', class_room: @class_room, messages: @messages, profile: current_tutor_profile, chat_css_class: '-app'
 
   = render 'students_bar', class_rooms: @class_rooms

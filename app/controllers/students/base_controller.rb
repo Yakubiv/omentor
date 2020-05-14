@@ -34,8 +34,6 @@ class Students::BaseController < ApplicationController
 
     if !current_user.student_profile.avatar.attached?
       photo_students_details_path
-    elsif current_user.student_profile.video_url.nil?
-      video_students_details_path
     end
   end
 

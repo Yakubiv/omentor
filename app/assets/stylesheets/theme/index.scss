@@ -41,10 +41,10 @@
 @import 'page/profile';
 
 // Project Widgets
-// @import 'page/widgets';
-// @import 'page/widgets-statistics';
+@import 'page/widgets';
+@import 'page/widgets-statistics';
 // @import 'page/widgets-data';
-// @import 'page/widgets-social';
+@import 'page/widgets-social';
 
 @import 'skins/dark.scss';
 @import 'skins/default.scss';
