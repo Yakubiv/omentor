@@ -142,9 +142,7 @@
     overflow: hidden;
     text-align: center; }
     .dropify-wrapper .dropify-preview .dropify-render img {
-      top: 50%;
-      -webkit-transform: translate(0, -50%);
-              transform: translate(0, -50%);
+      margin: 0 auto;
       position: relative;
       max-width: 100%;
       max-height: 100%;
@@ -254,7 +252,8 @@
         .dropify-wrapper.touch-fallback .dropify-preview .dropify-render img {
           position: relative;
           -webkit-transform: translate(0, 0);
-                  transform: translate(0, 0); }
+                  transform: translate(0, 0);
+                }
       .dropify-wrapper.touch-fallback .dropify-preview .dropify-infos {
         position: relative;
         opacity: 1;
