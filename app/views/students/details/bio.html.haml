@@ -7,24 +7,7 @@
         .card-body
           .card-title.mb-3
             = t('students.details.bio_header')
-          .row
-            .col-md-12
-              .alert.alert-success
-                Додайте заголовок та опис до свого профіля. Зробіть його яскравішим.
-            .col-md-3
-              .c-registration-form__bio
-                .c-registration-form__bio--image{ style: "background-image: url(#{image_path(f.object.avatar)})" }
-            .col-md-9
-              .form-group.mb-2
-                = f.label :short_bio, f.object.name, class: 'control-label'
-                = f.text_field :short_bio, class: 'form-control'
-                %small
-                  %em.text-muted м. Львів, досвід 5 років
-              .form-group.mb-0
-                = f.label :bio, class: 'control-label'
-                = f.text_area :bio, rows: 5, class: 'form-control'
-                %small
-                  %em.text-muted Мінімум 250 символів.
+          = render 'students/fields/bio', f: f
         .card-footer.text-right
           = link_to t('students.details.back').html_safe, photo_students_details_path, class: 'btn btn-info'
           = f.submit t('students.details.done').html_safe, class: 'btn btn-info'

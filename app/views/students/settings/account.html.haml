@@ -6,7 +6,7 @@
     .card-options
       %a.card-options-fullscreen{"data-toggle" => "card-fullscreen", :href => "#"}
         %i.fe.fe-maximize
-  = form_with(model: current_user, url: tutors_profile_path, method: :put) do |f|
+  = form_with(model: current_user, url: students_profile_path, method: :put) do |f|
     .card-body
       .row
         .col-sm-6

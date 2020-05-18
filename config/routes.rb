@@ -51,7 +51,7 @@ Rails.application.routes.draw do
         resources :time_slots, except: :show
       end
 
-      resource :profile, only: :show
+      resource :profile, only: [:show, :update]
       resource :details, only: %i[show create update] do
         get :photo, on: :collection
         get :bio, on: :collection
@@ -86,6 +86,13 @@ Rails.application.routes.draw do
       resources :tutor_profiles, path: :tutors, only: :index
       resources :calendars, only: :index
       resources :my_tutors, only: %i[show index]
+
+      resource :settings, only: %i[update] do
+        get :photo, on: :collection
+        get :bio, on: :collection
+        get :account, on: :collection
+        get :general, on: :collection
+      end
 
       namespace :lessons do
         scope ':lesson_id' do

@@ -50,6 +50,11 @@ en:
         subject_id: Предмет
         duration: Тривалість уроку
         price: Ціна
+      user:
+        email: Email
+        password: Пароль
+        password_confirmation: Повторіть пароль
+        current_password: Поточний пароль
       profile:
         statuses:
           pending: 'Очікує підтвердження'
@@ -141,6 +146,8 @@ en:
         page_title: Оплата Уроку
       lessons:
         page_title: Мої Уроки
+      settings:
+        page_title: Налаштування
   messages:
     no_messages: Повідомлень немає
     form_placeholder: Напишіть повідомлення тут...
@@ -268,7 +275,10 @@ en:
   details_controller:
     update:
       success: Профіль успішно оновлений
-
+  profiles_controller:
+    update:
+      success: Акаунт успішно оновлений
+      failed: Під час оновлення виникли проблеми
   lessons:
     duration:
       one_hour: 1 година

@@ -178,13 +178,9 @@
         &.open{
             right: 0;
         }
-        @include max-screen($break-1024 - 1px) {
-            right: -320px;
-            bottom: 140px;
-        }
-
         @include max-screen($break-small - 1px) {
-            // display: none;
+            bottom: 100px;
+            width: 100%;
         }
 
         .right_chat{

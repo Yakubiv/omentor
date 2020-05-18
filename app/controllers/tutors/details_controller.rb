@@ -54,7 +54,10 @@ class Tutors::DetailsController < Tutors::BaseController
   end
 
   def after_update_redirection
-    if request.referrer.match?(/photo/)
+    if request.referrer.match?(/settings/)
+      flash[:notice] = t('details_controller.update.success')
+      redirect_back(fallback_location: schedule_tutors_settings_path)
+    elsif request.referrer.match?(/photo/)
       redirect_to bio_tutors_details_path, notice: t('details_controller.update.success')
     elsif request.referrer.match?(/bio/)
       redirect_to video_tutors_details_path, notice: t('details_controller.update.success')
@@ -62,9 +65,6 @@ class Tutors::DetailsController < Tutors::BaseController
       redirect_to schedule_tutors_details_path, notice: t('details_controller.update.success')
     elsif request.referrer.match?(/schedule/)
       redirect_to tutors_dashboard_path, notice: t('details_controller.update.success')
-    elsif request.referrer.match?(/settings/)
-      flash[:notice] = t('details_controller.update.success')
-      redirect_back(fallback_location: schedule_tutors_settings_path)
     end
   end
 

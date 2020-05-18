@@ -5,11 +5,11 @@
         #c-tutors-search-box
           = form_with(scope: :search_tutor, url: search_url, method: :get) do |f|
             .row.input-group
-              .col-lg-4
+              .col-lg-4.col-md-12
                 .form-group
                   = f.label :subject, t('search_form.tutors.subject')
                   = f.text_field :subject, autocomplete: :off, value: params.fetch(:search_tutor, subject: nil)[:subject], placeholder: t('search_form.tutors.subject_placeholder'), class: 'form-control'
-              .col-lg-4
+              .col-lg-4.col-md-12
                 .form-group
                   %label= t('search_form.tutors.availability')
                   %a.nav-link.btn.btn-default{"data-toggle" => "dropdown"}
@@ -32,7 +32,7 @@
                             %label.selectgroup-item
                               = f.check_box :periods, { multiple: true, class: 'selectgroup-input', checked: checked }, period, false
                               %span.selectgroup-button= period
-              .col-lg-4
+              .col-lg-4.col-md-12
                 .form-group
                   - min_rate, max_rate = params.fetch(:search_tutor, price_range: nil)[:price_range]&.split(',')
                   - money_min_rate = (min_rate || @tutors_query.min_rate).to_i.round(0)

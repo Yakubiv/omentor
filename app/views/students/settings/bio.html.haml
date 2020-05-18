@@ -2,14 +2,12 @@
 
 .card
   .card-header.bline
-    = t('tutors.settings.account_header')
+    = t('tutors.settings.bio_header')
     .card-options
       %a.card-options-fullscreen{"data-toggle" => "card-fullscreen", :href => "#"}
         %i.fe.fe-maximize
-  = form_with(model: current_user, url: tutors_profile_path, method: :put) do |f|
+  = form_with(model: current_student_profile, url: students_settings_path, method: :put) do |f|
     .card-body
-      .row
-        .col-sm-6
-          = render 'tutors/settings/account_fields', f: f
+      = render 'students/details/fields/bio',f: f
     .card-footer.text-right
       = f.submit t('tutors.details.save').html_safe, class: 'btn btn-primary'

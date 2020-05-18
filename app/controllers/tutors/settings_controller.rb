@@ -8,4 +8,6 @@ class Tutors::SettingsController < Tutors::BaseController
   def video; end
 
   def schedule; end
+
+  def account; end
 end
