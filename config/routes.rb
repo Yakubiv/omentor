@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :search_tutors, only: :index
   resources :subscriptions, only: :create
+  get '/sitemap.xml' => 'sitemaps#index', defaults: { format: 'xml' }
 
   namespace :api do
     namespace :v1 do
