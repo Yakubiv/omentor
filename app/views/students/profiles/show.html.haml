@@ -189,24 +189,6 @@
       -#                 %textarea.form-control.no-resize{:placeholder => "Enter here for tweet...", :rows => "2"}
       -#               %button.btn.btn-primary Submit
       #pills-profile.tab-pane.fade{"aria-labelledby" => "pills-profile-tab", :role => "tabpanel"}
-        .card
-          .card-header
-            %h3.card-title= t('students.details.main_header')
-            .card-options
-              %a.card-options-fullscreen{"data-toggle" => "card-fullscreen", :href => "#"}
-                %i.fe.fe-maximize
-              .item-action.dropdown.ml-2
-                %a{"data-toggle" => "dropdown", :href => "javascript:void(0)"}
-                  %i.fe.fe-more-vertical
-                .dropdown-menu.dropdown-menu-right
-                  %a.dropdown-item{:href => "javascript:void(0)"}
-                    %i.dropdown-icon.fa.fa-eye
-                    View Details
-          = form_with(model: current_student_profile, url: students_details_path(current_student_profile), method: :put) do |f|
-            .card-body
-              = render 'students/details/fields', f: f
-            .card-footer.text-right
-              = f.submit t('students.details.submit_button').html_safe, class: 'btn btn-primary'
   .col-lg-4.col-md-12
     .card
       .card-body

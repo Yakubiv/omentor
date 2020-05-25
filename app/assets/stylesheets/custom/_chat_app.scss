@@ -178,6 +178,12 @@
         &.open{
             right: 0;
         }
+
+        @include max-screen($break-medium - 1px) {
+            bottom: 100px;
+            width: calc(100% - 255px);
+        }
+
         @include max-screen($break-small - 1px) {
             bottom: 100px;
             width: 100%;
