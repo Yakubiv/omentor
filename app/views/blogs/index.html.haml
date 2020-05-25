@@ -13,6 +13,7 @@
   %div{ class: 'flex flex-wrap' }
     - if @blog_posts.any?
       .c-posts-box{ class: 'w-full md:w-3/5' }
+        %h1.text-2xl.mb-8 Блог
         - @blog_posts.each do |blog_post|
           = cache [blog_post] do
             .c-post-box
