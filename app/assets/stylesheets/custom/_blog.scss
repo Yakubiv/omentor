@@ -229,20 +229,20 @@ $border-radius: 20px;
   &__image {
     position: relative;
     overflow: hidden;
-    height: 250px;
+    // height: 350px;
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
 
     @include media-breakpoint-down(lg) {
-      height: 230px;
+      // height: 300px;
     }
 
     @include media-breakpoint-down(md) {
-      height: 250px;
+      // height: 250px;
     }
 
     @include media-breakpoint-down(sm) {
-      height: 150px;
+      // height: 150px;
     }
 
     &:hover img {
