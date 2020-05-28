@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         }
         $.ajax({
-          url: `/class_rooms/${messages.data('class-room-id')}/messages`,
+          url: `/class_rooms/${element.getAttribute('data-class-room-id')}/messages`,
           type: "POST",
           data: postData,
           success: function (data, textStatus, jqXHR) {
