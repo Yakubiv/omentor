@@ -1,11 +1,10 @@
 // import google fonts
 @import 'font/fonts';
 @import 'font/simple-line-icons';
-@import 'font/weather-icons';
 @import 'font/feather';
 
 @import "mixins/responsive";
-@import "mixins/clearfix";
+
 @import "mixins/css3";
 
 // project base scss
@@ -16,36 +15,5 @@
 // @import 'base/helpers';
 @import "base/general";
 
-// ui kit scss
-@import 'uikit/functions';
-@import 'uikit/layout';
-@import 'uikit/aside';
-@import 'uikit/header';
-@import 'uikit/sidebar';
-@import 'uikit/footer';
-@import 'uikit/text';
-@import 'uikit/utilities';
-@import 'uikit/type';
-@import 'uikit/grid';
 @import 'uikit/uikit';
-
-// Page scss
-@import 'page/sparkline';
-@import 'page/charts';
-@import 'page/jvectormap';
-@import 'page/social';
-@import 'page/timeline';
-@import 'page/example';
-// @import 'page/inbox';
-@import 'page/blog';
-@import 'page/profile';
-
-// Project Widgets
-@import 'page/widgets';
-@import 'page/widgets-statistics';
-// @import 'page/widgets-data';
-@import 'page/widgets-social';
-
-@import 'skins/dark.scss';
-@import 'skins/default.scss';
 @import 'skins/theme1.scss';

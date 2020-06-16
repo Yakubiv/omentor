@@ -8,4 +8,8 @@ class User < ApplicationRecord
   enum sign_up_as: %i[student tutor admin]
 
   validates :terms_and_conditions, acceptance: true
+
+  def initials
+    email[0]
+  end
 end
