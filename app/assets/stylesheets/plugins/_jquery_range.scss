@@ -78,12 +78,12 @@
 }
 .theme-green .back-bar .selected-bar {
   border-radius: 2px;
-  background-color: $indigo;
-  background-image: -moz-linear-gradient(top, $indigo, $indigo);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($indigo), to($indigo));
-  background-image: -webkit-linear-gradient(top, $indigo, $indigo);
-  background-image: -o-linear-gradient(top, $indigo, $indigo);
-  background-image: linear-gradient(to bottom, $indigo, $indigo);
+  background-color: $orange;
+  background-image: -moz-linear-gradient(top, $orange, $orange);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($orange), to($orange));
+  background-image: -webkit-linear-gradient(top, $orange, $orange);
+  background-image: -o-linear-gradient(top, $orange, $orange);
+  background-image: linear-gradient(to bottom, $orange, $orange);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffbdfade', endColorstr='#ff76fabc', GradientType=0);
 }

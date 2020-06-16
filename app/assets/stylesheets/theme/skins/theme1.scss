@@ -3,11 +3,11 @@
 
 ::selection {
     color: $white;
-    background: $indigo;
+    background: $orange;
 }
 a,
 .btn-link{
-    color: $pink;
+    color: $orange;
 }
 .text-green,
 .text-info,
@@ -29,8 +29,8 @@ a,
     border-color: $indigo;
 }
 .nav-tabs .nav-link.active{
-    border-color: $indigo;
-    color: $indigo;
+    border-color: $orange;
+    color: $orange;
 }
 .form-control{
     &:focus{
@@ -46,7 +46,7 @@ a,
 .bg-info,
 .bg-warning,
 .btn-success{
-    background-color: $indigo !important;
+    background-color: $orange !important;
     border: transparent;
 }
 .bg-success,
