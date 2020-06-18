@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: studygo_production
-  username: studygo
-  password: <%= ENV['STUDYGO_DATABASE_PASSWORD'] %>
+  database: studylive_production
+  username: studylive
+  password: <%= ENV['STUDYLIVE_DATABASE_PASSWORD'] %>
