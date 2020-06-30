@@ -2,6 +2,7 @@ require 'sidekiq/web'
 
 Rails.application.routes.draw do
   root to: 'homes#index'
+  get :contacts, to: 'homes#contacts'
 
   resources :search_tutors, only: :index
   resources :subscriptions, only: :create
@@ -113,6 +114,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [] do
     get :pending, on: :collection
+  end
+
+  resource :tutors, only: [] do
     get :registration, on: :collection
   end
 

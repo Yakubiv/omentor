@@ -82,17 +82,21 @@ module ApplicationHelper
   end
 
   def registration_step_class
+    active_condition = { background: 'bg-indigo-500', text: 'text-white', active_line_style: 'width: 33%' }
+    completed_condition = { background: 'bg-indigo-500', text: 'text-white', active_line_style: 'width: 100%' }
+    disabled_condition = { background: 'bg-white', text: 'text-gray-600', active_line_style: 'width: 0%' }
+
     case action_name
     when 'show'
-      { general: 'active', bio: 'disabled', photo: 'disabled', video: 'disabled', schedule: 'disabled' }
+      { general: active_condition, bio: disabled_condition, photo: disabled_condition, video: disabled_condition, schedule: disabled_condition }
     when 'photo'
-      { general: 'completed', bio: 'disabled', photo: 'active', video: 'disabled', schedule: 'disabled' }
+      { general: completed_condition, bio: disabled_condition, photo: active_condition, video: disabled_condition, schedule: disabled_condition }
     when 'bio'
-      { general: 'completed', bio: 'active', photo: 'completed', video: 'disabled', schedule: 'disabled' }
+      { general: completed_condition, bio: active_condition, photo: completed_condition, video: disabled_condition, schedule: disabled_condition }
     when 'video'
-      { general: 'completed', bio: 'completed', photo: 'completed', video: 'active', schedule: 'disabled' }
+      { general: completed_condition, bio: completed_condition, photo: completed_condition, video: active_condition, schedule: disabled_condition }
     when 'schedule'
-      { general: 'completed', bio: 'completed', photo: 'completed', video: 'completed', schedule: 'active' }
+      { general: completed_condition, bio: completed_condition, photo: completed_condition, video: completed_condition, schedule: active_condition }
     end
   end
 

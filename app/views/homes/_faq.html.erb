@@ -1,0 +1,137 @@
+<div class="bg-white" x-data="{ openPanel: 1 }">
+  <div class="max-w-screen-xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-center text-3xl leading-9 font-extrabold text-gray-900 sm:text-4xl sm:leading-10">
+        FAQ
+      </h2>
+      <div class="mt-6 border-t-2 border-gray-200 pt-6">
+        <dl>
+          <div>
+            <dt class="text-lg leading-7">
+              <button x-description="Expand/collapse question button" @click="openPanel = (openPanel === 1 ? null : 1)" class="text-left w-full flex justify-between items-start text-gray-400 focus:outline-none focus:text-gray-900" x-bind:aria-expanded="openPanel === 1" aria-expanded="true">
+                <span class="font-medium text-gray-900">
+                  Чи можна довіряти StudyLive?
+                </span>
+                <span class="ml-6 h-7 flex items-center">
+                  <svg class="-rotate-180 h-6 w-6 transform" x-description="Expand/collapse icon, toggle classes based on question open state." x-state:on="Open" x-state:off="Closed" x-bind:class="{ '-rotate-180': openPanel === 1, 'rotate-0': !(openPanel === 1) }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </span>
+              </button>
+            </dt>
+            <dd class="mt-2 pr-12" x-show="openPanel === 1">
+              <p class="text-base leading-6 text-gray-500">
+                StudyLive - це українська онлайн платформа для онлайн навячання. Вона створена для того щоб покращити рівень знань, а також для зручності навчання.
+              </p>
+            </dd>
+          </div>
+          <div class="mt-6 border-t border-gray-200 pt-6">
+            <div>
+              <dt class="text-lg leading-7">
+                <button x-description="Expand/collapse question button" @click="openPanel = (openPanel === 2 ? null : 2)" class="text-left w-full flex justify-between items-start text-gray-400 focus:outline-none focus:text-gray-900" x-bind:aria-expanded="openPanel === 2">
+                  <span class="font-medium text-gray-900">
+                    Що роботи коли в мене змінилися плани і я не можу з'явитися на урок?
+                  </span>
+                  <span class="ml-6 h-7 flex items-center">
+                    <svg class="rotate-0 h-6 w-6 transform" x-description="Expand/collapse icon, toggle classes based on question open state." x-state:on="Open" x-state:off="Closed" x-bind:class="{ '-rotate-180': openPanel === 2, 'rotate-0': !(openPanel === 2) }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </span>
+                </button>
+              </dt>
+              <dd class="mt-2 pr-12" x-show="openPanel === 2" style="display: none;">
+                <p class="text-base leading-6 text-gray-500">
+                  Ви зможете скасувати чи перенести урок за 6 годин до початку уроку.
+                </p>
+              </dd>
+            </div>
+          </div>
+          <div class="mt-6 border-t border-gray-200 pt-6">
+            <div>
+              <dt class="text-lg leading-7">
+                <button x-description="Expand/collapse question button" @click="openPanel = (openPanel === 3 ? null : 3)" class="text-left w-full flex justify-between items-start text-gray-400 focus:outline-none focus:text-gray-900" x-bind:aria-expanded="openPanel === 3">
+                  <span class="font-medium text-gray-900">
+                    Скільки коштують заняття на платформі?
+                  </span>
+                  <span class="ml-6 h-7 flex items-center">
+                    <svg class="rotate-0 h-6 w-6 transform" x-description="Expand/collapse icon, toggle classes based on question open state." x-state:on="Open" x-state:off="Closed" x-bind:class="{ '-rotate-180': openPanel === 3, 'rotate-0': !(openPanel === 3) }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </span>
+                </button>
+              </dt>
+              <dd class="mt-2 pr-12" x-show="openPanel === 3" style="display: none;">
+                <p class="text-base leading-6 text-gray-500">
+                  Кожен викладач встановлює ціну відповідно до своїх навиків індивідуально.
+                </p>
+              </dd>
+            </div>
+          </div>
+          <div class="mt-6 border-t border-gray-200 pt-6">
+            <div>
+              <dt class="text-lg leading-7">
+                <button x-description="Expand/collapse question button" @click="openPanel = (openPanel === 4 ? null : 4)" class="text-left w-full flex justify-between items-start text-gray-400 focus:outline-none focus:text-gray-900" x-bind:aria-expanded="openPanel === 4">
+                  <span class="font-medium text-gray-900">
+                    Чи можна залишити відгук про урок?
+                  </span>
+                  <span class="ml-6 h-7 flex items-center">
+                    <svg class="rotate-0 h-6 w-6 transform" x-description="Expand/collapse icon, toggle classes based on question open state." x-state:on="Open" x-state:off="Closed" x-bind:class="{ '-rotate-180': openPanel === 4, 'rotate-0': !(openPanel === 4) }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </span>
+                </button>
+              </dt>
+              <dd class="mt-2 pr-12" x-show="openPanel === 4" style="display: none;">
+                <p class="text-base leading-6 text-gray-500">
+                  Так, звичайно! П'ять днів після першого уроку, ми відсилаємо імейл студенту, з проханням залишити відгук про вчителя.
+                </p>
+              </dd>
+            </div>
+          </div>
+          <div class="mt-6 border-t border-gray-200 pt-6">
+            <div>
+              <dt class="text-lg leading-7">
+                <button x-description="Expand/collapse question button" @click="openPanel = (openPanel === 5 ? null : 5)" class="text-left w-full flex justify-between items-start text-gray-400 focus:outline-none focus:text-gray-900" x-bind:aria-expanded="openPanel === 5">
+                  <span class="font-medium text-gray-900">
+                    Чи буде зберігатися історія усіх уроків?
+                  </span>
+                  <span class="ml-6 h-7 flex items-center">
+                    <svg class="rotate-0 h-6 w-6 transform" x-description="Expand/collapse icon, toggle classes based on question open state." x-state:on="Open" x-state:off="Closed" x-bind:class="{ '-rotate-180': openPanel === 5, 'rotate-0': !(openPanel === 5) }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </span>
+                </button>
+              </dt>
+              <dd class="mt-2 pr-12" x-show="openPanel === 5" style="display: none;">
+                <p class="text-base leading-6 text-gray-500">
+                  Ми зберігаємо всю інформацію про кожен урок у вашому кабінеті.
+                </p>
+              </dd>
+            </div>
+          </div>
+          <div class="mt-6 border-t border-gray-200 pt-6">
+            <div>
+              <dt class="text-lg leading-7">
+                <button x-description="Expand/collapse question button" @click="openPanel = (openPanel === 6 ? null : 6)" class="text-left w-full flex justify-between items-start text-gray-400 focus:outline-none focus:text-gray-900" x-bind:aria-expanded="openPanel === 6">
+                  <span class="font-medium text-gray-900">
+                    Як оплачувати уроки?
+                  </span>
+                  <span class="ml-6 h-7 flex items-center">
+                    <svg class="rotate-0 h-6 w-6 transform" x-description="Expand/collapse icon, toggle classes based on question open state." x-state:on="Open" x-state:off="Closed" x-bind:class="{ '-rotate-180': openPanel === 6, 'rotate-0': !(openPanel === 6) }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </span>
+                </button>
+              </dt>
+              <dd class="mt-2 pr-12" x-show="openPanel === 6" style="display: none;">
+                <p class="text-base leading-6 text-gray-500">
+                  Оплачувати уроки ви зможите на платформі за допомогою кредитної/дебетної картки або PayPal (в майбутньому).
+                </p>
+              </dd>
+            </div>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>

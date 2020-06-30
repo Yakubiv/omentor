@@ -3,11 +3,12 @@
   %head
     = render 'layouts/partials/head'
   %body.font-montserrat
-    = render 'layouts/partials/body_tag_manager'
-    = render 'layouts/partials/header', title: 'Блог'
+    %div{ "x-data" => "{ open: false }", class: "relative pt-6 pb-6"}
+      = render 'layouts/partials/body_tag_manager'
+      = render 'layouts/partials/header'
     #main_content
       = render 'layouts/partials/alert'
-      .section-body.mt-header
+      .section-body
         = yield
         = render 'layouts/partials/newsletter'
         = render 'layouts/partials/footer'

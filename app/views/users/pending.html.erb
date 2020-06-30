@@ -1,0 +1,19 @@
+<div class="bg-gray-50 py-4 sm:px-6 py-48 lg:px-8">
+  <div class="md:mx-auto md:w-full md:max-w-lg text-center">
+    <div class="bg-white sm:rounded-lg">
+      <div class="px-4 py-5 sm:p-6">
+        <h3 class="text-md leading-6 font-medium text-gray-900">
+          <%= t('signup.confirmation_message', email: session[:pending_user_email]).html_safe%>
+        </h3>
+
+        <% if string_match?(session[:pending_user_email], match: 'gmail.com') %>
+          <div class="mt-5">
+            <span class="inline-flex rounded-md shadow-sm">
+              <%= link_to t('signup.gmail_link'), 'https://mail.google.com/mail/', target: '_blank', class: 'inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150' %>
+            </span>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

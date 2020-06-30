@@ -55,6 +55,8 @@ en:
         password: Пароль
         password_confirmation: Повторіть пароль
         current_password: Поточний пароль
+        terms_and_conditions: Положення про конфіденційність
+        remember_me: Запамятати
       profile:
         statuses:
           pending: 'Очікує підтвердження'
@@ -93,6 +95,7 @@ en:
         country: Виберіть Країну
 
   signup:
+    gmail_link: Відкрити gmail
     confirmation_message: 'Перевірте свою <span class="font600">%{email}</span> пошту! Ми відправили вам лист підтвердження.'
   common:
     logout: Вийти
@@ -169,6 +172,18 @@ en:
       subscribers: News Підписники
     tutors:
       updated: 'Вчитель оновлений %{tutor}'
+  login_page:
+    signup_as_tutor: Навчай з Studylive
+    create_account: Зареєструватися
+    or_with: Або
+    signup_as_tutor_tip: Зареєструйся на Studylive, і почни робити свій кращим з вигодою для себе
+    login: Увійти
+    sign_up: Зареєструватися
+    existing_customer: Існуючий клієнт?
+    signup_as_student: Навчайся на Studylive
+    signup_as_student_tip: Зареєструйся на Studylive і навчайся будь-де і будь-коли
+    as_student: Зареєструйся як студент
+    as_tutor: Зареєструватися як вчитель
   blog:
     posts_not_found: Статей не найдено
     tags: Теги

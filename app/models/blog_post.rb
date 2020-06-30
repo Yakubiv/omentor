@@ -2,6 +2,7 @@ class BlogPost < ApplicationRecord
   FULL_DATE = '%d %B, %Y %H:%M'.freeze
   SHORT_DATE = '%d %B, %H:%M'.freeze
   DEFAULT_DATE = '%d %B %Y'.freeze
+  DATE_FORMAT = '%B %d, %Y'.freeze
   DATE = '%d/%m'.freeze
   TIME = '%H:%M'.freeze
   ITEMS_PER_PAGE = 15
