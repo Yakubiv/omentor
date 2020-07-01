@@ -1,0 +1,22 @@
+<div class="bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+
+  <div class="mt-8 lg:mx-auto lg:w-full lg:max-w-lg">
+    <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+      <h5 class="my-6 text-lg leading-9 font-medium text-gray-900">
+        <%= t('login_page.resend_confirm_text') %>
+      </h5>
+
+      <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <div class="form-group">
+          <%= f.label :email, class: 'form-label' %>
+          <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
+        </div>
+
+        <div class="form-footer">
+          <%= f.submit t('login_page.resend_confirm'), class: 'w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out cursor-pointer' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

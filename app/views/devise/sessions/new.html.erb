@@ -27,8 +27,11 @@
           <%= f.label :password, class: 'block text-sm font-medium leading-5 text-gray-700' %>
 
           <div class="mt-1 rounded-md shadow-sm">
-            <%= f.password_field :password, autocomplete: 'new-password', class: 'form-control' %>
+            <%= f.password_field :password, autocomplete: 'new-password', class: 'form-control mb-4' %>
           </div>
+          <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+            <%= link_to t('login_page.reset_pass'), new_password_path(resource_name), class: 'mt-4 text-indigo-500' %>
+          <% end %>
         </div>
 
         <div class="form-group">
@@ -40,9 +43,14 @@
           </div>
         </div>
 
-        <span class="block w-full rounded-md shadow-sm">
+        <span class="block w-full rounded-md shadow-sm mb-4">
           <%= f.submit t('login_page.login'), class: 'w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out' %>
         </span>
+
+        <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+          <%= link_to t('login_page.reset_confirm'), new_confirmation_path(resource_name), class: 'text-indigo-500' %>
+        <% end %>
+
       <% end %>
 
       <div class="mt-6">

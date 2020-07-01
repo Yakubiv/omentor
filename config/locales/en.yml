@@ -96,7 +96,7 @@ en:
 
   signup:
     gmail_link: Відкрити gmail
-    confirmation_message: 'Перевірте свою <span class="font600">%{email}</span> пошту! Ми відправили вам лист підтвердження.'
+    confirmation_message: 'Перевірте свою <span class="font600">%{email}</span> пошту! Ми відправили вам лист на підтвердження особистості'
   common:
     logout: Вийти
     profile: Профіль
@@ -173,6 +173,10 @@ en:
     tutors:
       updated: 'Вчитель оновлений %{tutor}'
   login_page:
+    reset_pass: Забули пароль?
+    reset_confirm: Не отримали листа підтвердження?
+    resend_confirm: Надіслати ще раз
+    resend_confirm_text: Надіслати лист підтвердження ще раз
     signup_as_tutor: Навчай з Studylive
     create_account: Зареєструватися
     or_with: Або
