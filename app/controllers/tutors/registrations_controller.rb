@@ -1,7 +1,7 @@
-class TutorsController < ApplicationController
-  layout 'login', only: :registration
+class Tutors::RegistrationsController < ApplicationController
+  layout 'login', only: :show
 
-  def registration
+  def show
   end
 
   def resource_name

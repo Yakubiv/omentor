@@ -116,8 +116,8 @@ Rails.application.routes.draw do
     get :pending, on: :collection
   end
 
-  resource :tutors, only: [] do
-    get :registration, on: :collection
+  namespace :tutors do
+    resource :registration, only: :show
   end
 
   resources :blogs, only: %i[index show], path: 'blog'
