@@ -17,4 +17,4 @@
   </nav>
 </div>
 
-<%= render 'messages/chat', class_room: @class_room, messages: @messages, target_profile: @class_room.tutor_profile, profile: current_student_profile %>
+<%= render 'messages/chat', class_room: @class_room, messages: @messages, target_profile: @class_room.opposet_profile_to(current_student_profile), profile: current_student_profile %>

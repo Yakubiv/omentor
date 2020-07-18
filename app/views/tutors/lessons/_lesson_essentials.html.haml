@@ -72,15 +72,7 @@
         .card-header.bline
         over
     #pills-chat.tab-pane.fade.show.active
-      .card
-        .card-header.bline
-          = image_tag image_path(lesson.student_profile.avatar), class: 'avatar mr-2'
-          %span= lesson.student_profile.name
-          %hr
-          %small.text-muted
-            Останній візит 30хв назад
-        .card-body
-          = render 'messages/chat', class_room: @class_room, messages: @messages, profile: profile, chat_css_class: '-widget'
+      = render 'messages/chat', class_room: @class_room, messages: @messages, target_profile: @class_room.opposet_profile_to(profile), profile: profile, chat_css_class: '-widget'
     #pills-attachments.tab-pane.fade.show
       .card
         .card-header.bline
