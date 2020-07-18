@@ -72,7 +72,7 @@
         .card-header.bline
         over
     #pills-chat.tab-pane.fade.show.active
-      = render 'messages/chat', class_room: @class_room, messages: @messages, target_profile: @class_room.opposet_profile_to(profile), profile: profile, chat_css_class: '-widget'
+      = render 'messages/chat', class_room: @class_room, messages: @messages, target_profile: @class_room.opposet_profile_to(profile), profile: profile
     #pills-attachments.tab-pane.fade.show
       .card
         .card-header.bline
