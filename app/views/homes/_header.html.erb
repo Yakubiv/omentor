@@ -22,13 +22,25 @@
     </div>
   </div>
   <div class="hidden md:block text-right">
-    <span class="inline-flex rounded-md shadow-md">
-      <span class="inline-flex rounded-md shadow-xs">
-        <a href="<%= new_user_session_path %>" class="inline-flex items-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-indigo-400 bg-white hover:bg-gray-50 focus:outline-none focus:border-indigo-300 focus:shadow-outline-indigo transition duration-150 ease-in-out">
-          Увійти
-        </a>
+    <% unless user_signed_in? %>
+      <span class="inline-flex rounded-md shadow-md">
+        <span class="inline-flex rounded-md shadow-xs">
+          <a href="<%= new_user_session_path %>" class="inline-flex items-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-indigo-400 bg-white hover:bg-gray-50 focus:outline-none focus:border-indigo-300 focus:shadow-outline-indigo transition duration-150 ease-in-out">
+            Увійти
+          </a>
+        </span>
       </span>
-    </span>
+    <% else %>
+      <span class="inline-flex rounded-md shadow-md">
+        <span class="inline-flex rounded-md shadow-xs">
+          <a href="<%= dynamic_dashboard_url %>" class="inline-flex items-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-indigo-400 bg-white hover:bg-gray-50 focus:outline-none focus:border-indigo-300 focus:shadow-outline-indigo transition duration-150 ease-in-out">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+              <path class="heroicon-ui" d="M13 20v-5h-2v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7.59l-.3.3a1 1 0 1 1-1.4-1.42l9-9a1 1 0 0 1 1.4 0l9 9a1 1 0 0 1-1.4 1.42l-.3-.3V20a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2zm5 0v-9.59l-6-6-6 6V20h3v-5c0-1.1.9-2 2-2h2a2 2 0 0 1 2 2v5h3z"/>
+            </svg>
+          </a>
+        </span>
+      </span>
+    <% end %>
   </div>
 </nav>
 
@@ -56,9 +68,15 @@
         </a>
       </div>
       <div>
-        <a href="<%= new_user_session_path %>" class="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100 hover:text-indigo-700 focus:outline-none focus:bg-gray-100 focus:text-indigo-700 transition duration-150 ease-in-out" role="menuitem">
-          Увійти
-        </a>
+        <% unless user_signed_in? %>
+          <a href="<%= new_user_session_path %>" class="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100 hover:text-indigo-700 focus:outline-none focus:bg-gray-100 focus:text-indigo-700 transition duration-150 ease-in-out" role="menuitem">
+            Увійти
+          </a>
+        <% else %>
+          <a href="<%= dynamic_dashboard_url %>" class="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100 hover:text-indigo-700 focus:outline-none focus:bg-gray-100 focus:text-indigo-700 transition duration-150 ease-in-out" role="menuitem">
+            Кабінет
+          </a>
+        <% end %>
       </div>
     </div>
   </div>

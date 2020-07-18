@@ -1,0 +1,12 @@
+<div class="flex items-start mb-4 text-sm">
+  <img src="<%= image_path(message.sender.avatar) %>" class="w-10 h-10 rounded mr-3">
+  <div class="flex-1 overflow-hidden">
+    <div>
+      <span class="font-bold"><%= message.sender.name %></span>
+      <span class="text-grey text-xs"><%= message.message_time %></span>
+      <span class="text-grey text-xs"><%= message.read || is_read ? 'seen' : '' %></span>
+    </div>
+
+    <p class="text-black leading-normal"><%= message.body %></p>
+  </div>
+</div>

@@ -6,6 +6,14 @@ module ApplicationHelper
   DATE = '%d/%m'.freeze
   TIME = '%H:%M'.freeze
 
+  def dynamic_dashboard_url
+    return students_dashboard_path if current_user.sign_up_as == 'student'
+    return tutors_dashboard_path if current_user.sign_up_as == 'tutor'
+    return admins_dashboard_path(subdomain: 'admin') if current_user.sign_up_as == 'admit'
+
+    root_path
+  end
+
   def og_properties(blog)
     { title: blog.title,
       type: blog.show(:category),
@@ -28,14 +36,6 @@ module ApplicationHelper
       alert: "alert-warning",
       notice: "alert-info"
     }.stringify_keys[flash_type.to_s] || flash_type.to_s
-  end
-
-  def message_css_class(type, message, profile)
-    if type == :own_by
-      message.profile_id == profile.id ? 'my-message' : 'other-message'
-    elsif type == :background
-      message.profile_id == profile.id ? 'bg-light-blue' : 'bg-blue-custom'
-    end
   end
 
   def lesson_durations

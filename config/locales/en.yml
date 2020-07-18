@@ -105,6 +105,8 @@ en:
     list: Список
     grid: Грід
     years: Років
+    back: Назад
+    chats: Чати
   class_room:
     video:
       stop_session: Завершити

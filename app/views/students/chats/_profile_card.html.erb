@@ -1,0 +1,19 @@
+<li class="flex flex-row items-center relative hover:bg-gray-100 p-2 rounded">
+  <div class="absolute flex items-center justify-center h-full right-0 top-0 mr-2">
+    <span class="flex items-center justify-center shadow bg-blue-600 h-6 w-6 text-xs rounded-full text-white">2</span>
+  </div>
+
+  <div class="relative flex-shrink-0">
+    <a href="<%= url%>" class="flex rounded-full w-16 h-16">
+      <img src="<%= image_path(profile.avatar) %>" alt class="w-full h-full rounded-full" />
+    </a>
+  </div>
+
+  <div class="flex flex-col ml-4">
+    <%= link_to url do%>
+      <h3 class="font-bold"><%= profile.name %></h3>
+
+      <p class="text-sm text-gray-600">Hey, how are you today?</p>
+    <% end %>
+  </div>
+</li>
