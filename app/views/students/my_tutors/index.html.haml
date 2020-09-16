@@ -1,39 +1,36 @@
-.row.clearfix
-  .col-lg-12
-    .card
-      .card-body
-        .input-group.mt-2
-          %input.form-control.search{:placeholder => "Search...", :type => "text"}/
+.card
+  .card-body
+    Пошук репетиторів
+    .input-group.mt-2
+      %input.form-control.search{:placeholder => "Search...", :type => "text"}/
 
-.tab-content
-  #list.tab-pane.fade.show.active{:role => "tabpanel"}
-    #users.table-responsive
-
-      %table.table.table-hover.table-vcenter.text-nowrap.table_custom.list
-        %tbody
-          - @tutors.each do |tutor|
-            %tr
-              %td.width35.hidden-xs
-                %a.mail-star{:href => "javascript:void(0);"}
-                  %i.icon-star
-              %td.text-center.width40
-                .avatar.d-block
-                  %img.avatar{ :src => image_path(tutor.avatar) }/
-              %td
-                %div
-                  %a{ href: students_my_tutor_path(tutor) }= tutor.name
-              %td
-                - tutor.subjects.each do |s|
-                  = link_to s.name, students_tutor_profiles_path(search_tutor: { subject: s.name })
-              %td.hidden-xs
-                .text-muted
-                  %i.icon-graduation
-                  = tutor.total_years_of_expirience.to_i
-                  = t('common.years')
-              %td.hidden-sm
-                .text-muted #{tutor.city}, #{tutor.country_name}
-              %td.text-right
-                %a.btn.btn-sm.btn-link{"data-toggle" => "tooltip", :href => "javascript:void(0)", :title => "Sent Message"}
-                  %i.icon-envelope
-                %a.btn.btn-sm.btn-link.hidden-xs.js-sweetalert{"data-toggle" => "tooltip", "data-type" => "confirm", :href => "javascript:void(0)", :title => "Delete"}
-                  %i.icon-trash
+%div{ class: "max-w-7xl mx-auto px-4 sm:px-6 md:px-8" }
+  #users.table-responsive
+    %table.table.table-hover.table-vcenter.text-nowrap.table_custom.list
+      %tbody
+        - @tutors.each do |tutor|
+          %tr
+            %td.width35.hidden-xs
+              %a.mail-star{:href => "javascript:void(0);"}
+                %i.icon-star
+            %td.text-center.width40
+              .avatar.d-block
+                %img.avatar{ :src => image_path(tutor.avatar) }/
+            %td
+              %div
+                %a{ href: students_my_tutor_path(tutor) }= tutor.name
+            %td
+              - tutor.subjects.each do |s|
+                = link_to s.name, students_tutor_profiles_path(search_tutor: { subject: s.name })
+            %td.hidden-xs
+              .text-muted
+                %i.icon-graduation
+                = tutor.total_years_of_expirience.to_i
+                = t('common.years')
+            %td.hidden-sm
+              .text-muted #{tutor.city}, #{tutor.country_name}
+            %td.text-right
+              %a.btn.btn-sm.btn-link{"data-toggle" => "tooltip", :href => "javascript:void(0)", :title => "Sent Message"}
+                %i.icon-envelope
+              %a.btn.btn-sm.btn-link.hidden-xs.js-sweetalert{"data-toggle" => "tooltip", "data-type" => "confirm", :href => "javascript:void(0)", :title => "Delete"}
+                %i.icon-trash
