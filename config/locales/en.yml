@@ -249,6 +249,10 @@ en:
       video_header: Відео
       bio_header: Біо
       avatar_header: Фото
+    
+    registration: 
+      delete_slot_tip: Для видалення розкладу, один 
+        раз клікніть на нього, дальше нажміть "Видалити". 
 
     lessons:
       show:
