@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_06_145624) do
+ActiveRecord::Schema.define(version: 2020_09_17_141342) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -172,7 +172,7 @@ ActiveRecord::Schema.define(version: 2020_05_06_145624) do
     t.string "slug"
     t.text "short_bio"
     t.string "video_url"
-    t.string "time_zone", default: "UTC"
+    t.string "time_zone"
     t.integer "country_id"
     t.integer "rate_cents", default: 0, null: false
     t.string "rate_currency", default: "USD", null: false
