@@ -1,13 +1,16 @@
-.row.clearfix.pt-50.pb-50
-  .col-lg-6.offset-lg-3
+.row.clearfix.pt-50.pb-50.mt-12
+  .col-lg-8.offset-lg-2
     = render 'steps'
-  .col-lg-6.offset-lg-3
+  .col-lg-8.offset-lg-2
     .card
       .card-body
         .card-title.mb-3
           = t('tutors.details.schedule_header')
+        .text-white.px-6.py-4.border-0.rounded.relative.mb-4.bg-indigo-500
+          %span.inline-block.align-middle.mr-8
+            = t('tutors.registration.delete_slot_tip')
         #calendar-tutor-schedule-form
         = render 'tutors/registrations/time_slots/delete_block'
       .card-footer.text-right
         = link_to t('students.details.back').html_safe, video_tutors_details_path, class: 'mr-4 whitespace-no-wrap text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900'
-        = link_to t('students.details.done').html_safe, tutors_dashboard_path, class: 'whitespace-no-wrap inline-flex items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150'
+        = link_to t('students.details.done').html_safe, tutors_dashboard_path, class: 'whitespace-no-wrap inline-flex items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150'
