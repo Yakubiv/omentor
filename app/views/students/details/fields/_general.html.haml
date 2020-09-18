@@ -18,7 +18,7 @@
   .col-md-6
     .form-group
       = f.label :time_zone, class: 'control-label'
-      = f.time_zone_select(:time_zone, nil, { }, class: 'form-control', required: true )
+      = f.time_zone_select(:time_zone, nil, { default: "Kyiv" }, class: 'form-control', required: true )
 
   .col-md-12
     .form-group
@@ -48,7 +48,7 @@
   .col-md-6
     .form-group
       = f.label :country_id, class: 'control-label'
-      = f.select :country_id, options_for_select(countries_to_select, f.object.country_id), { prompt: t('helpers.placeholder.student.country') }, class: 'form-control', required: true
+      = f.select :country_id, options_for_select(countries_to_select, Country.find_by(code: "UA").id), { prompt: t('helpers.placeholder.student.country') }, class: 'form-control', required: true
   .col-sm-6
     .form-group
       = f.label :city, class: 'control-label'
