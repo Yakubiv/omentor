@@ -107,6 +107,7 @@ Rails.application.routes.draw do
           resource :booking, only: %i[show create]
           resource :profile, only: :show
           resource :calendars, only: :show
+          resource :favorites, only: %i[create destroy]
         end
       end
     end
