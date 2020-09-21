@@ -220,6 +220,14 @@ en:
         completed_lessons: Завершені
         pending_lessons: Не оплачені
         no_found: 'Уроків не знайдено'
+        table:
+          subject: Предмет
+          time: Час
+          duration: Тривалість
+          price: Ціна
+          status: Статус
+          tutor: Викладач
+
     details:
       main_header: Загальна інформація
       submit_button: Зберегти інформацію
@@ -249,10 +257,10 @@ en:
       video_header: Відео
       bio_header: Біо
       avatar_header: Фото
-    
-    registration: 
-      delete_slot_tip: Для видалення розкладу, один 
-        раз клікніть на нього, дальше нажміть "Видалити". 
+
+    registration:
+      delete_slot_tip: Для видалення розкладу, один
+        раз клікніть на нього, дальше нажміть "Видалити".
 
     lessons:
       show:

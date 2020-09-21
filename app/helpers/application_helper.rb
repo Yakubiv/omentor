@@ -109,10 +109,10 @@ module ApplicationHelper
   end
 
   def lesson_status_background
-    { 'pending' => 'bg-secondary',
-      'paid' => 'bg-success',
-      'canceled' => 'bg-danger',
-      'completed' => 'bg-warning' }
+    { 'pending' => 'bg-gray-100 text-gray-800',
+      'paid' => 'bg-green-100 text-green-800',
+      'canceled' => 'bg-red-100 text-red-800',
+      'completed' => 'bg-orange-100 text-orange-800' }
   end
 
   def countries_to_select
