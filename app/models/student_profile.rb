@@ -7,7 +7,10 @@ class StudentProfile < Profile
   has_many :favorites, foreign_key: :profile_id
   has_many :favorite_tutor_profiles, through: :favorites, source: :favoritable, source_type: 'TutorProfile'
 
-  def infavorite?(profile)
-    favorite_tutor_profiles.ids.include?(profile.id)
+  def favorite?(favoritable)
+    favorites.where(
+      favoritable_id: favoritable.id,
+      favoritable_type: favoritable.class.base_class.name
+    ).size.positive?
   end
 end

@@ -1,11 +1,9 @@
 .card.c-tutor-card--h
   .card-body
-    - if current_student_profile.infavorite?(tutor_profile)
-      = link_to students_tutor_favorites_path(tutor_profile), method: :delete, title: "Remove tutor from favorites tutors", remote: true do
-        %i.icon-heart.heart-favorite.active
-    - else 
-      = link_to students_tutor_favorites_path(tutor_profile), method: :post, title: "Add tutor to favorites tutors", remote: true do
-        %i.icon-heart.heart-favorite
+    - if current_student_profile.favorite?(tutor_profile)
+      = render 'students/tutors/favorites/remove_favorite', url: students_tutor_favorites_path(tutor_profile)
+    - else
+      = render 'students/tutors/favorites/create_favorite', url: students_tutor_favorites_path(tutor_profile)
     %article.media
       .block.mr-3
         .card-image{ style: "background-image: url(#{image_path(tutor_profile.avatar)})" }

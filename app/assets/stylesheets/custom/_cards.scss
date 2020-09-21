@@ -1,3 +1,5 @@
+$red_color: #f56565;
+
 .card-heading {
   display: flex;
   flex-wrap: wrap;
@@ -147,7 +149,10 @@
   font-size: 22px;
   &:hover,
   &.active {
-    color: #f56565;
-    background-color: #f56565;
+    color: $red_color;
+    svg {
+      color: $red_color;
+      fill: $red_color;
+    }
   }
 }
