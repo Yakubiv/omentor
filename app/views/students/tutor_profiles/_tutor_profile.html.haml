@@ -1,9 +1,10 @@
 .card.c-tutor-card--h
   .card-body
-    - if current_student_profile.favorite?(tutor_profile)
-      = render 'students/tutors/favorites/remove_favorite', url: students_tutor_favorites_path(tutor_profile)
-    - else
-      = render 'students/tutors/favorites/create_favorite', url: students_tutor_favorites_path(tutor_profile)
+    .heart-favorite-container{id: "heart-favorite-container-#{tutor_profile.id}"}
+      - if current_student_profile.favorite?(tutor_profile)
+        = render 'students/tutors/favorites/remove_favorite', tutor_profile: tutor_profile
+      - else
+        = render 'students/tutors/favorites/create_favorite', tutor_profile: tutor_profile
     %article.media
       .block.mr-3
         .card-image{ style: "background-image: url(#{image_path(tutor_profile.avatar)})" }

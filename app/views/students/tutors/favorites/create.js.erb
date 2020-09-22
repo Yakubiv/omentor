@@ -1,1 +1,4 @@
-console.log('test');
+document.getElementById(
+  'heart-favorite-container-'+ <%= @tutor_profile.id %>
+).innerHTML =
+  "<%= escape_javascript(render partial: 'students/tutors/favorites/remove_favorite', locals: { tutor_profile: @tutor_profile }) %>"
