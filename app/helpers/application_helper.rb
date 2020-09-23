@@ -14,6 +14,14 @@ module ApplicationHelper
     'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:text-gray-700 focus:border-gray-300'
   end
 
+  def active_icon
+    'text-indigo-500 group-focus:text-indigo-600'
+  end
+
+  def inactive_icon
+    'text-gray-400 group-hover:text-gray-500 group-focus:text-gray-600'
+  end
+
   def dynamic_dashboard_url
     return students_dashboard_path if current_user.sign_up_as == 'student'
     return tutors_dashboard_path if current_user.sign_up_as == 'tutor'
