@@ -22,6 +22,10 @@ class Lesson < ApplicationRecord
     uuid
   end
 
+  def future?
+    start_at < Time.current
+  end
+
   private
 
   def set_uuid

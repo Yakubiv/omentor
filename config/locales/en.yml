@@ -96,7 +96,7 @@ en:
 
   signup:
     gmail_link: Відкрити gmail
-    confirmation_message: 'Перевірте свою <span class="font600">%{email}</span> пошту! Ми відправили вам лист на підтвердження особистості'
+    confirmation_message: 'Перевірте свою %{email} пошту! Ми відправили вам лист на підтвердження особистості'
   common:
     logout: Вийти
     profile: Профіль
@@ -107,6 +107,12 @@ en:
     years: Років
     back: Назад
     chats: Чати
+    rights_reserved: Всі права захищені
+    rights: Умови надання послуг
+    read_rights: Читати
+    logout: Вийти
+    settings: Налаштування
+    profile: Профіль
   class_room:
     video:
       stop_session: Завершити
@@ -321,11 +327,3 @@ en:
   simple_calendar:
     previous: Попередній
     next: Наступний
-
-  common:
-    rights_reserved: Всі права захищені
-    rights: Умови надання послуг
-    read_rights: Читати
-    logout: Вийти
-    settings: Налаштування
-    profile: Профіль

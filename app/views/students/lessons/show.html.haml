@@ -1,5 +1,2 @@
-.row.clearfix
-  .col-lg-9
-    = render 'tutors/lessons/lesson_essentials', lesson: @lesson, profile: current_student_profile
-  .col-lg-3
-    = render 'students/tutor_profiles/tutor_v_card', tutor_profile: @lesson.tutor_profile
+= render 'students/tutor_profiles/tutor_info_card', tutor_profile: @lesson.tutor_profile
+= render 'tutors/lessons/lesson_essentials', lesson: @lesson, profile: current_student_profile

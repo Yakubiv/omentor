@@ -1,37 +1,34 @@
-.row
-  .col-lg-3.order-md-12
-    = render 'students/tutor_profiles/tutor_v_card', tutor_profile: @lesson.tutor_profile
-  .col-lg-5.order-md-1.offset-lg-2
-    .card
-      .card-header
-        %h3.card-title Виберіть спосіб оплати
-        .card-options
-          %a.card-options-fullscreen{"data-toggle" => "card-fullscreen", :href => "#"}
-            %i.fe.fe-maximize
-      .card-body
-        .row
-          .col-md-12
+= render 'students/tutor_profiles/tutor_info_card', tutor_profile: @lesson.tutor_profile
+.card
+  .card-header
+    %h3.card-title Виберіть спосіб оплати
+    .card-options
+      %a.card-options-fullscreen{"data-toggle" => "card-fullscreen", :href => "#"}
+        %i.fe.fe-maximize
+  .card-body
+    .row
+      .col-md-12
 
-        .table-responsive
-          %table.table.table-hover
-            %thead
-              %tr
-                %th Предмет
-                %th Тривалість
-                %th Ціна
-            %tbody
-              %tr
-                %td= @lesson.subject
-                %td= @lesson.duration
-                %td $#{@lesson.price}
-            %tfoot
-              %tr
-                %td
-                %td
-                %td
-                  %strong $#{@lesson.price}
-        .row
-          .col-md-12.align-right
-            %button.btn.btn-warning
-              %i.icon-printer
-            = link_to 'Оплатити зараз', students_lessons_checkout_path(@lesson), method: :post, class: 'btn btn-success'
+    .table-responsive
+      %table.table.table-hover
+        %thead
+          %tr
+            %th Предмет
+            %th Тривалість
+            %th Ціна
+        %tbody
+          %tr
+            %td= @lesson.subject
+            %td= @lesson.duration
+            %td $#{@lesson.price}
+        %tfoot
+          %tr
+            %td
+            %td
+            %td
+              %strong $#{@lesson.price}
+    .row
+      .col-md-12.align-right
+        %button.btn.btn-warning
+          %i.icon-printer
+        = link_to 'Оплатити зараз', students_lessons_checkout_path(@lesson), method: :post, class: 'btn btn-success'
