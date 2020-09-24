@@ -201,6 +201,8 @@ en:
     email_placeholder: 'Email'
 
   students:
+    favorite_tutors: 
+      title: Улюблені Репетитори
     tutor_profiles:
       index:
         no_found: Репетиторів не знайдено

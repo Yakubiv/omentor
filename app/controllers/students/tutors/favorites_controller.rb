@@ -1,5 +1,9 @@
 class Students::Tutors::FavoritesController < Students::BaseController
-  before_action :set_tutor_profile
+  before_action :set_tutor_profile, only: [:create, :destroy]
+
+  def index
+    @favorite_tutors = current_student_profile.favorite_tutor_profiles
+  end
 
   def create
     current_student_profile.favorites.create(favoritable: @tutor_profile)
