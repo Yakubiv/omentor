@@ -96,7 +96,7 @@ en:
 
   signup:
     gmail_link: Відкрити gmail
-    confirmation_message: 'Перевірте свою <span class="font600">%{email}</span> пошту! Ми відправили вам лист на підтвердження особистості'
+    confirmation_message: 'Перевірте свою %{email} пошту! Ми відправили вам лист на підтвердження особистості'
   common:
     logout: Вийти
     profile: Профіль
@@ -107,6 +107,12 @@ en:
     years: Років
     back: Назад
     chats: Чати
+    rights_reserved: Всі права захищені
+    rights: Умови надання послуг
+    read_rights: Читати
+    logout: Вийти
+    settings: Налаштування
+    profile: Профіль
   class_room:
     video:
       stop_session: Завершити
@@ -222,6 +228,14 @@ en:
         completed_lessons: Завершені
         pending_lessons: Не оплачені
         no_found: 'Уроків не знайдено'
+        table:
+          subject: Предмет
+          time: Час
+          duration: Тривалість
+          price: Ціна
+          status: Статус
+          tutor: Викладач
+
     details:
       main_header: Загальна інформація
       submit_button: Зберегти інформацію
@@ -251,10 +265,10 @@ en:
       video_header: Відео
       bio_header: Біо
       avatar_header: Фото
-    
-    registration: 
-      delete_slot_tip: Для видалення розкладу, один 
-        раз клікніть на нього, дальше нажміть "Видалити". 
+
+    registration:
+      delete_slot_tip: Для видалення розкладу, один
+        раз клікніть на нього, дальше нажміть "Видалити".
 
     lessons:
       show:
@@ -315,11 +329,3 @@ en:
   simple_calendar:
     previous: Попередній
     next: Наступний
-
-  common:
-    rights_reserved: Всі права захищені
-    rights: Умови надання послуг
-    read_rights: Читати
-    logout: Вийти
-    settings: Налаштування
-    profile: Профіль

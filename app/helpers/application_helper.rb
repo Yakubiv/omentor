@@ -14,6 +14,14 @@ module ApplicationHelper
     'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:text-gray-700 focus:border-gray-300'
   end
 
+  def active_icon
+    'text-indigo-500 group-focus:text-indigo-600'
+  end
+
+  def inactive_icon
+    'text-gray-400 group-hover:text-gray-500 group-focus:text-gray-600'
+  end
+
   def dynamic_dashboard_url
     return students_dashboard_path if current_user.sign_up_as == 'student'
     return tutors_dashboard_path if current_user.sign_up_as == 'tutor'
@@ -109,10 +117,10 @@ module ApplicationHelper
   end
 
   def lesson_status_background
-    { 'pending' => 'bg-secondary',
-      'paid' => 'bg-success',
-      'canceled' => 'bg-danger',
-      'completed' => 'bg-warning' }
+    { 'pending' => 'bg-gray-100 text-gray-800',
+      'paid' => 'bg-green-100 text-green-800',
+      'canceled' => 'bg-red-100 text-red-800',
+      'completed' => 'bg-orange-100 text-orange-800' }
   end
 
   def countries_to_select
