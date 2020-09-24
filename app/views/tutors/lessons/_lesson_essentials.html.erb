@@ -11,16 +11,6 @@
         </h2>
       </div>
 
-      <div class="flex-1 min-w-0">
-        <% if !lesson.future? %>
-          <% time_left = 100.0 * ( Time.current - lesson.created_at ) / ( lesson.start_at - lesson.created_at ) %>
-
-          <div class="shadow w-full bg-grey-light rounded-full">
-            <div class="bg-indigo-600 text-xs leading-none py-1 text-center text-white rounded-full" style="width: <%= time_left %>"><%= distance_of_time_in_words(Time.current, lesson.start_at) %></div>
-          </div>
-        <% end %>
-      </div>
-
       <div class="mt-5 flex lg:mt-0 lg:ml-4">
         <span class="hidden sm:block shadow-sm rounded-md">
           <button type="button" class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:text-gray-800 active:bg-gray-50 transition duration-150 ease-in-out">
