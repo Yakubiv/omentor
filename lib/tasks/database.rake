@@ -16,4 +16,10 @@ namespace :database do
       Subject.create(name: row['Name'], status: 'active')
     end
   end
+
+  task create_languages: :environment do
+    Country.find_each do |country|
+      Language.create(country_id: country.id, name: I18n.t("countries.#{country.code}"))
+    end
+  end
 end

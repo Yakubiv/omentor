@@ -50,7 +50,7 @@ class Tutors::DetailsController < Tutors::BaseController
     params.require(:tutor_profile).permit(:avatar, :first_name, :last_name, :username,
                                           :birthday, :bio, :phone, :city, :country_id, :time_zone,
                                           :gender, :degree_type, :short_bio, :video_url, :subject,
-                                          :total_years_of_expirience, :rate)
+                                          :total_years_of_expirience, :rate, speaks_attributes: [:id, :level, :language_id])
   end
 
   def after_update_redirection

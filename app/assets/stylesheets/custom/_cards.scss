@@ -1,4 +1,5 @@
 $red_color: #f56565;
+$brand-violet: #6a58f1;
 
 .card-heading {
   display: flex;
@@ -154,5 +155,14 @@ $red_color: #f56565;
       color: $red_color;
       fill: $red_color;
     }
+  }
+}
+
+.remove-language {
+  display: inline-block;
+  color: $brand-violet;
+  &:hover,
+  &.active {
+    color: gray;
   }
 }

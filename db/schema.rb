@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_19_070945) do
+ActiveRecord::Schema.define(version: 2020_10_05_165948) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -127,6 +127,14 @@ ActiveRecord::Schema.define(version: 2020_09_19_070945) do
     t.index ["user_id"], name: "index_impressions_on_user_id"
   end
 
+  create_table "languages", force: :cascade do |t|
+    t.string "name"
+    t.bigint "country_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["country_id"], name: "index_languages_on_country_id"
+  end
+
   create_table "lessons", force: :cascade do |t|
     t.integer "status", default: 0
     t.datetime "start_at"
@@ -195,6 +203,16 @@ ActiveRecord::Schema.define(version: 2020_09_19_070945) do
     t.bigint "subject_id", null: false
     t.index ["profile_id", "subject_id"], name: "index_profiles_subjects_on_profile_id_and_subject_id"
     t.index ["subject_id", "profile_id"], name: "index_profiles_subjects_on_subject_id_and_profile_id"
+  end
+
+  create_table "speaks", force: :cascade do |t|
+    t.integer "level"
+    t.bigint "profile_id"
+    t.bigint "language_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["language_id"], name: "index_speaks_on_language_id"
+    t.index ["profile_id"], name: "index_speaks_on_profile_id"
   end
 
   create_table "subjects", force: :cascade do |t|

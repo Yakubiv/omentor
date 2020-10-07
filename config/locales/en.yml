@@ -88,6 +88,8 @@ en:
         video_url: Посилання на ютуб. Відео про себе.
         subject: Я викладаю предмет
         total_years_of_expirience: Років Досвіду
+        language: Мова
+        level: Рівень
 
   helpers:
     placeholder:
@@ -302,6 +304,8 @@ en:
       bio_header: Опис
       image_tips: Вимоги до фото
       schedule_header: Зазначне графік
+      add_language: Додати мову
+      select_level_language: Оберіть рівень...
     left_sidebar:
       dashboard: Головна
       chat: Чат

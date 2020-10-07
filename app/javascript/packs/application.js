@@ -3,23 +3,25 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-require("@rails/ujs").start()
-require("turbolinks").start()
-require("@rails/activestorage").start()
-require("local-time")
-require("alpinejs")
+require("jquery");
+require("@rails/ujs").start();
+require("turbolinks").start();
+require("@rails/activestorage").start();
+require("local-time");
+require("alpinejs");
+require("@nathanvda/cocoon");
 
-require("@fullcalendar/core")
-require("@fullcalendar/daygrid")
-require("@fullcalendar/timegrid")
+require("@fullcalendar/core");
+require("@fullcalendar/daygrid");
+require("@fullcalendar/timegrid");
 
-require("selectize")
+require("selectize");
 
-require("channels")
-require("custom")
-require("dropify")
+require("channels");
+require("custom");
+require("dropify");
 
-require("css/application.scss")
+require("css/application.scss");
 
 window.$ = $;
 
@@ -29,5 +31,5 @@ window.$ = $;
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
-require("trix")
-require("@rails/actiontext")
+require("trix");
+require("@rails/actiontext");
