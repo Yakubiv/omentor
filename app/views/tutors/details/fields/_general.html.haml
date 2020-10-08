@@ -86,19 +86,8 @@
       = f.label :city, class: 'control-label'
       = f.text_field :city, required: true, class: 'form-control'
 
-= f.object.speaks.inspect
-= f.fields_for :speaks, f.object.speaks do |speak|
-  .row
-    .col-md-6
-      .form-group
-        = f.label :language, class: 'control-label'
-        = speak.select :language_id, options_for_select(Language.all.map{|l|[l.name, l.id]}, speak.object.language_id), {}, class: 'form-control'
-    .col-md-5
-      .form-group
-        = f.label :level, class: 'control-label' 
-        = speak.select :level, options_for_select(Speak.levels.keys.to_a, speak.object.level), {prompt: t('tutors.details.select_level_language')}, class: 'form-control'
-    .col-md-12
-      = render 'tutors/details/speak_fields', f: speak
+= f.fields_for :speaks do |speak|
+  = render 'tutors/details/speak_fields', f: speak
 
 .row
   .col-md-12

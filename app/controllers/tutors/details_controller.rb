@@ -44,6 +44,7 @@ class Tutors::DetailsController < Tutors::BaseController
 
   def load_tutor_profile
     @tutor_profile = current_user.tutor_profile || current_user.build_tutor_profile
+    @tutor_profile.speaks.new unless @tutor_profile.speaks.any?
   end
 
   def current_tutor_params

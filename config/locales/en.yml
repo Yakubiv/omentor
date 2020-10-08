@@ -209,7 +209,7 @@ en:
     email_placeholder: 'Email'
 
   students:
-    favorite_tutors: 
+    favorite_tutors:
       title: Улюблені
     tutor_profiles:
       index:

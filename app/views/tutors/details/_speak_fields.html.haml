@@ -2,11 +2,11 @@
   .row
     .col-md-6
       .form-group
-        = f.label :language, class: 'control-label'
+        = f.label :language, t('activerecord.attributes.profile.language'), class: 'control-label'
         = f.select :language_id, options_for_select(Language.all.map{|l|[l.name, l.id]}, f.object.language_id), {}, class: 'form-control'
     .col-md-5
       .form-group
-        = f.label :level, class: 'control-label' 
+        = f.label :level, t('activerecord.attributes.profile.level'), class: 'control-label'
         = f.select :level, options_for_select(Speak.levels.keys.to_a, f.object.level), {prompt: t('tutors.details.select_level_language')}, class: 'form-control'
     .col-md-1
       .form-group
