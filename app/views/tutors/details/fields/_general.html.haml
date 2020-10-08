@@ -86,7 +86,8 @@
       = f.label :city, class: 'control-label'
       = f.text_field :city, required: true, class: 'form-control'
 
-= f.fields_for :speaks, f.object.speaks.new do |speak|
+= f.object.speaks.inspect
+= f.fields_for :speaks, f.object.speaks do |speak|
   .row
     .col-md-6
       .form-group
