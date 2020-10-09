@@ -18,15 +18,13 @@ namespace :database do
   end
 
   task create_languages: :environment do
-    # csv_text = File.read(Rails.root.join('lib', 'assets', 'language.csv'))
-    # csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
     csv = CSV.foreach(Rails.root.join('lib', 'assets', 'language.csv'), :headers=>true)
 
     csv.each do |row|
       country = Country.find_by(locale: row['639-1 '].strip)
       puts "created #{country&.locale}" if country
       puts "no created #{row}" unless country
-      Language.create(name: row['Language name '], country_id: country.id) if country
+      Language.create(name: row['Language name '].strip, country_id: country.id) if country
     end
   end
 end
