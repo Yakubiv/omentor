@@ -42,6 +42,16 @@ en:
         separator: "."
   activerecord:
     attributes:
+      speak:
+        levels: 
+          beginer: A1
+          elementary: A2 
+          intermediate: B1 
+          upper-intermediate: B2 
+          advanced: C1 
+          proficiency: C2 
+          native: Рідна мова
+
       blog_post:
         statuses:
           published: Опубліковано
@@ -306,6 +316,7 @@ en:
       schedule_header: Зазначне графік
       add_language: Додати мову
       select_level_language: Оберіть рівень...
+      language_skills: Володіння мовами
     left_sidebar:
       dashboard: Головна
       chat: Чат

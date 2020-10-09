@@ -31,6 +31,12 @@
             = link_to students_tutor_calendars_path(tutor_profile) do
               %i.icon-calendar
               Календар
+          %p.mb-2
+            #{t('tutors.details.language_skills')}:
+            - tutor_profile.speaks.each do |speak|
+              = speak.language 
+              %span.inline-flex.items-center.px-3.py-0.5.rounded-full.text-xs.font-medium.leading-5.bg-purple-100.text-purple-800
+                = Speak.human_enum_name(:levels, speak.level)
           %p= tutor_profile.bio
         %nav.flex.text-muted.items-center.flex-wrap.mt-2
           .card-details
