@@ -129,6 +129,12 @@ module ApplicationHelper
     end
   end
 
+  def languages_to_select
+    Language.all.map do |l|
+      [I18n.t("countries.language.#{l.name}"), l.id]
+    end
+  end
+
   SANITIZER          = Rails::Html::Sanitizer.white_list_sanitizer
   ALLOWED_TAGS       = SANITIZER.allowed_tags + [ ActionText::Attachment::TAG_NAME, "figure", "figcaption", "iframe" ]
   ALLOWED_ATTRIBUTES = SANITIZER.allowed_attributes + ActionText::Attachment::ATTRIBUTES
