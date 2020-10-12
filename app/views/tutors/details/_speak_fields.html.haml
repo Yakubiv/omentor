@@ -3,11 +3,11 @@
     .col-md-6
       .form-group
         = f.label :language, t('activerecord.attributes.profile.language'), class: 'control-label'
-        = f.select :language_id, options_for_select(languages_to_select, f.object.language_id), {}, class: 'form-control'
+        = f.select :language_id, required: true, options_for_select(languages_to_select, f.object.language_id), {}, class: 'form-control'
     .col-md-5
       .form-group
         = f.label :level, t('activerecord.attributes.profile.level'), class: 'control-label'
-        = f.select :level, options_for_select(Speak.levels.keys.map{|k|[Speak.human_enum_name(:level, k), k]}, f.object.level), {prompt: t('tutors.details.select_level_language')}, class: 'form-control'
+        = f.select :level, required: true, options_for_select(Speak.levels.keys.map{|k|[Speak.human_enum_name(:level, k), k]}, f.object.level), {prompt: t('tutors.details.select_level_language')}, class: 'form-control'
     .col-md-1
       .form-group
         = link_to_remove_association f do
