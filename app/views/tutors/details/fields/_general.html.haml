@@ -31,6 +31,15 @@
     .form-group
       = f.label :subject
       = f.text_field :subject, autocomplete: :off, required: true, value: f.object.subjects.first&.name, placeholder: t('search_form.tutors.subject_placeholder'), class: 'form-control'
+
+  .col-md-12
+    = f.fields_for :speaks do |speak|
+      = render 'tutors/details/speak_fields', f: speak
+
+  .col-md-12
+    .add-language.text-indigo-600.mb-4
+      = link_to_add_association t('tutors.details.add_language'), f, :speaks
+
   .col-md-12
     .form-group
       = f.label :phone, class: 'control-label'
@@ -80,16 +89,8 @@
   .col-md-6
     .form-group
       = f.label :country_id, class: 'control-label'
-      = f.select :country_id, required: true, options_for_select(countries_to_select, Country.find_by(code: "UA").id), { prompt: t('helpers.placeholder.student.country') }, class: 'form-control', required: true
+      = f.select :country_id, options_for_select(countries_to_select, Country.find_by(code: "UA").id), { prompt: t('helpers.placeholder.student.country') }, class: 'form-control', required: true
   .col-sm-6
     .form-group
       = f.label :city, class: 'control-label'
       = f.text_field :city, required: true, class: 'form-control'
-
-= f.fields_for :speaks do |speak|
-  = render 'tutors/details/speak_fields', f: speak
-
-.row
-  .col-md-12
-    .add-language.text-indigo-600
-      = link_to_add_association t('tutors.details.add_language'), f, :speaks
