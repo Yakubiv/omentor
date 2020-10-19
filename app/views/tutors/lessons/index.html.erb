@@ -1,0 +1,78 @@
+<div class="px-4 sm:px-6 lg:px-8 py-6 bg-white">
+  <div class="mx-auto">
+    <div>
+      <div class="sm:hidden">
+        <select aria-label="Selected tab" class="form-select block w-full">
+          <option>
+            <a href="<%= tutors_lessons_path %>">
+              <%= t('tutors.lessons.index.all_lessons') %>
+              <%= @lessons_count.values.sum %>
+            </a>
+          </option>
+
+          <option>
+            <a href="<%= paid_tutors_lessons_path %>">
+              <%= t('tutors.lessons.index.paid_lessons') %>
+              <%= @lessons_count.fetch('paid', 0) %>
+            </a>
+          </option>
+
+          <option>
+            <a href="<%= pending_tutors_lessons_path %>">
+              <%= t('tutors.lessons.index.pending_lessons') %>
+              <%= @lessons_count.fetch('pending', 0) %>
+            </a>
+          </option>
+
+          <option>
+            <a href="<%= completed_tutors_lessons_path %>">
+              <%= t('tutors.lessons.index.completed_lessons') %>
+              <%= @lessons_count.fetch('completed', 0) %>
+            </a>
+          </option>
+
+          <option selected="">
+            <a href="<%= canceled_tutors_lessons_path %>">
+              <%= t('tutors.lessons.index.canceled_lessons') %>
+              <%= @lessons_count.fetch('canceled', 0) %>
+            </a>
+          </option>
+        </select>
+      </div>
+      <div class="hidden sm:block">
+        <div class="border-b border-gray-200">
+          <nav class="-mb-px flex">
+            <a href="<%= tutors_lessons_path %>" class="w-1/4 py-4 px-1 text-center border-b-2 font-medium text-sm leading-5 focus:outline-none <%= active_if?(action: 'index') == 'active' ? active_tab_link : inactive_tab_link %>">
+              <%= t('tutors.lessons.index.all_lessons') %>
+              <%= @lessons_count.values.sum %>
+            </a>
+
+            <a href="<%= paid_tutors_lessons_path %>" class="w-1/4 py-4 px-1 text-center border-b-2 font-medium text-sm leading-5 focus:outline-none <%= active_if?(action: 'paid') == 'active' ? active_tab_link : inactive_tab_link %>">
+              <%= t('tutors.lessons.index.paid_lessons') %>
+              <%= @lessons_count.fetch('paid', 0) %>
+            </a>
+
+            <a href="<%= pending_tutors_lessons_path %>" class="w-1/4 py-4 px-1 text-center border-b-2 font-medium text-sm leading-5 focus:outline-none <%= active_if?(action: 'pending') == 'active' ? active_tab_link : inactive_tab_link %>">
+              <%= t('tutors.lessons.index.pending_lessons') %>
+              <%= @lessons_count.fetch('pending', 0) %>
+            </a>
+
+            <a href="<%= completed_tutors_lessons_path %>" class="w-1/4 py-4 px-1 text-center border-b-2 font-medium text-sm leading-5 focus:outline-none <%= active_if?(action: 'completed') == 'active' ? active_tab_link : inactive_tab_link %>">
+              <%= t('tutors.lessons.index.completed_lessons') %>
+              <%= @lessons_count.fetch('completed', 0) %>
+            </a>
+
+            <a href="<%= canceled_tutors_lessons_path %>" class="w-1/4 py-4 px-1 text-center border-b-2 font-medium text-sm leading-5 focus:outline-none <%= active_if?(action: 'canceled') == 'active' ? active_tab_link : inactive_tab_link %>">
+              <%= t('tutors.lessons.index.canceled_lessons') %>
+              <%= @lessons_count.fetch('canceled', 0) %>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 mt-10">
+  <%= render 'tutors/lessons/lessons', lessons: @lessons %>
+</div>

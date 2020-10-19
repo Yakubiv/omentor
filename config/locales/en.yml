@@ -296,6 +296,13 @@ en:
         pending_lessons: Не оплачені
         no_found: 'Уроків не знайдено'
         visit: Відкрити
+        table:
+          subject: Предмет
+          time: Час
+          duration: Тривалість
+          price: Ціна
+          status: Статус
+          student: Студент
     details:
       main_header: Загальна інформація
       submit_button: Зберегти інформацію

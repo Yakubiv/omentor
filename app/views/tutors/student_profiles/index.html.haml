@@ -1,11 +1,10 @@
-.row.clearfix
-  .col-lg-12
-    .card
-      .card-body
-        .input-group.mt-2
-          %input.form-control.search{:placeholder => "Search...", :type => "text"}/
+.card
+  .card-body
+    Пошук студентів
+    .input-group.mt-2
+      %input.form-control.search{:placeholder => "Search...", :type => "text"}/
 
-.tab-content
+%div{ class: "max-w-7xl mx-auto px-4 sm:px-6 md:px-8" }
   - if @students.any?
     #users.table-responsive
       %table.table.table-hover.table-vcenter.text-nowrap.table_custom.list
