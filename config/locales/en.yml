@@ -43,13 +43,13 @@ en:
   activerecord:
     attributes:
       speak:
-        levels: 
+        levels:
           beginer: A1
-          elementary: A2 
-          intermediate: B1 
-          upper-intermediate: B2 
-          advanced: C1 
-          proficiency: C2 
+          elementary: A2
+          intermediate: B1
+          upper-intermediate: B2
+          advanced: C1
+          proficiency: C2
           native: Рідна мова
 
       blog_post:
@@ -316,6 +316,7 @@ en:
       schedule_header: Зазначне графік
       add_language: Додати мову
       select_level_language: Оберіть рівень...
+      select_language: Оберіть мову
       language_skills: Володіння мовами
     left_sidebar:
       dashboard: Головна

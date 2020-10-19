@@ -1,7 +1,7 @@
 .row.clearfix.pt-50.pb-50
-  .col-lg-6.offset-lg-3
+  .col-lg-8.offset-lg-2
     = render 'steps'
-  .col-lg-6.offset-lg-3
+  .col-lg-8.offset-lg-2
     .card
       = form_with(model: @tutor_profile, url: tutors_details_path, method: :put) do |f|
         .card-body
