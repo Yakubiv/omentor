@@ -80,8 +80,16 @@
   .col-md-6
     .form-group
       = f.label :country_id, class: 'control-label'
-      = f.select :country_id, options_for_select(countries_to_select, Country.find_by(code: "UA").id), { prompt: t('helpers.placeholder.student.country') }, class: 'form-control', required: true
+      = f.select :country_id, required: true, options_for_select(countries_to_select, Country.find_by(code: "UA").id), { prompt: t('helpers.placeholder.student.country') }, class: 'form-control', 
   .col-sm-6
     .form-group
       = f.label :city, class: 'control-label'
       = f.text_field :city, required: true, class: 'form-control'
+
+= f.fields_for :speaks do |speak|
+  = render 'tutors/details/speak_fields', f: speak
+
+.row
+  .col-md-12
+    .add-language.text-indigo-600
+      = link_to_add_association t('tutors.details.add_language'), f, :speaks

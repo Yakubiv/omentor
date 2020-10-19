@@ -30,6 +30,7 @@ gem 'sendgrid-ruby'
 gem 'local_time'
 gem 'redis'
 gem 'sidekiq'
+gem 'cocoon'
 
 # video
 gem 'opentok', "~> 4.0.0"

@@ -16,4 +16,16 @@ namespace :database do
       Subject.create(name: row['Name'], status: 'active')
     end
   end
+
+  task create_languages: :environment do
+    csv = CSV.foreach(Rails.root.join('lib', 'assets', 'language.csv'), :headers=>true)
+
+    csv.each do |row|
+      country = Country.find_by(locale: row['639-1 '].strip)
+      # puts "created #{country&.locale}" if country
+      # puts "no created #{row}" unless country
+      # Language.create(name: row['Language name '].strip, country_id: country.id) if country
+      puts "#{row['Language name '].strip}: "
+    end
+  end
 end

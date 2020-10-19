@@ -42,6 +42,16 @@ en:
         separator: "."
   activerecord:
     attributes:
+      speak:
+        levels:
+          beginer: A1
+          elementary: A2
+          intermediate: B1
+          upper-intermediate: B2
+          advanced: C1
+          proficiency: C2
+          native: Рідна мова
+
       blog_post:
         statuses:
           published: Опубліковано
@@ -88,6 +98,8 @@ en:
         video_url: Посилання на ютуб. Відео про себе.
         subject: Я викладаю предмет
         total_years_of_expirience: Років Досвіду
+        language: Мова
+        level: Рівень
 
   helpers:
     placeholder:
@@ -207,7 +219,7 @@ en:
     email_placeholder: 'Email'
 
   students:
-    favorite_tutors: 
+    favorite_tutors:
       title: Улюблені
     tutor_profiles:
       index:
@@ -302,6 +314,10 @@ en:
       bio_header: Опис
       image_tips: Вимоги до фото
       schedule_header: Зазначне графік
+      add_language: Додати мову
+      select_level_language: Оберіть рівень...
+      select_language: Оберіть мову
+      language_skills: Володіння мовами
     left_sidebar:
       dashboard: Головна
       chat: Чат
