@@ -64,7 +64,7 @@
                     <%= number_to_currency lesson.price %>
                   </td>
                   <td class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium">
-                    <a href="<%= students_lesson_path(lesson) %>" class="text-indigo-600 hover:text-indigo-900">
+                    <a href="<%= tutors_lesson_path(lesson) %>" class="text-indigo-600 hover:text-indigo-900">
                       <%= t('tutors.lessons.index.visit') %>
                     </a>
                   </td>
@@ -72,7 +72,7 @@
               <% end %>
             <% else %>
               <tr>
-                <td colspan="7">
+                <td colspan="7" class="px-6 py-4">
                   <%= t('students.lessons.index.no_found') %>
                 </td>
               </tr>
