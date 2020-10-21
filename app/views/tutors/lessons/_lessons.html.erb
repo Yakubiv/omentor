@@ -6,22 +6,22 @@
           <thead>
             <tr>
               <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                <%= t('students.lessons.index.table.tutor') %>
+                <%= t('tutors.lessons.index.table.student') %>
               </th>
               <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                <%= t('students.lessons.index.table.subject') %>
+                <%= t('tutors.lessons.index.table.subject') %>
               </th>
               <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                <%= t('students.lessons.index.table.time') %>
+                <%= t('tutors.lessons.index.table.time') %>
               </th>
               <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                <%= t('students.lessons.index.table.duration') %>
+                <%= t('tutors.lessons.index.table.duration') %>
               </th>
               <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                <%= t('students.lessons.index.table.status') %>
+                <%= t('tutors.lessons.index.table.status') %>
               </th>
               <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                <%= t('students.lessons.index.table.price') %>
+                <%= t('tutors.lessons.index.table.price') %>
               </th>
               <th class="px-6 py-3 bg-gray-50"></th>
             </tr>
@@ -29,7 +29,7 @@
           <tbody class="bg-white divide-y divide-gray-200">
             <% if lessons.any? %>
               <% lessons.each do |lesson| %>
-                <%= render 'tutors/lessons/table_line', lesson: lesson %>
+                <%= render 'table_line', lesson: lesson %>
               <% end %>
             <% else %>
               <tr>

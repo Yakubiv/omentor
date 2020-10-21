@@ -1,0 +1,75 @@
+<div class="px-4 sm:px-6 lg:px-8 py-6 bg-white mb-10">
+  <div class="mx-auto">
+    <div>
+      <div class="sm:hidden">
+        <select aria-label="Selected tab" class="form-select block w-full">
+          <option>
+            <a href="<%= schedule_tutors_settings_path %>">
+              <%= t('tutors.settings.schedule_header') %>
+            </a>
+          </option>
+
+          <option>
+            <a href="<%= general_tutors_settings_path %>">
+              <%= t('tutors.settings.general_header') %>
+            </a>
+          </option>
+
+          <option>
+            <a href="<%= photo_tutors_settings_path %>">
+              <%= t('tutors.settings.avatar_header') %>
+            </a>
+          </option>
+
+          <option>
+            <a href="<%= video_tutors_settings_path %>">
+              <%= ('tutors.settings.video_header') %>
+            </a>
+          </option>
+
+          <option selected="">
+            <a href="<%= bio_tutors_settings_path %>">
+              <%= t('tutors.settings.bio_header') %>
+            </a>
+          </option>
+
+          <option selected="">
+            <a href="<%= account_tutors_settings_path %>">
+              <%= t('tutors.settings.account_header') %>
+            </a>
+          </option>
+        </select>
+      </div>
+
+      <div class="hidden sm:block">
+        <div class="border-b border-gray-200">
+          <nav class="-mb-px flex">
+            <a href="<%= schedule_tutors_settings_path %>" class="w-1/4 py-4 px-1 text-center border-b-2 font-medium text-sm leading-5 focus:outline-none <%= active_if?(action: 'schedule') == 'active' ? active_tab_link : inactive_tab_link %>">
+              <%= t('tutors.settings.schedule_header') %>
+            </a>
+
+            <a href="<%= general_tutors_settings_path %>" class="w-1/4 py-4 px-1 text-center border-b-2 font-medium text-sm leading-5 focus:outline-none <%= active_if?(action: 'general') == 'active' ? active_tab_link : inactive_tab_link %>">
+              <%= t('tutors.settings.general_header') %>
+            </a>
+
+            <a href="<%= photo_tutors_settings_path %>" class="w-1/4 py-4 px-1 text-center border-b-2 font-medium text-sm leading-5 focus:outline-none <%= active_if?(action: 'photo') == 'active' ? active_tab_link : inactive_tab_link %>">
+              <%= t('tutors.settings.avatar_header') %>
+            </a>
+
+            <a href="<%= video_tutors_settings_path %>" class="w-1/4 py-4 px-1 text-center border-b-2 font-medium text-sm leading-5 focus:outline-none <%= active_if?(action: 'video') == 'active' ? active_tab_link : inactive_tab_link %>">
+              <%= t('tutors.settings.video_header') %>
+            </a>
+
+            <a href="<%= bio_tutors_settings_path %>" class="w-1/4 py-4 px-1 text-center border-b-2 font-medium text-sm leading-5 focus:outline-none <%= active_if?(action: 'bio') == 'active' ? active_tab_link : inactive_tab_link %>">
+              <%= t('tutors.settings.bio_header') %>
+            </a>
+
+            <a href="<%= account_tutors_settings_path %>" class="w-1/4 py-4 px-1 text-center border-b-2 font-medium text-sm leading-5 focus:outline-none <%= active_if?(action: 'account') == 'active' ? active_tab_link : inactive_tab_link %>">
+              <%= t('tutors.settings.account_header') %>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

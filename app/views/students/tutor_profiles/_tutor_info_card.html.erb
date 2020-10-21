@@ -1,6 +1,6 @@
 <div class="bg-white shadow">
   <div class="px-4 sm:px-6 lg:mx-auto lg:px-8">
-    <div class="py-6 md:flex md:items-center md:justify-between lg:border-t lg:border-cool-gray-200">
+    <div class="py-6 md:flex md:items-center md:justify-between lg:border-t lg:border-b lg:border-cool-gray-200">
       <div class="flex-1 min-w-0">
         <!-- Profile -->
         <div class="flex items-center">
@@ -57,7 +57,7 @@
       <div class="mt-6 flex space-x-3 md:mt-0 md:ml-4">
         <span class="shadow-sm rounded-md">
           <a href="<%= students_tutor_profile_path(tutor_profile) %>" class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-700 active:bg-indigo-700 transition duration-150 ease-in-out">
-            Переглянути профіль
+            <%= t('students.tutor_profiles.view_profile_link') %>
           </a>
         </span>
       </div>
