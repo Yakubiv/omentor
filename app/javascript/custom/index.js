@@ -2,7 +2,8 @@ require('./plugins/bootstrap/bootstrap.min.js')
 require('./plugins/input-mask/jquery.mask.min.js')
 
 require('./plugins/metisMenu/metisMenu.js')
-require('./plugins/fullcalendar/main.js')
+require('./plugins/fullcalendar/tutor_time_slots.js')
+require('./plugins/fullcalendar/tutor_calendar.js')
 require('./plugins/flatpickr/datetimepicker.js')
 
 require('./plugins/jquery_range.min.js')
