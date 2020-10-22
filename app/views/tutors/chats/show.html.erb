@@ -1,20 +1,24 @@
-<div class="mb-5">
-  <nav class="sm:hidden">
-    <a href="#" class="flex items-center text-md leading-5 font-medium text-gray-500 hover:text-gray-700 transition duration-150 ease-in-out">
-      <svg class="flex-shrink-0 -ml-1 mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
-        <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
-      </svg>
+<div class="flex items-center justify-center">
+  <div class="flex flex-col w-full p-4">
+    <div class="flex flex-col relative mt-4">
+      <div class="absolute flex items-center justify-center h-10 w-10 left-0 top-0">
+        <svg class="h-6 w-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+        </svg>
+      </div>
+      <div>
+        <input class="focus:outline-none appearance-none border border-grey rounded-lg pl-8 pr-4 py-2 w-full" type="text" />
+      </div>
+    </div>
 
-      <%= t('common.back') %>
-    </a>
-  </nav>
-  <nav class="hidden sm:flex items-center text-md leading-5 font-medium">
-    <a href="<%= tutors_chats_path %>" class="text-gray-500 hover:text-gray-700 transition duration-150 ease-in-out"><%= t('common.chats') %></a>
-    <svg class="flex-shrink-0 mx-2 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
-      <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-    </svg>
-    <span class="text-gray-500 transition duration-150 ease-in-out"><%= @class_room.student_profile.name %></span>
-  </nav>
+    <hr class="mt-4">
+
+    <div class="font-sans antialiased h-screen flex">
+      <%= render 'messages/contacts_tutors' %>
+      <%= render 'messages/chat', class_room: @class_room, messages: @messages, target_profile: @class_room.opposet_profile_to(current_tutor_profile), profile: current_tutor_profile %>
+    </div>
+  </div>
 </div>
 
-<%= render 'messages/chat', class_room: @class_room, messages: @messages, target_profile: @class_room.opposet_profile_to(current_tutor_profile), profile: current_tutor_profile %>
+  
+
