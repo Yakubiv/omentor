@@ -43,3 +43,11 @@
     @apply bg-gray-100;
   }
 }
+
+.chat-full-h {
+  min-height: calc(100vh - 200px);
+}
+
+.chatbox-full-h {
+  max-height: calc(100vh - 200px);
+}
