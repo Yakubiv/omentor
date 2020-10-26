@@ -1,4 +1,4 @@
 document.getElementById(
-  'heart-favorite-container-'+ <%= @student.id %>
+  'heart-favorite-container-'+ <%= @student_profile.id %>
 ).innerHTML =
-  "<%= escape_javascript(render partial: 'tutors/students/favorites/create_favorite', locals: { student: @student }) %>"
+  "<%= escape_javascript(render partial: 'tutors/students/favorites/create_favorite', locals: { student: @student_profile }) %>"
