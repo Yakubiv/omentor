@@ -172,6 +172,7 @@ en:
       settings:
         page_title: Налаштування
   messages:
+    no_chats: У вас поки що немає чатів... 
     no_messages: Повідомлень немає
     form_placeholder: Напишіть повідомлення тут...
     select_chat: Виберіть чат, і почніть відправляти повідомлення
