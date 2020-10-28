@@ -10,21 +10,7 @@
       %table.table.table-hover.table-vcenter.text-nowrap.table_custom.list
         %tbody
           - @students.each do |student|
-            %tr
-              %td.width35.hidden-xs
-                %a.mail-star{:href => "javascript:void(0);"}
-                  %i.icon-star
-              %td.text-center.width40
-                .avatar.d-block
-                  %img.avatar{ :src => image_path(student.avatar) }/
-              %td
-                %div
-                  %a{ href: tutors_student_profile_path(student) }= student.name
-              %td.hidden-sm
-                .text-muted #{student.city}, #{student.country_name}
-              %td.text-right
-                %a.btn.btn-sm.btn-link{"data-toggle" => "tooltip", :href => "javascript:void(0)", :title => "Sent Message"}
-                  %i.icon-envelope
+            = render 'student_profile', student: student
   - else
     .pt-10.text-center
       %div{ class:"p-2 bg-indigo-400 items-center text-indigo-100 leading-none rounded-full flex lg:inline-flex" }

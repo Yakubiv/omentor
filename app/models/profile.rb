@@ -33,6 +33,13 @@ class Profile < ApplicationRecord
     "#{first_name[0]}#{last_name[0]}".upcase
   end
 
+  def favorite?(favoritable)
+    favorites.where(
+      favoritable_id: favoritable.id,
+      favoritable_type: favoritable.class.base_class.name
+    ).size.positive?
+  end
+
   private
 
   def set_country_name

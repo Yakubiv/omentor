@@ -73,6 +73,13 @@ Rails.application.routes.draw do
         get :general, on: :collection
       end
       resources :student_profiles, only: %i[index show], path: :students
+    
+      scope module: :students do
+        resources :favorites, only: :index
+        resources :students, only: [], path: nil, as: nil do
+          resource :favorites, only: %i[create destroy]
+        end
+      end   
     end
 
     namespace :students, path: 's' do
