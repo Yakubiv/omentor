@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_05_165948) do
+ActiveRecord::Schema.define(version: 2020_11_12_115452) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -99,6 +99,15 @@ ActiveRecord::Schema.define(version: 2020_10_05_165948) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["favoritable_type", "favoritable_id"], name: "index_favorites_on_favoritable_type_and_favoritable_id"
     t.index ["profile_id"], name: "index_favorites_on_profile_id"
+  end
+
+  create_table "feedbacks", force: :cascade do |t|
+    t.text "describe"
+    t.string "image"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_feedbacks_on_user_id"
   end
 
   create_table "impressions", force: :cascade do |t|

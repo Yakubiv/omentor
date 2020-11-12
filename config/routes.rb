@@ -131,7 +131,7 @@ Rails.application.routes.draw do
 
   resources :blogs, only: %i[index show], path: 'blog'
 
-  resources :feedbacks
+  resources :feedbacks, only: :create
 
   mount ActionCable.server => '/cable'
   mount Sidekiq::Web => '/sidekiq'

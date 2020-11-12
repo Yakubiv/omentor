@@ -176,6 +176,8 @@ en:
     no_messages: Повідомлень немає
     form_placeholder: Напишіть повідомлення тут...
     select_chat: Виберіть чат, і почніть відправляти повідомлення
+  feedback_form:
+    submit: Відправити
   search_form:
     tutors:
       subject: Предмет
