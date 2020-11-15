@@ -8,9 +8,9 @@
         %a.card-options-fullscreen{"data-toggle" => "card-fullscreen", :href => "#"}
           %i.fe.fe-maximize
     = form_with(model: current_user, url: tutors_profile_path, method: :put) do |f|
-      .card-body
+      .card-body.p-10
         .row
           .col-sm-6
             = render 'tutors/settings/account_fields', f: f
-      .card-footer.text-right
+      .card-footer.text-right.px-10
         = f.submit t('tutors.details.save').html_safe, class: 'btn btn-primary'
