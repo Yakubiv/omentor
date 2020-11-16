@@ -135,6 +135,11 @@ en:
         page_title: Головна
       subjects:
         page_title: Предмети
+      feedbacks:
+        page_title: Відгуки
+        description: Опис
+        type: Тип
+        image: Зображення
     tutors:
       dashboards:
         page_title: Головна
@@ -187,6 +192,7 @@ en:
       search: Шукати
   admins:
     left_sidebar:
+      feedbacks: Відгуки
       dashboard: Головна
       subjects: Предмети
       students: Студенти

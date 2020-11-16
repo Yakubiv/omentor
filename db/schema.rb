@@ -103,7 +103,6 @@ ActiveRecord::Schema.define(version: 2020_11_12_115452) do
 
   create_table "feedbacks", force: :cascade do |t|
     t.text "describe"
-    t.string "image"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

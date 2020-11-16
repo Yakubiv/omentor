@@ -1,4 +1,4 @@
-<%= form_with model: @feedback do |f| %>
+<%= form_with scope: :feedback, url: feedbacks_path(@feedback), method: :post do |f| %>
   <%= f.text_area :describe, rows: "7", class: "form-control", placeholder: "Describe your idea" %>
   
   <div class="image-upload">

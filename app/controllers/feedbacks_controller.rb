@@ -1,7 +1,7 @@
 class FeedbacksController < ApplicationController
 
   def create 
-    current_user.feedbacks.create(feedback_params)
+    @feedback = current_user.feedbacks.create(feedback_params)
   end
 
   private 
