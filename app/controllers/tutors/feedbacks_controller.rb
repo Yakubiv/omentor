@@ -1,7 +1,10 @@
-class FeedbacksController < ApplicationController
+class Tutors::FeedbacksController < ApplicationController
 
   def create 
     @feedback = current_user.feedbacks.create(feedback_params)
+    respond_to do |format|
+      format.js {}
+    end
   end
 
   private 

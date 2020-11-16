@@ -1,5 +1,5 @@
-<%= form_with scope: :feedback, url: feedbacks_path(@feedback), method: :post do |f| %>
-  <%= f.text_area :describe, rows: "7", class: "form-control", placeholder: "Describe your idea" %>
+<%= form_with scope: :feedback, url: students_feedbacks_path(@feedback), method: :post do |f| %>
+  <%= f.text_area :describe, rows: "7", class: "form-control", placeholder: "Describe your idea", require: true %>
   
   <div class="image-upload">
     <label for="image-input" class="cursor-pointer form-control">
