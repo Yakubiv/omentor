@@ -61,7 +61,6 @@ Rails.application.routes.draw do
         get :video, on: :collection
         get :schedule, on: :collection
       end
-      resources :feedbacks, only: :create
       resource :dashboard, only: :show
       resources :lessons, only: %i[index show update], concerns: :lessonable
       resources :calendars, only: :index
@@ -90,7 +89,6 @@ Rails.application.routes.draw do
         get :photo, on: :collection
         get :bio, on: :collection
       end
-      resources :feedbacks, only: :create
       resource :dashboard, only: :show
       resource :profile, only: :show
       resources :chats, only: %i[index show]
@@ -133,6 +131,8 @@ Rails.application.routes.draw do
   end
 
   resources :blogs, only: %i[index show], path: 'blog'
+
+  resources :feedbacks, only: :create
 
   mount ActionCable.server => '/cable'
   mount Sidekiq::Web => '/sidekiq'

@@ -1,4 +1,4 @@
-class Tutors::FeedbacksController < ApplicationController
+class FeedbacksController < ApplicationController
 
   def create 
     @feedback = current_user.feedbacks.create(feedback_params)

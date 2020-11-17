@@ -20,7 +20,7 @@
     </div>
     <div class="ml-4 flex items-center md:ml-6">
       <!-- Feedbacks dropdown -->
-      <div @click.away="flyoutMenuOpen = true" x-data="{ flyoutMenuOpen: true }" class="relative">
+      <div @click.away="flyoutMenuOpen = false" x-data="{ flyoutMenuOpen: false }" class="relative">
         <button type="button" @click="flyoutMenuOpen = !flyoutMenuOpen" x-state:on="Item active" x-state:off="Item inactive" class="group p-1 inline-flex items-center space-x-2 text-base leading-6 font-medium hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:text-gray-400 transition ease-in-out duration-150 text-gray-400">
           <span>Feedback</span>
         </button>
@@ -29,13 +29,7 @@
             <div class="rounded-lg shadow-xs overflow-hidden">
               <div class="z-20 relative grid gap-6 bg-white px-5 py-6 sm:gap-4 sm:p-4">
                 <div class="-m-3 p-3 block space-y-1 rounded-md hover:bg-gray-50 transition ease-in-out duration-150">
-                  <p class="text-base leading-6 font-medium text-gray-900">
-                    Post an Idea
-                  </p>
-                  <p class="text-sm leading-5 text-gray-500">
-                    Learn about tips, product updates and company culture.
-                  </p>
-                  <%= render 'tutors/feedbacks/feedback_form' %>
+                  <%= render 'feedbacks/feedback_form' %>
                 </div>
               </div> 
             </div>
