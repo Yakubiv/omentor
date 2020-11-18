@@ -1,0 +1,19 @@
+$("ul.errors").html("");
+$("ul.errors").removeClass("alert");
+
+<% if @feedback.errors.any? %>
+  $("ul.errors").addClass("alert");
+  
+  <% @feedback.errors.full_messages.each do |message| %>
+    $("ul.errors").append($("<li />").html("<%= message.html_safe %>"));
+  <% end %>
+ 
+<% else %>
+  document.getElementById("feedback-form").innerHTML =
+  "<%= escape_javascript(render partial: 'feedbacks/feedback_successful') %>";
+<% end %>
+
+
+
+
+

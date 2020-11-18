@@ -3,7 +3,7 @@
     = render 'steps'
   .col-lg-8.offset-lg-2
     .card
-      .card-body
+      .card-body.p-10
         .card-title.mb-3
           = t('tutors.details.schedule_header')
         .rounded-md.bg-indigo-200.p-4.mb-3
@@ -17,6 +17,6 @@
 
         #calendar-tutor-schedule-form
         = render 'tutors/registrations/time_slots/delete_block'
-      .card-footer.text-right
+      .card-footer.text-right.px-10
         = link_to t('students.details.back').html_safe, video_tutors_details_path, class: 'mr-4 whitespace-no-wrap text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900'
         = link_to t('students.details.done').html_safe, tutors_dashboard_path, class: 'whitespace-no-wrap inline-flex items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150'

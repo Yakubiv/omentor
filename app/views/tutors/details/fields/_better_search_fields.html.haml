@@ -1,0 +1,28 @@
+.row
+  .col-sm-12
+    .form-group
+      = f.label :gender, class: 'control-label'
+      %br
+      .selectgroup.w-100
+        - Profile.genders.each do |gender, key|
+          %label.selectgroup-item
+            = f.radio_button :gender, gender, { required: true, class: 'selectgroup-input' }
+            %span.selectgroup-button= Profile.human_enum_name(:gender, gender)
+
+  .col-sm-12
+    .form-group
+      = f.label :degree_type, class: 'control-label'
+      %br
+      .selectgroup.w-100
+        - Profile.degree_types.each do |degree, key|
+          %label.selectgroup-item
+            = f.radio_button :degree_type, degree , { required: true, class: 'selectgroup-input' }
+            %span.selectgroup-button= Profile.human_enum_name(:degree_type, degree)
+  .col-sm-12
+    .form-group
+      = f.label :birthday, class: 'control-label'
+      .input-group
+        .input-group-prepend
+          .input-group-text
+            %i.icon-present
+        = f.date_select :birthday, { start_year: Date.today.year - 70, end_year: Date.today.year }, { required: true, class: 'form-control' }

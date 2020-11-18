@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_one :tutor_profile
   has_one :student_profile
   has_many :blog_posts
+  has_many :feedbacks
 
   enum sign_up_as: %i[student tutor admin]
 

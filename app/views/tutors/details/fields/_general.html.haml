@@ -1,17 +1,18 @@
 .row
-  .col-sm-12
+  .col-sm-11
     .form-group
       = f.label :first_name, class: 'control-label'
       = f.text_field :first_name, required: true, class: 'form-control'
-  .col-md-6
+  .col-md-11
     .form-group
       = f.label :last_name, class: 'control-label'
       = f.text_field :last_name, required: true, class: 'form-control'
-  .col-md-6
+  .col-md-4
     .form-group
       = f.label :username, class: 'control-label'
       = f.text_field :username, required: true, class: 'form-control'
-  .col-md-6
+.row
+  .col-md-4
     .form-group
       = f.label :rate, class: 'control-label'
       .input-group
@@ -19,7 +20,7 @@
           .input-group-text
             %i.fe.fe-dollar-sign
         = f.number_field :rate, value: f.object.rate.to_f, required: true, min: 1, max: 200, class: 'form-control'
-  .col-md-6
+  .col-md-4
     .form-group
       = f.label :total_years_of_expirience, class: 'control-label'
       .input-group
@@ -27,11 +28,11 @@
           .input-group-text
             %i.icon-graduation
         = f.number_field :total_years_of_expirience, required: true, class: 'form-control'
-  .col-sm-12
+  .col-sm-11
     .form-group
       = f.label :subject
       = f.text_field :subject, autocomplete: :off, required: true, value: f.object.subjects.first&.name, placeholder: t('search_form.tutors.subject_placeholder'), class: 'form-control'
-  .col-md-12
+  .col-md-4
     .form-group
       = f.label :phone, class: 'control-label'
       .input-group
@@ -39,15 +40,8 @@
           .input-group-text
             %i.fe.fe-phone
         = f.text_field :phone, required: true, class: 'form-control', id: 'phone', placeholder: '(999) 999-9999'
-  .col-sm-12
-    .form-group
-      = f.label :birthday, class: 'control-label'
-      .input-group
-        .input-group-prepend
-          .input-group-text
-            %i.icon-present
-        = f.date_select :birthday, { start_year: Date.today.year - 70, end_year: Date.today.year }, { required: true, class: 'form-control' }
-  .col-md-12
+
+  .col-md-7
     .form-group
       = f.label :time_zone, class: 'control-label'
       .input-group
@@ -57,34 +51,15 @@
         = f.time_zone_select(:time_zone, nil, { default: "Kyiv" }, class: 'form-control', required: true )
 
 .row
-  .col-sm-12
-    .form-group
-      = f.label :gender, class: 'control-label'
-
-      .selectgroup.w-100
-        - Profile.genders.each do |gender, key|
-          %label.selectgroup-item
-            = f.radio_button :gender, gender, { required: true, class: 'selectgroup-input' }
-            %span.selectgroup-button= Profile.human_enum_name(:gender, gender)
-
-  .col-sm-12
-    .form-group
-      = f.label :degree_type, class: 'control-label'
-
-      .selectgroup.w-100
-        - Profile.degree_types.each do |degree, key|
-          %label.selectgroup-item
-            = f.radio_button :degree_type, degree , { required: true, class: 'selectgroup-input' }
-            %span.selectgroup-button= Profile.human_enum_name(:degree_type, degree)
-.row
-  .col-md-6
-    .form-group
-      = f.label :country_id, class: 'control-label'
-      = f.select :country_id, options_for_select(countries_to_select, Country.find_by(code: "UA").id), { prompt: t('helpers.placeholder.student.country') }, class: 'form-control', required: true
-  .col-sm-6
+  .col-sm-4
     .form-group
       = f.label :city, class: 'control-label'
       = f.text_field :city, required: true, class: 'form-control'
+  .col-md-7
+    .form-group
+      = f.label :country_id, class: 'control-label'
+      = f.select :country_id, options_for_select(countries_to_select, Country.find_by(code: "UA").id), { prompt: t('helpers.placeholder.student.country') }, class: 'form-control', required: true
+
 
 = f.fields_for :speaks do |speak|
   = render 'tutors/details/speak_fields', f: speak
