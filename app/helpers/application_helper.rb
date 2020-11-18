@@ -98,9 +98,9 @@ module ApplicationHelper
   end
 
   def registration_step_class
-    active_condition = { background: 'bg-indigo-500', text: 'text-white', active_line_style: 'width: 33%' }
-    completed_condition = { background: 'bg-indigo-500', text: 'text-white', active_line_style: 'width: 100%' }
-    disabled_condition = { background: 'bg-white', text: 'text-gray-600', active_line_style: 'width: 0%' }
+    active_condition = { background: 'none', text: 'text-indigo-600', border: "border-indigo-600", display: "hidden", display_text: "block" }
+    completed_condition = { background: 'bg-indigo-600', text: 'text-gray-900', border: "border-indigo-600", display: "block", display_text: "hidden" }
+    disabled_condition = { background: 'none', text: 'text-gray-500', border: "border-gray-400", display: "hidden", display_text: "block" }
 
     case action_name
     when 'show'
