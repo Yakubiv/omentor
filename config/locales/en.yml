@@ -142,6 +142,8 @@ en:
         description: Опис
         type: Тип
         image: Зображення
+        show: Перегляд
+        delete: Видалити
     tutors:
       dashboards:
         page_title: Головна

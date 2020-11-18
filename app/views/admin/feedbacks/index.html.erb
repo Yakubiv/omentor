@@ -9,9 +9,9 @@
       <table class="table text-nowrap mb-0">
         <thead>
           <tr>
-            <th>Description</th>
-            <th>User Email</th>
-            <th>User Type</th>
+            <th><%= t('layouts.admins.feedbacks.description') %></th>
+            <th>Email</th>
+            <th><%= t('layouts.admins.feedbacks.type') %></th>
             <th colspan="2"></th>
           </tr>
         </thead>
@@ -22,8 +22,8 @@
               <td><%= feedback.describe %></td>
               <td><%= feedback.user.email %></td>
               <td><%= feedback.user.sign_up_as %></td>
-              <td><%= link_to 'Show', [:admin, feedback] %></td>
-              <td><%= link_to 'Destroy', [:admin, feedback], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to t('layouts.admins.feedbacks.show'), [:admin, feedback] %></td>
+              <td><%= link_to t('layouts.admins.feedbacks.delete'), [:admin, feedback], method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
         </tbody>
@@ -32,6 +32,6 @@
   </div>
 
   <div class="card-footer text-right">
-    <%#= render partial: 'layouts/partials/pagy', locals: { pagy: @pagy } %>
+    <%= render partial: 'layouts/partials/pagy', locals: { pagy: @pagy } %>
   </div>
 </div>
