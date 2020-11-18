@@ -26,6 +26,7 @@ Rails.application.routes.draw do
       resources :students, only: %i[index edit update]
       resources :tutors, only: %i[index edit update]
       resources :subscribers, only: %i[index edit update destroy]
+      resources :feedbacks, only: %i[index show destroy]
     end
   end
 
@@ -131,6 +132,8 @@ Rails.application.routes.draw do
   end
 
   resources :blogs, only: %i[index show], path: 'blog'
+
+  resources :feedbacks, only: :create
 
   mount ActionCable.server => '/cable'
   mount Sidekiq::Web => '/sidekiq'

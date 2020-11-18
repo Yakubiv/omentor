@@ -103,6 +103,8 @@ en:
 
   helpers:
     placeholder:
+      feedback:
+        describe: Опишіть свою ідею 
       student:
         country: Виберіть Країну
 
@@ -135,6 +137,13 @@ en:
         page_title: Головна
       subjects:
         page_title: Предмети
+      feedbacks:
+        page_title: Відгуки
+        description: Опис
+        type: Тип
+        image: Зображення
+        show: Перегляд
+        delete: Видалити
     tutors:
       dashboards:
         page_title: Головна
@@ -176,6 +185,10 @@ en:
     no_messages: Повідомлень немає
     form_placeholder: Напишіть повідомлення тут...
     select_chat: Виберіть чат, і почніть відправляти повідомлення
+  feedback_form:
+    choose_file: Виберіть файл
+    post_an_idea: Опублікувати ідею
+    submit: Відправити
   search_form:
     tutors:
       subject: Предмет
@@ -185,6 +198,7 @@ en:
       search: Шукати
   admins:
     left_sidebar:
+      feedbacks: Відгуки
       dashboard: Головна
       subjects: Предмети
       students: Студенти
