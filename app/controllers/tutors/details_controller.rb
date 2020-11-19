@@ -4,7 +4,7 @@ class Tutors::DetailsController < Tutors::BaseController
   before_action :load_tutor_profile, only: %i[show photo bio video schedule]
   skip_before_action :varify_that_user_filled_his_details
 
-  layout 'application', only: :show
+  layout 'login'
 
   def show; end
 
