@@ -104,7 +104,7 @@ en:
   helpers:
     placeholder:
       feedback:
-        describe: Опишіть свою ідею 
+        describe: Опишіть свою ідею
       student:
         country: Виберіть Країну
 
@@ -186,8 +186,10 @@ en:
     form_placeholder: Напишіть повідомлення тут...
     select_chat: Виберіть чат, і почніть відправляти повідомлення
   feedback_form:
-    choose_file: Виберіть файл
-    post_an_idea: Опублікувати ідею
+    top_link: Відгук
+    min_length: Мінімум 10 символів
+    choose_file: Додайте файл
+    post_an_idea: Додати відгук
     submit: Відправити
   search_form:
     tutors:
