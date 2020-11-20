@@ -6,6 +6,7 @@ module Tutors
     before_action :verify_current_user_is_tutor?
     before_action :set_time_zone, if: :tutor_signed_in?
     before_action :varify_that_user_filled_his_details, if: :user_signed_in?
+    before_action :inactive_tutors_details
 
     layout 'tutors'
 
@@ -20,6 +21,10 @@ module Tutors
 
     def redirect_to_default
       redirect_to root_path
+    end
+
+    def inactive_tutors_details
+      redirect_to inactive_tutors_details_path if :current_tutor_profile.inactive?
     end
 
     private

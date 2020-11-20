@@ -3,7 +3,7 @@
 class Tutors::LessonsController < Tutors::BaseController
   before_action :load_lessons_counter, except: :show
 
-   def index
+  def index
     @lessons = current_tutor_profile.lessons
   end
 

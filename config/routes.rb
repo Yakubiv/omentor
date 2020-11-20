@@ -60,6 +60,7 @@ Rails.application.routes.draw do
         get :bio, on: :collection
         get :video, on: :collection
         get :schedule, on: :collection
+        get :inactive, on: :collection
       end
       resource :dashboard, only: :show
       resources :lessons, only: %i[index show update], concerns: :lessonable

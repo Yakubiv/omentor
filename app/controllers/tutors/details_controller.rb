@@ -16,6 +16,8 @@ class Tutors::DetailsController < Tutors::BaseController
 
   def schedule; end
 
+  def inactive; end
+
   def update
     save_tutor_prfile
     after_update_redirection
