@@ -3,6 +3,7 @@
 class Tutors::DetailsController < Tutors::BaseController
   before_action :load_tutor_profile, only: %i[show photo bio video schedule]
   skip_before_action :varify_that_user_filled_his_details
+  skip_before_action :inactive_tutors_details, only: :inactive
 
   layout 'login'
 
@@ -15,6 +16,8 @@ class Tutors::DetailsController < Tutors::BaseController
   def video; end
 
   def schedule; end
+
+  def inactive; end
 
   def update
     save_tutor_prfile
