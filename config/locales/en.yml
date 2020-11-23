@@ -296,6 +296,9 @@ en:
       video_header: Відео
       bio_header: Біо
       avatar_header: Фото
+    
+    status:
+      inactive: Ваш профіль неактивний
 
     registration:
       delete_slot_tip: Для видалення розкладу, один
