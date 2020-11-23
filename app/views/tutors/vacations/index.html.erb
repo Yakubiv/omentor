@@ -1,0 +1,38 @@
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title"><%= t('tutors.vacations.vacations') %></h3>
+  </div>
+
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table text-nowrap mb-0">
+        <thead>
+          <tr>
+            <th><%= t('tutors.vacations.description') %></th>
+            <th><%= t('tutors.vacations.start_at') %></th>
+            <th><%= t('tutors.vacations.end_at') %></th>
+            <th><%= t('tutors.vacations.status') %></th>
+            <th colspan="2"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @vacations.each do |vacation| %>
+            <tr>
+              <td><%= vacation.description %></td>
+              <td><%= vacation.start_at %></td>
+              <td><%= vacation.end_at %></td>
+              <td><%= vacation.status %></td>
+              <td><%= link_to t('tutors.vacations.edit'), edit_tutors_vacation_path(vacation) %></td>
+              <td><%= link_to t('tutors.vacations.delete'), tutors_vacation_path(vacation), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card-footer text-right">
+    <%= render partial: 'layouts/partials/pagy', locals: { pagy: @pagy } %>
+  </div>
+</div>

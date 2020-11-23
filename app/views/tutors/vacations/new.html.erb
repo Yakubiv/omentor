@@ -1,0 +1,17 @@
+<%= form_with model: @vacation, url: tutors_vacations_path(@vacation), method: :post do |f| %>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description, required: true %>
+  </div>
+  <div>
+    <%= f.label :start_at, "Start vacation" %>
+    <%= f.text_field :start_at, placeholder: 'Вибрати час', class: 'form-control', data: { provide: 'datepicker' }, required: true %>
+  </div>
+  <div>
+    <%= f.label :end_at, "End vacation" %>
+    <%= f.text_field :end_at, placeholder: 'Вибрати час', class: 'form-control', data: { provide: 'datepicker' }, required: true %>
+  </div>
+  <div>
+    <%= f.submit "Create" %>
+  </div>
+<% end %>
