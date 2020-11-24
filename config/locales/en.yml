@@ -299,12 +299,17 @@ en:
 
     vacations:
       description: Опис
+      short_description: Короткий опис про відпустку
       start_at: Початок відпустки
       end_at: Кінець відпустки
-      status: Статус
+      status_vacation: Статус відпустки
       vacations: Відпустки 
       edit: Редагувати
       delete: Видалити
+      create: Створити
+      select_time: Вибрати час
+      create_vacation: Створити відпустку
+      edit_vacation: Редагувати відпустку
     
     status:
       inactive: Ваш профіль неактивний

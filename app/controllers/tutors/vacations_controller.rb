@@ -2,7 +2,7 @@ class Tutors::VacationsController < Tutors::BaseController
   before_action :set_vacation, only: [:edit, :destroy, :update]
 
   def index 
-    @pagy, @vacations = pagy(Vacation.all)
+    @pagy, @vacations = pagy(Vacation.order(created_at: :desc))
   end
 
   def new
@@ -11,9 +11,8 @@ class Tutors::VacationsController < Tutors::BaseController
 
   def create 
     @vacation = current_tutor_profile.vacations.create(vacation_params)
-    if @vacation.save
-      flash[:notice] = "Vacation was created"  
-      redirect_to new_tutors_vacation_path
+    if @vacation.save  
+      redirect_to new_tutors_vacation_path, notice: "Vacation was created"
     else 
       render 'new'
     end
@@ -24,8 +23,7 @@ class Tutors::VacationsController < Tutors::BaseController
 
   def update 
     if @vacation.update(vacation_params)
-      flash[:notice] = "Vacation was updated"
-      redirect_to tutors_vacations_path(@Vacation)
+      redirect_to tutors_vacations_path(@Vacation), notice: "Vacation was updated"
     else
       flash[:notice] = "Vacation was not updated"
       render 'edit'
