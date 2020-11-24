@@ -296,6 +296,15 @@ en:
       video_header: Відео
       bio_header: Біо
       avatar_header: Фото
+
+    vacations:
+      description: Опис
+      start_at: Початок відпустки
+      end_at: Кінець відпустки
+      status: Статус
+      vacations: Відпустки 
+      edit: Редагувати
+      delete: Видалити
     
     status:
       inactive: Ваш профіль неактивний
