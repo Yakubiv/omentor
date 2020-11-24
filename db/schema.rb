@@ -295,7 +295,7 @@ ActiveRecord::Schema.define(version: 2020_11_23_143537) do
     t.text "description"
     t.datetime "start_at"
     t.datetime "end_at"
-    t.integer "status"
+    t.integer "status", default: 0
     t.bigint "profile_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -4,7 +4,7 @@ class CreateVacations < ActiveRecord::Migration[6.0]
       t.text :description
       t.datetime :start_at
       t.datetime :end_at
-      t.integer :status
+      t.integer :status, default: 0
       t.references :profile, index: true
 
       t.timestamps

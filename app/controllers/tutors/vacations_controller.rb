@@ -12,7 +12,7 @@ class Tutors::VacationsController < Tutors::BaseController
   def create 
     @vacation = current_tutor_profile.vacations.create(vacation_params)
     if @vacation.save  
-      redirect_to new_tutors_vacation_path, notice: "Vacation was created"
+      redirect_to tutors_calendars_path, notice: "Vacation was created"
     else 
       render 'new'
     end
