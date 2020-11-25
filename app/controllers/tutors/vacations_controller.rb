@@ -23,7 +23,7 @@ class Tutors::VacationsController < Tutors::BaseController
 
   def update 
     if @vacation.update(vacation_params)
-      redirect_to tutors_vacations_path(@Vacation), notice: "Vacation was updated"
+      redirect_to tutors_vacations_path, notice: "Vacation was updated"
     else
       flash[:notice] = "Vacation was not updated"
       render 'edit'
@@ -32,8 +32,7 @@ class Tutors::VacationsController < Tutors::BaseController
 
   def destroy
     @vacation.destroy
-    flash[:notice] = "Vacation was deleted"
-    redirect_to tutors_vacations_path
+    redirect_to tutors_vacations_path, notice: "Vacation was deleted"
   end
 
   private
