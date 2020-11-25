@@ -296,6 +296,23 @@ en:
       video_header: Відео
       bio_header: Біо
       avatar_header: Фото
+
+    vacations:
+      description: Опис
+      short_description: Короткий опис про відпустку
+      start_at: Початок відпустки
+      end_at: Кінець відпустки
+      status_vacation: Статус відпустки
+      vacations: Відпустки 
+      edit: Редагувати
+      delete: Видалити
+      create: Створити
+      select_time: Вибрати час
+      create_vacation: Створити відпустку
+      edit_vacation: Редагувати відпустку
+      add_vacation: Додати відпустку
+      manage_vacations: Керувати відпустками
+      calendar: Календар
     
     status:
       inactive: Ваш профіль неактивний
