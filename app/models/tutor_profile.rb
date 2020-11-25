@@ -5,9 +5,10 @@ class TutorProfile < Profile
   has_many :class_rooms
   has_many :student_profiles, through: :class_rooms, dependent: :destroy
   has_many :lessons, through: :class_rooms
-  has_many :favorites, :as => :favorable
   has_many :speaks, foreign_key: :profile_id
   accepts_nested_attributes_for :speaks, allow_destroy: true
+  has_many :favorites, foreign_key: :profile_id
+  has_many :favorite_student_profiles, through: :favorites, source: :favoritable, source_type: 'Profile'
 
   def subject=(subject_name)
     subject_record = Subject.find_or_create_by(name: subject_name)

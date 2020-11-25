@@ -7,6 +7,7 @@ class Profile < ApplicationRecord
   monetize :rate_cents
 
   has_one_attached :avatar
+  has_many :vacations
 
   enum gender: %i[male female]
   enum degree_type: %i[university schoole tests other]
@@ -31,6 +32,13 @@ class Profile < ApplicationRecord
 
   def initials
     "#{first_name[0]}#{last_name[0]}".upcase
+  end
+
+  def favorite?(favoritable)
+    favorites.where(
+      favoritable_id: favoritable.id,
+      favoritable_type: favoritable.class.base_class.name
+    ).size.positive?
   end
 
   private

@@ -1,0 +1,35 @@
+<div class="m-8">
+  <h2 class="text-2xl font-bold text-gray-900 sm:text-3xl sm:truncate mb-4"><%= t('tutors.vacations.vacations') %></h2>
+  <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+    <div class="table-responsive">
+      <table class="table text-nowrap mb-0">
+        <thead>
+          <tr>
+            <th><%= t('tutors.vacations.description') %></th>
+            <th><%= t('tutors.vacations.start_at') %></th>
+            <th><%= t('tutors.vacations.end_at') %></th>
+            <th><%= t('tutors.vacations.status') %></th>
+            <th colspan="2"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @vacations.each do |vacation| %>
+            <tr>
+              <td><%= vacation.description %></td>
+              <td><%= vacation.start_at %></td>
+              <td><%= vacation.end_at %></td>
+              <td><%= vacation.status %></td>
+              <td><%= link_to t('tutors.vacations.edit'), edit_tutors_vacation_path(vacation) %></td>
+              <td><%= link_to t('tutors.vacations.delete'), tutors_vacation_path(vacation), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-4">
+      <%= render partial: 'layouts/partials/pagy', locals: { pagy: @pagy } %>
+    </div>
+  </div>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_05_165948) do
+ActiveRecord::Schema.define(version: 2020_11_23_143537) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -99,6 +99,14 @@ ActiveRecord::Schema.define(version: 2020_10_05_165948) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["favoritable_type", "favoritable_id"], name: "index_favorites_on_favoritable_type_and_favoritable_id"
     t.index ["profile_id"], name: "index_favorites_on_profile_id"
+  end
+
+  create_table "feedbacks", force: :cascade do |t|
+    t.text "describe"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_feedbacks_on_user_id"
   end
 
   create_table "impressions", force: :cascade do |t|
@@ -281,6 +289,17 @@ ActiveRecord::Schema.define(version: 2020_10_05_165948) do
     t.integer "sign_up_as"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "vacations", force: :cascade do |t|
+    t.text "description"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.integer "status", default: 0
+    t.bigint "profile_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_id"], name: "index_vacations_on_profile_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

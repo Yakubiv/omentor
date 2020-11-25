@@ -103,6 +103,8 @@ en:
 
   helpers:
     placeholder:
+      feedback:
+        describe: Опишіть свою ідею
       student:
         country: Виберіть Країну
 
@@ -135,6 +137,13 @@ en:
         page_title: Головна
       subjects:
         page_title: Предмети
+      feedbacks:
+        page_title: Відгуки
+        description: Опис
+        type: Тип
+        image: Зображення
+        show: Перегляд
+        delete: Видалити
     tutors:
       dashboards:
         page_title: Головна
@@ -172,9 +181,16 @@ en:
       settings:
         page_title: Налаштування
   messages:
+    no_chats: У вас поки що немає чатів...
     no_messages: Повідомлень немає
     form_placeholder: Напишіть повідомлення тут...
     select_chat: Виберіть чат, і почніть відправляти повідомлення
+  feedback_form:
+    top_link: Відгук
+    min_length: Мінімум 10 символів
+    choose_file: Додайте файл
+    post_an_idea: Додати відгук
+    submit: Відправити
   search_form:
     tutors:
       subject: Предмет
@@ -184,6 +200,7 @@ en:
       search: Шукати
   admins:
     left_sidebar:
+      feedbacks: Відгуки
       dashboard: Головна
       subjects: Предмети
       students: Студенти
@@ -274,10 +291,31 @@ en:
     settings:
       schedule_header: Графік
       general_header: Загальні
+      additional_header: Додаткові
       account_header: Акаунт
       video_header: Відео
       bio_header: Біо
       avatar_header: Фото
+
+    vacations:
+      description: Опис
+      short_description: Короткий опис про відпустку
+      start_at: Початок відпустки
+      end_at: Кінець відпустки
+      status_vacation: Статус відпустки
+      vacations: Відпустки 
+      edit: Редагувати
+      delete: Видалити
+      create: Створити
+      select_time: Вибрати час
+      create_vacation: Створити відпустку
+      edit_vacation: Редагувати відпустку
+      add_vacation: Додати відпустку
+      manage_vacations: Керувати відпустками
+      calendar: Календар
+    
+    status:
+      inactive: Ваш профіль неактивний
 
     registration:
       delete_slot_tip: Для видалення розкладу, один

@@ -26,6 +26,7 @@ Rails.application.routes.draw do
       resources :students, only: %i[index edit update]
       resources :tutors, only: %i[index edit update]
       resources :subscribers, only: %i[index edit update destroy]
+      resources :feedbacks, only: %i[index show destroy]
     end
   end
 
@@ -59,10 +60,12 @@ Rails.application.routes.draw do
         get :bio, on: :collection
         get :video, on: :collection
         get :schedule, on: :collection
+        get :inactive, on: :collection
       end
       resource :dashboard, only: :show
       resources :lessons, only: %i[index show update], concerns: :lessonable
       resources :calendars, only: :index
+      resources :vacations, only: %i[index new create destroy update edit]
       resources :chats, only: %i[index show]
       resources :settings, only: [] do
         get :photo, on: :collection
@@ -71,8 +74,16 @@ Rails.application.routes.draw do
         get :schedule, on: :collection
         get :account, on: :collection
         get :general, on: :collection
+        get :additional, on: :collection
       end
       resources :student_profiles, only: %i[index show], path: :students
+
+      scope module: :students do
+        resources :favorites, only: :index
+        resources :students, only: [], path: nil, as: nil do
+          resource :favorites, only: %i[create destroy]
+        end
+      end
     end
 
     namespace :students, path: 's' do
@@ -123,6 +134,8 @@ Rails.application.routes.draw do
   end
 
   resources :blogs, only: %i[index show], path: 'blog'
+
+  resources :feedbacks, only: :create
 
   mount ActionCable.server => '/cable'
   mount Sidekiq::Web => '/sidekiq'

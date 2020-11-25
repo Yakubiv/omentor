@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<div class="bg-white shadow overflow-hidden sm:rounded-lg">
+  <div class="px-4 py-5 border-b border-gray-200 sm:px-6">
+    <h3 class="text-lg leading-6 font-medium text-gray-900">
+      Feedback Information
+    </h3>
+    <p class="mt-1 max-w-2xl text-sm leading-5 text-gray-500">
+      Detail about feedback
+    </p>
+  </div>
+  <div class="px-4 py-5 sm:p-0">
+    <dl>
+      <div class="mt-8 sm:mt-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:px-6 sm:py-5">
+        <dt class="text-sm leading-5 font-medium text-gray-500">
+          Email 
+        </dt>
+        <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+          <%= @feedback.user.email %>
+        </dd>
+      </div>
+      <div class="mt-8 sm:mt-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:px-6 sm:py-5">
+        <dt class="text-sm leading-5 font-medium text-gray-500">
+          <%= t('layouts.admins.feedbacks.type') %>
+        </dt>
+        <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+          <%= @feedback.user.sign_up_as %>
+        </dd>
+      </div>
+      <div class="mt-8 sm:mt-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:px-6 sm:py-5">
+        <dt class="text-sm leading-5 font-medium text-gray-500">
+          <%= t('layouts.admins.feedbacks.description') %>
+        </dt>
+        <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+           <%= @feedback.describe %>
+        </dd>
+      </div>
+      <div class="mt-8 sm:mt-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:px-6 sm:py-5">
+        <dt class="text-sm leading-5 font-medium text-gray-500">
+          <%= t('layouts.admins.feedbacks.image') %>
+        </dt>
+        <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+          <ul class="rounded-md">
+            <li class="pr-4 flex items-center justify-between text-sm leading-5">
+              <%= @feedback.image.attached? ? 
+                image_tag(@feedback.image.variant(resize_to_limit: [250, 250])) : 
+                "no image" 
+              %>
+            </li>
+          </ul>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
