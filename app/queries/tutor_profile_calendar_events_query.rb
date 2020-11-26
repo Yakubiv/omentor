@@ -14,19 +14,19 @@ class TutorProfileCalendarEventsQuery
 
   def tutor_vacations
     tutor_profile.vacations.map do |vacation|
-      { type: 'vacation',
-        start: vacation.start_at,
-        end: vacation.end_at,
-        description: vacation.description }
+    { title: "vacation",
+      start: vacation.start_at,
+      end: vacation.end_at,
+      description: vacation.description }
     end
   end
 
   def tutor_lessons
     tutor_profile.lessons.map do |lesson|
-      { type: 'lesson',
-        start: lesson.start_at,
-        end: lesson.start_at + lesson.duration.minutes,
-        description: "#{lesson.student_profile} - #{lesson.subject}" }
+    { title: "lesson",
+      start: lesson.start_at,
+      end: lesson.start_at + lesson.duration.minutes,
+      description: "#{lesson.student_profile} - #{lesson.subject}" }
     end
   end
 

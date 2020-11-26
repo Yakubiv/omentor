@@ -10,7 +10,6 @@ addEventListener("turbolinks:load", function () {
 });
 
 addEventListener("turbolinks:load", function () {
-  console.log("test");
   var calendarEl = document.getElementById("tutor-calendar");
   if (calendarEl) {
     var calendar = new Calendar(calendarEl, {
@@ -55,73 +54,12 @@ addEventListener("turbolinks:load", function () {
       firstDay: 1,
       selectOverlap: false,
       plugins: [interactionPlugin, timeGridPlugin],
-      events: [
-        {
-          type: "lesson",
-          start: "2019-08-12T10:30:00",
-          end: "2019-08-12T11:30:00",
-          description: "Lecture",
-        },
-      ],
-      eventResize: function (info) {
-        var timeSlot = {
-          time_slot: {
-            start_at: info.event.start,
-            end_at: info.event.end,
-          },
-        };
-        $.ajax({
-          url: `/t/registrations/time_slots/${info.event.id}.json`,
-          type: "PATCH",
-          data: timeSlot,
-        });
+      events: "/t/calendars.json",
+      select: function (info) {
+        console.log("open modal");
         console.log(info);
       },
-      eventDrop: function (info) {
-        var timeSlot = {
-          time_slot: {
-            start_at: info.event.start,
-            end_at: info.event.end,
-          },
-        };
-        $.ajax({
-          url: `/t/registrations/time_slots/${info.event.id}.json`,
-          type: "PATCH",
-          data: timeSlot,
-        });
-      },
-      eventClick: function (info) {
-        info.jsEvent.preventDefault();
-        var dropdownBlock = document.getElementById("calendar-dropdown-block");
-        var dropdownButton = document.getElementById("delete-event");
-        const rect = info.el.getBoundingClientRect();
-
-        dropdownBlock.style.display = "block";
-        dropdownBlock.style.position = "absolute";
-        dropdownBlock.style.top = `${rect.top - 35}px`;
-        dropdownBlock.style.left = `${rect.left - 200}px`;
-        dropdownButton.href = `/t/registrations/time_slots/${info.event.id}.js`;
-      },
-      select: function (info) {
-        var timeSlot = {
-          time_slot: {
-            start_at: info.start,
-            end_at: info.end,
-          },
-        };
-
-        $.ajax({
-          url: "/t/registrations/time_slots.json",
-          type: "POST",
-          data: timeSlot,
-          success: function (data) {
-            calendar.addEvent(data);
-          },
-        });
-      },
     });
-
-    console.log(calendar.events);
 
     window.calendar = calendar;
 
