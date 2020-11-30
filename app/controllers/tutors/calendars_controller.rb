@@ -9,4 +9,13 @@ class Tutors::CalendarsController < Tutors::BaseController
       format.json { render json: @time_slots }
     end
   end
+
+  def new 
+    @vacation = current_tutor_profile.vacations.new
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
 end

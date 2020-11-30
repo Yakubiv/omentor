@@ -82,6 +82,7 @@ addEventListener("turbolinks:load", function () {
           data: timeSlot,
         });
       },
+
       eventClick: function (info) {
         info.jsEvent.preventDefault();
         var dropdownBlock = document.getElementById("calendar-dropdown-block");
@@ -94,6 +95,7 @@ addEventListener("turbolinks:load", function () {
         dropdownBlock.style.left = `${rect.left - 200}px`;
         dropdownButton.href = `/t/registrations/time_slots/${info.event.id}.js`;
       },
+
       select: function (info) {
         var timeSlot = {
           time_slot: {
@@ -101,7 +103,6 @@ addEventListener("turbolinks:load", function () {
             end_at: info.end,
           },
         };
-
         $.ajax({
           url: "/t/registrations/time_slots.json",
           type: "POST",

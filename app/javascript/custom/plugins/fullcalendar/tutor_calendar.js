@@ -56,8 +56,10 @@ addEventListener("turbolinks:load", function () {
       plugins: [interactionPlugin, timeGridPlugin],
       events: "/t/calendars.json",
       select: function (info) {
-        console.log("open modal");
-        console.log(info);
+        $.ajax({
+          url: "/t/calendars/new.js",
+          type: "GET",
+        });
       },
     });
 
