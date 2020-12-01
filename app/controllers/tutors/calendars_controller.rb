@@ -18,4 +18,14 @@ class Tutors::CalendarsController < Tutors::BaseController
     end
   end
 
+  def create 
+    @vacation = current_tutor_profile.vacations.create(vacation_params)
+  end
+
+  private 
+
+    def vacation_params
+      params.require(:vacation).permit(:description, :start_at, :end_at, :status)
+    end
+
 end

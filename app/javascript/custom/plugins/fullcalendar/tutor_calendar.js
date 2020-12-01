@@ -53,13 +53,15 @@ addEventListener("turbolinks:load", function () {
       },
       firstDay: 1,
       selectOverlap: false,
-      slotDuration: '01:00:00',
+      slotDuration: "01:00:00",
       plugins: [interactionPlugin, timeGridPlugin],
       events: "/t/calendars.json",
       select: function (info) {
-        console.log(info)
+        console.log(info);
         $.ajax({
-          url: "/t/calendars/new.js" + `?start_at=${info.startStr}&end_at=${info.endStr}`,
+          url:
+            "/t/calendars/new.js" +
+            `?start_at=${info.startStr}&end_at=${info.endStr}`,
           type: "GET",
         });
       },

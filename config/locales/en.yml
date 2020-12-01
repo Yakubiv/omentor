@@ -392,3 +392,7 @@ en:
   simple_calendar:
     previous: Попередній
     next: Наступний
+  
+  modal_calendar:
+    vacation: Відпустка
+    lesson: Урок
