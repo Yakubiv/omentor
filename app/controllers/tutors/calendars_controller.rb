@@ -18,7 +18,12 @@ class Tutors::CalendarsController < Tutors::BaseController
   end
 
   def create 
-    current_tutor_profile.vacations.create(vacation_params)
+    @vacation = current_tutor_profile.vacations.create(vacation_params)
+    if @vacation.save
+      redirect_to tutors_calendars_path, notice: "Vacation was created"
+    else
+      render 'new'
+    end
   end
 
   private 
