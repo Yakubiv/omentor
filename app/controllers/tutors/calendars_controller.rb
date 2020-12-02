@@ -3,7 +3,6 @@
 class Tutors::CalendarsController < Tutors::BaseController
   def index
     @time_slots = TutorProfileCalendarEventsQuery.new(current_tutor_profile).results
-    # render json: @time_slots.results
     respond_to do |format|
       format.html
       format.json { render json: @time_slots }
@@ -19,7 +18,7 @@ class Tutors::CalendarsController < Tutors::BaseController
   end
 
   def create 
-    @vacation = current_tutor_profile.vacations.create(vacation_params)
+    current_tutor_profile.vacations.create(vacation_params)
   end
 
   private 

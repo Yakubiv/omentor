@@ -1,5 +1,9 @@
-document.getElementById('open-lesson-modal').click();
-var start = document.getElementById('start_at')
-var end = document.getElementById('end_at')
-flatpickr(start, { format: "Y-m-d H:i", enableTime: true }).setDate("<%= params[:start_at] %>");
-flatpickr(end, { format: "Y-m-d H:i", enableTime: true }).setDate("<%= params[:end_at] %>");
+document.getElementById("open-lesson-modal").click();
+var start = document.getElementById("start_at");
+var end = document.getElementById("end_at");
+flatpickr(start, { format: "Y-m-d H:i", enableTime: true }).setDate(
+  "<%= params[:start_at] %>"
+);
+flatpickr(end, { format: "Y-m-d H:i", enableTime: true }).setDate(
+  "<%= params[:end_at] %>"
+);
