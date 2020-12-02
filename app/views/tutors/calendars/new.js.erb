@@ -1,4 +1,5 @@
-console.log('hi')
 document.getElementById('open-lesson-modal').click();
-document.getElementById('start_at').value = "<%= params[:start_at] %>"
-document.getElementById('end_at').value = "<%= params[:end_at] %>"
+var start = document.getElementById('start_at')
+var end = document.getElementById('end_at')
+flatpickr(start, { format: "Y-m-d H:i", enableTime: true }).setDate("<%= params[:start_at] %>");
+flatpickr(end, { format: "Y-m-d H:i", enableTime: true }).setDate("<%= params[:end_at] %>");
