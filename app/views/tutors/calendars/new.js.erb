@@ -1,4 +1,11 @@
-document.getElementById("open-lesson-modal").click();
+var modal = document.getElementById("main-modal");
+modal.style.display = "block";
+
+var modal_content = document.getElementById("modal-content");
+var new_modal_content = document.getElementById("new-modal-content");
+new_modal_content.style.display = "block";
+modal_content.innerHTML = new_modal_content.outerHTML;
+
 var start = document.getElementById("vacation_start_at");
 var end = document.getElementById("vacation_end_at");
 flatpickr(start, { format: "Y-m-d H:i", enableTime: true }).setDate(
@@ -7,3 +14,9 @@ flatpickr(start, { format: "Y-m-d H:i", enableTime: true }).setDate(
 flatpickr(end, { format: "Y-m-d H:i", enableTime: true }).setDate(
   "<%= params[:end_at] %>"
 );
+
+function hiddenNewModalContent() {
+  modal_content.innerHTML = "";
+  new_modal_content.style.display = "none";
+  modal.style.display = "none";
+}

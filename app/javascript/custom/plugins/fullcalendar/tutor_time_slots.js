@@ -84,6 +84,7 @@ addEventListener("turbolinks:load", function () {
       },
 
       eventClick: function (info) {
+        console.log(info);
         info.jsEvent.preventDefault();
         var dropdownBlock = document.getElementById("calendar-dropdown-block");
         var dropdownButton = document.getElementById("delete-event");

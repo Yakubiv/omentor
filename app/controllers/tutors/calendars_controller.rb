@@ -26,6 +26,14 @@ class Tutors::CalendarsController < Tutors::BaseController
     end
   end
 
+  def edit
+    @vacation = Vacation.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
   private 
 
     def vacation_params
