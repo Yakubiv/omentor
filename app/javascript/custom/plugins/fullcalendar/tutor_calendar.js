@@ -58,7 +58,7 @@ addEventListener("turbolinks:load", function () {
       events: "/t/calendars.json",
       eventClick: function (info) {
         $.ajax({
-          url: `/t/calendars/30/edit.js`,
+          url: "/t/calendars/30/edit.js",
           type: "GET",
         });
       },

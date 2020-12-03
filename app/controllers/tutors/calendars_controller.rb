@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Tutors::CalendarsController < Tutors::BaseController
+  before_action :set_vacation, only: [:edit, :update]
+
   def index
     @time_slots = TutorProfileCalendarEventsQuery.new(current_tutor_profile).results
     respond_to do |format|
@@ -27,14 +29,19 @@ class Tutors::CalendarsController < Tutors::BaseController
   end
 
   def edit
-    @vacation = Vacation.find(params[:id])
     respond_to do |format|
       format.html
       format.js
     end
   end
 
+  def update
+  end
+
   private 
+    def set_vacation 
+      @vacation = Vacation.find(params[:id])
+    end
 
     def vacation_params
       params.require(:vacation).permit(:description, :start_at, :end_at, :status)
