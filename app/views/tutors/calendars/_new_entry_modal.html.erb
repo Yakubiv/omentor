@@ -16,17 +16,21 @@
           <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
             <nav>
               <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                <a class="mr-5 nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><%= t('modal_calendar.lesson') %></a>
-                <a class="mr-5 nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false"><%= t('modal_calendar.vacation') %></a>
+                <a class="mr-5 nav-item nav-link active" id="nav-lesson-tab" data-toggle="tab" href="#nav-lesson" role="tab" aria-controls="nav-lesson" aria-selected="true"><%= t('modal_calendar.lesson') %></a>
+                <a class="mr-5 nav-item nav-link" id="nav-vacation-tab" data-toggle="tab" href="#nav-vacation" role="tab" aria-controls="nav-vacation" aria-selected="false"><%= t('modal_calendar.vacation') %></a>
+                <a class="mr-5 nav-item nav-link" id="nav-edit-vacation-tab" data-toggle="tab" href="#nav-edit-vacation" role="tab" aria-controls="nav-edit-vacation" aria-selected="false"><%= t('modal_calendar.edit_vacation') %></a>
               </div>
             </nav>
 
             <div class="tab-content mt-5" id="nav-tabContent">
-              <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+              <div class="tab-pane fade show active" id="nav-lesson" role="tabpanel" aria-labelledby="nav-lesson-tab-tab">
                 <%= render 'lesson_form' %>
               </div>
-              <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+              <div class="tab-pane fade" id="nav-vacation" role="tabpanel" aria-labelledby="nav-vacation-tab">
                 <%= render 'vacation_form' %>
+              </div>
+              <div class="tab-pane fade" id="nav-edit-vacation" role="tabpanel" aria-labelledby="nav-edit-vacation-tab">
+                <%= render 'edit_vacation_form' %>
               </div>
             </div>
           </div>

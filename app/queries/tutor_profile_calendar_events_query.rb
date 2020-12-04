@@ -15,6 +15,7 @@ class TutorProfileCalendarEventsQuery
   def tutor_vacations
     tutor_profile.vacations.map do |vacation|
     { type: "vacation",
+      id: vacation.id,
       start: vacation.start_at,
       end: vacation.end_at,
       title: vacation.description,
@@ -25,6 +26,7 @@ class TutorProfileCalendarEventsQuery
   def tutor_lessons
     tutor_profile.lessons.map do |lesson|
     { type: "lesson",
+      id: lesson.id,
       start: lesson.start_at,
       end: lesson.start_at + lesson.duration.minutes,
       title: "#{lesson.student_profile.name} - #{lesson.subject}",

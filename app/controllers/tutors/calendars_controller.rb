@@ -36,6 +36,11 @@ class Tutors::CalendarsController < Tutors::BaseController
   end
 
   def update
+    if @vacation.update(vacation_params)
+      redirect_to tutors_calendars_path, notice: "Vacation was updated"
+    else
+      render 'edit'
+    end
   end
 
   private 
