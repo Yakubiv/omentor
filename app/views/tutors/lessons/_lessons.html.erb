@@ -29,7 +29,7 @@
           <tbody class="bg-white divide-y divide-gray-200">
             <% if lessons.any? %>
               <% lessons.each do |lesson| %>
-                <%= render 'table_line', lesson: lesson %>
+                <%= render 'tutors/lessons/table_line', lesson: lesson %>
               <% end %>
             <% else %>
               <tr>

@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class Tutors::CalendarsController < Tutors::BaseController
-  before_action :set_vacation, only: [:edit, :update]
-
   def index
     @time_slots = TutorProfileCalendarEventsQuery.new(current_tutor_profile).results
     respond_to do |format|
@@ -11,7 +9,7 @@ class Tutors::CalendarsController < Tutors::BaseController
     end
   end
 
-  def new 
+  def new
     @vacation = current_tutor_profile.vacations.new
     respond_to do |format|
       format.html
@@ -19,7 +17,7 @@ class Tutors::CalendarsController < Tutors::BaseController
     end
   end
 
-  def create 
+  def create
     @vacation = current_tutor_profile.vacations.create(vacation_params)
     if @vacation.save
       redirect_to tutors_calendars_path, notice: "Vacation was created"
@@ -29,6 +27,8 @@ class Tutors::CalendarsController < Tutors::BaseController
   end
 
   def edit
+    @entity = (params[:type] == 'vacation' ? Vacation : Lesson).find(params[:id])
+
     respond_to do |format|
       format.html
       format.js
@@ -43,11 +43,7 @@ class Tutors::CalendarsController < Tutors::BaseController
     end
   end
 
-  private 
-    def set_vacation 
-      @vacation = Vacation.find(params[:id])
-    end
-
+  private
     def vacation_params
       params.require(:vacation).permit(:description, :start_at, :end_at, :status)
     end

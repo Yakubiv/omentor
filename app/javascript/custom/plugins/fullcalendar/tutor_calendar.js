@@ -21,7 +21,6 @@ addEventListener("turbolinks:load", function () {
       },
       defaultView: "timeGridWeek",
       allDaySlot: false,
-      editable: true,
       nowIndicator: true,
       slotLabelFormat: [
         {
@@ -58,7 +57,7 @@ addEventListener("turbolinks:load", function () {
       events: "/t/calendars.json",
       eventClick: function (info) {
         $.ajax({
-          url: `/t/calendars/${info.event.id}/edit.js?start_at=${info.event.start}&end_at=${info.event.end}&title=${info.event.title}`,
+          url: `/t/calendars/${info.event.id}/edit.js?type=${info.event._def.extendedProps.type}`,
           type: "GET",
         });
       },

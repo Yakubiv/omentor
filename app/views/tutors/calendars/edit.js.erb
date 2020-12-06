@@ -1,20 +1,10 @@
-document.getElementById("open-lesson-modal").click();
+document.getElementById("edit-lesson-modal").click();
+var formBody = document.getElementById("edit-modal-body");
 
-var start = document.getElementById("start_at");
-var end = document.getElementById("end_at");
-var desctription = document.getElementById("description");
-
-function dateСonversion(date) {
-  var newDate = new Date(date).toISOString().split(".")[0];
-  return newDate;
-}
-
-flatpickr(start, { format: "Y-m-d H:i", enableTime: true }).setDate(
-  dateСonversion("<%= params[:start_at] %>")
-);
-flatpickr(end, { format: "Y-m-d H:i", enableTime: true }).setDate(
-  dateСonversion("<%= params[:end_at] %>")
-);
-desctription.value = "<%= params[:title] %>";
-
-console.log("<%= params[:id] %>");
+<% if params[:type] == 'vacation' %>
+  formBody.innerHTML = "<%= escape_javascript render :partial => 'tutors/calendars/edit_vacation_form', locals: { vacation: @entity } %>"
+  console.log('vacation')
+<% else %>
+  formBody.innerHTML = "<%= escape_javascript render :partial => 'tutors/calendars/edit_lesson_form', locals: { lesson: @entity } %>"
+  console.log('lesson')
+<% end %>
