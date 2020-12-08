@@ -55,6 +55,7 @@ addEventListener("turbolinks:load", function () {
       slotDuration: "01:00:00",
       plugins: [interactionPlugin, timeGridPlugin],
       events: "/t/calendars.json",
+
       eventClick: function (info) {
         $.ajax({
           url: `/t/calendars/${info.event.id}/edit.js?type=${info.event._def.extendedProps.type}`,

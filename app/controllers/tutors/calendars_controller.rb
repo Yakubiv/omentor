@@ -28,7 +28,7 @@ class Tutors::CalendarsController < Tutors::BaseController
 
   def edit
     @entity = (params[:type] == 'vacation' ? Vacation : Lesson).find(params[:id])
-
+    
     respond_to do |format|
       format.html
       format.js
@@ -36,16 +36,24 @@ class Tutors::CalendarsController < Tutors::BaseController
   end
 
   def update
-    if @vacation.update(vacation_params)
+    if params[:vacation]
+      @vacation = Vacation.find(params[:id])
+      @vacation.update(vacation_params)
       redirect_to tutors_calendars_path, notice: "Vacation was updated"
     else
-      render 'edit'
+      @lesson = Lesson.find(params[:id])
+      @lesson.update(lesson_params)
+      redirect_to tutors_calendars_path, notice: "Lesson was updated"
     end
   end
 
   private
     def vacation_params
       params.require(:vacation).permit(:description, :start_at, :end_at, :status)
+    end
+
+    def lesson_params
+      params.require(:lesson).permit(:description)
     end
 
 end
