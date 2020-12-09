@@ -1,12 +1,5 @@
-.row.clearfix
-  .col-md-12
-    .card.card-profile
-      .card-body.text-center
-        - if @student_profile.avatar.attachment
-          = image_tag user_avatar(@student_profile, 80), class: 'rounded-circle card-profile-img'
-        %h4.mb-3= @student_profile.name
-        %p.mb-4
-          = @student_profile.bio.html_safe
+= render 'student_card', student_profile: @student_profile
+= render 'tabs'
 
 .row.clearfix
   .col-12

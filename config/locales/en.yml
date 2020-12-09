@@ -236,6 +236,9 @@ en:
     email_placeholder: 'Email'
 
   students:
+    student_profile:
+      overview: Загальне
+      lessons: Уроки
     favorite_tutors:
       title: Улюблені
     tutor_profiles:
