@@ -272,6 +272,7 @@ en:
           price: Ціна
           status: Статус
           tutor: Викладач
+          student: Студент
 
     details:
       main_header: Загальна інформація
@@ -349,6 +350,7 @@ en:
           price: Ціна
           status: Статус
           student: Студент
+          tutor: Викладач
     details:
       main_header: Загальна інформація
       submit_button: Зберегти інформацію
