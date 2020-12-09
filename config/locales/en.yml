@@ -239,6 +239,10 @@ en:
     student_profile:
       overview: Загальне
       lessons: Уроки
+      number_of_lessons: Кількість Уроків
+      number_of_hours: Кількість годин
+      earned: Зароблено
+      grade_for_student: Оцінка для студента
     favorite_tutors:
       title: Улюблені
     tutor_profiles:
