@@ -18,3 +18,4 @@ require("./plugins/markdown/to-markdown.js");
 
 require("./theme/core.js");
 require("./feedbacks/index.js");
+require("./video_frame/index.js");

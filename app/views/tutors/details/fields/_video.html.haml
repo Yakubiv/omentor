@@ -2,6 +2,7 @@
   %em.text-muted= t('tutors.details.video_tip')
 .form-group.mb-2
   = f.label :video_url, class: 'control-label'
-  = f.text_field :video_url, placeholder: 'https://www.youtube.com/watch?v=123', class: 'form-control'
-.c-registration-form__video--placeholder
+  = f.text_field :video_url, placeholder: 'https://www.youtube.com/watch?v=123', class: 'form-control', id: 'video-url'
+.c-registration-form__video--placeholder.relative
   %i.icon-camcorder
+  %iframe.hidden#video-frame{:height => "100%", :width => "100%", :src => ""}

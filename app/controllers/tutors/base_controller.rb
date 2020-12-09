@@ -24,7 +24,7 @@ module Tutors
     end
 
     def inactive_tutors_details
-      redirect_to inactive_tutors_details_path if current_tutor_profile.inactive?
+      redirect_to inactive_tutors_details_path if current_tutor_profile && current_tutor_profile.inactive?
     end
 
     private
