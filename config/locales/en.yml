@@ -236,6 +236,13 @@ en:
     email_placeholder: 'Email'
 
   students:
+    student_profile:
+      overview: Загальне
+      lessons: Уроки
+      number_of_lessons: Кількість Уроків
+      number_of_hours: Кількість годин
+      earned: Зароблено
+      grade_for_student: Оцінка для студента
     favorite_tutors:
       title: Улюблені
     tutor_profiles:
@@ -265,6 +272,7 @@ en:
           price: Ціна
           status: Статус
           tutor: Викладач
+          student: Студент
 
     details:
       main_header: Загальна інформація
@@ -342,6 +350,7 @@ en:
           price: Ціна
           status: Статус
           student: Студент
+          tutor: Викладач
     details:
       main_header: Загальна інформація
       submit_button: Зберегти інформацію

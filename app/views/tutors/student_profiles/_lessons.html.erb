@@ -6,7 +6,7 @@
           <thead>
             <tr>
               <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                <%= t('tutors.lessons.index.table.student') %>
+                <%= t('tutors.lessons.index.table.tutor') %>
               </th>
               <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                 <%= t('tutors.lessons.index.table.subject') %>
@@ -29,7 +29,7 @@
           <tbody class="bg-white divide-y divide-gray-200">
             <% if lessons.any? %>
               <% lessons.each do |lesson| %>
-                <%= render 'tutors/lessons/table_line', lesson: lesson %>
+                <%= render 'tutors/student_profiles/table_line', lesson: lesson %>
               <% end %>
             <% else %>
               <tr>
