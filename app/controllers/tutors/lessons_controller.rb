@@ -5,6 +5,7 @@ class Tutors::LessonsController < Tutors::BaseController
 
   def index
     @lessons = current_tutor_profile.lessons
+    TutorLessonsQuery.new(params[:search])
   end
 
   def show

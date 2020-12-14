@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 class Tutors::ChatsController < Tutors::BaseController
-  before_action :load_class_rooms, only: %i[index show]
+  before_action :load_class_rooms, only: %i[show]
 
   def index
-
+    @class_rooms = ChatQuery.new(query_params).results
   end
 
   def show
@@ -15,6 +15,10 @@ class Tutors::ChatsController < Tutors::BaseController
   end
 
   private
+
+  def query_params
+    { search_string: params[:search], type: "Tutor", current_tutor_profile: current_tutor_profile }
+  end
 
   def load_class_rooms
     @class_rooms = current_tutor_profile.class_rooms.includes(:student_profile)

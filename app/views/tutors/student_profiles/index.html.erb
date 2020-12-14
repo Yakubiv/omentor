@@ -1,0 +1,30 @@
+<div class='card'>
+  <div class='card-body'>
+    <span>Пошук студентів</span>
+    <div class='input-group mt-2'>
+      <input class='form-control search' placeholder='Search...' type='text'>
+    </div>
+  </div>
+</div>
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+  <% if @students.any? %>
+    <div class="table-responsive" id="users">
+      <table class="table table-hover table-vcenter text-nowrap table_custom list">
+        <tbody>
+          <% @students.each do |student| %>
+            <%= render 'student_profile', student: student %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% else %>
+    <div class="pt-10 text-center">
+      <div class="p-2 bg-indigo-400 items-center text-indigo-100 leading-none rounded-full flex lg:inline-flex">
+        <span class="mr-2 text-left flex-auto">
+          <%= t('tutors.students.index.no_students') %>
+        </span>
+      </div>
+    </div>
+  <% end %>
+</div>

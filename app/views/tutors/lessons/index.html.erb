@@ -1,4 +1,4 @@
-<div class="px-4 sm:px-6 lg:px-8 py-6 bg-white">
+<div class="px-4 sm:px-6 lg:px-8 py-6 bg-white shadow">
   <div class="mx-auto">
     <div>
       <div class="sm:hidden">
@@ -72,6 +72,8 @@
     </div>
   </div>
 </div>
+
+<%= render 'tutors/lessons/search_form' %>
 
 <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 mt-10">
   <%= render 'tutors/lessons/lessons', lessons: @lessons %>
