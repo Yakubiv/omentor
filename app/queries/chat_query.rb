@@ -18,4 +18,5 @@ class ChatQuery
     current_tutor_profile.class_rooms.joins(:student_profile)
       .where("profiles.first_name ilike :search OR profiles.last_name ilike :search", search: "%#{search_string}%")
   end
+  
 end

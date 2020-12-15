@@ -16,7 +16,9 @@
 
     <div class="ml-auto hidden md:block">
       <div class="relative">
-        <input type="search" placeholder="Search" class="appearance-none border border-grey rounded-lg pl-8 pr-4 py-2">
+        <%= form_with url: tutors_chat_path, local: true, method: :get do |f| %>
+          <%= f.text_field :search, placeholder: "Search", class: "appearance-none border border-grey rounded-lg pl-8 pr-4 py-2" %>
+        <% end %>
 
         <div class="absolute pin-y pin-l pl-3 flex items-center justify-center" style="top: 13px">
           <svg class="fill-current text-grey h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -31,7 +33,7 @@
     <% if messages.exists? %>
       <%= render partial: 'messages/message', collection: messages, locals: { profile: profile, is_read: false }, chached: true %>
     <% else %>
-    <%= t('messages.no_messages') %>
+      <%= t('messages.no_messages') %>
     <% end %>
   </div>
 

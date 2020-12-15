@@ -4,6 +4,7 @@ class Students::ChatsController < Students::BaseController
   before_action :load_class_rooms, only: %i[index show]
 
   def index
+
   end
 
   def show
