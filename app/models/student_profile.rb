@@ -6,5 +6,4 @@ class StudentProfile < Profile
   has_many :lessons, through: :class_rooms
   has_many :favorites, foreign_key: :profile_id
   has_many :favorite_tutor_profiles, through: :favorites, source: :favoritable, source_type: 'Profile'
-  belongs_to :class_room
 end
