@@ -17,7 +17,7 @@ class Tutors::ChatsController < Tutors::BaseController
   private
 
   def query_params
-    { search_string: params[:search], type: "Tutor", current_tutor_profile: current_tutor_profile }
+    { search_string: params[:search], type: "student", current_tutor_profile: current_tutor_profile }
   end
 
   def load_class_rooms
