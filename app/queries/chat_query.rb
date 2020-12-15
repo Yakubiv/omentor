@@ -15,8 +15,7 @@ class ChatQuery
   attr_reader :type, :current_tutor_profile, :search_string
 
   def fetch_student_profiles
-    current_tutor_profile.student_profiles
-                      # .where("profiles.first_name ilike :search OR profiles.last_name ilike :search", search: "%#{search_string}%")
+    current_tutor_profile.class_rooms.joins(:student_profile)
+      .where("profiles.first_name ilike :search OR profiles.last_name ilike :search", search: "%#{search_string}%")
   end
-
-end       
+end
