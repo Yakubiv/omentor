@@ -6,7 +6,7 @@
       </h2>
 
       <div class="text-grey-dark text-sm truncate">
-        <a href="<%= students_chat_path(class_room) %>">
+        <a href="<%= class_room_path(class_room) %>">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14">
             <path class="heroicon-ui" d="M6 18.7V21a1 1 0 0 1-2 0v-5a1 1 0 0 1 1-1h5a1 1 0 1 1 0 2H7.1A7 7 0 0 0 19 12a1 1 0 1 1 2 0 9 9 0 0 1-15 6.7zM18 5.3V3a1 1 0 0 1 2 0v5a1 1 0 0 1-1 1h-5a1 1 0 0 1 0-2h2.9A7 7 0 0 0 5 12a1 1 0 1 1-2 0 9 9 0 0 1 15-6.7z"/>
           </svg>
@@ -16,9 +16,7 @@
 
     <div class="ml-auto hidden md:block">
       <div class="relative">
-        <%= form_with url: tutors_chat_path, local: true, method: :get do |f| %>
-          <%= f.text_field :search, placeholder: "Search", class: "appearance-none border border-grey rounded-lg pl-8 pr-4 py-2" %>
-        <% end %>
+        <%= render 'messages/search_message_form', url: url %>
 
         <div class="absolute pin-y pin-l pl-3 flex items-center justify-center" style="top: 13px">
           <svg class="fill-current text-grey h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
