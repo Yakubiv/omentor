@@ -6,7 +6,7 @@
             </svg>
         </div>
         <div>
-            <%= form_with url: students_chats_path, local: true, method: :get do |f| %>
+            <%= form_with url: students_chats_path, method: :get do |f| %>
                 <div class="form-group">
                     <%= f.text_field :search, class: "focus:outline-none appearance-none border border-grey rounded-lg pl-8 pr-4 py-2 w-full" %>
                 </div>
@@ -14,7 +14,7 @@
         </div>
     </div>
 </div>
-<ul class="flex flex-col mt-4 space-y-2 overflow-y-auto">
+<ul class="flex flex-col mt-4 space-y-2 overflow-y-auto" id="students-class-rooms-container">
     <% if class_rooms.any? %>
       <%- class_rooms.each do |class_room|%>
           <%= render 'students/chats/profile_card', profile: class_room.tutor_profile, class_room: class_room, url: students_chat_path(class_room) %>
