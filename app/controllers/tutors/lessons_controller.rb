@@ -4,8 +4,7 @@ class Tutors::LessonsController < Tutors::BaseController
   before_action :load_lessons_counter, except: :show
 
   def index
-    @lessons = current_tutor_profile.lessons
-    TutorLessonsQuery.new(params[:search])
+    @lessons = LessonsQuery.new(lessons_query).results
   end
 
   def show
@@ -23,6 +22,12 @@ class Tutors::LessonsController < Tutors::BaseController
   end
 
   private
+
+  def lessons_query
+    { search_string: params[:search],
+      type: 'tutor',
+      current_tutor_profile: current_tutor_profile }
+  end
 
   def load_lessons_counter
     @lessons_count ||= current_tutor_profile.lessons.group(:status).count

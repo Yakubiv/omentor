@@ -1,7 +1,7 @@
 <div class="card mt-1 rounded-none">
   <div class="card-body">
   <span>Пошук студентів</span>
-    <%= form_with url: tutors_lessons_path, method: :get do |f| %>
+    <%= form_with url: tutors_lessons_path, local: true, method: :get do |f| %>
       <div class="row">
         <div class="col-md-8">
           <div class="form-group">
