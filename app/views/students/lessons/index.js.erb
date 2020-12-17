@@ -1,0 +1,3 @@
+document.getElementById("student-table-lessons").innerHTML = 
+        "<%= escape_javascript(render partial: 'tutors/lessons/search_lessons', 
+                                      locals: { lessons: @lessons }) %>"

@@ -23,6 +23,10 @@ class LessonsQuery
   end
 
   def fetch_student_lessons
+    current_student_profile.lessons.joins(:tutor_profile, :subject)
+                          .where('profiles.first_name ilike :search OR
+                                  profiles.last_name ilike :search OR
+                                  subjects.name ilike :search', search: "%#{search_string}%")
   end
 
 end
