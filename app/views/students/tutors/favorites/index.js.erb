@@ -1,0 +1,3 @@
+document.getElementById('favorites-tutors-list').innerHTML = 
+  "<%= escape_javascript(render partial: 'students/tutors/favorites/search_favorites_tutors', 
+                                locals: { collection: @favorite_tutors, cached: true }) %>"

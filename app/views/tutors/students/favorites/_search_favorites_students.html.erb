@@ -1,0 +1,13 @@
+<tbody>
+  <% if favorite_students.any? %>
+    <% favorite_students.each do |favorite_student| %>
+      <%= render 'tutors/student_profiles/student_profile', student: favorite_student %>
+    <% end %>
+  <% else %>
+    <tr>
+      <td colspan="7" class="px-6 py-4 bg-white">
+        <%= t('tutors.students.favorites.no_found') %>
+      </td>
+    </tr>
+  <% end %>
+</tbody>

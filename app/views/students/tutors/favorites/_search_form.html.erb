@@ -1,0 +1,19 @@
+<div class="card mt-1 rounded-none">
+  <div class="card-body">
+  <span><%= t('students.tutors.favorites.search_favorite') %></span>
+    <%= form_with url: students_favorites_path, method: :get do |f| %>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="form-group">
+            <%= f.text_field :search, class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <%= f.submit "Search", class: "form-control" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
