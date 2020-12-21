@@ -1,6 +1,6 @@
 <% if class_rooms.any? %>
   <%- class_rooms.each do |class_room|%>
-    <%= render 'students/chats/profile_card', profile: class_room.tutor_profile, class_room: class_room, url: students_chat_path(class_room) %>
+    <%= render 'students/chats/profile_card', profile: class_room.tutor_profile, class_room: class_room, url: [entity_type, :chat, class_room] students_chat_path(class_room) %>
   <% end %>
 <% else %>
   <li class="flex flex-row items-center relative p-2 rounded m-auto">

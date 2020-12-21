@@ -17,13 +17,18 @@ class FavoritesProfilesQuery
 
   def fetch_students_favorites
     current_tutor_profile.favorite_student_profiles
-                          .where('profiles.first_name ilike :search OR
-                                  profiles.last_name ilike :search OR
-                                  profiles.country_name ilike :search OR
-                                  profiles.city ilike :search', search: "%#{search_string}%")
+                         .where('profiles.first_name ilike :search OR
+                                 profiles.last_name ilike :search OR
+                                 profiles.country_name ilike :search OR
+                                 profiles.city ilike :search', search: "%#{search_string}%")
   end
 
   def fetch_tutors_favorites
+    current_student_profile.favorite_tutor_profiles
+                           .where('profiles.first_name ilike :search OR
+                                   profiles.last_name ilike :search OR
+                                   profiles.country_name ilike :search OR
+                                   profiles.city ilike :search', search: "%#{search_string}%")
   end
 
 end
