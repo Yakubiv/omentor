@@ -7,6 +7,6 @@
     </h1>
   </div>
   <div class="max-w-7xl mx-auto px-4 sm:px-6.md:px-8" id="favorites-tutors-list">
-    <%= render partial: 'students/tutor_profiles/tutor_profile', collection: @favorite_tutors, cached: true %>
+    <%= render 'students/tutors/favorites/favorite_tutors', favorite_tutors: @favorite_tutors %>
   </div>
 </div>

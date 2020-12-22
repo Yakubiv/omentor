@@ -276,6 +276,8 @@ en:
           tutor: Викладач
           student: Студент
     tutors:
+      index:
+        no_found: Репетиторів не знайдено 
       favorites:
         title: Улюблені викладачі
         search_favorite: Пошук улюблених викладачів

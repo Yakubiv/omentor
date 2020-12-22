@@ -2,7 +2,7 @@
 
 class Tutors::StudentProfilesController < Tutors::BaseController
   def index
-    @students = StudentsQuery.new(query_params).results
+    @students = ProfilesQuery.new(query_params).results
   end
 
   def show

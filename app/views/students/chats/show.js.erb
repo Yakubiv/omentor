@@ -1,5 +1,2 @@
-document.getElementById(
-  'messages'
-).innerHTML =
-  "<%= escape_javascript(render partial: 'messages/search_messages', 
-      locals: { messages: @messages, profile: current_student_profile }) %>"
+document.getElementById("messages-container").innerHTML =
+  "<%= escape_javascript(render partial: 'messages/messages', locals: { messages: @messages, profile: current_student_profile }) %>";

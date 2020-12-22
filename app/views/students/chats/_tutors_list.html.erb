@@ -11,17 +11,5 @@
   </div>
 </div>
 <ul class="flex flex-col mt-4 space-y-2 overflow-y-auto" id="students-class-rooms-container">
-  <% if class_rooms.any? %>
-    <%- class_rooms.each do |class_room|%>
-      <%= render 'students/chats/profile_card', profile: class_room.tutor_profile, class_room: class_room, url: students_chat_path(class_room) %>
-    <% end %>
-  <% else %>
-    <li class="flex flex-row items-center relative p-2 rounded m-auto">
-      <div class="p-2 bg-indigo-400 items-center text-indigo-100 leading-none rounded-full flex lg:inline-flex">
-        <span class="mr-2 text-left flex-auto">
-          <%= t('messages.no_chats') %>
-        </span>
-      </div>
-    </li>
-  <% end %>
+  <%= render 'students/chats/class_rooms', class_rooms: @class_rooms %>
 </ul>

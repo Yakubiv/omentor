@@ -28,7 +28,7 @@
   </div>
 
   <div class="px-6 py-4 flex-1 overflow-y-scroll" id="messages-container" data-class-room-id="<%= class_room.uuid %>">
-    <%= render 'messages/messages', messages: @messages, profile: current_tutor_profile %>
+    <%= render 'messages/messages', messages: @messages, profile: profile %>
   </div>
 
   <%= render 'messages/form', class_room: class_room, profile: profile %>

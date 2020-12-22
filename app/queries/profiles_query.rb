@@ -1,4 +1,4 @@
-class StudentsQuery 
+class ProfilesQuery 
 
   def initialize(params)
     @search_string = params[:search_string]
@@ -24,6 +24,11 @@ class StudentsQuery
   end
 
   def fetch_tutors
+    current_student_profile.tutor_profiles
+                         .where('profiles.first_name ilike :search OR
+                                 profiles.last_name ilike :search OR
+                                 profiles.country_name ilike :search OR
+                                 profiles.city ilike :search', search: "%#{search_string}%")
   end
 
 end
