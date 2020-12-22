@@ -2,6 +2,8 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+$red_color: #f56565;
+
 .ava-xs {
   @apply inline-block h-4 w-4 rounded-full;
 }
@@ -14,7 +16,8 @@
   &-link {
     @apply flex items-center px-4 py-2 text-base leading-6 text-gray-900 rounded-md transition ease-in-out duration-150;
 
-    &.active, &.active:hover {
+    &.active,
+    &.active:hover {
       @apply bg-indigo-600 text-white font-medium;
     }
 
@@ -41,6 +44,21 @@
 
   &:hover {
     @apply bg-gray-100;
+  }
+}
+
+.favorites-link {
+  &.active,
+  &.active:hover {
+    color: $red_color;
+    fill: $red_color;
+  }
+
+  &:hover {
+    color: $red_color;
+    svg {
+      fill: $red_color;
+    }
   }
 }
 
