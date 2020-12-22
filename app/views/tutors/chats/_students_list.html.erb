@@ -1,9 +1,9 @@
 <div class="px-2 flex justify-between">
   <div class="flex flex-col relative w-full">
     <div class="absolute flex items-center justify-center h-10 w-10">
-        <svg class="h-6 w-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
-        </svg>
+      <svg class="h-6 w-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+      </svg>
     </div>
     <div>
       <%= render 'messages/search_chat_form', url: tutors_chats_path %>
@@ -12,17 +12,5 @@
 </div>
 
 <ul class="flex flex-col mt-4 space-y-2 overflow-y-auto" id="tutors-class-rooms-container">
-  <% if class_rooms.any? %>
-    <%- class_rooms.each do |class_room| %>
-      <%= render 'students/chats/profile_card', profile: class_room.student_profile, class_room: class_room, url: tutors_chat_path(class_room) %>
-    <% end %>
-  <% else %>
-    <li class="flex flex-row items-center relative p-2 rounded m-auto">
-      <div class="p-2 bg-indigo-400 items-center text-indigo-100 leading-none rounded-full flex lg:inline-flex">
-        <span class="mr-2 text-left flex-auto">
-          <%= t('message.no_chats') %>
-        </span>
-      </div>
-    </li>
-  <% end %>
+  <%= render 'tutors/chats/class_rooms', class_rooms: @class_rooms %>
 </ul>

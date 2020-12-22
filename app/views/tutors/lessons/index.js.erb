@@ -1,3 +1,2 @@
-document.getElementById("tutor-table-lessons").innerHTML = 
-        "<%= escape_javascript(render partial: 'tutors/lessons/lessons_table_body', 
-                                      locals: { lessons: @lessons }) %>"
+document.getElementById("tutor-table-lessons").innerHTML =
+  "<%= escape_javascript(render partial: 'layouts/partials/lessons_table_body', locals: { lessons: @lessons }) %>";

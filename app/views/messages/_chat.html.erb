@@ -27,12 +27,8 @@
     </div>
   </div>
 
-  <div class="px-6 py-4 flex-1 overflow-y-scroll" id="messages" data-class-room-id="<%= class_room.uuid %>">
-    <% if messages.exists? %>
-      <%= render partial: 'messages/message', collection: messages, locals: { profile: profile, is_read: false }, chached: true %>
-    <% else %>
-      <%= t('messages.no_messages') %>
-    <% end %>
+  <div class="px-6 py-4 flex-1 overflow-y-scroll" id="messages-container" data-class-room-id="<%= class_room.uuid %>">
+    <%= render 'messages/messages', messages: @messages, profile: current_tutor_profile %>
   </div>
 
   <%= render 'messages/form', class_room: class_room, profile: profile %>

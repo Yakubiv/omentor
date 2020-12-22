@@ -388,6 +388,7 @@ en:
       view_profile_link: Переглянути профіль
       index:
         no_students: У вас ще немає студентів
+        no_found: Студентів не знайдено
       favorites:
         title: Улюблені студенти
         search_favorite: Пошук улюблених студентів
