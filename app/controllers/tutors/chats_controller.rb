@@ -19,7 +19,9 @@ class Tutors::ChatsController < Tutors::BaseController
   attr_reader :class_room
 
   def query_params
-    { search_string: params[:search], type: "student", current_profile: current_tutor_profile }
+    { search_string: params[:search], 
+      type: "student", 
+      current_profile: current_tutor_profile }
   end
 
   def message_search_params

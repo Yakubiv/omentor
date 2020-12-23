@@ -3,6 +3,7 @@
 class Tutors::StudentProfilesController < Tutors::BaseController
   def index
     @students = ProfilesQuery.new(query_params).results
+    @tutors_chat_ids ||= current_tutor_profile.class_rooms.pluck(:student_profile_id, :uuid).to_h
   end
 
   def show

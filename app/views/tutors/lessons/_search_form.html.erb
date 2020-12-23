@@ -1,6 +1,6 @@
 <div class="card mt-1 rounded-none px-2">
   <div class="card-body">
-    <span>Пошук уроків</span>
+    <span><%= t('tutors.form_search.search_lessons') %></span>
     <%= form_with url: tutors_lessons_path, method: :get do |f| %>
       <div class="row">
         <div class="col-md-12">

@@ -304,6 +304,9 @@ en:
       blog: Блог
       settings: Налаштування
       lessons: Мої Уроки
+    form_search:
+      search_lessons: Пошук уроків
+      search_tutors: Пошук репетиторів
   tutors:
     settings:
       schedule_header: Графік
@@ -395,6 +398,9 @@ en:
         title: Улюблені студенти
         search_favorite: Пошук улюблених студентів
         no_found: Студентів не знайдено
+    form_search:
+      search_lessons: Пошук уроків
+      search_students: Пошук студентів
   details_controller:
     update:
       success: Профіль успішно оновлений
