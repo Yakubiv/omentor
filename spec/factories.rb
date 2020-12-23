@@ -16,14 +16,31 @@ FactoryBot.define do
     locale { 'en' }
   end
 
+  factory :subject do
+    name { Faker::Educator.subject }
+  end
+
+  factory :lesson do
+    subject
+    start_at { Faker::Time.forward(days: 23, period: :morning) }
+    duration { 60 }
+  end
+
+  factory :class_room do
+    tutor_profile
+    student_profile
+  end
+
   factory :profile do
     country
   end
 
-  factory :student_profile, parent: :profile do
+  factory :student_profile do
+    country
   end
 
-  factory :tutor_profile, parent: :profile do
+  factory :tutor_profile do
+    country
   end
 
   factory :favorite do
