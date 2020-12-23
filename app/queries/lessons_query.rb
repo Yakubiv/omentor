@@ -1,5 +1,4 @@
 class LessonsQuery
-
   def initialize(params)
     @type = params.fetch(:type)
     @search_string = params.fetch(:search_string)
@@ -24,9 +23,8 @@ class LessonsQuery
 
   def fetch_student_lessons
     current_student_profile.lessons.joins(:tutor_profile, :subject)
-                          .where('profiles.first_name ilike :search OR
-                                  profiles.last_name ilike :search OR
-                                  subjects.name ilike :search', search: "%#{search_string}%")
+                           .where('profiles.first_name ilike :search OR
+                                   profiles.last_name ilike :search OR
+                                   subjects.name ilike :search', search: "%#{search_string}%")
   end
-
 end
