@@ -15,7 +15,7 @@ RSpec.describe LessonsQuery do
         params = { current_tutor_profile: current_tutor_profile, type: 'tutor', search_string: '' }
         query = LessonsQuery.new(params).results
 
-        expect(query).to eq([lesson_math, lesson])
+        expect(query.size).to include([lesson_math, lesson])
       end
 
       it 'finds lessons by subject' do

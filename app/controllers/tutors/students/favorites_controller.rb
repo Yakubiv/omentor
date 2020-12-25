@@ -1,5 +1,6 @@
 class Tutors::Students::FavoritesController < Tutors::BaseController
     before_action :set_student_profile, only: [:create, :destroy]
+    before_action :tutor_chat_ids, only: :index
 
     def index 
         @favorite_students = FavoritesProfilesQuery.new(favorites_params).results

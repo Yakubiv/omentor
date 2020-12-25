@@ -24,7 +24,7 @@
     <div class="text-muted"><%= "#{student.city}, #{student.country_name}" %></div>
   </td>
   <td class="text-right">
-    <a class="btn btn-sm btn-link" data-toggle="tooltip" href="<%= tutors_chat_path(@tutors_chat_ids.dig(student.id)) %>" title="Sent Message">
+    <a class="btn btn-sm btn-link" data-toggle="tooltip" href="<%= tutors_chat_path(@tutor_chat_ids.dig(student.id)) %>" title="Sent Message">
       <i class="icon-envelope"></i>
     </a>
   </td>

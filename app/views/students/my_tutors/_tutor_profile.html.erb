@@ -32,7 +32,7 @@
     <div class="text-muted"><%= tutor.city %>, <%= tutor.country_name %></div>
   </td>
   <td class="text-right">
-    <a class="btn btn-sm btn-link" data-toggle="tooltip" href="<%= students_chat_path(@students_chat_ids.dig(tutor.id)) %>" title="Sent Message">
+    <a class="btn btn-sm btn-link" data-toggle="tooltip" href="<%= students_chat_path(@student_chat_ids.dig(tutor.id)) %>" title="Sent Message">
       <i class="icon-envelope"></i>
     </a>
     <a class="btn btn-sm btn-link hidden-xs js-sweetalert" data-toggle="tooltip" data-type="confirm" href="javascript:void(0)" title="Delete">

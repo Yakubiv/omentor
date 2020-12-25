@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 class Tutors::StudentProfilesController < Tutors::BaseController
+  before_action :tutor_chat_ids, only: :index
+
   def index
     @students = ProfilesQuery.new(query_params).results
-    @tutors_chat_ids ||= current_tutor_profile.class_rooms.pluck(:student_profile_id, :uuid).to_h
   end
 
   def show

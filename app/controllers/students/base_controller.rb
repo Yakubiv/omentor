@@ -45,6 +45,10 @@ class Students::BaseController < ApplicationController
     Time.zone = current_student_profile.time_zone
   end
 
+  def student_chat_ids
+    @student_chat_ids ||= current_student_profile.class_rooms.pluck(:tutor_profile_id, :uuid).to_h
+  end
+
   # move to pundit
   def check_if_required_fileds_are_filled?
     if current_user && current_user.student_profile.nil?
