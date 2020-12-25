@@ -13,9 +13,10 @@ RSpec.describe LessonsQuery do
         lesson_math = create(:lesson, class_room_id: class_room.id, subject: subject_math)
         lesson = create(:lesson, class_room: class_room, subject: subject_phis)
         params = { current_tutor_profile: current_tutor_profile, type: 'tutor', search_string: '' }
+
         query = LessonsQuery.new(params).results
 
-        expect(query.size).to include([lesson_math, lesson])
+        expect(query).to match([lesson_math, lesson])
       end
 
       it 'finds lessons by subject' do
