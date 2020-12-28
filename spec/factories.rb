@@ -45,4 +45,12 @@ FactoryBot.define do
 
   factory :favorite do
   end
+
+  factory :messages do 
+    tutor_profile
+    student_profile
+  end
+
+  factory :sender do 
+  end
 end
