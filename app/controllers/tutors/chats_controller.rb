@@ -21,7 +21,7 @@ class Tutors::ChatsController < Tutors::BaseController
   def query_params
     { search_string: params[:search], 
       type: "student", 
-      current_profile: current_tutor_profile }
+      current_tutor_profile: current_tutor_profile }
   end
 
   def message_search_params
