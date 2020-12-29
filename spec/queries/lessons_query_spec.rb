@@ -32,16 +32,16 @@ RSpec.describe LessonsQuery do
       it 'find lessons by first name' do
         lesson = create(:lesson, class_room: class_room, student_profile: student_profile)
         params = { current_tutor_profile: current_tutor_profile, type: 'tutor', search_string: 'Mike' }
-        
+
         query = LessonsQuery.new(params).results
 
         expect(query).to match_array([lesson])
       end
 
-      it 'find lessons by last name' do 
+      it 'find lessons by last name' do
         lesson = create(:lesson, class_room: class_room, student_profile: student_profile)
         params = { current_tutor_profile: current_tutor_profile, type: 'tutor', search_string: 'Jack' }
-        
+
         query = LessonsQuery.new(params).results
 
         expect(query).to match_array([lesson])
@@ -59,13 +59,13 @@ RSpec.describe LessonsQuery do
         lesson_math = create(:lesson, class_room: class_room, subject: subject_math)
         lesson_phis = create(:lesson, class_room: class_room, subject: subject_phis)
         params = { current_student_profile: current_student_profile, type: 'student', search_string: '' }
-        
+
         query = LessonsQuery.new(params).results
 
         expect(query).to match_array([lesson_math, lesson_phis])
       end
 
-      it 'find lesson by subject' do 
+      it 'find lesson by subject' do
         lesson_math = create(:lesson, class_room: class_room, subject: subject_math )
         lesson_phis = create(:lesson, class_room: class_room, subject: subject_phis )
         params = { current_student_profile: current_student_profile, type: 'student', search_string: 'Mat' }
@@ -74,7 +74,7 @@ RSpec.describe LessonsQuery do
 
         expect(query).to match_array([lesson_math])
       end
-      
+
       it 'find lesson by first name' do
         lesson = create(:lesson, class_room: class_room, tutor_profile: tutor_profile)
         params = { current_student_profile: current_student_profile, type: 'student', search_string: 'Fri' }

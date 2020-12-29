@@ -12,14 +12,13 @@ RSpec.describe ProfilesQuery do
         params = { current_tutor_profile: current_tutor_profile, type: 'students', search_string: '' }
 
         query = ProfilesQuery.new(params).results
-        
-        expect(query).to match_array([student_profile])  
+
+        expect(query).to match_array([student_profile])
       end
     end
 
     context 'students profiles' do
-      
+
     end
-    
   end
 end
