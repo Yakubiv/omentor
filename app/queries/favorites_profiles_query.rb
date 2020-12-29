@@ -1,10 +1,9 @@
 class FavoritesProfilesQuery
-
   def initialize(params)
     @search_string = params[:search_string]
     @type = params[:type]
     @current_tutor_profile = params[:current_tutor_profile]
-    @current_student_profile = params[:current_student_profile] 
+    @current_student_profile = params[:current_student_profile]
   end
 
   def results
@@ -30,5 +29,4 @@ class FavoritesProfilesQuery
                                    profiles.country_name ilike :search OR
                                    profiles.city ilike :search', search: "%#{search_string}%")
   end
-
 end
