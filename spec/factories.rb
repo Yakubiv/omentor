@@ -17,7 +17,7 @@ FactoryBot.define do
   end
 
   factory :subject do
-    name { Faker::Educator.subject }
+    name { Faker::Educator.unique.subject }
   end
 
   factory :lesson do
