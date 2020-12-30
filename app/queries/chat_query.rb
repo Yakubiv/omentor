@@ -1,5 +1,4 @@
 class ChatQuery
-
   def initialize(params)
     @search_string = params[:search_string]
     @type = params[:type]
@@ -24,5 +23,4 @@ class ChatQuery
     current_student_profile.class_rooms.joins(:tutor_profile)
       .where("profiles.first_name ilike :search OR profiles.last_name ilike :search", search: "%#{search_string}%")
   end
-
 end

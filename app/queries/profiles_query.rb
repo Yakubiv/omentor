@@ -1,5 +1,4 @@
-class ProfilesQuery 
-
+class ProfilesQuery
   def initialize(params)
     @search_string = params[:search_string]
     @type = params[:type]
@@ -30,5 +29,4 @@ class ProfilesQuery
                                  profiles.country_name ilike :search OR
                                  profiles.city ilike :search', search: "%#{search_string}%")
   end
-
 end

@@ -9,5 +9,4 @@ class MessageQuery
   def results
     class_room.messages.where("messages.body ilike ?", "%#{search_string}%")
   end
-  
 end
