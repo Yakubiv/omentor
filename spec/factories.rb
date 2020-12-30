@@ -70,4 +70,9 @@ FactoryBot.define do
   factory :sender do
   end
 
+  factory :time_slot do
+    start_at { Faker::Time.backward(days: 14, period: :evening) }
+    end_at { Faker::Time.forward(days: 25, period: :evening) }
+  end
+
 end
