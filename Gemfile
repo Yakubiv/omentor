@@ -50,7 +50,7 @@ gem 'hamlit', '~> 2.13.2'
 gem 'friendly_id', '~> 5.4.1'
 gem 'babosa', '1.0.4'
 
-gem 'bootsnap', '>= 1.4.2', require: false
+gem 'bootsnap', '>= 1.5.1', require: false
 
 group :development, :test do
   gem 'faker'
