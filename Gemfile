@@ -21,7 +21,7 @@ gem 'jbuilder', '~> 2.10.1'
 gem 'aws-sdk-s3', '~> 1.87.0'
 gem 'image_processing', '~> 1.12.1'
 
-gem "simple_calendar", "~> 2.0"
+gem "simple_calendar", "~> 2.4.1"
 
 gem 'pundit'
 gem 'devise'
