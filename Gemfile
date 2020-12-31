@@ -30,10 +30,10 @@ gem 'sendgrid-ruby', '~> 6.3.8'
 gem 'local_time', '~> 2.1.0'
 gem 'redis', '~> 4.2.5'
 gem 'sidekiq', '~> 6.1.2'
-gem 'cocoon'
+gem 'cocoon', '~> 1.2.15'
 
 # video
-gem 'opentok', "~> 4.0.0"
+gem 'opentok', "~> 4.1.2"
 
 gem 'money-rails', '~>1.12'
 
