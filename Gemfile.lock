@@ -162,10 +162,10 @@ GEM
       activejob (>= 5.0)
       devise (>= 4.0)
     diff-lcs (1.4.4)
-    dotenv (2.7.5)
-    dotenv-rails (2.7.5)
-      dotenv (= 2.7.5)
-      railties (>= 3.2, < 6.1)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.10.0)
     factory_bot (5.1.1)
       activesupport (>= 4.2.0)
@@ -403,7 +403,7 @@ DEPENDENCIES
   devise-async (~> 1.0.0)
   dotenv-rails
   factory_bot_rails
-  faker
+  faker (~> 2.15.1)
   friendly_id (~> 5.4.1)
   hamlit (~> 2.13.2)
   image_processing (~> 1.12.1)

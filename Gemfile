@@ -54,7 +54,7 @@ gem 'bootsnap', '>= 1.5.1', require: false
 
 group :development, :test do
   gem 'faker', '~> 2.15.1'
-  gem 'dotenv-rails'
+  gem 'dotenv-rails', '~> 2.7.6'
   gem 'pry', '~> 0.12.2'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
