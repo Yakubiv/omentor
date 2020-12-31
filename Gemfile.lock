@@ -365,7 +365,7 @@ GEM
     unicode-display_width (1.6.1)
     warden (1.2.9)
       rack (>= 2.0.9)
-    web-console (4.0.1)
+    web-console (4.1.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
@@ -419,7 +419,7 @@ DEPENDENCIES
   pagy (~> 3.10.0)
   pg (~> 1.2.3)
   pg_search (~> 2.3.5)
-  pry
+  pry (~> 0.13.1)
   puma (~> 5.1.1)
   pundit
   rails (~> 6.0.0)
@@ -440,7 +440,7 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5.2.1)
   tzinfo-data
-  web-console (>= 3.3.0)
+  web-console
   webdrivers
   webpacker (~> 5.2.1)
 
