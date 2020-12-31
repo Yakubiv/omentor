@@ -25,8 +25,8 @@ gem "simple_calendar", "~> 2.4.1"
 
 gem 'pundit'
 gem 'devise', '4.7.3'
-gem 'devise-async'
-gem 'sendgrid-ruby'
+gem 'devise-async', '~> 1.0.0'
+gem 'sendgrid-ruby', '~> 6.3.8'
 gem 'local_time'
 gem 'redis'
 gem 'sidekiq'
