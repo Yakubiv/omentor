@@ -24,7 +24,7 @@ gem 'image_processing', '~> 1.12.1'
 gem "simple_calendar", "~> 2.4.1"
 
 gem 'pundit'
-gem 'devise'
+gem 'devise', '4.7.3'
 gem 'devise-async'
 gem 'sendgrid-ruby'
 gem 'local_time'
