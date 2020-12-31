@@ -179,7 +179,7 @@ GEM
       activerecord (>= 4.0.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    hamlit (2.10.0)
+    hamlit (2.13.2)
       temple (>= 0.8.2)
       thor
       tilt
@@ -416,7 +416,7 @@ DEPENDENCIES
   meta-tags (~> 2.14.0)
   money-rails (~> 1.13.3)
   opentok (~> 4.1.2)
-  pagy
+  pagy (~> 3.10.0)
   pg (~> 1.2.3)
   pg_search (~> 2.3.5)
   pry (~> 0.12.2)

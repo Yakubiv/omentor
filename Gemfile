@@ -46,7 +46,7 @@ gem 'inline_svg', '~> 1.7.2'
 
 gem 'pagy', '~> 3.10.0'
 
-gem 'hamlit'
+gem 'hamlit', '~> 2.13.2'
 gem 'friendly_id'
 gem 'babosa', '1.0.2'
 
