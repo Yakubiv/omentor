@@ -29,7 +29,7 @@ gem 'devise-async', '~> 1.0.0'
 gem 'sendgrid-ruby', '~> 6.3.8'
 gem 'local_time', '~> 2.1.0'
 gem 'redis', '~> 4.2.5'
-gem 'sidekiq'
+gem 'sidekiq', '~> 6.1.2'
 gem 'cocoon'
 
 # video
