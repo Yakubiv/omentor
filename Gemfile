@@ -53,7 +53,7 @@ gem 'babosa', '1.0.4'
 gem 'bootsnap', '>= 1.5.1', require: false
 
 group :development, :test do
-  gem 'faker'
+  gem 'faker', '~> 2.15.1'
   gem 'dotenv-rails'
   gem 'pry', '~> 0.12.2'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
