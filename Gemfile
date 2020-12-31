@@ -44,7 +44,7 @@ gem 'rubocop', '~> 0.76.0', require: false
 # Inline svg
 gem 'inline_svg', '~> 1.7.2'
 
-gem 'pagy'
+gem 'pagy', '~> 3.10.0'
 
 gem 'hamlit'
 gem 'friendly_id'
