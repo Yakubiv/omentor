@@ -80,4 +80,4 @@ group :test do
   gem 'factory_bot_rails', '~> 6.1.0'
 end
 
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby] #Could not find gem 'tzinfo-data'.
