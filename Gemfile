@@ -14,7 +14,7 @@ gem 'acts-as-taggable-on', '~> 7.0.0'
 
 gem 'puma', '~> 5.1.1'
 gem 'sass-rails', '~> 6.0.0'
-gem 'webpacker', '~> 4.0'
+gem 'webpacker'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 
