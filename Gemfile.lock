@@ -441,11 +441,11 @@ DEPENDENCIES
   simple_calendar (~> 2.0)
   spring
   spring-watcher-listen (~> 2.0.0)
-  turbolinks (~> 5)
+  turbolinks (~> 5.2.1)
   tzinfo-data
   web-console (>= 3.3.0)
   webdrivers
-  webpacker
+  webpacker (~> 5.2.1)
 
 RUBY VERSION
    ruby 2.7.0p0

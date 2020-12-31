@@ -14,8 +14,8 @@ gem 'acts-as-taggable-on', '~> 7.0.0'
 
 gem 'puma', '~> 5.1.1'
 gem 'sass-rails', '~> 6.0.0'
-gem 'webpacker'
-gem 'turbolinks', '~> 5'
+gem 'webpacker', '~> 5.2.1'
+gem 'turbolinks', '~> 5.2.1'
 gem 'jbuilder', '~> 2.7'
 
 gem 'aws-sdk-s3'
