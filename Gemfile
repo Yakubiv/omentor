@@ -8,7 +8,7 @@ gem 'rails', '~> 6.0.0'
 gem 'pg', '~> 1.2.3'
 
 gem 'pg_search', '~> 2.3.5'
-gem 'meta-tags'
+gem 'meta-tags', '~> 2.14.0'
 gem 'impressionist', '1.6.1'
 gem 'acts-as-taggable-on', '~> 6.0'
 
