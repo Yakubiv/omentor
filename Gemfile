@@ -19,7 +19,7 @@ gem 'turbolinks', '~> 5.2.1'
 gem 'jbuilder', '~> 2.10.1'
 
 gem 'aws-sdk-s3', '~> 1.87.0'
-gem 'image_processing'
+gem 'image_processing', '~> 1.12.1'
 
 gem "simple_calendar", "~> 2.0"
 
