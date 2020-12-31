@@ -1,8 +1,9 @@
 class Tutors::Students::FavoritesController < Tutors::BaseController
     before_action :set_student_profile, only: [:create, :destroy]
+    before_action :tutor_chat_ids, only: :index
 
     def index 
-        @favorite_students = current_tutor_profile.favorite_student_profiles
+        @favorite_students = FavoritesProfilesQuery.new(favorites_params).results
     end
 
     def create
@@ -19,7 +20,13 @@ class Tutors::Students::FavoritesController < Tutors::BaseController
         end
     end
 
-    private    
+    private
+    
+    def favorites_params
+      { search_string: params[:search],
+        type: "students",
+        current_tutor_profile: current_tutor_profile }
+    end
 
     def set_student_profile
         @student_profile = StudentProfile.friendly.find(params[:student_id])

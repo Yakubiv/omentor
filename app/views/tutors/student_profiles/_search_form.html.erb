@@ -1,0 +1,14 @@
+<div class="card mt-1 rounded-none px-2">
+  <div class="card-body">
+    <span><%= t('tutors.form_search.search_students') %></span>
+    <%= form_with url: tutors_student_profiles_path, method: :get do |f| %>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group mt-2">
+            <%= f.text_field :search, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

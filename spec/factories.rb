@@ -16,16 +16,63 @@ FactoryBot.define do
     locale { 'en' }
   end
 
+  factory :subject do
+    name { Faker::Educator.unique.subject }
+  end
+
+  factory :lesson do
+    subject
+    start_at { Faker::Time.forward(days: 23, period: :morning) }
+    duration { 60 }
+  end
+
+  factory :class_room do
+    tutor_profile
+    student_profile
+  end
+
   factory :profile do
     country
   end
 
-  factory :student_profile, parent: :profile do
+  factory :student_profile do
+    country
+    first_name { Faker::Name.first_name }
+    last_name { Faker::Name.last_name }
+    username { Faker::Name.middle_name }
+    birthday { Faker::Date.birthday(min_age: 18, max_age: 65) }
+    phone { Faker::PhoneNumber.cell_phone }
+    city { Faker::Address.city }
+    country_name { Faker::Address.country }
+    gender { Faker::Gender.binary_type.downcase }
   end
 
-  factory :tutor_profile, parent: :profile do
+  factory :tutor_profile do
+    country
+    first_name { Faker::Name.first_name }
+    last_name { Faker::Name.last_name }
+    username { Faker::Name.middle_name }
+    birthday { Faker::Date.birthday(min_age: 18, max_age: 65) }
+    phone { Faker::PhoneNumber.cell_phone }
+    city { Faker::Address.city }
+    country_name { Faker::Address.country }
+    gender { Faker::Gender.binary_type.downcase }
   end
 
   factory :favorite do
   end
+
+  factory :messages do
+    tutor_profile
+    student_profile
+  end
+
+  factory :sender do
+  end
+
+  factory :time_slot do
+    start_at { Faker::Time.backward(days: 14, period: :evening) }
+    end_at { Faker::Time.forward(days: 25, period: :evening) }
+  end
+
 end

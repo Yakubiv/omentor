@@ -1,0 +1,13 @@
+<% if class_rooms.any? %>
+  <%- class_rooms.each do |class_room| %>
+    <%= render 'students/chats/profile_card', profile: class_room.student_profile, class_room: class_room, url: tutors_chat_path(class_room) %>
+  <% end %>
+<% else %>
+  <li class="flex flex-row items-center relative p-2 rounded m-auto">
+    <div class="p-2 bg-indigo-400 items-center text-indigo-100 leading-none rounded-full flex lg:inline-flex">
+      <span class="mr-2 text-left flex-auto">
+        <%= t('message.no_chats') %>
+      </span>
+    </div>
+  </li>
+<% end %>

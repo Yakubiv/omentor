@@ -1,0 +1,42 @@
+<tr>
+  <td class="width35 hidden-xs">
+    <a class="mail-star" href="javascript:void(0);">
+      <i class="icon-star"></i>
+    </a>
+  </td>
+  <td class="text-center width40">
+    <div class="avatar d-block">
+      <img class="avatar" src="<%= image_path(tutor.avatar) %>"/>
+    </div>
+  </td>
+  <td>
+    <div>
+      <a href="<%= students_my_tutor_path(tutor) %>">
+        <%= tutor.name %>
+      </a>
+    </div>
+  </td>
+  <td>
+    <% tutor.subjects.each do |s| %>
+      <%= link_to s.name, students_tutor_profiles_path(search_tutor: { subject: s.name }) %>
+    <% end %>
+  </td>
+  <td class="hidden-xs">
+    <div class="text-muted">
+      <i class="icon-graduation"></i>
+      <%= tutor.total_years_of_expirience.to_i %>
+      <%= t('common.years') %>
+    </div>
+  </td>
+  <td class="hidden-sm">
+    <div class="text-muted"><%= tutor.city %>, <%= tutor.country_name %></div>
+  </td>
+  <td class="text-right">
+    <a class="btn btn-sm btn-link" data-toggle="tooltip" href="<%= students_chat_path(@student_chat_ids.dig(tutor.id)) %>" title="Sent Message">
+      <i class="icon-envelope"></i>
+    </a>
+    <a class="btn btn-sm btn-link hidden-xs js-sweetalert" data-toggle="tooltip" data-type="confirm" href="javascript:void(0)" title="Delete">
+      <i class="icon-trash"></i>
+    </a>
+  </td>
+</tr>

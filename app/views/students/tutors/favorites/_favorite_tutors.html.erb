@@ -1,0 +1,7 @@
+<% if @favorite_tutors.any? %>
+  <%= render partial: 'students/tutor_profiles/tutor_profile', collection: @favorite_tutors, cached: true %>
+<% else %>
+  <div colspan="7" class="px-6 py-4 bg-white">
+    <%= t('students.tutors.favorites.no_found') %>
+  </div>
+<% end %>

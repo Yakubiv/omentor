@@ -52,5 +52,9 @@ module Tutors
     def set_time_zone
       Time.zone = current_tutor_profile.time_zone
     end
+
+    def tutor_chat_ids
+      @tutor_chat_ids ||= current_tutor_profile.class_rooms.pluck(:student_profile_id, :uuid).to_h
+    end
   end
 end

@@ -1,0 +1,2 @@
+document.getElementById("favorite-students-table").innerHTML =
+  "<%= escape_javascript(render partial: 'tutors/students/favorites/favorite_students', locals: { favorite_students: @favorite_students }) %>";

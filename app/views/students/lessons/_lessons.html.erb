@@ -26,18 +26,8 @@
               <th class="px-6 py-3 bg-gray-50"></th>
             </tr>
           </thead>
-          <tbody class="bg-white divide-y divide-gray-200">
-            <% if lessons.any? %>
-              <% lessons.each do |lesson| %>
-                <%= render 'tutors/lessons/table_line', lesson: lesson %>
-              <% end %>
-            <% else %>
-              <tr>
-                <td colspan="7" class="px-6 py-4">
-                  <%= t('students.lessons.index.no_found') %>
-                </td>
-              </tr>
-            <% end %>
+          <tbody class="bg-white divide-y divide-gray-200" id="student-table-lessons">
+             <%= render 'layouts/partials/lessons_table_body', lessons: lessons %>
           </tbody>
         </table>
 

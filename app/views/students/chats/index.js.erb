@@ -1,0 +1,2 @@
+document.getElementById("students-class-rooms-container").innerHTML =
+  "<%= escape_javascript(render partial: 'students/chats/class_rooms', locals: { class_rooms: @class_rooms, entity_type: :student }) %>";

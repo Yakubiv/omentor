@@ -1,0 +1,31 @@
+<tr>
+  <td class="width35 hidden-xs relative">
+    <div class="heart-favorite-container" id="heart-favorite-container-<%= student.id %>">
+      <% if current_tutor_profile.favorite?(student) %>
+        <%= render 'tutors/students/favorites/remove_favorite', student: student %>
+      <% else %>
+        <%= render 'tutors/students/favorites/create_favorite', student: student %>
+      <% end %>
+    </div>
+  </td>
+  <td class="text-center width40">
+    <div class="avatar d-block">
+      <img class="avatar" src="<%= image_path(student.avatar) %>"/>
+    </div>
+  </td>
+  <td>
+    <div>
+      <a href="<%= tutors_student_profile_path(student) %>">
+        <%= student.name %>
+      </a>
+    </div>
+  </td>
+  <td class="hidden-sm">
+    <div class="text-muted"><%= "#{student.city}, #{student.country_name}" %></div>
+  </td>
+  <td class="text-right">
+    <a class="btn btn-sm btn-link" data-toggle="tooltip" href="<%= tutors_chat_path(@tutor_chat_ids.dig(student.id)) %>" title="Sent Message">
+      <i class="icon-envelope"></i>
+    </a>
+  </td>
+</tr>
