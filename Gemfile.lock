@@ -340,7 +340,7 @@ GEM
       redis (>= 4.2.0)
     simple_calendar (2.4.1)
       rails (>= 3.0)
-    spring (2.1.0)
+    spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
       spring (>= 1.2, < 3.0)
@@ -409,7 +409,7 @@ DEPENDENCIES
   inline_svg (~> 1.7.2)
   jbuilder (~> 2.10.1)
   letter_opener
-  listen
+  listen (~> 3.3.3)
   local_time (~> 2.1.0)
   meta-tags (~> 2.14.0)
   money-rails (~> 1.13.3)
