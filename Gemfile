@@ -16,7 +16,7 @@ gem 'puma', '~> 5.1.1'
 gem 'sass-rails', '~> 6.0.0'
 gem 'webpacker', '~> 5.2.1'
 gem 'turbolinks', '~> 5.2.1'
-gem 'jbuilder', '~> 2.7'
+gem 'jbuilder', '~> 2.10.1'
 
 gem 'aws-sdk-s3'
 gem 'image_processing'
