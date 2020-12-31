@@ -70,7 +70,7 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '>= 2.15'
+  gem 'capybara', '~> 3.34.0'
   gem 'selenium-webdriver'
   gem 'webdrivers'
   %w[rspec-core rspec-expectations rspec-mocks rspec-support].each do |lib|
