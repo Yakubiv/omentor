@@ -63,9 +63,9 @@ group :development do
   gem 'web-console', '~> 4.1.0'
   gem 'listen', '~> 3.3.3'
   gem 'spring', '~> 2.1.1'
-  gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'letter_opener'
-  gem 'better_errors'
+  gem 'spring-watcher-listen', '~> 2.0.1'
+  gem 'letter_opener', '~> 1.7.0'
+  gem 'better_errors', '~> 2.9.1'
   gem 'binding_of_caller'
 end
 
