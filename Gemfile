@@ -77,7 +77,7 @@ group :test do
     gem lib, :git => "https://github.com/rspec/#{lib}.git", :branch => 'master'
   end
   gem 'rspec-rails', git: 'https://github.com/rspec/rspec-rails', branch: '4-0-maintenance'
-  gem 'factory_bot_rails'
+  gem 'factory_bot_rails', '~> 6.1.0'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
