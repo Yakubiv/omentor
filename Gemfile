@@ -72,7 +72,7 @@ end
 group :test do
   gem 'capybara', '~> 3.34.0'
   gem 'selenium-webdriver', '~> 3.142.7'
-  gem 'webdrivers'
+  gem 'webdrivers', '~> 4.4.2'
   %w[rspec-core rspec-expectations rspec-mocks rspec-support].each do |lib|
     gem lib, :git => "https://github.com/rspec/#{lib}.git", :branch => 'master'
   end
