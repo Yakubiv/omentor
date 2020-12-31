@@ -9,8 +9,8 @@ gem 'pg', '~> 1.2.3'
 
 gem 'pg_search', '~> 2.3.5'
 gem 'meta-tags', '~> 2.14.0'
-gem 'impressionist'
-gem 'acts-as-taggable-on', '~> 6.0'
+gem 'impressionist', '~> 2.0.0'
+gem 'acts-as-taggable-on', '~> 7.0.0'
 
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5'
