@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class Tutors::ProfilesController < Tutors::BaseController
+  def show
+  end
+
   def update
     @user = current_user
     if @user.update_with_password(user_params)
