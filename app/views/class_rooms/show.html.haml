@@ -33,7 +33,6 @@
         .card-body
           .tab-content
             .tab-pane.fade.active.show#chat
-              = render 'messages/chat', class_room: @class_room, messages: @messages, target_profile: @class_room.opposet_profile_to(@current_profile), profile: @current_profile
             .tab-pane.fade.show#board
               Board
 %script{ src: "https://static.opentok.com/v2/js/opentok.min.js" }

@@ -1,0 +1,10 @@
+document.getElementById("edit-lesson-modal").click();
+var formBody = document.getElementById("edit-modal-body");
+
+<% if params[:type] == 'vacation' %>
+  formBody.innerHTML = "<%= escape_javascript render :partial => 'tutors/calendars/edit_vacation_form', locals: { vacation: @entity } %>"
+  console.log('vacation')
+<% else %>
+  formBody.innerHTML = "<%= escape_javascript render :partial => 'tutors/calendars/edit_lesson_form', locals: { lesson: @entity } %>"
+  console.log('lesson')
+<% end %>

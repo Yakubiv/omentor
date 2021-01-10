@@ -1,7 +1,7 @@
 import flatpickr from "flatpickr";
 import { Ukrainian } from "flatpickr/dist/l10n/uk.js"
 
-addEventListener('turbolinks:load', function () {
+var datePicker = function () {
   flatpickr("[data-provide='datepicker']", {
     allowInput: true,
     format: "Y-m-d H:i",
@@ -10,4 +10,6 @@ addEventListener('turbolinks:load', function () {
     enableTime: true,
     "locale": Ukrainian
   })
-});
+};
+
+addEventListener('turbolinks:load', datePicker, false);

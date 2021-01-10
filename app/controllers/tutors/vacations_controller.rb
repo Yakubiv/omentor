@@ -25,7 +25,6 @@ class Tutors::VacationsController < Tutors::BaseController
     if @vacation.update(vacation_params)
       redirect_to tutors_vacations_path, notice: "Vacation was updated"
     else
-      flash[:notice] = "Vacation was not updated"
       render 'edit'
     end    
   end

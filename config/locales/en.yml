@@ -214,15 +214,15 @@ en:
     reset_confirm: Не отримали листа підтвердження?
     resend_confirm: Надіслати ще раз
     resend_confirm_text: Надіслати лист підтвердження ще раз
-    signup_as_tutor: Навчай з Studylive
+    signup_as_tutor: Навчай з Omentor
     create_account: Зареєструватися
     or_with: Або
-    signup_as_tutor_tip: Зареєструйся на Studylive, і почни робити свій кращим з вигодою для себе
+    signup_as_tutor_tip: Зареєструйся на Omentor, і почни робити свій кращим з вигодою для себе
     login: Увійти
     sign_up: Зареєструватися
     existing_customer: Існуючий клієнт?
-    signup_as_student: Навчайся на Studylive
-    signup_as_student_tip: Зареєструйся на Studylive і навчайся будь-де і будь-коли
+    signup_as_student: Навчайся на Omentor
+    signup_as_student_tip: Зареєструйся на Omentor і навчайся будь-де і будь-коли
     as_student: Зареєструйся як студент
     as_tutor: Зареєструватися як вчитель
   blog:
@@ -417,3 +417,8 @@ en:
   simple_calendar:
     previous: Попередній
     next: Наступний
+  
+  modal_calendar:
+    vacation: Відпустка
+    lesson: Урок
+    edit_vacation: Редагувати

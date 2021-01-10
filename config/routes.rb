@@ -64,7 +64,7 @@ Rails.application.routes.draw do
       end
       resource :dashboard, only: :show
       resources :lessons, only: %i[index show update], concerns: :lessonable
-      resources :calendars, only: :index
+      resources :calendars, only: %i[index new create edit update delete]
       resources :vacations, only: %i[index new create destroy update edit]
       resources :chats, only: %i[index show]
       resources :settings, only: [] do
@@ -96,7 +96,7 @@ Rails.application.routes.draw do
       resource :profile, only: :show
       resources :chats, only: %i[index show]
       resources :lessons, only: %i[index show update], concerns: :lessonable
-      resources :tutor_profiles, path: :tutors, only: :index
+      resources :tutor_profiles, path: :tutors, only: %i[index]
       resources :calendars, only: :index
       resources :my_tutors, only: %i[show index]
 
