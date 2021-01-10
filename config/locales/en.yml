@@ -104,7 +104,7 @@ en:
   helpers:
     placeholder:
       feedback:
-        describe: Опишіть свою ідею
+        describe: Опишіть свою ідею або проблему
       student:
         country: Виберіть Країну
 
@@ -277,7 +277,7 @@ en:
           student: Студент
     tutors:
       index:
-        no_found: Репетиторів не знайдено 
+        no_found: Репетиторів не знайдено
       favorites:
         title: Улюблені викладачі
         search_favorite: Пошук улюблених викладачів
@@ -322,7 +322,7 @@ en:
       start_at: Початок відпустки
       end_at: Кінець відпустки
       status_vacation: Статус відпустки
-      vacations: Відпустки 
+      vacations: Відпустки
       edit: Редагувати
       delete: Видалити
       create: Створити
@@ -417,7 +417,7 @@ en:
   simple_calendar:
     previous: Попередній
     next: Наступний
-  
+
   modal_calendar:
     vacation: Відпустка
     lesson: Урок
