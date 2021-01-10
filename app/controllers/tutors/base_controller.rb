@@ -24,7 +24,7 @@ module Tutors
     end
 
     def inactive_tutors_details
-      redirect_to inactive_tutors_details_path if current_tutor_profile.inactive?
+      redirect_to inactive_tutors_details_path if current_tutor_profile && current_tutor_profile.inactive?
     end
 
     private
@@ -51,6 +51,10 @@ module Tutors
 
     def set_time_zone
       Time.zone = current_tutor_profile.time_zone
+    end
+
+    def tutor_chat_ids
+      @tutor_chat_ids ||= current_tutor_profile.class_rooms.pluck(:student_profile_id, :uuid).to_h
     end
   end
 end

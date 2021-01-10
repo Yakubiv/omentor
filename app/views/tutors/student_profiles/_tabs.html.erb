@@ -1,0 +1,24 @@
+<div class="bg-white px-4 sm:px-6 py-6 pb-0 lg:mx-auto lg:px-8">
+  <div class="border-b border-gray-200">
+    <nav class="flex -mb-px">
+      <%= link_to params.permit(:page).merge(page: 'overview'), class: "group inline-flex items-center py-4 px-1 border-b-2 font-medium text-sm leading-5 focus:outline-none #{params[:page] == 'overview' || params[:page].blank? ? active_tab_link : inactive_tab_link}" do %>
+        <!-- Heroicon name: user -->
+        <svg class="-ml-0.5 mr-2 h-5 w-5 <%= params[:page] == 'overview' || params[:page].blank? ? active_icon : inactive_icon %>" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+        </svg>
+        <span>
+          <%= t('students.student_profile.overview') %>
+        </span>
+      <% end %>
+
+      <%= link_to params.permit(:page).merge(page: 'lessons'), class: "ml-8 group inline-flex items-center py-4 px-1 border-b-2 font-medium text-sm leading-5 focus:outline-none #{params[:page] == 'lessons' ? active_tab_link : inactive_tab_link}" do %>
+        <!-- Heroicon name: academic-cap -->
+        <svg class="-ml-0.5 mr-2 h-5 w-5 <%= params[:page] == 'lessons' ? active_icon : inactive_icon %>"  viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" clip-rule="evenodd" />
+        </svg>
+          <%= t('students.student_profile.lessons') %>
+        </span>
+      <% end %>
+    </nav>
+  </div>
+</div>

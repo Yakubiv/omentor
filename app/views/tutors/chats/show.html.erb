@@ -6,10 +6,9 @@
       <div class="hidden lg:block w-width285px">
         <%= render 'students_list', class_rooms: @class_rooms %>
       </div>
-      <%= render 'messages/chat', class_room: @class_room, messages: @messages, target_profile: @class_room.opposet_profile_to(current_tutor_profile), profile: current_tutor_profile %>
+      <%= render 'messages/chat', class_room: @class_room,
+        messages: @messages, target_profile: @class_room.opposet_profile_to(current_tutor_profile),
+        profile: current_tutor_profile, url: tutors_chat_path, class_room_path: students_chat_path(@class_room) %>
     </div>
   </div>
 </div>
-
-
-

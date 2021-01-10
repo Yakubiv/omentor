@@ -1,0 +1,13 @@
+<% if @students.any? %>
+  <% @students.each do |student| %>
+    <%= render 'student_profile', student: student %>
+  <% end %>
+<% else %>
+  <div class="pt-10 text-center">
+    <div class="p-2 bg-indigo-400 items-center text-indigo-100 leading-none rounded-full flex lg:inline-flex">
+      <span class="mr-2 text-left flex-auto">
+        <%= t('tutors.students.index.no_found') %>
+      </span>
+    </div>
+  </div>
+<% end %>

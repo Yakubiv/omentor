@@ -1,0 +1,85 @@
+<div class="card c-tutor-card--h">
+  <div class="card-body">
+    <div class="heart-favorite-container" id="heart-favorite-container-<%= tutor_profile.id %>">
+      <% if current_student_profile.favorite?(tutor_profile) %>
+        <%= render 'students/tutors/favorites/remove_favorite', tutor_profile: tutor_profile %>
+      <% else %>
+        <%= render 'students/tutors/favorites/create_favorite', tutor_profile: tutor_profile %>
+      <% end %>
+    </div>
+    <article class="media">
+      <div class="block mr-3">
+        <div class="card-image" style="background-image: url(<%= image_path(tutor_profile.avatar) %>)"></div>
+      </div>
+      <div class="media-body">
+        <div class="content">
+          <div class="card-heading">
+            <div class="card-heading--name h5">
+              <%= tutor_profile.name %>
+              <small>
+                @<%= tutor_profile.username %>
+              </small>
+              <div class="card-heading--rating">
+                <i class="icon-star"></i>
+                <%= tutor_profile.stars %>
+              </div>
+            </div>
+            <div class="card-heading--essentials">
+              <div class="card-heading--rate">
+                <%= humanized_money_with_symbol tutor_profile.rate %>
+                <small class="unit text-muted"><%= t('common.hour') %>%.</small>
+              </div>
+            </div>
+          </div>
+          <p class="mb-2">
+            <span>
+              <i class="icon-home"></i>
+              <%= tutor_profile.city %>
+            </span>
+          </p>
+          <p class="mb-2">
+            <span><%= tutor_profile.subjects.pluck(:name).join(', ') %></span>
+            <%= link_to students_tutor_calendars_path(tutor_profile) do %>
+              <i class="icon-calendar"></i>
+              Календар
+            <% end %>
+          </p>
+          <p class="mb-2">
+            <%= t('tutors.details.language_skills') %>:
+            <% tutor_profile.speaks.each do |speak| %>
+              <%= speak.language  %>
+              <span class="inline-flex items-center px-3 py-0 5 rounded-full text-xs font-medium leading-5 bg-purple-200 text-purple-800">
+                <%= Speak.human_enum_name(:levels, speak.level) %>
+              </span>
+            <% end %>
+          </p>
+        </div>
+        <nav class="flex text-muted items-center flex-wrap mt-2">
+          <div class="card-details">
+            <a class="icon mr-3" href="#">
+              <i class="icon-graduation"></i>
+              <%= tutor_profile.total_years_of_expirience %> років
+            </a>
+            <a class="icon mr-3" href="#">
+              <i class="icon-users"></i>
+              100 уроків
+            </a>
+            <a class="icon mr-3" href="#">
+              <i class="icon-bubbles"></i>
+              43 відгуки
+            </a>
+            <a class="icon mr-3" href="#">
+              <i class="icon-globe"></i>
+              43 статті
+            </a>
+          </div>
+          <div class="card-button">
+            <a class="btn btn-success btn-block btn-lg" href="<%= students_tutor_booking_path(tutor_profile) %>">
+              Записатися на урок
+            </a>
+          </div>
+        </nav>
+      </div>
+    </article>
+  </div>
+</div>

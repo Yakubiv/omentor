@@ -1,0 +1,40 @@
+<tr>
+    <td class="px-6 py-4 whitespace-no-wrap">
+        <div class="flex items-center">
+            <div class="flex-shrink-0 h-10 w-10">
+                <img class="h-10 w-10 rounded-full" src="<%= image_path(lesson.tutor_profile.avatar) %>" alt="">
+            </div>
+            <div class="ml-4">
+                <div class="text-sm leading-5 font-medium text-gray-900">
+                    <a href="<%= tutors_profile_path %>" >
+                        <%= lesson.tutor_profile.name %>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </td>
+    <td class="px-6 py-4 whitespace-no-wrap">
+        <div class="text-sm leading-5 text-gray-900">
+            <%= lesson.subject %>
+        </div>
+    </td>
+    <td class="px-6 py-4 whitespace-no-wrap">
+        <%= lesson.start_at.strftime(Lesson::FULL_FORMAT) %>
+    </td>
+    <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+        <%= duration_in_hours[lesson.duration.to_i] %>
+    </td>
+    <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full <%= lesson_status_background[lesson.status] %>">
+            <%= lesson.status.titleize %>
+        </span>
+    </td>
+    <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+        <%= number_to_currency lesson.price %>
+    </td>
+    <td class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium">
+        <a href="<%= tutors_lesson_path(lesson) %>" class="text-indigo-600 hover:text-indigo-900">
+            <%= t('tutors.lessons.index.visit') %>
+        </a>
+    </td>
+</tr>

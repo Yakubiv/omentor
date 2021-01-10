@@ -1,0 +1,12 @@
+<%= render 'students/tutors/favorites/search_form' %>
+
+<div class="pt-2 pb-6 md:py-6">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6.md:px-8">
+    <h1 class="text-lg leading-6 font-medium text-cool-gray-900 mb-4">
+      <%= t('students.tutors.favorites.title') %>
+    </h1>
+  </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6.md:px-8" id="favorites-tutors-list">
+    <%= render 'students/tutors/favorites/favorite_tutors', favorite_tutors: @favorite_tutors %>
+  </div>
+</div>

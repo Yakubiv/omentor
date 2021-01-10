@@ -1,0 +1,5 @@
+<% if messages.exists? %>
+  <%= render partial: 'messages/message', collection: messages, locals: { profile: profile, is_read: false }, chached: true %>
+<% else %>
+  <%= t('messages.no_messages') %>
+<% end %>

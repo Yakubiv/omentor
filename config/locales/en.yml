@@ -236,8 +236,17 @@ en:
     email_placeholder: 'Email'
 
   students:
+    student_profile:
+      overview: Загальне
+      lessons: Уроки
+      number_of_lessons: Кількість Уроків
+      number_of_hours: Кількість годин
+      earned: Зароблено
+      grade_for_student: Оцінка для студента
     favorite_tutors:
-      title: Улюблені
+      title: Улюблені студенти
+      search_favorite: Пошук улюблених
+      no_found: Студентів не знайдено
     tutor_profiles:
       view_profile_link: Переглянути профіль
       index:
@@ -265,6 +274,14 @@ en:
           price: Ціна
           status: Статус
           tutor: Викладач
+          student: Студент
+    tutors:
+      index:
+        no_found: Репетиторів не знайдено 
+      favorites:
+        title: Улюблені викладачі
+        search_favorite: Пошук улюблених викладачів
+        no_found: Викладачів не знайдено
 
     details:
       main_header: Загальна інформація
@@ -281,12 +298,15 @@ en:
     left_sidebar:
       dashboard: Головна
       search_teachers: Пошук Репетиторів
-      my_teachers: Мої Репетори
+      my_teachers: Мої Репетитори
       chat: Чат
       calendar: Календар
       blog: Блог
       settings: Налаштування
       lessons: Мої Уроки
+    form_search:
+      search_lessons: Пошук уроків
+      search_tutors: Пошук репетиторів
   tutors:
     settings:
       schedule_header: Графік
@@ -296,7 +316,6 @@ en:
       video_header: Відео
       bio_header: Біо
       avatar_header: Фото
-
     vacations:
       description: Опис
       short_description: Короткий опис про відпустку
@@ -313,14 +332,11 @@ en:
       add_vacation: Додати відпустку
       manage_vacations: Керувати відпустками
       calendar: Календар
-    
     status:
       inactive: Ваш профіль неактивний
-
     registration:
       delete_slot_tip: Для видалення розкладу, один
         раз клікніть на нього, дальше нажміть "Видалити".
-
     lessons:
       show:
         start_lesson: Почати урок
@@ -342,6 +358,7 @@ en:
           price: Ціна
           status: Статус
           student: Студент
+          tutor: Викладач
     details:
       main_header: Загальна інформація
       submit_button: Зберегти інформацію
@@ -376,6 +393,14 @@ en:
       view_profile_link: Переглянути профіль
       index:
         no_students: У вас ще немає студентів
+        no_found: Студентів не знайдено
+      favorites:
+        title: Улюблені студенти
+        search_favorite: Пошук улюблених студентів
+        no_found: Студентів не знайдено
+    form_search:
+      search_lessons: Пошук уроків
+      search_students: Пошук студентів
   details_controller:
     update:
       success: Профіль успішно оновлений

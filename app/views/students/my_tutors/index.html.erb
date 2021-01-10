@@ -1,0 +1,11 @@
+<%= render 'students/my_tutors/search_form' %>
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+  <div class="table-responsive" id="users">
+    <table class="table table-hover table-vcenter text-nowrap table_custom list">
+      <tbody id="student-table-tutors">
+        <%= render 'students/my_tutors/tutor_profiles_table_body', tutors: @tutors %>
+      </tbody>
+    </table>
+  </div>
+</div>
