@@ -400,7 +400,7 @@ DEPENDENCIES
   devise (= 4.7.3)
   devise-async (~> 1.0.0)
   dotenv-rails (~> 2.7.6)
-  factory_bot_rails
+  factory_bot_rails (~> 6.1.0)
   faker (~> 2.15.1)
   friendly_id (~> 5.4.1)
   hamlit (~> 2.13.2)
