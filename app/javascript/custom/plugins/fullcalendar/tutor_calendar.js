@@ -1,5 +1,6 @@
 import { Calendar } from "@fullcalendar/core";
 import timeGridPlugin from "@fullcalendar/timegrid";
+import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 
 addEventListener("turbolinks:load", function () {
@@ -14,12 +15,12 @@ addEventListener("turbolinks:load", function () {
   if (calendarEl) {
     var calendar = new Calendar(calendarEl, {
       selectable: true,
-      header: {
-        left: "prev,next, title",
+      headerToolbar: {
+        left: "prev,next title",
         center: "",
-        right: "",
+        right: 'dayGridMonth,timeGridWeek,timeGridDay'
       },
-      defaultView: "timeGridWeek",
+      initialView: "timeGridWeek",
       allDaySlot: false,
       nowIndicator: true,
       slotLabelFormat: [
@@ -53,7 +54,7 @@ addEventListener("turbolinks:load", function () {
       firstDay: 1,
       selectOverlap: false,
       slotDuration: "01:00:00",
-      plugins: [interactionPlugin, timeGridPlugin],
+      plugins: [interactionPlugin, dayGridPlugin, timeGridPlugin],
       events: "/t/calendars.json",
 
       eventClick: function (info) {
