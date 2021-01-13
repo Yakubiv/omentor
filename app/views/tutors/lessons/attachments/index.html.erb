@@ -9,3 +9,11 @@
     <%= link_to attachment.filename, attachment, target: :blank %>
   </div>
 <% end %>
+
+<div data-controller="mycontroller">
+  <button data-action="click->mycontroller#say_hello">
+    Say Hello
+  </button>
+  <span data-target="mycontroller.output">
+  </span>
+</div>
