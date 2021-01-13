@@ -1,0 +1,11 @@
+<%= render 'tutors/lessons/subject', lesson: @lesson %>
+<%= render 'tutors/lessons/student_card', student_profile: @lesson.student_profile %>
+<%= render 'tutors/lessons/tabs', lesson: @lesson %>
+
+<%= render 'tutors/lessons/attachments/form', lesson: @lesson %>
+
+<% @lesson.attachments.each do |attachment| %>
+  <div>
+    <%= link_to attachment.filename, attachment, target: :blank %>
+  </div>
+<% end %>

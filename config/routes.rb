@@ -63,7 +63,9 @@ Rails.application.routes.draw do
         get :inactive, on: :collection
       end
       resource :dashboard, only: :show
-      resources :lessons, only: %i[index show update], concerns: :lessonable
+      resources :lessons, only: %i[index show update], concerns: :lessonable do
+        resources :attachments, only: %i[index show create update destroy], module: :lessons
+      end
       resources :calendars, only: %i[index new create edit update delete]
       resources :vacations, only: %i[index new create destroy update edit]
       resources :chats, only: %i[index show]

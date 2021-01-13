@@ -22,15 +22,15 @@
           </span>
         <% end %>
 
-        <%= link_to params.permit(:page).merge(page: 'attachments'), class: "ml-8 group inline-flex items-center py-4 px-1 border-b-2 font-medium text-sm leading-5 focus:outline-none #{params[:page] == 'attachments' ? active_tab_link : inactive_tab_link}" do %>
+        <a href="<%= tutors_lesson_attachments_path(lesson) %>", class="ml-8 group inline-flex items-center py-4 px-1 border-b-2 font-medium text-sm leading-5 focus:outline-none <%= active_if?(controller: 'attachments') == 'active' ? active_tab_link : inactive_tab_link %>">
           <!-- Heroicon name: users -->
-          <svg class="-ml-0.5 mr-2 h-5 w-5 <%= params[:page] == 'attachments' ? active_icon : inactive_icon %>" viewBox="0 0 20 20" fill="currentColor">
+          <svg class="-ml-0.5 mr-2 h-5 w-5 <%= active_if?(controller: 'attachments') == 'active' ? active_icon : inactive_icon %>" viewBox="0 0 20 20" fill="currentColor">
             <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
           </svg>
           <span>
             <%= t('students.lessons.show.attachments') %>
           </span>
-        <% end %>
+        </a>
       </nav>
     </div>
   </div>
