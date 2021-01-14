@@ -1,5 +1,5 @@
 class Tutors::Lessons::AttachmentsController < Tutors::BaseController
-  before_action :set_lesson, only: %i[ index create ]
+  before_action :set_lesson, only: %i[ index create destroy ]
 
   def index
   end
@@ -10,6 +10,13 @@ class Tutors::Lessons::AttachmentsController < Tutors::BaseController
         format.html { redirect_to tutors_lesson_attachments_path(@lesson) }
       end
     end
+  end
+
+  def destroy
+    @file = ActiveStorage::Attachment.find(params[:id])
+    @file.purge
+
+    redirect_back(fallback_location: tutors_lesson_attachments_path)
   end
 
   private

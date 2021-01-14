@@ -13,7 +13,6 @@ class Lesson < ApplicationRecord
   has_one :tutor_profile, through: :class_room
 
   has_many_attached :attachments
-  validates :attachments, presence: true, blob: { content_type: ['text/pdf', 'text/doc', 'text/docx', 'text/xml', 'image/png', 'image/jpeg', 'image/jpg', 'text/zip', 'text/rar'] }
 
   before_create :set_uuid
 

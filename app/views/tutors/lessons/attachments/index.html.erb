@@ -2,18 +2,11 @@
 <%= render 'tutors/lessons/student_card', student_profile: @lesson.student_profile %>
 <%= render 'tutors/lessons/tabs', lesson: @lesson %>
 
-<%= render 'tutors/lessons/attachments/form', lesson: @lesson %>
-
 <% @lesson.attachments.each do |attachment| %>
   <div>
-    <%= link_to attachment.filename, attachment, target: :blank %>
+    <%= link_to attachment.filename, attachment, target: :blank %> |
+    <%= link_to "Remove", tutors_lesson_attachment_path(@lesson.id, attachment.id), method: :delete, data: { confirm: "Are you shure?" } %>
   </div>
 <% end %>
 
-<div data-controller="mycontroller">
-  <button data-action="click->mycontroller#say_hello">
-    Say Hello
-  </button>
-  <span data-target="mycontroller.output">
-  </span>
-</div>
+<%= render 'tutors/lessons/attachments/form', lesson: @lesson %>
