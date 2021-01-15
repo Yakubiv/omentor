@@ -1,0 +1,24 @@
+<% lesson.attachments.each do |attachment| %>
+  <tr>
+    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+      Icon
+    </td>
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+      <%= attachment.filename %>
+    </td>
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+      <%= attachment.created_at.strftime("%Y-%m-%d %H:%M") %>
+    </td>
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+      <%= number_to_human_size(attachment.byte_size) %>
+    </td>
+    <td class="px-6 py-4 whitespace-nowrap text-left text-sm font-medium">
+      <%= link_to "View", attachment, target: :blank, class: "text-indigo-600 hover:text-indigo-900" %>
+    </td>
+    <td class="px-6 py-4 whitespace-nowrap text-left text-sm font-medium">
+      <%= link_to "Remove", tutors_lesson_attachment_path(lesson.id, attachment.id),
+                            class: "text-indigo-600 hover:text-indigo-900",
+                            method: :delete, data: { confirm: "Are you shure?" } %>
+    </td>
+  </tr>
+<% end %>

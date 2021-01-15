@@ -1,7 +1,10 @@
 class Tutors::Lessons::AttachmentsController < Tutors::BaseController
-  before_action :set_lesson, only: %i[ index create destroy ]
+  before_action :set_lesson, only: %i[ index create new ]
 
   def index
+  end
+
+  def new
   end
 
   def create
