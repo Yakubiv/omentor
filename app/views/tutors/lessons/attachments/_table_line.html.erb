@@ -12,22 +12,20 @@
     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
       <%= number_to_human_size(attachment.byte_size) %>
     </td>
-    <td class="px-6 py-4 whitespace-nowrap text-left text-sm text-gray-500">
+    <td class="px-6 py-4 whitespace-nowrap text-left text-sm text-gray-500 flex justify-between">
       <%= link_to attachment, target: :blank, class: "text-indigo-600 hover:text-indigo-900" do %>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M14.9998 12C14.9998 13.6569 13.6566 15 11.9998 15C10.3429 15 8.99976 13.6569 8.99976 12C8.99976 10.3431 10.3429 9 11.9998 9C13.6566 9 14.9998 10.3431 14.9998 12Z" stroke="#a0aec0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M2.45801 12C3.73228 7.94288 7.52257 5 12.0002 5C16.4778 5 20.2681 7.94291 21.5424 12C20.2681 16.0571 16.4778 19 12.0002 19C7.52256 19 3.73226 16.0571 2.45801 12Z" stroke="#a0aec0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       <% end %>
-    </td>
-    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+
       <%= link_to rails_blob_path(attachment, disposition: 'attachment') do %>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 10V16M12 16L9 13M12 16L15 13M17 21H7C5.89543 21 5 20.1046 5 19V5C5 3.89543 5.89543 3 7 3H12.5858C12.851 3 13.1054 3.10536 13.2929 3.29289L18.7071 8.70711C18.8946 8.89464 19 9.149 19 9.41421V19C19 20.1046 18.1046 21 17 21Z" stroke="#a0aec0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       <% end %>
-    </td>
-    <td class="px-6 py-4 whitespace-nowrap text-left text-sm text-gray-500">
+
       <%= link_to tutors_lesson_attachment_path(lesson.id, attachment.id),
                             class: "text-indigo-600 hover:text-indigo-900",
                             method: :delete, data: { confirm: "Are you shure?" } do %>

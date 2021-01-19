@@ -343,6 +343,17 @@ en:
         overview: Загальне
         chat: Чат
         attachments: Документи
+      attachments:
+        name: Ім'я
+        size: Розмір
+        date: Дата
+        add_files: Додати файли
+        upload: Завантажити
+        cancel: Скасувати
+        remove: Видалити
+        cancel_upload: Скасувати завантаження
+        drop_title: Перетягніть сюди файл або клікніть тут для вибору файлу
+        drop_info: Дозволені типи файлів pdf, png, jpeg, jpg, doc, docx, xml, zip, rar. Максимальний розмір файлу 100мб
       index:
         all_lessons: Усі Уроки
         paid_lessons: Заплановані

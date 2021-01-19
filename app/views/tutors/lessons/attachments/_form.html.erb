@@ -1,16 +1,23 @@
-<%= form_with(model: lesson, url: tutors_lesson_attachments_path, method: :post) do |f| %>
-  <div class='mb-6'>
-    <%= f.label :attachment, class: 'label' %>
-    <div class='dropzone dropzone-default dz-clickable' data-controller="dropzone" data-dropzone-max-files='3'>
-      <%= f.file_field :attachments, multiple: true, direct_upload: true, data: { target: 'dropzone.input' } %>
-      <div class="dropzone-msg dz-message needsclick text-gray-600">
-        <h3 class="dropzone-msg-title">Drag here to upload or click here to browse</h3>
-        <span class="dropzone-msg-desc text-sm">2 MB file size maximum. Allowed file types pdf, png, jpeg, jpg, doc, docx, xml, zip, rar.</span>
+<div class="px-4 sm:px-6 lg:mx-auto lg:px-8">
+  <%= form_with(model: lesson, url: tutors_lesson_attachments_path, method: :post) do |f| %>
+    <div class='my-6'>
+      <div class='dropzone dz-clickable'
+           data-controller="dropzone"
+           data-dropzone-max-file-size="1"
+           data-dropzone-dict-remove-file="<%= t('tutors.lessons.attachments.remove') %>"
+           data-dropzone-dict-cancel-upload="<%= t('tutors.lessons.attachments.cancel_upload') %>">
+        <%= f.file_field :attachments, multiple: true, direct_upload: true, data: { target: 'dropzone.input' } %>
+        <div class=" dz-message">
+          <h3 class="dropzone-msg-title mb-3 font-semibold text-gray-900 flex flex-wrap justify-center"><%= t('tutors.lessons.attachments.drop_title') %></h3>
+          <span class="dropzone-msg-desc text-sm"><%= t('tutors.lessons.attachments.drop_info') %></span>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class='form-group'>
-    <%= f.submit 'Upload', class: 'form-control' %>
-  </div>
-<% end %>
+    <div class="flex justify-end">
+      <%= f.submit t('tutors.lessons.attachments.upload'), class: "cursor-pointer rounded-sm px-3 py-1 bg-blue-700 hover:bg-blue-500 text-white focus:shadow-outline focus:outline-none" %>
+      <%= link_to t('tutors.lessons.attachments.cancel'), tutors_lesson_attachments_path, class: "ml-3 rounded-sm px-3 py-1 hover:bg-gray-300 focus:shadow-outline focus:outline-none" %>
+    </div>
+  <% end %>
+</div>
+

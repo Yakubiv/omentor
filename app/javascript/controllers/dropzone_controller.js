@@ -19,7 +19,7 @@ export default class extends Controller {
     Dropzone.autoDiscover = false; // necessary quirk for Dropzone error in console
   }
 
-  // Private
+  Private;
   hideFileInput() {
     this.inputTarget.disabled = true;
     this.inputTarget.style.display = "none";
@@ -61,8 +61,16 @@ export default class extends Controller {
     return this.data.get("acceptedFiles");
   }
 
+  get dictRemoveFile() {
+    return this.data.get("dictRemoveFile");
+  }
+
   get addRemoveLinks() {
     return this.data.get("addRemoveLinks") || true;
+  }
+
+  get dictCancelUpload() {
+    return this.data.get("dictCancelUpload");
   }
 }
 
@@ -150,6 +158,9 @@ function createDropZone(controller) {
     maxFilesize: controller.maxFileSize,
     acceptedFiles: controller.acceptedFiles,
     addRemoveLinks: controller.addRemoveLinks,
+    dictRemoveFile: controller.dictRemoveFile,
+    dictCancelUpload: controller.dictCancelUpload,
     autoQueue: false,
+    acceptedFiles: ".pdf, .png, .jpeg, .jpg, .doc, .docx, .xml, .zip, .rar",
   });
 }
