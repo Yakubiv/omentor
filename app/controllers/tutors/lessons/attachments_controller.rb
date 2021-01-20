@@ -10,10 +10,10 @@ class Tutors::Lessons::AttachmentsController < Tutors::BaseController
   def create
     respond_to do |format|
       if @lesson.update!(lesson_params)
-        flash[:notice] = 'Files has been uploadet'
+        flash[:notice] = t('tutors.lessons.attachments.files_uploadet')
         format.html { redirect_to tutors_lesson_attachments_path(@lesson) }
       else
-        flash[:notice] = 'Files has not uploadet'
+        flash[:notice] = t('tutors.lessons.attachments.files_not_uploadet')
         render 'new'
       end
     end
@@ -23,7 +23,7 @@ class Tutors::Lessons::AttachmentsController < Tutors::BaseController
     @file = ActiveStorage::Attachment.find(params[:id])
     @file.purge
 
-    redirect_back(fallback_location: tutors_lesson_attachments_path, success: 'File has been deleted')
+    redirect_back(fallback_location: tutors_lesson_attachments_path, success: t('tutors.lessons.attachments.file_remove'))
   end
 
   private

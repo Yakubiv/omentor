@@ -351,6 +351,9 @@ en:
         upload: Завантажити
         cancel: Скасувати
         remove: Видалити
+        file_remove: Файл видалено
+        files_uploadet: Файли завантажено
+        files_not_uploadet: Файли не завантажено
         cancel_upload: Скасувати завантаження
         drop_title: Перетягніть сюди файл або клікніть тут для вибору файлу
         drop_info: Дозволені типи файлів pdf, png, jpeg, jpg, doc, docx, xml, zip, rar. Максимальний розмір файлу 100мб
