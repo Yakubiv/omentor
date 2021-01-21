@@ -88,8 +88,9 @@ module ApplicationHelper
       action: action_name == conditions[:action],
       category: params[:category].to_s == conditions[:category],
       controller: controller_name == conditions[:controller],
-      fullpath: request.fullpath =~ conditions[:fullpath],
-      starts_with: fullpath_starts_with?(conditions[:starts_with].to_s)
+      fullpath: request.fullpath == conditions[:fullpath],
+      starts_with: fullpath_starts_with?(conditions[:starts_with].to_s),
+      include_in_path: request.fullpath.include?(conditions[:include_in_path].to_s)
     }.select{ |k,_| conditions.keys.include? k }.values
     return 'active' if active_conditions.all?
   end
@@ -159,5 +160,34 @@ module ApplicationHelper
     end
 
     sanitize content.to_html, tags: ALLOWED_TAGS + ["iframe"], attributes: ALLOWED_ATTRIBUTES
+  end
+
+  def return_type_file_icon(file_name)
+    file_type = file_name.to_s.split(".").last
+    file_path = "#{Rails.root}/app/assets/images/icon_file_type/icon_#{file_type}.svg"
+
+    case file_type
+    when 'pdf'
+      return File.read(file_path).html_safe if File.exists?(file_path)
+      '(not found)'
+    when
+      'jpg', 'jpeg', 'png'
+      return File.read(file_path).html_safe if File.exists?(file_path)
+      '(not found)'
+    when
+      'doc', 'docx'
+      return File.read(file_path).html_safe if File.exists?(file_path)
+      '(not found)'
+    when
+      'xls'
+      return File.read(file_path).html_safe if File.exists?(file_path)
+      '(not found)'
+    when
+      'zip', 'rar'
+      return File.read(file_path).html_safe if File.exists?(file_path)
+      '(not found)'
+    else
+      "ANY"
+    end
   end
 end

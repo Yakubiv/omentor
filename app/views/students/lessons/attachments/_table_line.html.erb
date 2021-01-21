@@ -1,0 +1,25 @@
+<% if lesson.attachments.any? %>
+  <% lesson.attachments.each do |attachment| %>
+    <tr>
+      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+        <div><%= return_type_file_icon(attachment.filename) %></div>
+      </td>
+      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+        <%= attachment.filename %>
+      </td>
+      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+        <%= attachment.created_at.strftime("%Y-%m-%d %H:%M") %>
+      </td>
+      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+        <%= number_to_human_size(attachment.byte_size) %>
+      </td>
+      <%= render 'students/lessons/attachments/table_links', lesson: lesson, attachment: attachment %>
+    </tr>
+  <% end %>
+<% else %>
+  <tr>
+    <td colspan="7" class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+      <%= t('students.lessons.attachments.no_files') %>
+    </td>
+  </tr>
+<% end %>

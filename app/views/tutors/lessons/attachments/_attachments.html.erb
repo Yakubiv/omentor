@@ -1,0 +1,19 @@
+<div class="flex flex-col">
+  <div class="overflow-x-auto">
+    <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+      <div class="relative text-right my-5">
+        <%= link_to new_tutors_lesson_attachment_path do %>
+          <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-700 active:bg-indigo-700 transition duration-150 ease-in-out">
+            <svg class="-ml-1 mr-2 h-5 w-5" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 9V12M12 12V15M12 12H15M12 12H9M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <%= t('tutors.lessons.attachments.add_files') %>
+          </button>
+        <% end %>
+      </div>
+      <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+        <%= render 'tutors/lessons/attachments/table', lesson: lesson %>
+      </div>
+    </div>
+  </div>
+</div>

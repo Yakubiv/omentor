@@ -255,6 +255,11 @@ en:
         calendar: Календар
         lessons: Уроки
     lessons:
+      attachments:
+        no_files: Немає доданих файлів
+        name: Ім'я
+        size: Розмір
+        date: Дата
       show:
         start_lesson: Почати урок
         overview: Загальне
@@ -343,6 +348,21 @@ en:
         overview: Загальне
         chat: Чат
         attachments: Документи
+      attachments:
+        name: Ім'я
+        size: Розмір
+        date: Дата
+        add_files: Додати файли
+        upload: Завантажити
+        cancel: Скасувати
+        remove: Видалити
+        file_remove: Файл видалено
+        no_files: Немає доданих файлів
+        files_uploadet: Файли завантажено
+        files_not_uploadet: Файли не завантажено
+        cancel_upload: Скасувати завантаження
+        drop_title: Перетягніть сюди файл або клікніть тут для вибору файлу
+        drop_info: Дозволені типи файлів pdf, png, jpeg, jpg, doc, docx, xml, zip, rar. Максимальний розмір файлу 100мб
       index:
         all_lessons: Усі Уроки
         paid_lessons: Заплановані
