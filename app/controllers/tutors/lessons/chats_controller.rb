@@ -3,10 +3,4 @@ class Tutors::Lessons::ChatsController < Tutors::BaseController
 
   def index
   end
-
-  private
-
-  def set_lesson
-    @lesson = current_tutor_profile.lessons.find_by(uuid: params[:lesson_id])
-  end
 end

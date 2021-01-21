@@ -28,10 +28,6 @@ class Tutors::Lessons::AttachmentsController < Tutors::BaseController
 
   private
 
-  def set_lesson
-    @lesson = current_tutor_profile.lessons.find_by(uuid: params[:lesson_id])
-  end
-
   def lesson_params
     params.require(:lesson).permit(attachments: [])
   end
