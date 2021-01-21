@@ -99,7 +99,11 @@ Rails.application.routes.draw do
       resource :dashboard, only: :show
       resource :profile, only: :show
       resources :chats, only: %i[index show]
-      resources :lessons, only: %i[index show update], concerns: :lessonable
+      resources :lessons, only: %i[index show update], concerns: :lessonable do
+        resources :overviews, only: %i[ index ], module: :lessons
+        resources :chats, only: %i[ index ], module: :lessons
+        resources :attachments, only: %i[index show ], module: :lessons
+      end
       resources :tutor_profiles, path: :tutors, only: %i[index]
       resources :calendars, only: :index
       resources :my_tutors, only: %i[show index]

@@ -352,6 +352,7 @@ en:
         cancel: Скасувати
         remove: Видалити
         file_remove: Файл видалено
+        no_files: Немає доданих файлів
         files_uploadet: Файли завантажено
         files_not_uploadet: Файли не завантажено
         cancel_upload: Скасувати завантаження
