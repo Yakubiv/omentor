@@ -255,6 +255,11 @@ en:
         calendar: Календар
         lessons: Уроки
     lessons:
+      attachments:
+        no_files: Немає доданих файлів
+        name: Ім'я
+        size: Розмір
+        date: Дата
       show:
         start_lesson: Почати урок
         overview: Загальне
