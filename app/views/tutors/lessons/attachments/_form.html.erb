@@ -3,7 +3,6 @@
     <div class='my-6'>
       <div class='dropzone dz-clickable'
            data-controller="dropzone"
-           data-dropzone-max-file-size="1"
            data-dropzone-dict-remove-file="<%= t('tutors.lessons.attachments.remove') %>"
            data-dropzone-dict-cancel-upload="<%= t('tutors.lessons.attachments.cancel_upload') %>">
         <%= f.file_field :attachments, multiple: true, direct_upload: true, data: { target: 'dropzone.input' } %>

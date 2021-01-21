@@ -88,8 +88,9 @@ module ApplicationHelper
       action: action_name == conditions[:action],
       category: params[:category].to_s == conditions[:category],
       controller: controller_name == conditions[:controller],
-      fullpath: request.fullpath =~ conditions[:fullpath],
-      starts_with: fullpath_starts_with?(conditions[:starts_with].to_s)
+      fullpath: request.fullpath == conditions[:fullpath],
+      starts_with: fullpath_starts_with?(conditions[:starts_with].to_s),
+      include_in_path: request.fullpath.include?(conditions[:include_in_path].to_s)
     }.select{ |k,_| conditions.keys.include? k }.values
     return 'active' if active_conditions.all?
   end

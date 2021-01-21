@@ -50,7 +50,7 @@ export default class extends Controller {
   }
 
   get maxFiles() {
-    return this.data.get("maxFiles") || 1;
+    return this.data.get("maxFiles") || 15;
   }
 
   get maxFileSize() {

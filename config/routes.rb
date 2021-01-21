@@ -65,6 +65,8 @@ Rails.application.routes.draw do
       resource :dashboard, only: :show
       resources :lessons, only: %i[index show update], concerns: :lessonable do
         resources :attachments, only: %i[index show create update destroy new ], module: :lessons
+        resources :overviews, only: %i[ index ], module: :lessons
+        resources :chats, only: %i[ index ], module: :lessons
       end
       resources :calendars, only: %i[index new create edit update delete]
       resources :vacations, only: %i[index new create destroy update edit]
