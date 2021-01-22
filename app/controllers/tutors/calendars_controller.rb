@@ -3,6 +3,10 @@
 class Tutors::CalendarsController < Tutors::BaseController
   def index
     @time_slots = TutorProfileCalendarEventsQuery.new(current_tutor_profile).results
+    @lesson = Lesson.new(price: current_tutor_profile.price_for_hour_lesson,
+                         duration: Lesson::ONE_HOUR_DURATION)
+    @available_hours = Tutor::AvailableHours.new(current_tutor_profile, @lesson, params[:start_date]&.to_datetime).fetch
+
     respond_to do |format|
       format.html
       format.json { render json: @time_slots }
@@ -28,7 +32,7 @@ class Tutors::CalendarsController < Tutors::BaseController
 
   def edit
     @entity = (params[:type] == 'vacation' ? Vacation : Lesson).find(params[:id])
-    
+
     respond_to do |format|
       format.html
       format.js

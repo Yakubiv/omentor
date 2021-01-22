@@ -65,6 +65,13 @@ Rails.application.routes.draw do
       resource :dashboard, only: :show
       resources :lessons, only: %i[index show update], concerns: :lessonable
       resources :calendars, only: %i[index new create edit update delete]
+
+      scope module: :calendars do
+        resource :calendars, only: [] do
+          resource :lessons, only: %i[create update destroy]
+        end
+      end
+
       resources :vacations, only: %i[index new create destroy update edit]
       resources :chats, only: %i[index show]
       resources :settings, only: [] do
