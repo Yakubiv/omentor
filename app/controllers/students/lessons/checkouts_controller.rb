@@ -10,7 +10,7 @@ class Students::Lessons::CheckoutsController < Students::BaseController
   def create
     lesson = load_lesson
     lesson.update(status: 'paid')
-    redirect_to [:students, lesson]
+    redirect_to students_lesson_overviews_path(lesson)
   end
 
   private
