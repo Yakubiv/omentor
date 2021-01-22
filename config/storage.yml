@@ -12,7 +12,6 @@ amazon:
   secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
   region: eu-north-1
   bucket: studygo
-
 # Remember not to checkin your GCS keyfile to a repository
 # google:
 #   service: GCS

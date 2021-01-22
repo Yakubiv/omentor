@@ -12,6 +12,8 @@ class Lesson < ApplicationRecord
   has_one :student_profile, through: :class_room
   has_one :tutor_profile, through: :class_room
 
+  has_many_attached :attachments
+
   before_create :set_uuid
 
   scope :for_student, ->(class_room) { where(class_room_id: class_room.id) }

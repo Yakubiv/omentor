@@ -1,0 +1,22 @@
+<div class="px-4 sm:px-6 lg:mx-auto lg:px-8">
+  <%= form_with(model: lesson, url: tutors_lesson_attachments_path, method: :post) do |f| %>
+    <div class='my-6'>
+      <div class='dropzone dz-clickable'
+           data-controller="dropzone"
+           data-dropzone-dict-remove-file="<%= t('tutors.lessons.attachments.remove') %>"
+           data-dropzone-dict-cancel-upload="<%= t('tutors.lessons.attachments.cancel_upload') %>">
+        <%= f.file_field :attachments, multiple: true, direct_upload: true, data: { target: 'dropzone.input' } %>
+        <div class=" dz-message">
+          <h3 class="dropzone-msg-title mb-3 font-semibold text-gray-900 flex flex-wrap justify-center"><%= t('tutors.lessons.attachments.drop_title') %></h3>
+          <span class="dropzone-msg-desc text-sm"><%= t('tutors.lessons.attachments.drop_info') %></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex justify-end mb-5">
+      <%= f.submit t('tutors.lessons.attachments.upload'), class: "inline-flex mr-5 items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 cursor-pointer hover:bg-indigo-500 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-700 active:bg-indigo-700 transition duration-150 ease-in-out" %>
+      <%= link_to t('tutors.lessons.attachments.cancel'), tutors_lesson_attachments_path, class: "inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+    </div>
+  <% end %>
+</div>
+

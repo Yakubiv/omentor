@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+  add_flash_types :success, :warning, :danger, :info
   include Pagy::Backend
 
   layout :layout_by_resource

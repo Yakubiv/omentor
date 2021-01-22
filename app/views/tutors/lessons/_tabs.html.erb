@@ -2,35 +2,35 @@
   <div class="">
     <div class="border-b border-gray-200">
       <nav class="flex -mb-px">
-        <%= link_to params.permit(:page).merge(page: 'overview'), class: "group inline-flex items-center py-4 px-1 border-b-2 font-medium text-sm leading-5 focus:outline-none #{params[:page] == 'overview' || params[:page].blank? ? active_tab_link : inactive_tab_link}" do %>
-          <!-- Heroicon name: user -->
-          <svg class="-ml-0.5 mr-2 h-5 w-5 <%= params[:page] == 'overview' || params[:page].blank? ? active_icon : inactive_icon %>" viewBox="0 0 20 20" fill="currentColor">
+        <a href="<%= tutors_lesson_overviews_path(lesson) %>", class="group inline-flex items-center py-4 px-1 border-b-2 font-medium text-sm leading-5 focus:outline-none <%= active_if?(controller: 'overviews') == 'active' ? active_tab_link : inactive_tab_link %>">
+          <!-- Heroicon name: users -->
+          <svg class="-ml-0.5 mr-2 h-5 w-5 <%= active_if?(controller: 'overviews') == 'active' ? active_icon : inactive_icon %>" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
           </svg>
           <span>
             <%= t('students.lessons.show.overview') %>
           </span>
-        <% end %>
+        </a>
 
-        <%= link_to params.permit(:page).merge(page: 'chat'), class: "ml-8 group inline-flex items-center py-4 px-1 border-b-2 font-medium text-sm leading-5 focus:outline-none #{params[:page] == 'chat' ? active_tab_link : inactive_tab_link}" do %>
-          <!-- Heroicon name: office-building -->
-          <svg class="-ml-0.5 mr-2 h-5 w-5 <%= params[:page] == 'chat' ? active_icon : inactive_icon %>" viewBox="0 0 20 20" fill="currentColor">
+        <a href="<%= tutors_lesson_chats_path(lesson) %>", class="ml-8 group inline-flex items-center py-4 px-1 border-b-2 font-medium text-sm leading-5 focus:outline-none <%= active_if?(controller: 'chats') == 'active' ? active_tab_link : inactive_tab_link %>">
+          <!-- Heroicon name: users -->
+          <svg class="-ml-0.5 mr-2 h-5 w-5 <%= active_if?(controller: 'chats') == 'active' ? active_icon : inactive_icon %>" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clip-rule="evenodd" />
           </svg>
           <span>
             <%= t('students.lessons.show.chat') %>
           </span>
-        <% end %>
+        </a>
 
-        <%= link_to params.permit(:page).merge(page: 'attachments'), class: "ml-8 group inline-flex items-center py-4 px-1 border-b-2 font-medium text-sm leading-5 focus:outline-none #{params[:page] == 'attachments' ? active_tab_link : inactive_tab_link}" do %>
+        <a href="<%= tutors_lesson_attachments_path(lesson) %>", class="ml-8 group inline-flex items-center py-4 px-1 border-b-2 font-medium text-sm leading-5 focus:outline-none <%= active_if?(controller: 'attachments') == 'active' ? active_tab_link : inactive_tab_link %>">
           <!-- Heroicon name: users -->
-          <svg class="-ml-0.5 mr-2 h-5 w-5 <%= params[:page] == 'attachments' ? active_icon : inactive_icon %>" viewBox="0 0 20 20" fill="currentColor">
+          <svg class="-ml-0.5 mr-2 h-5 w-5 <%= active_if?(controller: 'attachments') == 'active' ? active_icon : inactive_icon %>" viewBox="0 0 20 20" fill="currentColor">
             <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
           </svg>
           <span>
             <%= t('students.lessons.show.attachments') %>
           </span>
-        <% end %>
+        </a>
       </nav>
     </div>
   </div>
