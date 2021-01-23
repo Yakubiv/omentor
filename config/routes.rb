@@ -111,7 +111,7 @@ Rails.application.routes.draw do
         resources :chats, only: %i[ index ], module: :lessons
         resources :attachments, only: %i[index show ], module: :lessons
       end
-      resources :tutor_profiles, path: :tutors, only: %i[index]
+      resources :tutor_profiles, path: :tutors, only: %i[index show]
       resources :calendars, only: :index
       resources :my_tutors, only: %i[show index]
 

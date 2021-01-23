@@ -248,6 +248,7 @@ en:
       search_favorite: Пошук улюблених
       no_found: Студентів не знайдено
     tutor_profiles:
+      book_lesson: Забронювати урок
       view_profile_link: Переглянути профіль
       index:
         no_found: Репетиторів не знайдено
