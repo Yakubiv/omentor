@@ -7,11 +7,11 @@ module ApplicationHelper
   TIME = '%H:%M'.freeze
 
   def active_tab_link
-    'text-indigo-600 focus:text-indigo-800 focus:border-indigo-700 border-indigo-500'
+    'border-indigo-500 text-indigo-600'
   end
 
   def inactive_tab_link
-    'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:text-gray-700 focus:border-gray-300'
+    'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
   end
 
   def active_icon
