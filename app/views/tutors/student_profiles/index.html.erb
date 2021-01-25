@@ -6,4 +6,6 @@
       <%= render 'tutors/student_profiles/student_profiles_table_body', students: @students %>
     </tbody>
   </table>
+
+  <%= render partial: 'layouts/partials/pagy', locals: { pagy: @pagy } %>
 </div>

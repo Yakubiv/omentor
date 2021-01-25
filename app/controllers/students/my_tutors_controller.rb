@@ -4,7 +4,7 @@ class Students::MyTutorsController < Students::BaseController
   before_action :student_chat_ids, only: :index
 
   def index
-    @tutors = ProfilesQuery.new(query_params).results
+    @pagy, @tutors = pagy(ProfilesQuery.new(query_params).results, items: 15)
   end
 
   def show

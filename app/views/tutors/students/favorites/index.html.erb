@@ -14,6 +14,8 @@
             <%= render 'tutors/students/favorites/favorite_students', favorite_students: @favorite_students %>
           </tbody>
         </table>
+
+        <%= render partial: 'layouts/partials/pagy', locals: { pagy: @pagy } %>
       </div>
   </div>
 </div>

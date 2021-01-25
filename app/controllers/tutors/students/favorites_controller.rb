@@ -2,8 +2,8 @@ class Tutors::Students::FavoritesController < Tutors::BaseController
     before_action :set_student_profile, only: [:create, :destroy]
     before_action :tutor_chat_ids, only: :index
 
-    def index 
-        @favorite_students = FavoritesProfilesQuery.new(favorites_params).results
+    def index
+        @pagy, @favorite_students = pagy(FavoritesProfilesQuery.new(favorites_params).results, items: 15)
     end
 
     def create
@@ -21,7 +21,7 @@ class Tutors::Students::FavoritesController < Tutors::BaseController
     end
 
     private
-    
+
     def favorites_params
       { search_string: params[:search],
         type: "students",
@@ -30,6 +30,6 @@ class Tutors::Students::FavoritesController < Tutors::BaseController
 
     def set_student_profile
         @student_profile = StudentProfile.friendly.find(params[:student_id])
-    end 
+    end
 
 end

@@ -3,7 +3,7 @@ class Students::Tutors::FavoritesController < Students::BaseController
   before_action :student_chat_ids, only: :index
 
   def index
-    @favorite_tutors = FavoritesProfilesQuery.new(favorites_params).results
+    @pagy, @favorite_tutors = pagy(FavoritesProfilesQuery.new(favorites_params).results, items: 15)
   end
 
   def create

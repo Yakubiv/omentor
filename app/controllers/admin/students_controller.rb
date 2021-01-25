@@ -2,7 +2,7 @@ class Admin::StudentsController < Admin::BaseController
   # GET /subjects
   # GET /subjects.json
   def index
-    @students = StudentProfile.all
+    @pagy, @students = pagy(StudentProfile.all, items: 15)
   end
 
   def edit

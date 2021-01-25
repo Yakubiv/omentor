@@ -4,12 +4,12 @@ class Students::LessonsController < Students::BaseController
   before_action :load_lessons_counter, except: :show
 
   def index
-    @lessons = LessonsQuery.new(lessons_query).results
+    @pagy, @lessons = pagy(LessonsQuery.new(lessons_query).results, items: 15)
   end
 
   %w[paid pending completed canceled].each do |status|
     define_method status.to_sym do
-      @lessons = current_student_profile.lessons.send(status)
+      @pagy, @lessons = pagy(current_student_profile.lessons.send(status), items: 15)
       render 'index'
     end
   end

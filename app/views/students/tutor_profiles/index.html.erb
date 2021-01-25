@@ -1,0 +1,20 @@
+<%= render 'students/tutor_profiles/search_form', search_url: students_tutor_profiles_path %>
+
+<div class="sm:px-6.md:px-8 max-w-7xl mx-auto px-4">
+  <div id="cards">
+    <div class="dimmer">
+      <div class="loader"></div>
+    </div>
+    <div id="tutors-collection">
+      <% if @tutors.any? %>
+        <%= render @tutors, cached: true %>
+      <% else %>
+        <%= render 'students/tutor_profiles/no_found' %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="mb-5">
+    <%= render partial: 'layouts/partials/pagy', locals: { pagy: @pagy } %>
+  </div>
+</div>

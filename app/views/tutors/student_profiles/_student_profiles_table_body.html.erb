@@ -1,6 +1,6 @@
 <% if @students.any? %>
   <% @students.each do |student| %>
-    <%= render 'student_profile', student: student %>
+    <%= render 'tutors/student_profiles/student_profile', student: student %>
   <% end %>
 <% else %>
   <div class="pt-10 text-center">

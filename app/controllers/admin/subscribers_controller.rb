@@ -1,6 +1,6 @@
 class Admin::SubscribersController < Admin::BaseController
   def index
-    @subscribers = NewsSubscriber.all
+    @pagy, @subscribers = pagy(NewsSubscriber.all, items: 15)
   end
 
   def edit
