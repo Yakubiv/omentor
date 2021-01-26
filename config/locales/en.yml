@@ -236,6 +236,18 @@ en:
     email_placeholder: 'Email'
 
   students:
+    my_tutors_profile:
+      price: Ціна за годину
+      age: Вік
+      about: Про себе
+      gender: Стать
+      phone: Телефон
+      subjects: Предмети
+      languages: Володіння мовами
+      profile: Профіль
+      joined: Приєднався(-лась)
+      write_message: Написати повідомлення
+      book_lesson: Забронювати урок
     student_profile:
       overview: Загальне
       lessons: Уроки
