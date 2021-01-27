@@ -238,6 +238,8 @@ en:
   students:
     my_tutors_profile:
       price: Ціна за годину
+      book_lesson: Бронювання уроку
+      select_subject: Виберіть предмет на час проведення уроку
       age: Вік
       about: Про себе
       gender: Стать
@@ -247,7 +249,7 @@ en:
       profile: Профіль
       joined: Приєднався(-лась)
       write_message: Написати повідомлення
-      book_lesson: Забронювати урок
+      book_lesson_btn: Забронювати урок
     student_profile:
       overview: Загальне
       lessons: Уроки
