@@ -1,0 +1,15 @@
+<div class="form-group">
+  <%= f.label :description, t('tutors.vacations.description'), class: 'block text-sm font-medium leading-5 text-gray-700' %>
+  <%= f.text_area :description, class: "form-control", required: true, placeholder: t('tutors.vacations.short_description') %>
+</div>
+<div class="form-group">
+  <%= f.label :start_at, t('tutors.vacations.start_at'), class: 'block text-sm font-medium leading-5 text-gray-700' %>
+  <%= f.text_field :start_at, placeholder: t('tutors.vacations.select_time'), class: 'form-control', data: { provide: 'datepicker' }, required: true %>
+</div>
+<div class="form-group">
+  <%= f.label :end_at, t('tutors.vacations.end_at'), class: 'block text-sm font-medium leading-5 text-gray-700' %>
+  <%= f.text_field :end_at, placeholder: t('tutors.vacations.select_time'), class: 'form-control', data: { provide: 'datepicker' }, required: true %>
+</div>
+<div class="form-group">
+  <%= f.submit t('tutors.vacations.create'), data: { disable_with: "Saving..." }, class: 'w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out' %>
+</div>

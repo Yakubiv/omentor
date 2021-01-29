@@ -1,0 +1,3 @@
+<%= form_with model: Lesson.new, url: tutors_calendars_lessons_path, mthod: :post, html: { id: 'lesson-booking-form' } do |f| %>
+  <%= render 'tutors/calendars/lesson_fields', f: f %>
+<% end %>

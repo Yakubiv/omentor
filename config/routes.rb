@@ -69,6 +69,13 @@ Rails.application.routes.draw do
         resources :chats, only: %i[ index ], module: :lessons
       end
       resources :calendars, only: %i[index new create edit update delete]
+
+      scope module: :calendars do
+        resource :calendars, only: [] do
+          resource :lessons, only: %i[create update destroy]
+        end
+      end
+
       resources :vacations, only: %i[index new create destroy update edit]
       resources :chats, only: %i[index show]
       resources :settings, only: [] do
@@ -104,7 +111,7 @@ Rails.application.routes.draw do
         resources :chats, only: %i[ index ], module: :lessons
         resources :attachments, only: %i[index show ], module: :lessons
       end
-      resources :tutor_profiles, path: :tutors, only: %i[index]
+      resources :tutor_profiles, path: :tutors, only: %i[index show]
       resources :calendars, only: :index
       resources :my_tutors, only: %i[show index]
 

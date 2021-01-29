@@ -6,6 +6,11 @@ class Students::TutorProfilesController < Students::BaseController
     @pagy, @tutors = pagy(@tutors_query.call, items: 15)
   end
 
+  def show
+    @tutor_profile = TutorProfile.friendly.find(params[:id])
+    redirect_to students_my_tutor_path(@tutor_profile) if current_student_profile.tutor_profiles.include?(@tutor_profile)
+  end
+
   private
 
   def search_params

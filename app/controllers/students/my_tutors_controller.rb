@@ -11,6 +11,10 @@ class Students::MyTutorsController < Students::BaseController
     @tutor_profile = current_student_profile.tutor_profiles.friendly.find(params[:id])
     @class_room = current_student_profile.class_rooms.find_by(tutor_profile_id: @tutor_profile.id)
     @lessons = current_student_profile.lessons.for_tutor(@class_room)
+    @lesson = Lesson.new(price: @tutor_profile.price_for_hour_lesson,
+                         duration: params[:duration] || Lesson::ONE_HOUR_DURATION)
+    @available_hours = Tutor::AvailableHours.new(@tutor_profile, @lesson, params[:start_date]&.to_datetime).fetch
+    @decorated_tutor_profile = TutorProfileDecorator.new(@tutor_profile)
   end
 
   private

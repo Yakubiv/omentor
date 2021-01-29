@@ -12,7 +12,7 @@
     width: 340px;
     background-color: #fff;
     border: 1px solid #edeff0;
-    box-shadow: 0 5px 25px 0 rgba(79,79,79,.1);
+    box-shadow: 0 5px 25px 0 rgba(79, 79, 79, 0.1);
 
     padding: 20px;
 
@@ -26,7 +26,7 @@
   display: flex;
   justify-content: space-between;
   font-size: 16px;
-  margin-bottom: 15px;
+  align-items: center;
 }
 
 .c-time-slot-record {
@@ -47,26 +47,42 @@
   line-height: 1.5rem;
 
   &.free {
-    color: $indigo;
+    color: #000000;
+    --tw-bg-opacity: 1;
+    background-color: rgba(224, 231, 255, var(--tw-bg-opacity));
 
     &:hover {
-
       border: 1px solid $indigo;
     }
   }
 
   &.booked {
-    color: $gray-300;
+    color: #7b7b7b;
     cursor: not-allowed;
+    border: 1px solid #e0e7ff;
   }
 }
 
 #booking-calendar {
-  table th, table td {
+  table th:nth-last-child(-n + 2) {
+    color: #7b7b7b;
+  }
+  table th {
+    color: #000000;
+    font-weight: 600;
+  }
+  table th,
+  table td {
     padding: 2px;
+    padding-bottom: 10px;
+    text-align: center !important;
+    border: none;
   }
 
   .btn.btn-default {
     padding: 3px 6px;
+    border: none;
+    font-size: 24px;
+    color: #595959;
   }
 }

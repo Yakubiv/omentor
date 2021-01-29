@@ -1,0 +1,135 @@
+<main class="py-10">
+  <div class="px-4 mx-auto sm:px-6 md:flex md:items-center md:justify-between md:space-x-5 lg:max-w-7xl lg:px-8">
+    <div class="flex items-center space-x-5">
+      <div class="flex-shrink-0">
+        <div class="relative">
+          <img class="h-16 w-16 rounded-full" src="<%= image_path(tutor_profile.avatar) %>" alt="Tutor avatar">
+          <span class="absolute inset-0 shadow-inner rounded-full" aria-hidden="true"></span>
+        </div>
+      </div>
+      <div>
+        <h1 class="text-2xl font-bold text-gray-900"><%= tutor_profile.first_name %> <%= tutor_profile.last_name %></h1>
+        <p class="text-sm font-medium text-gray-500"><%= t('students.my_tutors_profile.joined') %> <%= tutor_profile.created_at.strftime("%B %d, %Y") %></p>
+      </div>
+    </div>
+    <div class="mt-6 flex flex-col-reverse justify-stretch space-y-4 space-y-reverse sm:flex-row-reverse sm:justify-end sm:space-x-reverse sm:space-y-0 sm:space-x-3 md:mt-0 md:flex-row md:space-x-3">
+      <%= link_to students_chat_path(@class_room) do %>
+        <button type="button" class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-blue-500">
+          <%= t('students.my_tutors_profile.write_message') %>
+        </button>
+      <% end %>
+      <%= link_to students_tutor_booking_path(tutor_profile) do %>
+        <button type="button" class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
+          <%= t('students.my_tutors_profile.book_lesson_btn') %>
+        </button>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="mt-8 grid grid-cols-1 gap-6 sm:px-6 lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3">
+    <div class="space-y-6 lg:col-start-1 lg:col-span-2">
+      <section aria-labelledby="applicant-information-title">
+        <div class="bg-white shadow sm:rounded-lg">
+          <div class="px-4 py-5 sm:px-6">
+            <h2 id="applicant-information-title" class="text-lg leading-6 font-medium text-gray-900">
+              <%= t('students.my_tutors_profile.profile') %>
+            </h2>
+          </div>
+          <div class="border-t border-gray-200 px-4 py-5 sm:px-6">
+            <dl class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
+              <div class="sm:col-span-1 mb-5">
+                <dt class="text-sm font-medium text-gray-500">
+                  <%= t('students.my_tutors_profile.subjects') %>
+                </dt>
+                <% tutor_profile.subjects.each do |subject| %>
+                  <dd class="mt-1 text-sm text-gray-900">
+                    <%= subject.name %>
+                  </dd>
+                <% end %>
+              </div>
+              <div class="sm:col-span-1 mb-5">
+                <dt class="text-sm font-medium text-gray-500">
+                  <%= t('students.my_tutors_profile.languages') %>
+                </dt>
+                <% tutor_profile.speaks.each do |speak| %>
+                  <dd class="mt-1 text-sm text-gray-900 w-56 relative">
+                    <%= speak.language  %>
+                    <span class="absolute right-0 inline-flex items-center px-3 py-0 5 rounded-full text-xs font-medium leading-5 bg-purple-200 text-purple-800">
+                      <%= Speak.human_enum_name(:levels, speak.level) %>
+                    </span>
+                  </dd>
+                <% end %>
+              </div>
+              <div class="sm:col-span-1 mb-5">
+                <dt class="text-sm font-medium text-gray-500">
+                  <%= t('students.my_tutors_profile.price') %>
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900">
+                  <%= humanized_money_with_symbol tutor_profile.rate %>
+                </dd>
+              </div>
+              <div class="sm:col-span-1 mb-5">
+                <dt class="text-sm font-medium text-gray-500">
+                  <%= t('students.my_tutors_profile.phone') %>
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900">
+                  <%= tutor_profile.phone %>
+                </dd>
+              </div>
+              <div class="sm:col-span-1 mb-5">
+                <dt class="text-sm font-medium text-gray-500">
+                  <%= t('students.my_tutors_profile.gender') %>
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900">
+                  <%= tutor_profile.gender %>
+                </dd>
+              </div>
+              <div class="sm:col-span-1 mb-5">
+                <dt class="text-sm font-medium text-gray-500">
+                  <%= t('students.my_tutors_profile.age') %>
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900">
+                  <%= @decorated_tutor_profile.find_age %>
+                </dd>
+              </div>
+              <div class="sm:col-span-2">
+                <dt class="text-sm font-medium text-gray-500">
+                  <%= t('students.my_tutors_profile.about') %>
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900">
+                  <%= tutor_profile.bio %>
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="notes-title">
+        <div class="bg-white shadow sm:rounded-lg sm:overflow-hidden w-3/4 xl:w-3/4">
+          <div class="divide-y divide-gray-200">
+            <div class="px-4 py-5 sm:px-6">
+              <h2 id="notes-title" class="text-lg font-medium text-gray-900"><%= t('students.my_tutors_profile.book_lesson') %></h2>
+            </div>
+            <div class="px-4 py-6 sm:px-6">
+              <div class='card'>
+                <div class='card-header'>
+                  <h3 class='card-title'><%= t('students.my_tutors_profile.select_subject') %></h3>
+                </div>
+                <div class='card-body'>
+                  <%= render 'layouts/partials/booking_calendar' %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section aria-labelledby="timeline-title" class="lg:col-start-3 lg:col-span-1">
+      <div class="bg-white shadow sm:rounded-lg iframe-container">
+        <iframe class="block sm:rounded-lg" id="video-frame" src="<%= changeYoutubeUrlForFrame(tutor_profile.video_url) %>"></iframe>
+      </div>
+    </section>
+  </div>
+</main>

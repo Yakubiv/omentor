@@ -56,8 +56,12 @@
       </div>
       <div class="mt-6 flex space-x-3 md:mt-0 md:ml-4">
         <span class="shadow-sm rounded-md">
-          <% if controller.class.to_s.split('::').first == 'Students' && !controller_name.include?('profile') %>
-            <a href="<%= students_my_tutor_path(tutor_profile) %>" class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-700 active:bg-indigo-700 transition duration-150 ease-in-out">
+          <% if purpose == 'tutors_details' %>
+            <a href="<%= students_tutor_booking_path(tutor_profile) %>" class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-700 active:bg-indigo-700 transition duration-150 ease-in-out">
+              <%= t('students.tutor_profiles.book_lesson') %>
+            </a>
+          <% elsif purpose == 'check_profile' %>
+            <a href="<%= students_tutor_profile_path(tutor_profile) %>" class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-700 active:bg-indigo-700 transition duration-150 ease-in-out">
               <%= t('students.tutor_profiles.view_profile_link') %>
             </a>
           <% end %>

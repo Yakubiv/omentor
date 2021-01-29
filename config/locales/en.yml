@@ -236,6 +236,20 @@ en:
     email_placeholder: 'Email'
 
   students:
+    my_tutors_profile:
+      price: Ціна за годину
+      book_lesson: Бронювання уроку
+      select_subject: Виберіть предмет на час проведення уроку
+      age: Вік
+      about: Про себе
+      gender: Стать
+      phone: Телефон
+      subjects: Предмети
+      languages: Володіння мовами
+      profile: Профіль
+      joined: Приєднався(-лась)
+      write_message: Написати повідомлення
+      book_lesson_btn: Забронювати урок
     student_profile:
       overview: Загальне
       lessons: Уроки
@@ -248,6 +262,7 @@ en:
       search_favorite: Пошук улюблених
       no_found: Студентів не знайдено
     tutor_profiles:
+      book_lesson: Забронювати урок
       view_profile_link: Переглянути профіль
       index:
         no_found: Репетиторів не знайдено

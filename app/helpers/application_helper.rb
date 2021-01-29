@@ -99,6 +99,11 @@ module ApplicationHelper
     request.fullpath =~ /^\/#{Regexp.quote(path)}/
   end
 
+  def changeYoutubeUrlForFrame(youtube_url)
+    id = youtube_url.split('?').last.split('&').select { |w| w.include?('v=') }.first.split('=').last
+    "https://www.youtube.com/embed/" + id
+  end
+
   def registration_step_class
     active_condition = { background: 'none', text: 'text-indigo-600', border: "border-indigo-600", display: "hidden", display_text: "block" }
     completed_condition = { background: 'bg-indigo-600', text: 'text-gray-900', border: "border-indigo-600", display: "block", display_text: "hidden" }

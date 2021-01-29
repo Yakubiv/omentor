@@ -14,12 +14,12 @@ addEventListener("turbolinks:load", function () {
   if (calendarEl) {
     var calendar = new Calendar(calendarEl, {
       selectable: true,
-      header: {
-        left: "prev,next, title",
+      headerToolbar: {
+        left: "prev,next title",
         center: "",
         right: "",
       },
-      defaultView: "timeGridWeek",
+      initialView: "timeGridWeek",
       allDaySlot: false,
       editable: true,
       nowIndicator: true,
