@@ -1,0 +1,108 @@
+<div class="row">
+  <div class="col-sm-11">
+    <div class="form-group">
+      <%= f.label :first_name, class: 'control-label' %>
+      <%= f.text_field :first_name, required: true, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="col-md-11">
+    <div class="form-group">
+      <%= f.label :last_name, class: 'control-label' %>
+      <%= f.text_field :last_name, required: true, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="form-group">
+      <%= f.label :username, class: 'control-label' %>
+      <%= f.text_field :username, required: true, class: 'form-control' %>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <div class="form-group">
+      <%= f.label :rate, class: 'control-label' %>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <i class="fe fe-dollar-sign"></i>
+          </div>
+        </div>
+        <%= f.number_field :rate, value: f.object.rate.to_f, required: true, min: 1, max: 200, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="form-group">
+      <%= f.label :total_years_of_expirience, class: 'control-label' %>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <i class="icon-graduation"></i>
+          </div>
+        </div>
+        <%= f.number_field :total_years_of_expirience, required: true, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-11">
+    <div class="form-group">
+      <%= f.label :subject, class: 'control-label' %>
+      <%= f.text_field :subject, autocomplete: :off, required: true, value: f.object.subjects.first&.name, placeholder: t('search_form.tutors.subject_placeholder'), class: 'form-control' %>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <div class="form-group">
+      <%= f.label :phone, class: 'control-label' %>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <i class="fe fe-phone"></i>
+          </div>
+        </div>
+        <%= f.text_field :phone, required: true, class: 'form-control', id: 'phone', placeholder: '(999) 999-9999' %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-7">
+    <div class="form-group">
+      <%= f.label :time_zone, class: 'control-label' %>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <i class="icon-globe"></i>
+          </div>
+        </div>
+        <%= f.time_zone_select(:time_zone, nil, { default: "Kyiv" }, class: 'form-control', required: true ) %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+      <%= f.label :city, class: 'control-label' %>
+      <%= f.text_field :city, required: true, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="col-md-7">
+    <div class="form-group">
+      <%= f.label :country_id, class: 'control-label' %>
+      <%= f.select :country_id, options_for_select(countries_to_select, Country.find_by(code: "UA").id), { prompt: t('helpers.placeholder.student.country') }, class: 'form-control', required: true %>
+    </div>
+  </div>
+</div>
+<%= f.fields_for :speaks do |speak| %>
+  <%= render 'tutors/details/speak_fields', f: speak %>
+<% end %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="add-language text-indigo-600">
+      <%= link_to_add_association t('tutors.details.add_language'), f, :speaks, partial: 'tutors/details/speak_fields' %>
+    </div>
+  </div>
+</div>

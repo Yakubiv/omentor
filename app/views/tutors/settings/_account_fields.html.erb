@@ -1,0 +1,17 @@
+<div class="form-group">
+  <%= f.label :email, class: 'control-label' %>
+  <%= f.email_field :email, required: true, class: 'form-control' %>
+</div>
+<hr class="mt-10 mb-10"/>
+<div class="form-group">
+  <%= f.label :current_password, class: 'control-label' %>
+  <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
+</div>
+<div class="form-group">
+  <%= f.label :password, class: 'control-label' %>
+  <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+</div>
+<div class="form-group">
+  <%= f.label :password_confirmation, class: 'control-label' %>
+  <%= f.password_field :password_confirmation, class: 'form-control' %>
+</div>

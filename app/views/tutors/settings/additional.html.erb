@@ -1,0 +1,22 @@
+<%= render 'tutors/settings/tabs' %>
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 xl:px-32">
+  <div class="card">
+    <div class="card-header bline">
+      <%= t('tutors.settings.additional_header') %>
+      <div class="card-options">
+        <a class="card-options-fullscreen" data-toggle="card-fullscreen" href="#">
+          <i class="fe fe-maximize"></i>
+        </a>
+      </div>
+    </div>
+    <%= form_with(model: current_tutor_profile, url: tutors_details_path, method: :put) do |f| %>
+      <div class="card-body p-10">
+        <%= render 'tutors/details/fields/better_search_fields',f: f %>
+      </div>
+      <div class="card-footer text-right px-10">
+        <%= f.submit t('tutors.details.save').html_safe, class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </div>
+</div>
