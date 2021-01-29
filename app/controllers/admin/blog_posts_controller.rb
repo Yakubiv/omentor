@@ -2,7 +2,7 @@ class Admin::BlogPostsController < Admin::BaseController
   before_action :set_post, only: [:edit, :update, :destroy]
 
   def index
-    @pagy, @posts = pagy(BlogPost.all)
+    @pagy, @posts = pagy(BlogPost.all, items: 15)
   end
 
   def new

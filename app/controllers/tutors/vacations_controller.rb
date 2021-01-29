@@ -1,32 +1,32 @@
 class Tutors::VacationsController < Tutors::BaseController
   before_action :set_vacation, only: [:edit, :destroy, :update]
 
-  def index 
-    @pagy, @vacations = pagy(Vacation.order(created_at: :desc))
+  def index
+    @pagy, @vacations = pagy(Vacation.order(created_at: :desc), items: 15)
   end
 
   def new
     @vacation = current_tutor_profile.vacations.new
   end
 
-  def create 
+  def create
     @vacation = current_tutor_profile.vacations.create(vacation_params)
-    if @vacation.save  
+    if @vacation.save
       redirect_to tutors_calendars_path, notice: "Vacation was created"
-    else 
+    else
       render 'new'
     end
   end
 
-  def edit 
+  def edit
   end
 
-  def update 
+  def update
     if @vacation.update(vacation_params)
       redirect_to tutors_vacations_path, notice: "Vacation was updated"
     else
       render 'edit'
-    end    
+    end
   end
 
   def destroy

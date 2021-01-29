@@ -42,3 +42,6 @@
                   %i.icon-pencil
                 = link_to [:admin, post], method: :delete, data: { confirm: 'Are you sure?' } do
                   %i.icon-trash
+
+  .card-footer.text-right
+    = render partial: 'layouts/partials/pagy', locals: { pagy: @pagy }

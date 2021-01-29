@@ -3,7 +3,7 @@
 class Students::TutorProfilesController < Students::BaseController
   def index
     @tutors_query ||= TutorProfilesQuery.new(TutorProfile.active, search_params)
-    @tutors = @tutors_query.call
+    @pagy, @tutors = pagy(@tutors_query.call, items: 15)
   end
 
   private

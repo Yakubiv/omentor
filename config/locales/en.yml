@@ -421,6 +421,11 @@ en:
     form_search:
       search_lessons: Пошук уроків
       search_students: Пошук студентів
+    pagynation:
+      showing: Показати
+      to: по
+      of: з
+      results: Результатів
   details_controller:
     update:
       success: Профіль успішно оновлений

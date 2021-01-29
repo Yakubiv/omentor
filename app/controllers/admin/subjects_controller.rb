@@ -4,7 +4,7 @@ class Admin::SubjectsController < Admin::BaseController
   # GET /subjects
   # GET /subjects.json
   def index
-    @pagy, @subjects = pagy(Subject.all)
+    @pagy, @subjects = pagy(Subject.all, items: 15)
   end
 
   # GET /subjects/1

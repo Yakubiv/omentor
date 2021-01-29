@@ -1,11 +1,11 @@
 class Admin::FeedbacksController < Admin::BaseController
   before_action :set_feedback, only: [:show, :destroy]
 
-  def index 
-    @pagy, @feedbacks = pagy(Feedback.all)
+  def index
+    @pagy, @feedbacks = pagy(Feedback.all, items: 15)
   end
 
-  def show 
+  def show
   end
 
   def destroy
