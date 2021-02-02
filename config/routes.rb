@@ -73,6 +73,7 @@ Rails.application.routes.draw do
       scope module: :calendars do
         resource :calendars, only: [] do
           resource :lessons, only: %i[create update destroy]
+          resource :vacations, only: %i[create update destroy]
         end
       end
 

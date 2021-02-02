@@ -1,31 +1,36 @@
+<%= f.hidden_field :start_at, required: true %>
+
 <div class="form-group">
-  <%= f.label :subject_id, class: 'block text-sm font-medium leading-5 text-gray-700' %>
-  <%= f.select :subject_id, options_for_select(current_tutor_profile.subjects.map{|a| [a.name, a.id]}), {}, class: "form-control", required: true, placeholder: t('tutors.vacations.short_description') %>
+  <%= f.label :student_profile_id, t('tutors.lessons.new_form.student_profile'), class: 'block text-sm font-medium leading-5 text-gray-700' %>
+  <%= f.select :student_profile_id, options_for_select(current_tutor_profile.student_profiles.map{|s| [s.name, s.id]}), { include_blank: t('tutors.lessons.new_form.student_profile_placeholder') }, class: "form-control", required: true %>
 </div>
 
 <div class="form-group">
-  <%= f.label :duration, class: 'block text-sm font-medium leading-5 text-gray-700' %>
-  <%= f.select :duration, options_for_select(lesson_durations.map{ |a| [a[:name], a[:duration]]}), {}, class: "form-control", required: true, placeholder: t('tutors.vacations.short_description') %>
+  <%= f.label :subject_id, t('tutors.lessons.new_form.subject'), class: 'block text-sm font-medium leading-5 text-gray-700' %>
+  <%= f.select :subject_id, options_for_select(current_tutor_profile.subjects.map{|a| [a.name, a.id]}), { include_blank: t('tutors.lessons.new_form.subject_placeholder') }, class: "form-control", required: true %>
 </div>
 
 <div class="form-group">
-  <%= f.label :price, class: 'block text-sm font-medium leading-5 text-gray-700' %>
-  <%= f.text_field :price, readonly: true, class: "form-control", required: true, placeholder: t('tutors.vacations.short_description') %>
+  <%= f.label :duration,t('tutors.lessons.new_form.duration'), class: 'block text-sm font-medium leading-5 text-gray-700' %>
+  <%= f.select :duration, options_for_select(lesson_durations.map{ |a| [a[:name], a[:duration]]}, f.object.duration), {}, class: "form-control", required: true, data: { tutor_rate: current_tutor_profile.rate_cents } %>
+</div>
+
+<div class="form-group">
+  <%= f.label :price, t('tutors.lessons.new_form.price'), class: 'block text-sm font-medium leading-5 text-gray-700' %>
+  <%= f.text_field :price, readonly: true, class: "form-control", required: true %>
 </div>
 
 <div class="mt-5 align-center">
   <div id="booking-calendar">
     <%= week_calendar do |date| %>
       <%- @available_hours.fetch(date.to_s, []).each do |time| %>
-        <div class="c-time-slot-record <%= time[:status] %>" data-time="<%= time[:full_time] %>">
+        <div class="c-time-slot-record <%= time[:status] %>" data-checkbox="true" data-time="<%= time[:full_time] %>">
           <%= time[:time]%>
         </div>
       <% end %>
     <% end %>
   </div>
 </div>
-
-<%= params[:start_at]  %>
 
 <div class="form-group">
   <%= f.submit t('tutors.vacations.create'), data: { disable_with: "Saving..." }, class: 'w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out' %>

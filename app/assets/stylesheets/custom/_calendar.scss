@@ -54,6 +54,20 @@
     &:hover {
       border: 1px solid $indigo;
     }
+
+    &.active {
+      position: relative;
+      border: 1px solid $indigo;
+
+      &:before {
+        position: absolute;
+        top: -3px;
+        left: 3px;
+        content:'\2713';
+        color: $indigo;
+
+      }
+    }
   }
 
   &.booked {
