@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<%= turbo_frame_tag "class_room" do %>
+  <%= render @class_room %>
+<% end %>
+
+<div id="messages">
+  <%= render @class_room.messages %>
+</div>
+
+<%= turbo_frame_tag "new_message", src: new_class_room_message_path(@class_room), target: "_top" %>

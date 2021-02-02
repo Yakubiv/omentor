@@ -1,0 +1,9 @@
+<div>
+  <%= render @class_room %>
+</div>
+
+<div id="messages">
+  <%= render @messages %>
+</div>
+
+<%= turbo_frame_tag "new_message", src: new_tutors_class_room_message_path(@class_room), target: "_blank" %>

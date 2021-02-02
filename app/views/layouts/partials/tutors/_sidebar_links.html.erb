@@ -19,7 +19,7 @@
   <%= t('tutors.left_sidebar.calendar') %>
 <% end %>
 
-<%= link_to tutors_chats_path, class: "mt-1 group tw-sidebar-link #{active_if?(fullpath: '/t/chats')}" do %>
+<%= link_to tutors_class_rooms_path, class: "mt-1 group tw-sidebar-link #{active_if?(fullpath: '/t/chats')}" do %>
   <svg class="tw-sidebar-icon <%= active_if?(fullpath: '/t/chats')%>" stroke="currentColor" fill="none" viewBox="0 0 24 24">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M10,15 L18.0092049,15 C19.1017876,15 20,14.1019465 20,12.9941413 L20,3.00585866 C20,1.89706013 19.1086907,1 18.0092049,1 L1.99079514,1 C0.898212381,1 0,1.89805351 0,3.00585866 L0,12.9941413 C0,14.1029399 0.891309342,15 1.99079514,15 L6,15 L6,19 L10,15 Z M5,7 L7,7 L7,9 L5,9 L5,7 Z M9,7 L11,7 L11,9 L9,9 L9,7 Z M13,7 L15,7 L15,9 L13,9 L13,7 Z"></path>
   </svg>

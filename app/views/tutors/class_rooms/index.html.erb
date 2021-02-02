@@ -1,0 +1,19 @@
+<h1>Rooms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @class_rooms.each do |class_room| %>
+      <tr>
+        <td><%= class_room.student_profile.first_name %></td>
+        <td><%= link_to 'Show', tutors_class_room_path(class_room) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

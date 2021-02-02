@@ -35,7 +35,7 @@ Rails.application.routes.draw do
 
   authenticated :user do
     resources :class_rooms, only: [] do
-      resources :messages, only: :create
+      resources :messages, only: %i[new create]
     end
 
     concern :lessonable do
@@ -78,6 +78,9 @@ Rails.application.routes.draw do
 
       resources :vacations, only: %i[index new create destroy update edit]
       resources :chats, only: %i[index show]
+      resources :class_rooms, only: %i[index show] do
+        resources :messages
+      end
       resources :settings, only: [] do
         get :photo, on: :collection
         get :bio, on: :collection
