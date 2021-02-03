@@ -8,6 +8,7 @@ addEventListener('turbolinks:load', function () {
       if(checkbox) {
         $('.c-time-slot-record').removeClass('active');
         $(this).addClass('active');
+        document.getElementById('tutor-creates-lesson').disabled = false;
       }
       else {
         $(this).closest('form').submit();
