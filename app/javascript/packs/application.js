@@ -9,6 +9,7 @@ require("@rails/activestorage").start();
 require("local-time");
 require("alpinejs");
 require("@nathanvda/cocoon");
+require("@hotwired/turbo-rails");
 
 require("@fullcalendar/core");
 require("@fullcalendar/daygrid");
@@ -35,4 +36,4 @@ require("@rails/actiontext");
 
 import "controllers";
 
-import "controllers"
+import "controllers";

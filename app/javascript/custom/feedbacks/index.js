@@ -1,6 +1,7 @@
-addEventListener("turbolinks:load", function () {
+addEventListener("turbo:load", function () {
   let feedbackImageInput = document.getElementById("feedback-image-input");
   if (feedbackImageInput) {
+    console.log("image load");
     document
       .getElementById("feedback-image-input")
       .addEventListener("change", function () {
