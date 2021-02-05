@@ -3,9 +3,8 @@
 class Tutors::CalendarsController < Tutors::BaseController
   def index
     @time_slots = TutorProfileCalendarEventsQuery.new(current_tutor_profile).results
-    @lesson = Lesson.new(price: current_tutor_profile.price_for_hour_lesson,
-                         duration: Lesson::ONE_HOUR_DURATION)
-    @available_hours = Tutor::AvailableHours.new(current_tutor_profile, @lesson, params[:start_date]&.to_datetime).fetch
+    @lesson_form = Tutors::NewLessonForm.new(initial_lesson_params)
+    @available_hours = Tutor::AvailableHours.new(current_tutor_profile, @lesson_form.lesson, params[:start_date]&.to_datetime).fetch
 
     respond_to do |format|
       format.html
@@ -52,12 +51,18 @@ class Tutors::CalendarsController < Tutors::BaseController
   end
 
   private
-    def vacation_params
-      params.require(:vacation).permit(:description, :start_at, :end_at, :status)
-    end
 
-    def lesson_params
-      params.require(:lesson).permit(:description)
-    end
+  def initial_lesson_params
+    { tutor_profile: current_tutor_profile,
+      price: current_tutor_profile.price_for_hour_lesson,
+      duration: Lesson::ONE_HOUR_DURATION }
+  end
 
+  def vacation_params
+    params.require(:vacation).permit(:description, :start_at, :end_at, :status)
+  end
+
+  def lesson_params
+    params.require(:lesson).permit(:description)
+  end
 end
