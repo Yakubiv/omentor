@@ -656,3 +656,10 @@ a[disabled="disabled"] {
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Opera and Firefox */
 }
+
+input[disabled="disabled"] {
+  pointer-events: none;
+  text-decoration: none;
+  opacity: 0.5;
+  color: white;
+}

@@ -358,6 +358,13 @@ en:
       delete_slot_tip: Для видалення розкладу, один
         раз клікніть на нього, дальше нажміть "Видалити".
     lessons:
+      new_form:
+        student_profile_placeholder: Виберіть студента
+        subject_placeholder: Виберіть предмет
+        student_profile: Студент
+        duration: Тривалість
+        price: Ціна
+        subject: Предмет
       show:
         start_lesson: Почати урок
         overview: Загальне

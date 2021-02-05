@@ -606,6 +606,7 @@ module.exports = {
     zIndex: {
       auto: "auto",
       0: "0",
+      1: "1",
       5: "5",
       10: "10",
       20: "20",
@@ -893,6 +894,9 @@ module.exports = {
     transitionTimingFunction: ["responsive"],
     transitionDuration: ["responsive"],
     transitionDelay: ["responsive"],
+    extend: {
+      opacity: ['disabled'],
+    },
   },
   corePlugins: {},
   plugins: [],

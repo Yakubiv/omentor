@@ -1,10 +1,18 @@
 addEventListener("turbo:load", function () {
   var bookingCalendarEl = document.getElementById("booking-calendar");
   if (bookingCalendarEl) {
-    $(".c-time-slot-record").on("click", function (e) {
-      var startAt = $(this).data("time");
-      $("#lesson_start_at").attr("value", startAt);
-      $(this).closest("form").submit();
+    $('.c-time-slot-record').on('click', function(e) {
+      var startAt = $(this).data('time');
+      var checkbox = $(this).data('checkbox');
+      $('#lesson_start_at').attr('value', startAt);
+      if(checkbox) {
+        $('.c-time-slot-record').removeClass('active');
+        $(this).addClass('active');
+        document.getElementById('tutor-creates-lesson').disabled = false;
+      }
+      else {
+        $(this).closest('form').submit();
+      }
     });
   }
 
@@ -14,8 +22,8 @@ addEventListener("turbo:load", function () {
     lessonDuration.on("change", function (e) {
       var tutorRate = parseFloat($(this).attr("data-tutor-rate"));
       var lessonDuration = parseFloat($(this).val());
-      var price = (tutorRate * lessonDuration) / 60.0 / 100;
-      $("#lesson_price").val(price.toFixed(2));
+      var price = ((tutorRate * lessonDuration) / 60.0) / 100;
+      $('#lesson_price').val(price.toFixed(2).toString().replace('.', ','))
     });
   }
 });

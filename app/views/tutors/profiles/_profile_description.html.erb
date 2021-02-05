@@ -117,7 +117,9 @@
                   <h3 class='card-title'><%= t('students.my_tutors_profile.select_subject') %></h3>
                 </div>
                 <div class='card-body'>
-                  <%= render 'layouts/partials/booking_calendar' %>
+                  <%= form_with(model: @lesson, url: students_tutor_booking_path(@tutor_profile), method: :post, html: { id: 'lesson-booking-form' }) do |f| %>
+                    <%= render 'students/tutors/bookings/lesson_fields', f: f, lesson: @lesson %>
+                  <% end %>
                 </div>
               </div>
             </div>
