@@ -16,6 +16,7 @@ module Omentor
     config.generators do |g|
       g.test_framework :rspec
     end
+    config.action_view.form_with_generates_remote_forms = false
     config.active_storage.replace_on_assign_to_many = false
 
     # Settings in config/environments/* take precedence over those specified here.
