@@ -2,14 +2,14 @@ import { Calendar } from "@fullcalendar/core";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 
-addEventListener("turbolinks:load", function () {
+addEventListener("turbo:load", function () {
   var calendarEl = document.getElementById("calendar-tutor-schedule-form");
   if (calendarEl && calendarEl.classList.contains("fc")) {
     $("#calendar-tutor-schedule-form").html("");
   }
 });
 
-addEventListener("turbolinks:load", function () {
+addEventListener("turbo:load", function () {
   var calendarEl = document.getElementById("calendar-tutor-schedule-form");
   if (calendarEl) {
     var calendar = new Calendar(calendarEl, {

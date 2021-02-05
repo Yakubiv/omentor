@@ -1,5 +1,5 @@
 <div class="px-4 sm:px-6 lg:mx-auto lg:px-8">
-  <%= form_with(model: lesson, url: tutors_lesson_attachments_path, method: :post) do |f| %>
+  <%= form_with(model: lesson, url: tutors_lesson_attachments_path, method: :post, data: {turbo: false}) do |f| %>
     <div class='my-6'>
       <div class='dropzone dz-clickable'
            data-controller="dropzone"

@@ -3,14 +3,14 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 
-addEventListener("turbolinks:load", function () {
+addEventListener("turbo:load", function () {
   var calendarEl = document.getElementById("tutor-calendar");
   if (calendarEl && calendarEl.classList.contains("fc")) {
     $("#tutor-calendar").html("");
   }
 });
 
-addEventListener("turbolinks:load", function () {
+addEventListener("turbo:load", function () {
   var calendarEl = document.getElementById("tutor-calendar");
   if (calendarEl) {
     var calendar = new Calendar(calendarEl, {
@@ -18,7 +18,7 @@ addEventListener("turbolinks:load", function () {
       headerToolbar: {
         left: "prev,next title",
         center: "",
-        right: 'dayGridMonth,timeGridWeek,timeGridDay'
+        right: "dayGridMonth,timeGridWeek,timeGridDay",
       },
       initialView: "timeGridWeek",
       allDaySlot: false,
