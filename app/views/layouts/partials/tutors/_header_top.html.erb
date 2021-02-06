@@ -47,7 +47,7 @@
           <% end %>
         </div>
 
-        <div data-dropdown-target="menu" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg hidden">
+        <div data-dropdown-target="menu" class="origin-top-right absolute z-10 right-0 mt-2 w-48 rounded-md shadow-lg hidden">
           <div class="py-1 rounded-md bg-white shadow-xs" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
             <a href="<%= tutors_profile_path %>" class="tw-dropdown-link" role="menuitem"><%= t('common.profile') %></a>
             <%= link_to '', method: :delete, class: 'tw-dropdown-link' do %>
