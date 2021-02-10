@@ -55,5 +55,6 @@ export default class extends Controller {
       "sm:translate-y-0",
       "sm:scale-95"
     );
+    this.element.remove();
   }
 }
