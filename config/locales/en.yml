@@ -32,7 +32,7 @@
 en:
   date:
     formats:
-      long_default: '%F %j, %Y %H:%M'
+      long_default: '%Y-%m-%d %H:%M'
   pagy:
     nav:
       prev: "&lsaquo;&nbsp;Попередня"
