@@ -16,9 +16,9 @@
       <div>
         <div id="edit-modal-body">
           <% if params[:type] == 'vacation' %>
-            <%= render :partial => 'tutors/calendars/edit_vacation_form' %>
+            <%= render 'tutors/calendars/edit_vacation_form', vacation: @entity %>
           <% else %>
-            <%= render :partial => 'tutors/calendars/edit_lesson_form' %>
+            <%= render 'tutors/calendars/edit_lesson_form', lesson: @entity  %>
           <% end %>
         </div>
       </div>

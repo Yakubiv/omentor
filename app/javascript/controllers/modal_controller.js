@@ -3,6 +3,10 @@ import { Controller } from "stimulus";
 export default class extends Controller {
   static targets = ["overlay", "panel"];
 
+  connect() {
+    this.open();
+  }
+
   open() {
     this.element.classList.remove("invisible");
     this.overlayTarget.classList.remove("opacity-0", "ease-in", "duration-200");
