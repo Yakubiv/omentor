@@ -2,9 +2,3 @@ document.querySelector("body").insertAdjacentHTML('beforeend', "<%= j(render par
 var start = document.getElementById("vacation_start_at");
 var end = document.getElementById("vacation_end_at");
 console.log(start)
-flatpickr(start, { format: "Y-m-d H:i", enableTime: true }).setDate(
-  "<%= params[:start_at] %>"
-);
-flatpickr(end, { format: "Y-m-d H:i", enableTime: true }).setDate(
-  "<%= params[:end_at] %>"
-);
