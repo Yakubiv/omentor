@@ -1,2 +1,1 @@
-var editModal = document.getElementById("edit-entry-modal");
-editModal.innerHTML = "<%= j(render partial: 'tutors/calendars/edit_entry_modal', locals: { entity: @entity }) %>"
+document.querySelector("body").insertAdjacentHTML('beforeend', "<%= j(render partial: 'tutors/calendars/edit_entry_modal', locals: { entity: @entity }) %>");
