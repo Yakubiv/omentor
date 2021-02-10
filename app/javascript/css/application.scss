@@ -119,3 +119,28 @@ $red_color: #f56565;
     }
   }
 }
+
+
+.modal-enter {
+  @apply transition ease-out duration-100;
+}
+
+.modal-enter-start {
+  @apply transform opacity-0 scale-95;
+}
+
+.modal-enter-end {
+  @apply transform opacity-100 scale-100;
+}
+
+.modal-leave {
+  @apply transition ease-in duration-75;
+}
+
+.modal-leave-start {
+  @apply transform opacity-100 scale-100;
+}
+
+.modal-leave-end {
+  @apply transform opacity-0 scale-95;
+}

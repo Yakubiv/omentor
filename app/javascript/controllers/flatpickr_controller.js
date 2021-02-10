@@ -4,8 +4,6 @@ import "flatpickr/dist/themes/airbnb.css";
 
 export default class extends Flatpickr {
   connect() {
-    console.log("hihih");
-
     this.config = {
       ...this.config,
       altInput: true,

@@ -2,6 +2,7 @@ addEventListener("turbo:load", function () {
   var bookingCalendarEl = document.getElementById("booking-calendar");
   if (bookingCalendarEl) {
     $('.c-time-slot-record').on('click', function(e) {
+      debugger
       var startAt = $(this).data('time');
       var checkbox = $(this).data('checkbox');
       $('#lesson_start_at').attr('value', startAt);

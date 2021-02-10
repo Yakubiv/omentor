@@ -1,6 +1,6 @@
 <div class="simple-calendar">
   <div class="calendar-heading">
-    <%= link_to calendar.url_for_previous_view, class: 'btn btn-sm btn-default' do %>
+    <%= button_to calendar.url_for_previous_view, class: 'btn btn-sm btn-default', method: :get do %>
       <i class="fe fe-chevron-left"></i>
     <% end %>
     <% if calendar.number_of_weeks == 1 %>
@@ -8,7 +8,7 @@
     <%else%>
         <span class="calendar-title">Week <%= calendar.week_number %> - <%= calendar.end_week %></span>
     <%end%>
-        <%= link_to calendar.url_for_next_view, class: 'btn btn-default btn-sm' do %>
+        <%= button_to calendar.url_for_next_view, class: 'btn btn-default btn-sm', method: :get do %>
           <i class="fe fe-chevron-right"></i>
         <% end %>
   </div>
