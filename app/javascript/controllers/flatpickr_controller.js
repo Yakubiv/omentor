@@ -4,7 +4,7 @@ import "flatpickr/dist/themes/airbnb.css";
 
 export default class extends Flatpickr {
   connect() {
-    console.log('hihih');
+    console.log("hihih");
 
     this.config = {
       ...this.config,
@@ -13,6 +13,9 @@ export default class extends Flatpickr {
       altInputClass: "",
       enableTime: true,
       locale: Ukrainian,
+      altFormat: "Y-m-d H:i",
+      dateFormat: "Y-m-d H:i",
+      minDate: "today",
     };
     super.connect();
   }
