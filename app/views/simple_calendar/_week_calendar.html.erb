@@ -1,41 +1,43 @@
-<div class="simple-calendar">
-  <div class="calendar-heading">
-    <%= button_to calendar.url_for_previous_view, class: 'btn btn-sm btn-default', method: :get do %>
-      <i class="fe fe-chevron-left"></i>
-    <% end %>
-    <% if calendar.number_of_weeks == 1 %>
-      <strong class="calendar-title"><%= calendar.date_range.first.strftime('%d') %> - <%= calendar.date_range.last.strftime('%d %b, %Y') %></strong>
-    <%else%>
-        <span class="calendar-title">Week <%= calendar.week_number %> - <%= calendar.end_week %></span>
-    <%end%>
-        <%= button_to calendar.url_for_next_view, class: 'btn btn-default btn-sm', method: :get do %>
-          <i class="fe fe-chevron-right"></i>
-        <% end %>
-  </div>
+<turbo-frame id="calendar">
+  <div class="simple-calendar">
+    <div class="calendar-heading">
+      <%= button_to calendar.url_for_previous_view, class: 'btn btn-sm btn-default', method: :get do %>
+        <i class="fe fe-chevron-left"></i>
+      <% end %>
+      <% if calendar.number_of_weeks == 1 %>
+        <strong class="calendar-title"><%= calendar.date_range.first.strftime('%d') %> - <%= calendar.date_range.last.strftime('%d %b, %Y') %></strong>
+      <%else%>
+          <span class="calendar-title">Week <%= calendar.week_number %> - <%= calendar.end_week %></span>
+      <%end%>
+          <%= button_to calendar.url_for_next_view, class: 'btn btn-default btn-sm', method: :get do %>
+            <i class="fe fe-chevron-right"></i>
+          <% end %>
+    </div>
 
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <% date_range.slice(0, 7).each do |day| %>
-          <th><%= t('date.abbr_day_names')[day.wday] %></th>
-        <% end %>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% date_range.each_slice(7) do |week| %>
+    <table class="table table-striped">
+      <thead>
         <tr>
-          <% week.each do |day| %>
-            <%= content_tag :td, class: calendar.td_classes_for(day) do %>
-              <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(block) %>
-                <% capture_haml(day, sorted_events.fetch(day, []), &block) %>
-              <% else %>
-                <% passed_block.call day, sorted_events.fetch(day, []) %>
-              <% end %>
-            <% end %>
+          <% date_range.slice(0, 7).each do |day| %>
+            <th><%= t('date.abbr_day_names')[day.wday] %></th>
           <% end %>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+      </thead>
+
+      <tbody>
+        <% date_range.each_slice(7) do |week| %>
+          <tr>
+            <% week.each do |day| %>
+              <%= content_tag :td, class: calendar.td_classes_for(day) do %>
+                <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(block) %>
+                  <% capture_haml(day, sorted_events.fetch(day, []), &block) %>
+                <% else %>
+                  <% passed_block.call day, sorted_events.fetch(day, []) %>
+                <% end %>
+              <% end %>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</turbo-frame>
