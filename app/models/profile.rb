@@ -8,6 +8,7 @@ class Profile < ApplicationRecord
 
   has_one_attached :avatar
   has_many :vacations
+  has_many :reviews
 
   enum gender: %i[male female]
   enum degree_type: %i[university schoole tests other]

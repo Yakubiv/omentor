@@ -30,10 +30,15 @@
     <div class="space-y-6 lg:col-start-1 lg:col-span-2">
       <section aria-labelledby="applicant-information-title">
         <div class="bg-white shadow sm:rounded-lg">
-          <div class="px-4 py-5 sm:px-6">
+          <div class="px-4 py-5 sm:px-6 flex justify-between items-center">
             <h2 id="applicant-information-title" class="text-lg leading-6 font-medium text-gray-900">
               <%= t('students.my_tutors_profile.profile') %>
             </h2>
+            <%= link_to students_tutor_reviews %>
+              <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-700 active:bg-indigo-700 transition duration-150 ease-in-out">
+                <%= t('students.my_tutors_profile.add_review') %>
+              </button>
+            <% end %>
           </div>
           <div class="border-t border-gray-200 px-4 py-5 sm:px-6">
             <dl class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
@@ -123,6 +128,19 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="applicant-information-title">
+        <div class="bg-white shadow sm:rounded-lg">
+          <div class="px-4 py-5 sm:px-6">
+            <h2 id="applicant-information-title" class="text-lg leading-6 font-medium text-gray-900">
+              <%= t('students.my_tutors_profile.reviews') %>
+            </h2>
+          </div>
+          <div class="border-t border-gray-200 px-4 py-5 sm:px-6">
+            test
           </div>
         </div>
       </section>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_10_205049) do
+ActiveRecord::Schema.define(version: 2021_02_11_165142) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -229,6 +229,15 @@ ActiveRecord::Schema.define(version: 2021_01_10_205049) do
     t.index ["subject_id", "profile_id"], name: "index_profiles_subjects_on_subject_id_and_profile_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.text "description"
+    t.integer "stars"
+    t.bigint "profile_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_id"], name: "index_reviews_on_profile_id"
+  end
+
   create_table "speaks", force: :cascade do |t|
     t.integer "level"
     t.bigint "profile_id"
@@ -320,5 +329,6 @@ ActiveRecord::Schema.define(version: 2021_01_10_205049) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "reviews", "profiles"
   add_foreign_key "taggings", "tags"
 end

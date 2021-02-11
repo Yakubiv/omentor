@@ -253,6 +253,8 @@ en:
       joined: Приєднався(-лась)
       write_message: Написати повідомлення
       book_lesson_btn: Забронювати урок
+      reviews: Відгуки
+      add_review: Додати відгук
     student_profile:
       overview: Загальне
       lessons: Уроки
