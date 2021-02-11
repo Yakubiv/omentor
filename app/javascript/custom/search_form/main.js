@@ -1,33 +1,32 @@
-addEventListener('turbolinks:load', function () {
-  var priceRange = $('#price-range');
+addEventListener("turbo:load", function () {
+  var priceRange = $("#price-range");
   if (priceRange.length > 0) {
-    var minValue = priceRange.attr('min');
-    var maxValue = priceRange.attr('max');
-    var stepValue = priceRange.attr('step');
-    var priceRangeValues = $('#price-range_values');
+    var minValue = priceRange.attr("min");
+    var maxValue = priceRange.attr("max");
+    var stepValue = priceRange.attr("step");
+    var priceRangeValues = $("#price-range_values");
 
     $("#price-range").jRange({
       from: minValue,
       to: maxValue,
       step: stepValue,
-      format: '%s',
+      format: "%s",
       width: 250,
       showLabels: false,
       showScale: false,
       isRange: true,
-      onstatechange: function(range) {
-        var minPrice = range.split(',')[0];
-        var maxPrice = range.split(',')[1];
+      onstatechange: function (range) {
+        var minPrice = range.split(",")[0];
+        var maxPrice = range.split(",")[1];
         var result = `${minPrice} - ${maxPrice}`;
         priceRangeValues.text(result);
-      }
+      },
     });
   }
-
 });
 
-addEventListener('turbolinks:load', function () {
-  $(document).on('click', '#c-tutors-search-box .dropdown-menu', function (e) {
+addEventListener("turbo:load", function () {
+  $(document).on("click", "#c-tutors-search-box .dropdown-menu", function (e) {
     e.stopPropagation();
   });
 });

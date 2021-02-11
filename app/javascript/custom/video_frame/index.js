@@ -1,4 +1,4 @@
-addEventListener("turbolinks:load", function () {
+addEventListener("turbo:load", function () {
   function getId(url) {
     var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
     var match = url.match(regExp);

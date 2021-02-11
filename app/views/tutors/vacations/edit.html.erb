@@ -6,13 +6,15 @@
         <%= f.label :description, t('tutors.vacations.description'), class: 'block text-sm font-medium leading-5 text-gray-700' %>
         <%= f.text_area :description, class: "form-control", required: true, placeholder: t('tutors.vacations.short_description') %>
       </div>
-      <div class="form-group"> 
+      <div class="form-group">
         <%= f.label :start_at, t('tutors.vacations.start_at'), class: 'block text-sm font-medium leading-5 text-gray-700' %>
-        <%= f.text_field :start_at, placeholder: t('tutors.vacations.select_time'), class: 'form-control', data: { provide: 'datepicker' }, required: true %>
+        <%= f.text_field :start_at, placeholder: t('tutors.vacations.select_time'), class: 'form-control', data: {
+        controller: "flatpickr" }, required: true %>
       </div>
       <div class="form-group">
         <%= f.label :end_at, t('tutors.vacations.end_at'), class: 'block text-sm font-medium leading-5 text-gray-700' %>
-        <%= f.text_field :end_at, placeholder: t('tutors.vacations.select_time'), class: 'form-control', data: { provide: 'datepicker' }, required: true %>
+        <%= f.text_field :end_at, placeholder: t('tutors.vacations.select_time'), class: 'form-control', data: {
+        controller: "flatpickr" }, required: true %>
       </div>
       <div class="form-group">
         <%= f.label :status, t('tutors.vacations.status_vacation'), class: 'block text-sm font-medium leading-5 text-gray-700' %>

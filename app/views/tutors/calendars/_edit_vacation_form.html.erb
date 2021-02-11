@@ -1,4 +1,4 @@
-<h2>Edit vacation</h2>
+<h2><%= t('tutors.vacations.edit_vacation') %></h2>
 
 <%= form_with model: vacation, url: tutors_calendar_path(vacation), method: :put do |f| %>
   <%= render 'tutors/calendars/vacation_fields', f: f %>

@@ -5,11 +5,11 @@
 
 require("jquery");
 require("@rails/ujs").start();
-require("turbolinks").start();
 require("@rails/activestorage").start();
 require("local-time");
 require("alpinejs");
 require("@nathanvda/cocoon");
+require("@hotwired/turbo-rails");
 
 require("@fullcalendar/core");
 require("@fullcalendar/daygrid");
@@ -33,5 +33,7 @@ window.$ = $;
 // const imagePath = (name) => images(name, true)
 require("trix");
 require("@rails/actiontext");
+
+import "controllers";
 
 import "controllers";

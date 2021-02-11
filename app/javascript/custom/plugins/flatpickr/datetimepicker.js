@@ -1,5 +1,5 @@
 import flatpickr from "flatpickr";
-import { Ukrainian } from "flatpickr/dist/l10n/uk.js"
+import { Ukrainian } from "flatpickr/dist/l10n/uk.js";
 
 var datePicker = function () {
   flatpickr("[data-provide='datepicker']", {
@@ -8,8 +8,8 @@ var datePicker = function () {
     altFormat: "Y-m-d H:i",
     altInput: true,
     enableTime: true,
-    "locale": Ukrainian
-  })
+    locale: Ukrainian,
+  });
 };
 
-addEventListener('turbolinks:load', datePicker, false);
+addEventListener("turbo:load", datePicker, false);

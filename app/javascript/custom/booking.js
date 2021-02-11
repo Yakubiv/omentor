@@ -1,7 +1,8 @@
-addEventListener('turbolinks:load', function () {
-  var bookingCalendarEl = document.getElementById('booking-calendar');
+addEventListener("turbo:load", function () {
+  var bookingCalendarEl = document.getElementById("booking-calendar");
   if (bookingCalendarEl) {
     $('.c-time-slot-record').on('click', function(e) {
+      debugger
       var startAt = $(this).data('time');
       var checkbox = $(this).data('checkbox');
       $('#lesson_start_at').attr('value', startAt);
@@ -16,11 +17,11 @@ addEventListener('turbolinks:load', function () {
     });
   }
 
-  var lessonDuration = $('#lesson_duration');
+  var lessonDuration = $("#lesson_duration");
 
   if (lessonDuration.length > 0) {
-    lessonDuration.on('change', function (e) {
-      var tutorRate = parseFloat($(this).attr('data-tutor-rate'));
+    lessonDuration.on("change", function (e) {
+      var tutorRate = parseFloat($(this).attr("data-tutor-rate"));
       var lessonDuration = parseFloat($(this).val());
       var price = ((tutorRate * lessonDuration) / 60.0) / 100;
       $('#lesson_price').val(price.toFixed(2).toString().replace('.', ','))

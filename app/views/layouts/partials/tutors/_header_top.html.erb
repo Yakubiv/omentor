@@ -34,19 +34,20 @@
       </button>
 
       <!-- Profile dropdown -->
-      <div @click.away="open = false" class="ml-3 relative" x-data="{ open: false }">
-        <div>
-          <button @click="open = !open" class="max-w-xs flex items-center text-sm rounded-full focus:outline-none focus:shadow-outline" id="user-menu" aria-label="User menu" aria-haspopup="true" x-bind:aria-expanded="open" aria-expanded="false">
-            <% if current_tutor_profile.avatar.attached? %>
-              <%= image_tag user_avatar(current_tutor_profile), class: 'h-8 w-8 rounded-full'%>
-            <% else %>
-              <span class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-gray-400">
-                <span class="text-xs font-medium leading-none text-white"><%= current_tutor_profile.initials %></span>
-              </span>
-            <% end %>
-          </button>
+      <div class="ml-3 relative" data-controller="dropdown">
+        <div data-action="click->dropdown#toggle" role="button"
+             data-dropdown-target="button" tabindex="0"
+             class="max-w-xs flex items-center text-sm rounded-full focus:outline-none focus:shadow-outline">
+          <% if current_tutor_profile.avatar.attached? %>
+            <%= image_tag user_avatar(current_tutor_profile), class: 'h-8 w-8 rounded-full'%>
+          <% else %>
+            <span class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-gray-400">
+              <span class="text-xs font-medium leading-none text-white"><%= current_tutor_profile.initials %></span>
+            </span>
+          <% end %>
         </div>
-        <div x-show="open" x-description="Profile dropdown panel, show/hide based on dropdown state." x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg" style="display: none;">
+
+        <div data-dropdown-target="menu" class="origin-top-right absolute z-10 right-0 mt-2 w-48 rounded-md shadow-lg hidden">
           <div class="py-1 rounded-md bg-white shadow-xs" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
             <a href="<%= tutors_profile_path %>" class="tw-dropdown-link" role="menuitem"><%= t('common.profile') %></a>
             <%= link_to '', method: :delete, class: 'tw-dropdown-link' do %>

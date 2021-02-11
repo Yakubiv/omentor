@@ -3,8 +3,6 @@
 class Tutors::CalendarsController < Tutors::BaseController
   def index
     @time_slots = TutorProfileCalendarEventsQuery.new(current_tutor_profile).results
-    @lesson_form = Tutors::NewLessonForm.new(initial_lesson_params)
-    @available_hours = Tutor::AvailableHours.new(current_tutor_profile, @lesson_form.lesson, params[:start_date]&.to_datetime).fetch
 
     respond_to do |format|
       format.html
@@ -13,7 +11,10 @@ class Tutors::CalendarsController < Tutors::BaseController
   end
 
   def new
-    @vacation = current_tutor_profile.vacations.new
+    @lesson_form = Tutors::NewLessonForm.new(initial_lesson_params)
+    @available_hours = Tutor::AvailableHours.new(current_tutor_profile, @lesson_form.lesson, params[:start_date]&.to_datetime).fetch
+    @vacation = current_tutor_profile.vacations.new(start_at: params[:start_at], end_at: params[:end_at])
+
     respond_to do |format|
       format.html
       format.js

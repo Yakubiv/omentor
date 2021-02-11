@@ -11,7 +11,7 @@ class Tutors::Lessons::AttachmentsController < Tutors::BaseController
     respond_to do |format|
       if @lesson.update!(lesson_params)
         flash[:notice] = t('tutors.lessons.attachments.files_uploadet')
-        format.html { redirect_to tutors_lesson_attachments_path(@lesson) }
+        format.html { redirect_to tutors_lesson_attachments_path(@lesson), turbo: false }
       else
         flash[:notice] = t('tutors.lessons.attachments.files_not_uploadet')
         render 'new'
