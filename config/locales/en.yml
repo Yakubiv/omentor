@@ -307,6 +307,10 @@ en:
         title: Улюблені викладачі
         search_favorite: Пошук улюблених викладачів
         no_found: Викладачів не знайдено
+      reviews:
+        review_about: Відгук про
+        help_select_tutor: Допоможіть іншим учням вибрати репетитора
+        description_placeholder: Опишіть свої враження від занять з цим репетитором (20 - 60 слів)
 
     details:
       main_header: Загальна інформація

@@ -130,12 +130,13 @@ Rails.application.routes.draw do
       end
 
       scope module: :tutors do
+        resources :favorites, only: :index
         resources :tutors, only: [], path: nil, as: nil do
           resource :booking, only: %i[show create]
           resource :profile, only: :show
           resource :calendars, only: :show
-          resource :favorites, only: %i[index create destroy]
-          resources :reviews, only: %i[create destroy update]
+          resource :favorites, only: %i[create destroy]
+          resources :reviews, only: %i[new create destroy update]
         end
       end
     end

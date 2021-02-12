@@ -34,7 +34,7 @@
             <h2 id="applicant-information-title" class="text-lg leading-6 font-medium text-gray-900">
               <%= t('students.my_tutors_profile.profile') %>
             </h2>
-            <%= link_to students_tutor_reviews %>
+            <%= link_to new_students_tutor_review_path(tutor_profile), remote: true do %>
               <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-700 active:bg-indigo-700 transition duration-150 ease-in-out">
                 <%= t('students.my_tutors_profile.add_review') %>
               </button>
@@ -140,7 +140,17 @@
             </h2>
           </div>
           <div class="border-t border-gray-200 px-4 py-5 sm:px-6">
-            test
+            <% if tutor_profile.reviews.any? %>
+              <% tutor_profile.reviews.each do |review| %>
+                <div style="border: 1px solid red; margin-top: 5px">
+                  <p>Username: <%=  %></p>
+                  <p>Stars rate: <%= review.stars %></p>
+                  <p>Description: <%= review.description%></p>
+                </div>
+              <% end %>
+            <% else %>
+              <p>Not review</p>
+            <% end %>
           </div>
         </div>
       </section>

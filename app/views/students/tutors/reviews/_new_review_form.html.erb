@@ -1,0 +1,15 @@
+<%= form_with model: @review, url: students_tutor_reviews_path, method: :post do |f| %>
+  <%= f.hidden_field :profile_id, :value => tutor_profile.id %>
+
+  <div class="form-group">
+    <%= f.select :stars, options_for_select([1, 2, 3, 4, 5]) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_area :description, class: "form-control", rows: "5", required: true, placeholder: t('students.tutors.reviews.description_placeholder') %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit "Додати відгук", data: { disable_with: "Saving..." }, class: 'w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out' %>
+  </div>
+<% end %>
