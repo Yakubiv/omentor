@@ -1,0 +1,22 @@
+<div class="m-8">
+  <%= render 'breadcrumbs', title: "Edit #{params[:type].titleize}" %>
+
+  <h2 class="text-2xl font-bold text-gray-900 sm:text-3xl sm:truncate mb-4">
+    Edit <%= params[:type].titleize %>
+  </h2>
+
+  <div>
+    <div class="card m-auto my-6 xl:w-3/6 md:w-3/4 w-11/12">
+      <div class="card-body">
+        <div id="edit-modal-body">
+          <% if params[:type] == 'vacation' %>
+            <%= render 'tutors/calendars/edit_vacation_form', vacation: @entity %>
+          <% else %>
+            <%= render 'tutors/calendars/edit_lesson_form', lesson: @entity  %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

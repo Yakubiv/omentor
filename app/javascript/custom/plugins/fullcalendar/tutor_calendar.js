@@ -58,18 +58,12 @@ addEventListener("turbo:load", function () {
       events: "/t/calendars.json",
 
       eventClick: function (info) {
-        $.ajax({
-          url: `/t/calendars/${info.event.id}/edit.js?type=${info.event._def.extendedProps.type}`,
-          type: "GET",
-        });
+        var url = `/t/calendars/${info.event.id}/edit?type=${info.event._def.extendedProps.type}`;
+        window.location.href = url;
       },
 
       select: function (info) {
         var url = `/t/calendars/new?start_at=${info.startStr}&end_at=${info.endStr}`
-        // $.ajax({
-        //   url: url,
-        //   type: "GET",
-        // });
         window.location.href = url;
       },
     });

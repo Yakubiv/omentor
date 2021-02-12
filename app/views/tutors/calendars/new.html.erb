@@ -1,23 +1,30 @@
-<div>
-  <div class="card m-auto my-6 xl:w-3/6 md:w-3/4 w-11/12">
-    <div class="card-body">
-      <div class="mt-3 text-center sm:mt-0 sm:text-left">
-        <nav>
-          <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <a class="mr-5 nav-item nav-link active" id="nav-lesson-tab" data-toggle="tab" href="#nav-lesson" role="tab" aria-controls="nav-lesson" aria-selected="true"><%= t('modal_calendar.lesson') %></a>
-            <a class="mr-5 nav-item nav-link" id="nav-vacation-tab" data-toggle="tab" href="#nav-vacation" role="tab" aria-controls="nav-vacation" aria-selected="false"><%= t('modal_calendar.vacation') %></a>
-          </div>
-      </div>
+<div class="m-8">
+  <%= render 'breadcrumbs', title: "New record" %>
 
-      <div class="tab-content mt-5" id="nav-tabContent">
-        <div class="tab-pane fade show active" id="nav-lesson" role="tabpanel" aria-labelledby="nav-lesson-tab-tab">
-          <%= render 'new_lesson_form' %>
+  <h2 class="text-2xl font-bold text-gray-900 sm:text-3xl sm:truncate mb-4">
+    New record
+  </h2>
+
+  <div>
+    <div class="card m-auto my-6 xl:w-3/6 md:w-3/4 w-11/12">
+      <div class="card-body">
+        <div class="mt-3 text-center sm:mt-0 sm:text-left">
+          <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <a class="mr-5 nav-item nav-link active" id="nav-lesson-tab" data-toggle="tab" href="#nav-lesson" role="tab" aria-controls="nav-lesson" aria-selected="true"><%= t('modal_calendar.lesson') %></a>
+              <a class="mr-5 nav-item nav-link" id="nav-vacation-tab" data-toggle="tab" href="#nav-vacation" role="tab" aria-controls="nav-vacation" aria-selected="false"><%= t('modal_calendar.vacation') %></a>
+            </div>
         </div>
-        <div class="tab-pane fade" id="nav-vacation" role="tabpanel" aria-labelledby="nav-vacation-tab">
-          <%= render 'new_vacation_form' %>
+
+        <div class="tab-content mt-5" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-lesson" role="tabpanel" aria-labelledby="nav-lesson-tab-tab">
+            <%= render 'new_lesson_form' %>
+          </div>
+          <div class="tab-pane fade" id="nav-vacation" role="tabpanel" aria-labelledby="nav-vacation-tab">
+            <%= render 'new_vacation_form' %>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-

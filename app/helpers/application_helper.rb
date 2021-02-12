@@ -85,6 +85,7 @@ module ApplicationHelper
   def active_if?(conditions)
     active_conditions = {
       id: params[:id] == conditions[:id],
+      type: params[:type] == conditions[:type],
       action: action_name == conditions[:action],
       category: params[:category].to_s == conditions[:category],
       controller: controller_name == conditions[:controller],
