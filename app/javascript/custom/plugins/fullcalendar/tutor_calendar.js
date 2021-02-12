@@ -65,13 +65,12 @@ addEventListener("turbo:load", function () {
       },
 
       select: function (info) {
-        console.log(info);
-        $.ajax({
-          url:
-            "/t/calendars/new.js" +
-            `?start_at=${info.startStr}&end_at=${info.endStr}`,
-          type: "GET",
-        });
+        var url = `/t/calendars/new?start_at=${info.startStr}&end_at=${info.endStr}`
+        // $.ajax({
+        //   url: url,
+        //   type: "GET",
+        // });
+        window.location.href = url;
       },
     });
 

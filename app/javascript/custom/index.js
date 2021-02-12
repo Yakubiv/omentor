@@ -4,10 +4,8 @@ require("./plugins/input-mask/jquery.mask.min.js");
 require('./plugins/metisMenu/metisMenu.js')
 require('./plugins/fullcalendar/tutor_time_slots.js')
 require('./plugins/fullcalendar/tutor_calendar.js')
-require('./plugins/flatpickr/datetimepicker.js')
 
 require("./plugins/jquery_range.min.js");
-require("./booking");
 require("./general");
 require("./search_form/main");
 require("./search_form/autocomplete");

@@ -1,4 +1,6 @@
-<%= render 'tutors/lessons/subject', lesson: @lesson %>
-<%= render 'tutors/lessons/student_card', student_profile: @lesson.student_profile %>
-<%= render 'tutors/lessons/tabs', lesson: @lesson %>
-<%= render 'tutors/lessons/attachments/attachments', lesson: @lesson %>
+<turbo-frame id="lesson-tabs">
+  <%= render 'tutors/lessons/subject', lesson: @lesson %>
+  <%= render 'tutors/lessons/student_card', student_profile: @lesson.student_profile %>
+  <%= render 'tutors/lessons/tabs', lesson: @lesson %>
+  <%= render 'tutors/lessons/attachments/attachments', lesson: @lesson %>
+</turbo-frame>

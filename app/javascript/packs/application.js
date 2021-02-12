@@ -4,7 +4,6 @@
 // that code so it'll be compiled.
 
 require("jquery");
-require("@rails/ujs").start();
 require("@rails/activestorage").start();
 require("local-time");
 require("alpinejs");
@@ -33,7 +32,5 @@ window.$ = $;
 // const imagePath = (name) => images(name, true)
 require("trix");
 require("@rails/actiontext");
-
-import "controllers";
 
 import "controllers";

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Tutors::CalendarsController < Tutors::BaseController
+  protect_from_forgery except: :new
+
   def index
     @time_slots = TutorProfileCalendarEventsQuery.new(current_tutor_profile).results
 
