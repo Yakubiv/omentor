@@ -10,6 +10,7 @@ require("local-time");
 require("alpinejs");
 require("@nathanvda/cocoon");
 require("@hotwired/turbo-rails");
+require("custom/plugins/jquery.raty");
 
 require("@fullcalendar/core");
 require("@fullcalendar/daygrid");

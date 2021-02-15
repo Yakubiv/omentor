@@ -232,10 +232,12 @@ ActiveRecord::Schema.define(version: 2021_02_11_165142) do
   create_table "reviews", force: :cascade do |t|
     t.text "description"
     t.integer "stars"
-    t.bigint "profile_id", null: false
+    t.bigint "reviewer_id"
+    t.string "reviewable_type"
+    t.bigint "reviewable_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["profile_id"], name: "index_reviews_on_profile_id"
+    t.index ["reviewable_type", "reviewable_id"], name: "index_reviews_on_reviewable"
   end
 
   create_table "speaks", force: :cascade do |t|
@@ -329,6 +331,5 @@ ActiveRecord::Schema.define(version: 2021_02_11_165142) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "reviews", "profiles"
   add_foreign_key "taggings", "tags"
 end

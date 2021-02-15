@@ -132,25 +132,23 @@
         </div>
       </section>
 
-      <section aria-labelledby="applicant-information-title">
-        <div class="bg-white shadow sm:rounded-lg">
-          <div class="px-4 py-5 sm:px-6">
-            <h2 id="applicant-information-title" class="text-lg leading-6 font-medium text-gray-900">
-              <%= t('students.my_tutors_profile.reviews') %>
-            </h2>
-          </div>
-          <div class="border-t border-gray-200 px-4 py-5 sm:px-6">
-            <% if tutor_profile.reviews.any? %>
-              <% tutor_profile.reviews.each do |review| %>
-                <div style="border: 1px solid red; margin-top: 5px">
-                  <p>Username: <%=  %></p>
-                  <p>Stars rate: <%= review.stars %></p>
-                  <p>Description: <%= review.description%></p>
-                </div>
-              <% end %>
-            <% else %>
-              <p>Not review</p>
-            <% end %>
+      <section aria-labelledby="notes-title">
+        <div class="bg-white shadow sm:rounded-lg sm:overflow-hidden">
+          <div class="divide-y divide-gray-200">
+            <div class="px-4 py-5 sm:px-6">
+              <h2 id="notes-title" class="text-lg font-medium text-gray-900"><%= t('students.my_tutors_profile.reviews') %></h2>
+            </div>
+            <div class="px-4 py-6 sm:px-6">
+              <ul class="space-y-8">
+                <% if tutor_profile.reviews.any? %>
+                  <% tutor_profile.reviews.each do |review| %>
+                    <%= render 'tutors/profiles/review', review: review %>
+                  <% end %>
+                <% else %>
+                  <p><%= t('students.tutors.reviews.not_review') %></p>
+                <% end %>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -163,3 +161,14 @@
     </section>
   </div>
 </main>
+
+<script>
+  $(".review-rating").raty({
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    },
+    path: '/assets/'
+  })
+  raty()
+</script>

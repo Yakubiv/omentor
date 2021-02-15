@@ -3,8 +3,8 @@ class CreateReviews < ActiveRecord::Migration[6.1]
     create_table :reviews do |t|
       t.text :description
       t.integer :stars
-      t.references :profile, null: false, foreign_key: true
-
+      t.bigint :reviewer_id
+      t.references :reviewable, polymorphic: true
       t.timestamps
     end
   end

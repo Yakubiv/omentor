@@ -10,10 +10,10 @@ class Students::Tutors::ReviewsController < Students::BaseController
   end
 
   def create
-    @review = Review.create(review_params)
+    @review = @tutor_profile.reviews.create(review_params)
 
-    respond_to do |format|
-      if @review.save
+    if @review.save
+      respond_to do |format|
         format.html { redirect_to students_my_tutor_path(@tutor_profile), notice: "Review was created" }
         format.js {}
       end
@@ -29,7 +29,7 @@ class Students::Tutors::ReviewsController < Students::BaseController
   private
 
   def review_params
-    params.require(:review).permit(:stars, :description, :profile_id)
+    params.require(:review).permit(:stars, :description, :reviewer_id)
   end
 
   def set_tutor_profile
