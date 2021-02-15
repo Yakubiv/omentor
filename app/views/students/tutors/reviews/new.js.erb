@@ -1,6 +1,5 @@
 document.querySelector("body").insertAdjacentHTML('beforeend', "<%= j(render partial: 'students/tutors/reviews/new_review_modal', locals: { tutor_profile: @tutor_profile }) %>");
-let rating_form = document.getElementById("rating-form");
-rating_form.raty({
-  path: '/javascript/custom/plugins/jquery.raty.js'
+$("#rating-form").raty({
+  scoreName: 'review[stars]',
+  path: '/assets/'
 })
-console.log(rating_form);

@@ -100,6 +100,8 @@ module ApplicationHelper
   end
 
   def changeYoutubeUrlForFrame(youtube_url)
+    return '' if youtube_url.blank?
+
     id = youtube_url.split('?').last.split('&').select { |w| w.include?('v=') }.first.split('=').last
     "https://www.youtube.com/embed/" + id
   end

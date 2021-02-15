@@ -8,7 +8,7 @@
         <a href="#" class="font-semibold text-gray-900"><%= review.reviewer.first_name %></a>
         <a href="#" class="font-semibold text-gray-900"><%= review.reviewer.last_name %></a>
       </div>
-      <div class="review-rating" data-score="<%= review.stars %>"></div>
+      <div class="review-rating-<%= review.id %>" id="review-rating" data-score="<%= review.stars %>"></div>
       <div class="mt-1 text-sm text-gray-700">
         <p><%= review.description %></p>
       </div>
@@ -18,3 +18,18 @@
     </div>
   </div>
 </li>
+
+<script>
+  document.addEventListener("turbo:load", function () {
+    var rating = document.getElementsByClassName("review-rating-<%= review.id %>");
+    rating[0].innerHTML = "";
+
+    $(".review-rating-<%= review.id %>").raty({
+      readOnly: true,
+      score: function() {
+        return $(this).attr('data-score');
+      },
+      path: '/assets/'
+    });
+  });
+</script>
