@@ -2,6 +2,6 @@ class TutorAvgRatingJob < ApplicationJob
   queue_as :default
 
   def perform(tutor_profile)
-    CalculateAvgRating.new(tutor_profile).calculate
+    Tutor::CalculateAvgRating.new(tutor_profile).calculate
   end
 end
