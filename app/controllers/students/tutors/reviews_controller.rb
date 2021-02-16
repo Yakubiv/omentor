@@ -12,10 +12,14 @@ class Students::Tutors::ReviewsController < Students::BaseController
   def create
     @review = @tutor_profile.reviews.create(review_params)
 
-    if @review.save
-      respond_to do |format|
-        format.html { redirect_to students_my_tutor_path(@tutor_profile), notice: "Review was created" }
+    respond_to do |format|
+      if @review.save
+        TutorAvgRatingJob.perform_later(@tutor_profile)
+        format.html { redirect_to students_my_tutor_path(@tutor_profile), notice: "Review succefully created" }
         format.js {}
+      else
+        format.html { render :new }
+        format.json { render json: @tweet.errors, status: :unprocessable_entity }
       end
     end
   end

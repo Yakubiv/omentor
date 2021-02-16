@@ -13,7 +13,7 @@
         <p><%= review.description %></p>
       </div>
       <div class="mt-2 text-sm space-x-2">
-        <span class="text-gray-500 font-semibold"><%= review.created_at.strftime("%d %b %Y %H:%M") %></span>
+        <span class="text-gray-500 font-semibold"><%= review.created_at.strftime(t('date.formats.short')) %></span>
       </div>
     </div>
   </div>

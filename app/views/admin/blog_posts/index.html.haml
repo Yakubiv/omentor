@@ -36,7 +36,8 @@
                 = post.popular ? 'Популярна' : ''
               %td
                 = l post.publish_at, format: BlogPost::SHORT_DATE if post.publish_at
-              %td= l post.created_at, format: BlogPost::SHORT_DATE
+              %td
+                = l post.created_at, format: BlogPost::SHORT_DATE
               %td
                 = link_to edit_admin_blog_post_path(post) do
                   %i.icon-pencil
