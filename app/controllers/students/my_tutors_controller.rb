@@ -9,6 +9,7 @@ class Students::MyTutorsController < Students::BaseController
 
   def show
     @tutor_profile = current_student_profile.tutor_profiles.friendly.find(params[:id])
+    @pagy, @reviews = pagy(@tutor_profile.reviews, items: 5)
     @class_room = current_student_profile.class_rooms.find_by(tutor_profile_id: @tutor_profile.id)
     @lessons = current_student_profile.lessons.for_tutor(@class_room)
     @lesson = Lesson.new(price: @tutor_profile.price_for_hour_lesson,
