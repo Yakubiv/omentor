@@ -18,6 +18,11 @@ class Students::Tutors::ReviewsController < Students::BaseController
         format.html { redirect_to students_my_tutor_path(@tutor_profile), notice: "Review succefully created" }
         format.js {}
       else
+        format.turbo_stream do
+          render turbo_stream: turbo_stream.replace('review-form',
+                                                    partial: 'students/tutors/reviews/new_review_form',
+                                                    locals: { tutor_profile: @tutor_profile })
+        end
         format.html { render :new }
         format.json { render json: @tweet.errors, status: :unprocessable_entity }
       end
