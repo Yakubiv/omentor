@@ -9,6 +9,7 @@ class TutorProfile < Profile
   accepts_nested_attributes_for :speaks, allow_destroy: true
   has_many :favorites, foreign_key: :profile_id
   has_many :favorite_student_profiles, through: :favorites, source: :favoritable, source_type: 'Profile'
+  has_many :reviews, as: :reviewable
 
   def subject=(subject_name)
     subject_record = Subject.find_or_create_by(name: subject_name)

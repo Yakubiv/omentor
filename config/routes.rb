@@ -136,6 +136,7 @@ Rails.application.routes.draw do
           resource :profile, only: :show
           resource :calendars, only: :show
           resource :favorites, only: %i[create destroy]
+          resources :reviews, only: %i[new create destroy update]
         end
       end
     end

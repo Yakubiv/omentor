@@ -5,6 +5,13 @@ FactoryBot.define do
     terms_and_conditions { true }
   end
 
+  factory :review do
+    association :reviewable, factory: :tutor_profile
+    association :reviewer, factory: :student_profile
+    stars { 5.0 }
+    description { Faker::Lorem.sentence }
+  end
+
   factory :blog_post do
     author
     title { Faker::Lorem.question }

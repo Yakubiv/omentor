@@ -15,19 +15,28 @@
         <div class="content">
           <div class="card-heading">
             <div class="card-heading--name h5">
-              <%= tutor_profile.name %>
-              <small>
-                @<%= tutor_profile.username %>
-              </small>
+              <%= link_to do %>
+                <%= tutor_profile.name %>
+                <small>
+                  @<%= tutor_profile.username %>
+                </small>
+              <% end %>
               <div class="card-heading--rating">
-                <i class="icon-star"></i>
-                <%= tutor_profile.stars %>
+                <div class="flex items-center text-sm font-medium text-gray-500">
+                  <svg width="18" height="18" viewBox="0 0 426.667 426.667">
+                    <polygon style="fill:#FAC917;" points="213.333,10.441 279.249,144.017 426.667,165.436 320,269.41 345.173,416.226 213.333,346.91
+                    81.485,416.226 106.667,269.41 0,165.436 147.409,144.017 "/>
+                  </svg>
+                  <span class="ml-1">
+                    <%= tutor_profile.stars %>
+                  </span>
+                </div>
               </div>
             </div>
             <div class="card-heading--essentials">
               <div class="card-heading--rate">
                 <%= humanized_money_with_symbol tutor_profile.rate %>
-                <small class="unit text-muted"><%= t('common.hour') %>%.</small>
+                <small class="unit text-muted"><%= t('common.hour') %>.</small>
               </div>
             </div>
           </div>

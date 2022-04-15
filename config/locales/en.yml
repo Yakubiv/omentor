@@ -253,6 +253,8 @@ en:
       joined: Приєднався(-лась)
       write_message: Написати повідомлення
       book_lesson_btn: Забронювати урок
+      reviews: Відгуки
+      add_review: Додати відгук
     student_profile:
       overview: Загальне
       lessons: Уроки
@@ -305,6 +307,12 @@ en:
         title: Улюблені викладачі
         search_favorite: Пошук улюблених викладачів
         no_found: Викладачів не знайдено
+      reviews:
+        not_review: Відгуків немає
+        add_review: Додати відгук
+        review_about: Відгук про
+        help_select_tutor: Допоможіть іншим учням вибрати репетитора
+        description_placeholder: Опишіть свої враження від занять з цим репетитором (20 - 60 слів)
 
     details:
       main_header: Загальна інформація

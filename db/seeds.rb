@@ -50,4 +50,5 @@ end
   Subject.create(name: s)
 end
 
-User.create(email: "admin@gmail.com", confirmed_at: Time.current, password: 'password', sign_up_as: 'admin', terms_and_conditions: true)
+u = User.create(email: "admin@gmail.com", confirmed_at: Time.current, password: 'password', sign_up_as: 'admin', terms_and_conditions: true)
+u.user.skip_confirmation!

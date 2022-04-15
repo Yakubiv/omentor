@@ -1,5 +1,5 @@
 class TestMailer < ApplicationMailer
-  default template_path: "mailers/test_mailer"
+  default(template_path: "mailers/test_mailer")
   layout 'mailer'
   def test_send(email)
     @email = email

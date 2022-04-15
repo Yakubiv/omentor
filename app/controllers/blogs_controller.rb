@@ -9,6 +9,6 @@ class BlogsController < ApplicationController
 
   def show
     @blog_post = BlogPost.includes(:tags).friendly.find(params[:id])
-    impressionist(@blog_post, unique: :session_hash)
+    # impressionist(@blog_post, unique: :session_hash)
   end
 end
