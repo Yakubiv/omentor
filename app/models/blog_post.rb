@@ -14,7 +14,7 @@ class BlogPost < ApplicationRecord
   has_rich_text :body
   friendly_id :title, use: :slugged
 
-  is_impressionable counter_cache: true, unique: true
+  # is_impressionable counter_cache: true, unique: true
   acts_as_taggable_on :tags
 
   belongs_to :author, foreign_key: :user_id, class_name: 'User'
