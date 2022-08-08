@@ -31,20 +31,20 @@
 
       <div class="hidden sm:block">
         <div class="border-b border-gray-200">
-          <nav class="-mb-px flex">
-            <a href="<%= general_students_settings_path %>" class="w-1/4 py-4 px-1 text-center border-b-2 font-medium text-sm leading-5 focus:outline-none <%= active_if?(action: 'general') == 'active' ? active_tab_link : inactive_tab_link %>">
+          <nav class="-mb-px flex space-x-8" aria-label="Tabs">
+            <a href="<%= general_students_settings_path %>" class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm <%= active_if?(action: 'general') == 'active' ? active_tab_link : inactive_tab_link %>">
               <%= t('tutors.settings.general_header') %>
             </a>
 
-            <a href="<%= photo_students_settings_path %>" class="w-1/4 py-4 px-1 text-center border-b-2 font-medium text-sm leading-5 focus:outline-none <%= active_if?(action: 'photo') == 'active' ? active_tab_link : inactive_tab_link %>">
+            <a href="<%= photo_students_settings_path %>" class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm <%= active_if?(action: 'photo') == 'active' ? active_tab_link : inactive_tab_link %>">
               <%= t('tutors.settings.avatar_header') %>
             </a>
 
-            <a href="<%= bio_students_settings_path %>" class="w-1/4 py-4 px-1 text-center border-b-2 font-medium text-sm leading-5 focus:outline-none <%= active_if?(action: 'bio') == 'active' ? active_tab_link : inactive_tab_link %>">
+            <a href="<%= bio_students_settings_path %>" class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm <%= active_if?(action: 'bio') == 'active' ? active_tab_link : inactive_tab_link %>">
               <%= t('tutors.settings.bio_header') %>
             </a>
 
-            <a href="<%= account_students_settings_path %>" class="w-1/4 py-4 px-1 text-center border-b-2 font-medium text-sm leading-5 focus:outline-none <%= active_if?(action: 'account') == 'active' ? active_tab_link : inactive_tab_link %>">
+            <a href="<%= account_students_settings_path %>" class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm <%= active_if?(action: 'account') == 'active' ? active_tab_link : inactive_tab_link %>">
               <%= t('tutors.settings.account_header') %>
             </a>
           </nav>

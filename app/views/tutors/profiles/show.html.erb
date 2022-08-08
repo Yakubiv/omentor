@@ -1,1 +1,139 @@
-<%= render 'tutors/profiles/profile_description', tutor_profile: current_tutor_profile %>
+<main class="py-10">
+  <div class="px-4 mx-auto sm:px-6">
+    <div class="flex items-center space-x-5">
+      <div class="flex-shrink-0">
+        <div class="relative">
+          <img class="h-16 w-16 rounded-full" src="<%= image_path(@tutor_profile.avatar) %>" alt="Tutor avatar">
+          <span class="absolute inset-0 shadow-inner rounded-full" aria-hidden="true"></span>
+        </div>
+      </div>
+      <div>
+        <div class="flex items-center">
+          <h1 class="text-2xl mr-2 font-bold text-gray-900"><%= @tutor_profile.first_name %> <%= @tutor_profile.last_name %></h1>
+          <div class="flex items-center text-lg font-medium text-gray-500">
+            <svg width="18" height="18" viewBox="0 0 426.667 426.667">
+              <polygon style="fill:#FAC917;" points="213.333,10.441 279.249,144.017 426.667,165.436 320,269.41 345.173,416.226 213.333,346.91
+              81.485,416.226 106.667,269.41 0,165.436 147.409,144.017 "/>
+            </svg>
+            <span class="ml-1 mt-1">
+              <%= @tutor_profile.stars %>
+            </span>
+          </div>
+        </div>
+        <p class="text-lg font-medium text-gray-500"><%= t('students.my_tutors_profile.joined') %> <%= @tutor_profile.created_at.strftime("%B %d, %Y") %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-8 px-6">
+    <div class="space-y-6 lg:col-start-1 lg:col-span-2">
+      <section aria-labelledby="applicant-information-title">
+        <div class="bg-white shadow sm:rounded-lg">
+          <div class="px-4 py-5 sm:px-6 flex justify-between items-center">
+            <h2 id="applicant-information-title" class="text-lg leading-6 font-medium text-gray-900">
+              <%= t('students.my_tutors_profile.profile') %>
+            </h2>
+            <%= link_to new_students_tutor_review_path(@tutor_profile), remote: true do %>
+              <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent text-lg leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-700 active:bg-indigo-700 transition duration-150 ease-in-out">
+                <%= t('students.my_tutors_profile.add_review') %>
+              </button>
+            <% end %>
+          </div>
+          <div class="border-t border-gray-200 px-4 py-5 sm:px-6">
+            <dl class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
+              <div class="sm:col-span-1 mb-5">
+                <dt class="text-base font-medium text-gray-500">
+                  <%= t('students.my_tutors_profile.subjects') %>
+                </dt>
+                <% @tutor_profile.subjects.each do |subject| %>
+                  <dd class="mt-1 text-lg text-gray-900">
+                    <%= subject.name %>
+                  </dd>
+                <% end %>
+              </div>
+              <div class="sm:col-span-1 mb-5">
+                <dt class="text-lg font-medium text-gray-500">
+                  <%= t('students.my_tutors_profile.languages') %>
+                </dt>
+                <% @tutor_profile.speaks.each do |speak| %>
+                  <dd class="mt-1 text-lg text-gray-900 w-56 relative">
+                    <%= speak.language  %>
+                    <span class="absolute right-0 inline-flex items-center px-3 py-0 5 rounded-full text-xs font-medium leading-5 bg-purple-200 text-purple-800">
+                      <%= Speak.human_enum_name(:levels, speak.level) %>
+                    </span>
+                  </dd>
+                <% end %>
+              </div>
+              <div class="sm:col-span-1 mb-5">
+                <dt class="text-lg font-medium text-gray-500">
+                  <%= t('students.my_tutors_profile.price') %>
+                </dt>
+                <dd class="mt-1 text-lg text-gray-900">
+                  <%= humanized_money_with_symbol @tutor_profile.rate %>
+                </dd>
+              </div>
+              <div class="sm:col-span-1 mb-5">
+                <dt class="text-lg font-medium text-gray-500">
+                  <%= t('students.my_tutors_profile.phone') %>
+                </dt>
+                <dd class="mt-1 text-lg text-gray-900">
+                  <%= @tutor_profile.phone %>
+                </dd>
+              </div>
+              <div class="sm:col-span-1 mb-5">
+                <dt class="text-lg font-medium text-gray-500">
+                  <%= t('students.my_tutors_profile.gender') %>
+                </dt>
+                <dd class="mt-1 text-lg text-gray-900">
+                  <%= @tutor_profile.gender %>
+                </dd>
+              </div>
+              <div class="sm:col-span-1 mb-5">
+                <dt class="text-lg font-medium text-gray-500">
+                  <%= t('students.my_tutors_profile.age') %>
+                </dt>
+                <dd class="mt-1 text-lg text-gray-900">
+                  <%= @decorated_tutor_profile&.find_age %>
+                </dd>
+              </div>
+              <div class="sm:col-span-2">
+                <dt class="text-lg font-medium text-gray-500">
+                  <%= t('students.my_tutors_profile.about') %>
+                </dt>
+                <dd class="mt-1 text-lg text-gray-900">
+                  <%= @tutor_profile.bio %>
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="notes-title">
+        <div class="bg-white shadow sm:rounded-lg sm:overflow-hidden">
+          <div class="divide-y divide-gray-200">
+            <div class="px-4 py-5 sm:px-6">
+              <h2 id="notes-title" class="text-lg font-medium text-gray-900"><%= t('students.my_tutors_profile.reviews') %></h2>
+            </div>
+            <div class="px-4 py-6 sm:px-6">
+              <ul class="space-y-8">
+                <% if @reviews.any? %>
+                  <% @reviews.each do |review| %>
+                    <%= render 'tutors/profiles/review', review: review %>
+                  <% end %>
+                <% else %>
+                  <p><%= t('students.tutors.reviews.not_review') %></p>
+                <% end %>
+              </ul>
+            </div>
+            <div class="p-4">
+              <nav class="relative z-0 inline-flex shadow-sm">
+                <%= render partial: 'layouts/partials/pagy', locals: { pagy: @pagy } %>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
