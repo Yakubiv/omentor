@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get :contacts, to: 'homes#contacts'
 
   resources :search_tutors, only: :index
-  resources :subscriptions, only: :create
+  resources :subscriptions, only: [:create]
   get '/sitemap.xml' => 'sitemaps#index', defaults: { format: 'xml' }
 
   namespace :api do

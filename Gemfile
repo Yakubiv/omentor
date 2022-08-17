@@ -52,6 +52,8 @@ gem 'hamlit', '~> 2.16.0'
 gem 'friendly_id', '~> 5.4.1'
 gem 'babosa', '2.0.0'
 
+gem "view_component"
+
 gem 'bootsnap', '>= 1.5.1', require: false
 
 group :development, :test do

@@ -1,9 +1,6 @@
 class SubscriptionsController < ApplicationController
   def create
     NewsSubscriber.create(subscriber_params)
-    respond_to do |format|
-      format.js
-    end
   end
 
   private

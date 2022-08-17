@@ -50,7 +50,7 @@
         <div data-dropdown-target="menu" class="origin-top-right absolute z-10 right-0 mt-2 w-48 rounded-md shadow-lg hidden">
           <div class="py-1 rounded-md bg-white shadow-xs" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
             <a href="<%= students_profile_path %>" class="tw-dropdown-link" role="menuitem"><%= t('common.profile') %></a>
-            <%= link_to general_students_settings_path, method: :delete, class: 'tw-dropdown-link' do %>
+            <%= link_to general_students_settings_path, class: 'tw-dropdown-link' do %>
               <%= t('common.settings')%>
             <% end %>
             <%= link_to destroy_user_session_path, method: :delete, class: 'tw-dropdown-link' do %>
