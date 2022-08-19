@@ -24,11 +24,14 @@
       </div>
     </div>
     <div class="mt-6 flex flex-col-reverse justify-stretch space-y-4 space-y-reverse sm:flex-row-reverse sm:justify-end sm:space-x-reverse sm:space-y-0 sm:space-x-3 md:mt-0 md:flex-row md:space-x-3">
-      <%= link_to students_chat_path(@class_room) do %>
-        <button type="button" class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 shadow-sm text-lg font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none">
-          <%= t('students.my_tutors_profile.write_message') %>
-        </button>
+      <% if @class_room %>
+        <%= link_to students_chat_path(@class_room) do %>
+          <button type="button" class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 shadow-sm text-lg font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none">
+            <%= t('students.my_tutors_profile.write_message') %>
+          </button>
+        <% end %>
       <% end %>
+
       <%= link_to students_tutor_booking_path(tutor_profile) do %>
         <button type="button" class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-lg font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none">
           <%= t('students.my_tutors_profile.book_lesson_btn') %>
@@ -105,7 +108,7 @@
                   <%= t('students.my_tutors_profile.age') %>
                 </dt>
                 <dd class="mt-1 text-lg text-gray-900">
-                  <%= @decorated_tutor_profile.find_age %>
+                  <%= @decorated_tutor_profile&.find_age %>
                 </dd>
               </div>
               <div class="sm:col-span-2">

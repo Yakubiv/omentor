@@ -2,6 +2,9 @@
 
 class Tutors::ProfilesController < Tutors::BaseController
   def show
+    @tutor_profile = current_tutor_profile
+    @pagy, @reviews = pagy(@tutor_profile.reviews, items: 5)
+    @decorated_tutor_profile = TutorProfileDecorator.new(@tutor_profile)
   end
 
   def update
