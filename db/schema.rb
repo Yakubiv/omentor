@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2021_02_11_165142) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_19_155134) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
   enable_extension "plpgsql"
@@ -113,6 +113,18 @@ ActiveRecord::Schema[7.0].define(version: 2021_02_11_165142) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_feedbacks_on_user_id"
+  end
+
+  create_table "homework_presets", force: :cascade do |t|
+    t.text "description"
+    t.boolean "active", default: true
+    t.text "subject_theme"
+    t.bigint "subject_id"
+    t.bigint "profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_homework_presets_on_profile_id"
+    t.index ["subject_id"], name: "index_homework_presets_on_subject_id"
   end
 
   create_table "impressions", force: :cascade do |t|
