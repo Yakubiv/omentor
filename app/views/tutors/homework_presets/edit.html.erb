@@ -1,0 +1,38 @@
+UPDATE HW
+
+<%= form_with model: @homework_preset, url: tutors_homework_preset_path, method: :put do |f| %>
+  <%= render 'layouts/partials/form_errors', errors: @homework_preset.errors %>
+
+  <div class="form-group">
+    <%= f.label :active, 'Фізика' %>
+    <%= f.number_field :subject_id, class: "form-control",
+                                    required: true,
+                                    value: 1 %>
+  <div>
+
+  <div class="form-group">
+    <%= f.label :active, t('tutors.homework_presets.active') %>
+    <%= f.check_box :active, class: "form-control", required: true %>
+  <div>
+
+  <div class="form-group">
+    <%= f.text_field :subject_theme, class: "form-control",
+                                     required: true, 
+                                     placeholder: t('tutors.homework_presets.subject_theme') %>
+  <div>
+
+
+  <div class="form-group">
+    <%= f.text_area :description, class: "form-control",
+                                  required: true, 
+                                  placeholder: t('tutors.homework_presets.description') %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit t('tutors.homework_presets.update'), data: { disable_with: "Saving..." }, 
+                                                      class: 'w-full flex justify-center py-2 px-4 border border-transparent text-sm 
+                                                              font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none 
+                                                              focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition 
+                                                              duration-150 ease-in-out' %>
+  </div>
+<% end %>

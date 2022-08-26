@@ -5,7 +5,7 @@ module Tutors
     end
 
     def show
-      @homework_preset = current_tutor_profile.homework_presets.find(homework_preset_params[:id])
+      @homework_preset = current_tutor_profile.homework_presets.find(params[:id])
     end
 
     def new
@@ -15,11 +15,32 @@ module Tutors
     def create
       @homework_preset = current_tutor_profile.homework_presets.new(homework_preset_params)
 
-      if @homework_preset.save!
-        redirect_to @homework_preset, notice: 'Homework preset was created'
+      if @homework_preset.save
+        redirect_to tutors_homework_preset_path(@homework_preset), notice: 'Homework preset was created'
       else
         render 'new'
       end
+    end
+
+    def edit
+      @homework_preset = current_tutor_profile.homework_presets.find(params[:id])
+    end
+
+    def update
+      @homework_preset = current_tutor_profile.homework_presets.find(params[:id])
+
+      if @homework_preset.update(homework_preset_params)
+        redirect_to tutors_homework_preset_path(@homework_preset), notice: 'Homework preset was updated'
+      else
+        render 'edit'
+      end
+    end
+
+    def destroy
+      @@homework_preset = current_tutor_profile.homework_presets.find(params[:id])
+      @@homework_preset.destroy
+
+      redirect_to tutors_homework_presets_path, notice: 'Homework preset was deleted'
     end
 
     private

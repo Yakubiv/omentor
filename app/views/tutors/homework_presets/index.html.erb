@@ -1,0 +1,21 @@
+<%= link_to 'CREATE HOMEWORK PRESET', new_tutors_homework_preset_path, style: 'color: green' %>
+
+<h1>List of homework presets:</h1>
+<ul>
+  <% @homework_presets.each do |homework_preset| %>
+    <li style="margin-top: 20px">
+      <p>subject: <%= homework_preset.subject.name %></p>
+      <p>theme: <%= homework_preset.subject_theme %></p>
+      <p>description: <%= homework_preset.description %></p>
+
+      <%= link_to 'SHOW', tutors_homework_preset_path(homework_preset), style: 'color: green' %>
+      <%= link_to 'EDIT', edit_tutors_homework_preset_path(homework_preset), style: 'color: green' %>
+      <%= link_to 'DELETE', tutors_homework_preset_path(homework_preset), style: 'color: green',
+                                                                           data: {
+                                                                            turbo_method: :delete,
+                                                                            turbo_confirm: 'Are you sure?'
+                                                                           } %>
+    </li>
+    <hr>
+  <% end %>
+</ul>
