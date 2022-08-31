@@ -23,7 +23,7 @@
     <div id="booking-calendar">
       <%= week_calendar do |date| %>
         <% @available_hours.fetch(date.to_s, []).each do |time| %>
-          <div class="<%= time[:status] %> c-time-slot-record" data-booking-time="<%= time[:full_time] %>">
+          <div class="<%= time[:status] %> c-time-slot-record" data-action="click->booking#selectTime" data-booking-time="<%= time[:full_time] %>">
             <%= time[:time] %>
           </div>
         <% end %>
