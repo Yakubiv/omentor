@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Tutors::Registrations::TimeSlotsController < Tutors::BaseController
+  skip_before_action :verify_authenticity_token, only: :create
   before_action :load_time_slot, only: %i[edit update destroy]
 
   def index
