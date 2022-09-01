@@ -1,0 +1,7 @@
+Предмети:
+
+<div>
+  <% @subjects.each do |subject| %>
+    <p><%= link_to subject.name, tutors_subject_path(subject) %></p>
+  <% end %>
+</div>

@@ -1,6 +1,6 @@
 CREATE HW
 
-<%= form_with model: @homework_preset, url: tutors_homework_presets_path, method: :post do |f| %>
+<%= form_with model: @homework_preset, url: tutors_subject_homework_presets_path, method: :post do |f| %>
   <%= render 'layouts/partials/form_errors', errors: @homework_preset.errors %>
 
   <div class="form-group">
