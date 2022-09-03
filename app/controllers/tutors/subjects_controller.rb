@@ -6,7 +6,7 @@ module Tutors
 
     def show
       @subject = current_tutor_profile.subjects.find(params[:id])
-      @homeworks = current_tutor_profile.homework_presets.where(subject: @subject)
+      @homeworks = current_tutor_profile.homework_presets.order(created_at: :desc).where(subject: @subject)
     end
   end
 end
