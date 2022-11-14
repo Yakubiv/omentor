@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_03_120304) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_02_202525) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
   enable_extension "plpgsql"
@@ -240,6 +240,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_03_120304) do
     t.index ["subject_id", "profile_id"], name: "index_profiles_subjects_on_subject_id_and_profile_id"
   end
 
+  create_table "question_options", force: :cascade do |t|
+    t.bigint "question_id", null: false
+    t.string "title"
+    t.boolean "is_correct"
+    t.text "correct_text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_question_options_on_question_id"
+  end
+
   create_table "questions", force: :cascade do |t|
     t.string "title"
     t.boolean "active"
@@ -354,5 +364,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_03_120304) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "question_options", "questions"
   add_foreign_key "taggings", "tags"
 end

@@ -18,7 +18,7 @@ module Tutors
       @homework_preset = current_tutor_profile.homework_presets.new(homework_preset_params)
 
       if @homework_preset.save
-        redirect_to tutors_subject_homework_preset_path(@subject, @homework_preset), notice: 'Homework preset was created'
+        redirect_to tutors_subject_path(@subject), notice: 'Homework preset was created'
       else
         render 'new'
       end
@@ -39,8 +39,8 @@ module Tutors
     end
 
     def destroy
-      @@homework_preset = current_tutor_profile.homework_presets.find(params[:id])
-      @@homework_preset.destroy
+      @homework_preset = current_tutor_profile.homework_presets.find(params[:id])
+      @homework_preset.destroy
 
       redirect_to tutors_subject_homework_presets_path, notice: 'Homework preset was deleted'
     end
@@ -48,8 +48,7 @@ module Tutors
     private
 
     def homework_preset_params
-      params.require(:homework_preset).permit(:description, :active,
-                                              :subject_theme, :subject_id)
+      params.require(:homework_preset).permit(:description, :active, :subject_theme, :subject_id)
     end
 
     def subject

@@ -1,7 +1,10 @@
-Домашки з предмету:
+Мої предмети
 
-<div>
+<ul style="margin-top: 20px">
   <% @subjects.each do |subject| %>
-    <p><%= link_to subject.name, tutors_subject_path(subject) %></p>
+    <li>
+      <%= subject.name %>
+      <%= link_to 'Відкрити', tutors_subject_path(subject), style: "color: green" %>
+    </li>
   <% end %>
-</div>
+</ul>

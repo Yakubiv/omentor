@@ -1,21 +1,23 @@
+<div>Тема: <%= @homework_preset.subject_theme %></div>
+
 <div style='margin-bottom: 20px'>
-  <%= link_to 'Додати питання +', new_tutors_subject_homework_preset_question_path(@subject, @homework_preset) %>
+  <%= link_to 'Додати питання +', new_tutors_subject_homework_preset_question_path(@subject, @homework_preset),
+                                  style: "font-weight: bold" %>
 </div>
 
 <div style='margin-bottom: 20px'>
-  <p>Список питань</p>
+  <p>Список питань:</p>
+
+  <ul>
+    <% @homework_preset.questions.each do |question| %>
+      <li>
+        <%= question.title %>
+        <div style="margin-left: 20px">
+          <% question.question_options.each do |option| %>
+            <p><%= option.title %></p>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
 </div>
-
-<p style='color: green'>HOMEWORK ID: <%= @homework_preset.id %></p>
-
-<p>Предмет: <%= @homework_preset.subject.name %></p>
-<p>Тема: <%= @homework_preset.subject_theme %></p>
-<p>Опис: <%= @homework_preset.description %></p>
-
-<%= link_to 'Редагувати', edit_tutors_subject_homework_preset_path(@subject, @homework_preset), style: 'color: gray' %>
-<%= link_to 'Видалити', tutors_subject_homework_preset_path(@subject, @homework_preset), 
-                        style: 'color: red',
-                        data: {
-                          turbo_method: :delete,
-                          turbo_confirm: 'Are you sure?'
-                        } %>

@@ -10,11 +10,12 @@
 
       <%= link_to 'SHOW', tutors_homework_preset_path(homework_preset), style: 'color: green' %>
       <%= link_to 'EDIT', edit_tutors_homework_preset_path(homework_preset), style: 'color: green' %>
-      <%= link_to 'DELETE', tutors_homework_preset_path(homework_preset), style: 'color: green',
-                                                                           data: {
-                                                                            turbo_method: :delete,
-                                                                            turbo_confirm: 'Are you sure?'
-                                                                           } %>
+      <%= link_to 'DELETE', tutors_homework_preset_path(homework_preset),
+                            style: 'color: green',
+                            data: {
+                              turbo_method: :delete,
+                              turbo_confirm: 'Are you sure?'
+                            } %>
     </li>
     <hr>
   <% end %>

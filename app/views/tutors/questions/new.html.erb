@@ -1,3 +1,36 @@
-<p>Створити питання</p>
+<p>Тип питання:</p>
+<p style="margin-bottom: 20px">Quiz, OpenAnswer, OneLineAnswer</p>
 
-Quiz, OpenQuestion, OneLineQuestion
+<div style="border: 5px solid black; width: 50%; padding: 15px">
+  QUIZ
+
+  <%= form_with model: @question, url: tutors_subject_homework_preset_questions_path do |form| %>
+    <%= form.hidden_field :tutor_profile_id, value: current_tutor_profile.id %>
+    <div>
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </div>
+    <div>
+      <%= form.label :active %>
+      <%= form.check_box :active %>
+    </div>
+
+    <ul style="margin-left: 20px; margin-top: 10px">
+      <%= form.fields_for :question_options do |options_form| %>
+        <li>
+          <div>
+            <%= options_form.label :title %>
+            <%= options_form.text_field :title %>
+          </div>
+
+          <div>
+            <%= options_form.label :is_correct %>
+            <%= options_form.check_box :is_correct %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+
+    <%= form.submit 'Create' %>
+  <% end %>
+</div>
