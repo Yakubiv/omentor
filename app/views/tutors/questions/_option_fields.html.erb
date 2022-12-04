@@ -1,0 +1,16 @@
+<%= content_tag :div, style: 'margin-bottom: 10px', class: 'nested-fields', data: { new_record: form.object.new_record? } do %>
+  <div>
+    <div>
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </div>
+
+    <div>
+      <%= form.label :is_correct? %>
+      <%= form.check_box :is_correct %>
+    </div>
+
+    <%= link_to 'Remove', '#', style: 'color: red', data: { action: 'click->nested-form#remove_option' } %>
+    <%= form.hidden_field :_destroy %>
+  </div>
+<% end %>

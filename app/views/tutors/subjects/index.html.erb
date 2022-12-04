@@ -1,10 +1,10 @@
-Мої предмети
+<p style='font-weight: bold'>Предмети:</p>
 
 <ul style="margin-top: 20px">
   <% @subjects.each do |subject| %>
     <li>
       <%= subject.name %>
-      <%= link_to 'Відкрити', tutors_subject_path(subject), style: "color: green" %>
+      <%= link_to 'Відкрити', tutors_subject_path(subject), style: 'color: green' %>
     </li>
   <% end %>
 </ul>

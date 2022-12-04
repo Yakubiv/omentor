@@ -1,37 +1,12 @@
-Редагувати домашку
+<div style='margin-bottom: 20px'>
+  <%= link_to '<---', tutors_subject_path(@subject),
+                      style: "font-weight: bold" %>
+</div>
 
-<%= form_with model: @homework_preset, url: tutors_subject_homework_preset_path, method: :put do |f| %>
-  <%= render 'layouts/partials/form_errors', errors: @homework_preset.errors %>
+<h2 style='margin-bottom: 10px'>Редагувати Тему</h2>
 
-  <div class="form-group">
-    <%= f.hidden_field :subject_id, required: true, value: @subject.id %>
-  <div>
-
-  <div class="form-group">
-    <%= f.label :active, t('tutors.homeworks.active') %>
-    <%= f.check_box :active, class: "form-control", required: true %>
-  <div>
-
-  <div class="form-group">
-    <%= f.label :subject_theme, t('tutors.homeworks.subject_theme') %>
-    <%= f.text_field :subject_theme, class: "form-control",
-                                     required: true, 
-                                     placeholder: t('tutors.homeworks.subject_theme') %>
-  <div>
-
-
-  <div class="form-group">
-    <%= f.label :description, t('tutors.homeworks.description') %>
-    <%= f.text_area :description, class: "form-control",
-                                  required: true, 
-                                  placeholder: t('tutors.homeworks.description') %>
-  </div>
-
-  <div class="form-group">
-    <%= f.submit t('tutors.homeworks.update'), data: { disable_with: "Saving..." }, 
-                                                      class: 'w-full flex justify-center py-2 px-4 border border-transparent text-sm 
-                                                              font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none 
-                                                              focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition 
-                                                              duration-150 ease-in-out' %>
-  </div>
-<% end %>
+<%= render 'form', homework_preset: @homework_preset,
+                   url: tutors_subject_homework_preset_path,
+                   method: :put, 
+                   subject: @subject,
+                   btn: 'Редагувати' %>

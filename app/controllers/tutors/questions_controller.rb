@@ -1,7 +1,10 @@
 module Tutors
   class QuestionsController < BaseController
     def new
+      @subject = subject
+      @homevork_preset = homework_preset
       @question = homework_preset.questions.new
+      @question.question_options.new
     end
 
     def create
@@ -12,6 +15,15 @@ module Tutors
       else
         render 'new'
       end
+    end
+
+    def edit
+    end
+
+    def update
+    end
+
+    def destroy
     end
 
     private
