@@ -88,7 +88,7 @@ module ApplicationHelper
       type: params[:type] == conditions[:type],
       action: action_name == conditions[:action],
       category: params[:category].to_s == conditions[:category],
-      controller: controller_name == conditions[:controller],
+      controller: conditions[:controller]&.include?(controller_name),
       fullpath: request.fullpath == conditions[:fullpath],
       starts_with: fullpath_starts_with?(conditions[:starts_with].to_s),
       include_in_path: request.fullpath.include?(conditions[:include_in_path].to_s)

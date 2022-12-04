@@ -441,6 +441,13 @@ en:
       settings: Налаштування
       lessons: Уроки
       students: Студенти
+      homeworks: Домашки
+    homeworks:
+      subject_theme: Тема
+      description: Опис
+      active: Активний
+      create: Створити домашку
+      update: Редагувати домашку
     students:
       lessons: Уроки
       view_profile_link: Переглянути профіль

@@ -1,0 +1,30 @@
+<div style='border: 2px solid black; width: 50%; padding: 20px'>
+  <%= form_with model: homework_preset, url: url, method: method do |f| %>
+    <%= render 'layouts/partials/form_errors', errors: homework_preset.errors %>
+
+    <%= f.hidden_field :subject_id, required: true, value: subject.id %>
+
+    <div>
+      <%= f.label :subject_theme, t('tutors.homeworks.subject_theme') %>
+      <%= f.text_field :subject_theme, required: true,
+                                       style: 'width: 100%;',
+                                       placeholder: t('tutors.homeworks.subject_theme') %>
+    <div>
+
+    <div>
+      <%= f.label :description, t('tutors.homeworks.description') %>
+      <%= f.text_area :description, required: true,
+                                    style: 'width: 100%;',
+                                    placeholder: t('tutors.homeworks.description') %>
+    </div>
+
+    <div>
+      <%= f.label :active, 'active' %>
+      <%= f.check_box :active %>
+    <div>
+
+    <div style='margin-top: 10px',>
+      <%= f.submit btn, data: { disable_with: 'Saving...' } %>
+    </div>
+  <% end %>
+</div>

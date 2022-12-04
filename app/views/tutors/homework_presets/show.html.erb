@@ -1,0 +1,31 @@
+<div style='margin-bottom: 20px'>
+  <%= link_to '<---', tutors_subject_path(@subject),
+                      style: "font-weight: bold" %>
+</div>
+
+<div>Тема: <%= @homework_preset.subject_theme %></div>
+
+<div style='margin: 10px 0 10px 0'>
+  <%= link_to 'Додати питання +', new_tutors_subject_homework_preset_question_path(@subject, @homework_preset),
+                                  style: "font-weight: bold" %>
+</div>
+
+<div style='margin-bottom: 20px'>
+  <p>Список питань:</p>
+
+  <ul>
+    <% @homework_preset.questions.each do |question| %>
+      <li style='margin: 10px'>
+        <%= question.title %>
+        <div style="margin-left: 20px">
+          <% question.question_options.each do |option| %>
+            <div>
+              <%= option.title %>
+              <% if option.is_correct %><span style='color: green'>(правильна відповідь)</span><% end %>
+            </div>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

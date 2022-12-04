@@ -1,0 +1,62 @@
+<div style='margin-bottom: 20px'>
+  <%= link_to '<---', tutors_subject_homework_preset_path(@subject, @homework_preset),
+                      style: "font-weight: bold" %>
+</div>
+
+<p>Тип питання:</p>
+<p style="margin-bottom: 20px">Quiz, OpenAnswer, OneLineAnswer</p>
+
+<div style="border: 5px solid black; width: 50%; padding: 15px">
+  QUIZ
+
+  <%= form_with model: @question, url: tutors_subject_homework_preset_questions_path do |form| %>
+    <%= form.hidden_field :tutor_profile_id, value: current_tutor_profile.id %>
+    <div>
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </div>
+    <div>
+      <%= form.label :active %>
+      <%= form.check_box :active %>
+    </div>
+
+    <div style="margin-left: 20px; margin-top: 10px">
+      <p style='margin-bottom: 15px'>OPTIONS:</p>
+
+      <div data-controller='nested-form'>
+        <template data-target='nested-form.template'>
+          <%= form.fields_for :question_options, QuestionOption.new, child_index: 'NEW_RECORD' do |option| %>
+            <%= render 'option_fields', form: option %>
+          <% end %>
+        </template>
+
+        <%= form.fields_for :question_options do |option| %>
+          <%= render 'option_fields', form: option %>
+        <% end %>
+
+        <div style='margin-top: 15px; color: green' data-target='nested-form.links'>
+          <%= link_to 'Add', '#', data: { action: 'click->nested-form#add_option' } %>
+        </div>
+      </div>
+    </div>
+
+    <%= form.submit 'Create' %>
+  <% end %>
+</div>
+
+<div style="border: 5px solid black; width: 50%; padding: 15px; margin-top: 20px">
+  OpenAnswer
+
+  <%= form_with model: @question, url: tutors_subject_homework_preset_questions_path do |form| %>
+    <%= form.hidden_field :tutor_profile_id, value: current_tutor_profile.id %>
+      <div>
+        <%= form.label :title %>
+        <%= form.text_field :title %>
+      </div>
+      <div>
+        <%= form.label :active %>
+        <%= form.check_box :active %>
+      </div>
+    <%= form.submit 'Create' %>
+  <% end %>
+</div>

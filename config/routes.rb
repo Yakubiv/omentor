@@ -77,6 +77,11 @@ Rails.application.routes.draw do
         end
       end
 
+      resources :subjects, only: %i[index show] do
+        resources :homework_presets, only: %i[index show new create edit update destroy] do
+          resources :questions, only: %i[new create edit update destroy]
+        end
+      end
       resources :vacations, only: %i[index new create destroy update edit]
       resources :chats, only: %i[index show]
       resources :settings, only: [] do

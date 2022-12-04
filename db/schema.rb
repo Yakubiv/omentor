@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2021_02_11_165142) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_02_202525) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2021_02_11_165142) do
     t.string "name", null: false
     t.text "body"
     t.string "record_type", null: false
-    t.integer "record_id", null: false
+    t.bigint "record_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
@@ -48,7 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2021_02_11_165142) do
   end
 
   create_table "active_storage_variant_records", force: :cascade do |t|
-    t.integer "blob_id", null: false
+    t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
@@ -76,8 +76,8 @@ ActiveRecord::Schema[7.0].define(version: 2021_02_11_165142) do
   end
 
   create_table "class_rooms", force: :cascade do |t|
-    t.integer "student_profile_id"
-    t.integer "tutor_profile_id"
+    t.bigint "student_profile_id"
+    t.bigint "tutor_profile_id"
     t.integer "status", default: 0
     t.string "name"
     t.datetime "created_at", null: false
@@ -98,9 +98,9 @@ ActiveRecord::Schema[7.0].define(version: 2021_02_11_165142) do
   end
 
   create_table "favorites", force: :cascade do |t|
-    t.integer "profile_id"
+    t.bigint "profile_id"
     t.string "favoritable_type"
-    t.integer "favoritable_id"
+    t.bigint "favoritable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["favoritable_type", "favoritable_id"], name: "index_favorites_on_favoritable_type_and_favoritable_id"
@@ -109,10 +109,22 @@ ActiveRecord::Schema[7.0].define(version: 2021_02_11_165142) do
 
   create_table "feedbacks", force: :cascade do |t|
     t.text "describe"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_feedbacks_on_user_id"
+  end
+
+  create_table "homework_presets", force: :cascade do |t|
+    t.text "description"
+    t.boolean "active", default: true
+    t.text "subject_theme"
+    t.bigint "subject_id"
+    t.bigint "profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_homework_presets_on_profile_id"
+    t.index ["subject_id"], name: "index_homework_presets_on_subject_id"
   end
 
   create_table "impressions", force: :cascade do |t|
@@ -143,7 +155,7 @@ ActiveRecord::Schema[7.0].define(version: 2021_02_11_165142) do
 
   create_table "languages", force: :cascade do |t|
     t.string "name"
-    t.integer "country_id"
+    t.bigint "country_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["country_id"], name: "index_languages_on_country_id"
@@ -153,8 +165,8 @@ ActiveRecord::Schema[7.0].define(version: 2021_02_11_165142) do
     t.integer "status", default: 0
     t.datetime "start_at", precision: nil
     t.decimal "duration", precision: 8, scale: 2
-    t.integer "subject_id"
-    t.integer "class_room_id"
+    t.bigint "subject_id"
+    t.bigint "class_room_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "uuid"
@@ -166,8 +178,8 @@ ActiveRecord::Schema[7.0].define(version: 2021_02_11_165142) do
 
   create_table "messages", force: :cascade do |t|
     t.text "body"
-    t.integer "class_room_id"
-    t.integer "profile_id"
+    t.bigint "class_room_id"
+    t.bigint "profile_id"
     t.boolean "read", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -185,7 +197,7 @@ ActiveRecord::Schema[7.0].define(version: 2021_02_11_165142) do
   create_table "pg_search_documents", force: :cascade do |t|
     t.text "content"
     t.string "searchable_type"
-    t.integer "searchable_id"
+    t.bigint "searchable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id"
@@ -207,7 +219,7 @@ ActiveRecord::Schema[7.0].define(version: 2021_02_11_165142) do
     t.decimal "stars", precision: 3, scale: 1
     t.text "bio"
     t.string "type"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slug"
@@ -228,6 +240,28 @@ ActiveRecord::Schema[7.0].define(version: 2021_02_11_165142) do
     t.index ["subject_id", "profile_id"], name: "index_profiles_subjects_on_subject_id_and_profile_id"
   end
 
+  create_table "question_options", force: :cascade do |t|
+    t.bigint "question_id", null: false
+    t.string "title"
+    t.boolean "is_correct"
+    t.text "correct_text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_question_options_on_question_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "title"
+    t.boolean "active"
+    t.integer "kind"
+    t.bigint "homework_preset_id"
+    t.bigint "tutor_profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["homework_preset_id"], name: "index_questions_on_homework_preset_id"
+    t.index ["tutor_profile_id"], name: "index_questions_on_tutor_profile_id"
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.text "description"
     t.integer "stars"
@@ -241,8 +275,8 @@ ActiveRecord::Schema[7.0].define(version: 2021_02_11_165142) do
 
   create_table "speaks", force: :cascade do |t|
     t.integer "level"
-    t.integer "profile_id"
-    t.integer "language_id"
+    t.bigint "profile_id"
+    t.bigint "language_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["language_id"], name: "index_speaks_on_language_id"
@@ -287,7 +321,7 @@ ActiveRecord::Schema[7.0].define(version: 2021_02_11_165142) do
   create_table "time_slots", force: :cascade do |t|
     t.datetime "start_at", precision: nil
     t.datetime "end_at", precision: nil
-    t.integer "profile_id"
+    t.bigint "profile_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "wday"
@@ -322,7 +356,7 @@ ActiveRecord::Schema[7.0].define(version: 2021_02_11_165142) do
     t.datetime "start_at", precision: nil
     t.datetime "end_at", precision: nil
     t.integer "status", default: 0
-    t.integer "profile_id"
+    t.bigint "profile_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["profile_id"], name: "index_vacations_on_profile_id"
@@ -330,5 +364,6 @@ ActiveRecord::Schema[7.0].define(version: 2021_02_11_165142) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "question_options", "questions"
   add_foreign_key "taggings", "tags"
 end
